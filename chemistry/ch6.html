@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F4F2ED">
+<link rel="icon" type="image/svg+xml" href="../favicon/sela.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<title>第六章 原子與分子 — 阿蔓明道國中復習專班</title>
+<style>
+/* ── 北歐極簡設計系統 v1.3 ── */
+:root {
+  --bg:#F4F2ED; --surface:#FFFFFF; --surface2:#F9F8F5;
+  --border:#E3DFDA; --border-mid:#CCCAB5; --border-dark:#B0ADA4;
+  --text-1:#1A1916; --text-2:#65635E; --text-3:#A5A29C;
+  --c1:#2B4C7E; --c1l:#EAF0F8;
+  --c2:#3A5C42; --c2l:#EBF2EC;
+  --c3:#78600A; --c3l:#F5EDD8;
+  --c4:#5A3E6E; --c4l:#EEE8F4;
+  --c5:#7A4E36; --c5l:#F5EDE8;
+  --c6:#2C5F6E; --c6l:#E8F3F5;
+  --r:4px; --r-s:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI",
+    "Hiragino Sans","Noto Sans TC",sans-serif;
+  background:var(--bg); color:var(--text-1);
+  font-size:15px; line-height:1.7;
+}
+
+/* ── TOPBAR ── */
+.topbar{
+  height:52px; position:sticky; top:0; z-index:100;
+  background:rgba(244,242,237,.94); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; padding:0 20px; gap:10px;
+}
+.topbar-back{
+  font-size:13px; color:var(--text-2); min-height:44px;
+  display:flex; align-items:center; gap:4px; text-decoration:none;
+  white-space:nowrap;
+}
+.topbar-back:hover{color:var(--text-1);}
+.topbar-sep{color:var(--border-mid); font-size:13px;}
+.topbar-title{font-size:13px; font-weight:500; color:var(--text-1); flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.topbar-prog{display:flex; flex-direction:column; gap:3px; min-width:80px;}
+.prog-label{font-size:11px; color:var(--text-3); text-align:right; letter-spacing:.02em;}
+.prog-bar{height:3px; background:var(--border); border-radius:2px; overflow:hidden;}
+.prog-fill{height:3px; background:var(--c1); border-radius:2px; transition:width .3s; width:0%;}
+
+/* ── SECTION TABS ── */
+.stabs{
+  background:var(--surface); border-bottom:1px solid var(--border);
+  display:flex; overflow-x:auto; padding:0 20px; gap:0;
+}
+.stabs::-webkit-scrollbar{display:none;}
+.stab{
+  flex-shrink:0; padding:0 16px; height:40px; border:none; background:none;
+  font-size:12px; font-weight:500; color:var(--text-3); cursor:pointer;
+  border-bottom:2px solid transparent; letter-spacing:.01em; white-space:nowrap;
+}
+.stab.on{color:var(--c);border-bottom-color:var(--c);}
+
+/* ── LESSON PILLS ── */
+.lpills{
+  background:var(--surface); border-bottom:1px solid var(--border);
+  display:flex; overflow-x:auto; padding:8px 20px; gap:6px;
+}
+.lpills::-webkit-scrollbar{display:none;}
+.lpill{
+  flex-shrink:0; padding:4px 12px; border:1px solid var(--border);
+  border-radius:var(--r-s); background:var(--surface); color:var(--text-3);
+  font-size:11px; font-weight:500; cursor:pointer; white-space:nowrap;
+  letter-spacing:.01em;
+}
+.lpill:hover{background:var(--surface2); border-color:var(--border-mid);}
+.lpill.on{background:var(--cl); color:var(--c); border-color:var(--c);}
+
+/* ── SECTIONS / LESSONS ── */
+.sec-wrap{display:none;}
+.sec-wrap.on{display:block;}
+.lesson{display:none; padding:24px 20px 80px; max-width:640px; margin:0 auto;}
+.lesson.on{display:block;}
+
+/* ── TYPOGRAPHY ── */
+.page-label{font-size:11px; font-weight:500; color:var(--text-3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px;}
+.page-title{font-size:22px; font-weight:300; color:var(--text-1); letter-spacing:-.01em; margin-bottom:8px; line-height:1.4;}
+.page-sub{font-size:14px; color:var(--text-2); margin-bottom:24px;}
+h3{font-size:14px; font-weight:500; color:var(--text-1); margin-bottom:10px; margin-top:24px;}
+h3:first-child{margin-top:0;}
+p{font-size:14px; color:var(--text-2); line-height:1.75; margin-bottom:10px;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:500; color:var(--text-1);}
+
+/* ── CARDS ── */
+.card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px; margin-bottom:10px;}
+.card-stack{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:10px;}
+.card-stack .row{padding:14px 16px; border-top:1px solid var(--border); font-size:14px;}
+.card-stack .row:first-child{border-top:none;}
+.card-stack .row-title{font-weight:500; color:var(--text-1); margin-bottom:2px;}
+.card-stack .row-sub{font-size:13px; color:var(--text-2);}
+
+/* ── HIGHLIGHT BOXES ── */
+.hi{border-left:3px solid var(--c); background:var(--cl); border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:14px; color:var(--text-1); line-height:1.7;}
+.hi p{color:var(--text-1); margin-bottom:0;}
+.hi strong{color:var(--text-1);}
+.note{border:1px solid var(--border); background:var(--surface2); border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:13px; color:var(--text-2); line-height:1.7;}
+.warn{border-left:3px solid #B84E35; background:#FBF0ED; border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:14px; color:#5C1F0F; line-height:1.7;}
+.extra{border:1px solid var(--border-mid); background:var(--surface); border-radius:var(--r); padding:14px 16px; margin-bottom:10px;}
+.extra-label{font-size:10px; font-weight:500; color:var(--text-3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px;}
+.extra p{font-size:13px; color:var(--text-2); margin-bottom:0;}
+
+/* ── TABLE ── */
+.tbl{width:100%; border-collapse:collapse; font-size:13px; margin-bottom:10px;}
+.tbl th{background:var(--surface2); border:1px solid var(--border); padding:8px 10px; font-weight:500; color:var(--text-2); text-align:center; font-size:12px; letter-spacing:.02em;}
+.tbl td{border:1px solid var(--border); padding:8px 10px; text-align:center; color:var(--text-2);}
+.tbl td:first-child{text-align:left; color:var(--text-1);}
+.tbl tr:hover td{background:var(--surface2);}
+
+/* ── DIVIDER ── */
+.div{border:none; border-top:1px solid var(--border); margin:20px 0;}
+.sec-head{display:flex; align-items:center; gap:10px; margin:20px 0 12px;}
+.sec-head-label{font-size:10px; font-weight:500; color:var(--text-3); letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;}
+.sec-head-line{flex:1; height:1px; background:var(--border);}
+
+/* ── FORMULA BOX ── */
+.formula-box{
+  background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
+  font-family:Georgia,serif; font-size:15px; text-align:center; padding:14px 16px;
+  margin-bottom:10px; color:var(--text-1);
+}
+
+/* ── BADGE ── */
+.badge{display:inline-block; padding:1px 8px; border-radius:var(--r-s); font-size:11px; font-weight:500; letter-spacing:.02em; border:1px solid;}
+.b1{background:var(--c1l);color:var(--c1);border-color:var(--c1);}
+.b2{background:var(--c2l);color:var(--c2);border-color:var(--c2);}
+.b3{background:var(--c3l);color:var(--c3);border-color:var(--c3);}
+.b4{background:var(--c4l);color:var(--c4);border-color:var(--c4);}
+.b5{background:var(--c5l);color:var(--c5);border-color:var(--c5);}
+.b6{background:var(--c6l);color:var(--c6);border-color:var(--c6);}
+.bdone{background:#EBF2EC;color:#3A5C42;border-color:#7AB888;}
+.btodo{background:#EEECEA;color:#A5A29C;border-color:#CCCAB5;}
+
+/* ── TWO-COL GRID ── */
+.g2{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;}
+@media(max-width:440px){.g2{grid-template-columns:1fr;}}
+
+/* ── ATOM BUILDER ── */
+.atom-display{border:1px solid var(--border); background:var(--surface); border-radius:var(--r); padding:20px; margin-bottom:10px; text-align:center;}
+.atom-counts{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:12px;}
+.atom-count-cell{background:var(--surface); padding:12px 8px; text-align:center;}
+.atom-count-n{font-size:22px; font-weight:300; color:var(--text-1);}
+.atom-count-l{font-size:11px; color:var(--text-3); letter-spacing:.04em; margin-top:2px;}
+.atom-ctrls{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.atom-ctrl{border:1px solid var(--border); border-radius:var(--r); padding:10px 12px; background:var(--surface); display:flex; align-items:center; gap:10px;}
+.atom-ctrl-label{font-size:12px; font-weight:500; flex:1; color:var(--text-2);}
+.atom-ctrl-btns{display:flex; gap:4px;}
+.ac-btn{width:28px; height:28px; border-radius:var(--r-s); border:1px solid var(--border); background:var(--surface2); color:var(--text-1); font-size:15px; font-weight:500; cursor:pointer; display:flex; align-items:center; justify-content:center;}
+.ac-btn:hover{background:var(--surface); border-color:var(--border-mid);}
+.atom-name{font-size:13px; color:var(--text-3); margin-top:10px; padding:8px; background:var(--surface2); border-radius:var(--r);}
+
+/* ── INTERACTIVE INPUTS ── */
+.inter{border:1px solid var(--border); background:var(--surface); border-radius:var(--r); padding:16px; margin-bottom:10px;}
+.inter-label{font-size:11px; font-weight:500; color:var(--text-3); letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:6px; margin-top:12px;}
+.inter-label:first-child{margin-top:0;}
+.inter select, .inter input[type=number]{
+  width:100%; padding:9px 10px; border:1px solid var(--border); border-radius:var(--r);
+  background:var(--surface); color:var(--text-1); font-size:14px;
+  -webkit-appearance:none; outline:none;
+}
+.inter select:focus, .inter input:focus{border-color:var(--c);}
+.inter-btn{
+  width:100%; margin-top:12px; padding:10px; border:1px solid var(--border-mid);
+  border-radius:var(--r); background:var(--surface2); color:var(--text-1);
+  font-size:13px; font-weight:500; cursor:pointer; letter-spacing:.02em;
+}
+.inter-btn:hover{background:var(--surface); border-color:var(--border-dark);}
+.inter-result{display:none; margin-top:12px; padding:12px; background:var(--surface2); border-radius:var(--r); font-size:13px; color:var(--text-2); line-height:1.8;}
+.inter-result strong{color:var(--text-1); font-size:16px;}
+
+/* ── ION SLIDER ── */
+.slider-wrap{padding:12px 0; display:flex; align-items:center; gap:12px;}
+.slider-wrap input[type=range]{
+  flex:1; -webkit-appearance:none; height:3px; background:var(--border); border-radius:2px; outline:none;
+}
+.slider-wrap input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+  background:var(--surface); border:2px solid var(--c); cursor:pointer;
+}
+.slider-val{font-size:13px; font-weight:500; width:32px; text-align:right; color:var(--text-2);}
+.ion-big{padding:16px; background:var(--surface2); border-radius:var(--r); text-align:center; margin:12px 0;}
+.ion-sym{font-size:32px; font-weight:300; color:var(--text-1);}
+.ion-desc{font-size:12px; color:var(--text-3); margin-top:4px; letter-spacing:.02em;}
+
+/* ── ISOTOPE CARDS ── */
+.iso-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:8px;}
+.iso-card{border:1px solid var(--border); border-radius:var(--r); padding:10px; text-align:center; cursor:pointer; background:var(--surface);}
+.iso-card:hover{background:var(--surface2);}
+.iso-card.on{border-color:var(--c); background:var(--cl);}
+.iso-card .is{font-size:17px; font-weight:500; color:var(--text-1);}
+.iso-card .il{font-size:11px; color:var(--text-3); margin-top:2px;}
+.iso-detail{border:1px solid var(--border); border-radius:var(--r); padding:12px; font-size:13px; color:var(--text-2); min-height:52px; margin-bottom:10px; background:var(--surface);}
+
+/* ── FORMULA BUILDER ── */
+.fb-result{padding:16px; background:var(--surface2); border-radius:var(--r); text-align:center; margin:12px 0;}
+.fb-formula{font-size:28px; font-weight:300; color:var(--text-1);}
+.fb-verify{font-size:12px; color:var(--text-3); margin-top:4px;}
+
+/* ── STATE CANVAS ── */
+.state-btns{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:10px;}
+.state-btn{padding:8px; border:1px solid var(--border); border-radius:var(--r); background:var(--surface); color:var(--text-2); font-size:13px; font-weight:500; cursor:pointer;}
+.state-btn:hover{background:var(--surface2);}
+.state-btn.on{border-color:var(--c); color:var(--c); background:var(--cl);}
+.state-canvas-wrap{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:10px; background:#F9F8F5;}
+.state-canvas-wrap canvas{display:block; width:100%; height:160px;}
+
+/* ── MOL SORT ── */
+.mol-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:8px;}
+.mol-item{border:1px solid var(--border); border-radius:var(--r); padding:10px 6px; text-align:center; cursor:pointer; background:var(--surface);}
+.mol-item:hover{background:var(--surface2);}
+.mol-item .mf{font-size:15px; font-weight:500; color:var(--text-1);}
+.mol-item .mn{font-size:11px; color:var(--text-3); margin-top:2px;}
+.mol-reveal{border:1px solid var(--border); border-radius:var(--r); padding:12px; font-size:13px; color:var(--text-2); min-height:46px; margin-bottom:10px; background:var(--surface);}
+
+/* ── VOL CALC ── */
+.vol-calc{border:1px solid var(--border); border-radius:var(--r); padding:16px; background:var(--surface2); margin-bottom:10px;}
+.vol-calc label{font-size:11px; font-weight:500; color:var(--text-3); letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:5px; margin-top:10px;}
+.vol-calc label:first-child{margin-top:0;}
+.vol-calc select,.vol-calc input{width:100%; padding:8px 10px; border:1px solid var(--border); border-radius:var(--r); background:var(--surface); color:var(--text-1); font-size:14px;}
+.vol-calc button{width:100%; padding:9px; margin-top:12px; border:1px solid var(--border-mid); border-radius:var(--r); background:var(--surface); color:var(--text-1); font-size:13px; font-weight:500; cursor:pointer;}
+.vol-calc button:hover{background:var(--surface2);}
+.vol-result{display:none; margin-top:12px; padding:12px; background:var(--surface); border-radius:var(--r); font-size:13px; color:var(--text-2); line-height:1.85;}
+
+/* ── ELEMENT GRID ── */
+.elem-chips{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+.ec{border:1px solid var(--border); border-radius:var(--r); padding:6px 10px; text-align:center; min-width:50px; background:var(--surface);}
+.ec .s{font-size:15px; font-weight:500; color:var(--text-1);}
+.ec .n{font-size:11px; color:var(--text-3); margin-top:1px;}
+.ec .a{font-size:14px; font-weight:500; color:var(--c5);}
+
+/* ── MOLE CALC ── */
+.mole-pair{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:8px 0;}
+.mole-pair input{padding:9px 10px; border:1px solid var(--border); border-radius:var(--r); font-size:15px; background:var(--surface); color:var(--text-1); width:100%;}
+.mole-pair input:focus{outline:none; border-color:var(--c5);}
+.mole-info{padding:8px 12px; background:var(--surface2); border-radius:var(--r); font-size:13px; color:var(--text-2); margin:8px 0;}
+.mole-out{padding:12px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); font-size:13px; color:var(--text-2); margin-top:8px; min-height:44px;}
+.mole-out strong{font-size:16px; color:var(--text-1);}
+
+/* ── FLASHCARD ── */
+.fc-wrap{border:1px solid var(--border); border-radius:var(--r); height:110px; cursor:pointer; perspective:600px; margin-bottom:10px;}
+.fc-inner{position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .35s;}
+.fc-inner.fl{transform:rotateY(180deg);}
+.fc-face{position:absolute; inset:0; border-radius:var(--r); display:flex; flex-direction:column; align-items:center; justify-content:center; backface-visibility:hidden; padding:16px;}
+.fc-front{background:var(--surface);}
+.fc-back{background:var(--cl); transform:rotateY(180deg);}
+.fc-word{font-size:18px; font-weight:400; color:var(--text-1);}
+.fc-hint{font-size:11px; color:var(--text-3); margin-top:4px; letter-spacing:.04em;}
+.fc-back .fc-word{font-size:22px; font-weight:300; color:var(--c);}
+.fc-nav{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+.fc-nav button{padding:6px 14px; border:1px solid var(--border); border-radius:var(--r-s); background:var(--surface); color:var(--text-2); font-size:13px; cursor:pointer;}
+.fc-nav button:hover{background:var(--surface2);}
+.fc-nav span{flex:1; text-align:center; font-size:12px; color:var(--text-3);}
+.fc-cats{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;}
+.fc-cat{padding:3px 10px; border:1px solid var(--border); border-radius:var(--r-s); background:var(--surface); color:var(--text-3); font-size:11px; font-weight:500; cursor:pointer; letter-spacing:.02em;}
+.fc-cat:hover{background:var(--surface2);}
+.fc-cat.on{border-color:var(--c4); color:var(--c4); background:var(--c4l);}
+
+/* ── QUIZ ── */
+.quiz-wrap{}
+.qcard{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:14px 16px; margin-bottom:10px;}
+.qnum{font-size:11px; color:var(--text-3); font-weight:500; letter-spacing:.04em; margin-bottom:6px;}
+.qtxt{font-size:14px; font-weight:500; color:var(--text-1); line-height:1.6; margin-bottom:10px;}
+.qopt{padding:9px 12px; border:1px solid var(--border); border-radius:var(--r-s); background:var(--surface); margin-bottom:5px; font-size:13px; cursor:pointer; display:flex; gap:8px; color:var(--text-2);}
+.qopt:hover{background:var(--surface2); border-color:var(--border-mid);}
+.qopt.sel{border-color:var(--c); background:var(--cl); color:var(--text-1);}
+.qopt.ok{background:#EBF2EC; border-color:#7AB888; color:#3A5C42;}
+.qopt.no{background:#FBF0ED; border-color:#C47F64; color:#7A4E36;}
+.qlabel{font-weight:500; width:16px; flex-shrink:0; color:var(--text-3);}
+.qexp{display:none; margin-top:8px; padding:10px 12px; border-radius:var(--r-s); font-size:12px; line-height:1.65;}
+.qexp.ok{background:#EBF2EC; color:#3A5C42;}
+.qexp.no{background:#FBF0ED; color:#7A4E36;}
+.quiz-score{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px; margin-bottom:12px; text-align:center;}
+.quiz-score-n{font-size:26px; font-weight:300; color:var(--text-1);}
+.quiz-score-m{font-size:13px; color:var(--text-2); margin-top:4px;}
+.quiz-footer{display:flex; gap:8px; margin-top:4px;}
+.qbtn{flex:1; padding:10px; border:1px solid var(--border-mid); border-radius:var(--r); background:var(--surface2); color:var(--text-1); font-size:13px; font-weight:500; cursor:pointer;}
+.qbtn:hover{background:var(--surface); border-color:var(--border-dark);}
+.qbtn:disabled{opacity:.4; cursor:not-allowed;}
+.qbtn.primary{background:var(--c); color:#fff; border-color:var(--c);}
+
+/* ── SUMMARY ── */
+.summary{background:#EBF2EC; border:1px solid #7AB888; border-radius:var(--r); padding:14px 16px; margin-top:24px;}
+.summary h4{font-size:12px; font-weight:500; color:#3A5C42; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;}
+.summary li{font-size:13px; color:#3A5C42; line-height:1.75; list-style:none; padding-left:18px; position:relative;}
+.summary li::before{content:"✓"; position:absolute; left:0; font-weight:500;}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed; bottom:0; left:0; right:0; background:rgba(244,242,237,.94); backdrop-filter:blur(12px); border-top:1px solid var(--border); padding:10px 20px; padding-bottom:max(10px,env(safe-area-inset-bottom)); display:flex; gap:8px; z-index:99;}
+.bnav-btn{flex:1; padding:10px; border:1px solid var(--border-mid); border-radius:var(--r); background:var(--surface2); color:var(--text-1); font-size:13px; font-weight:500; cursor:pointer;}
+.bnav-btn:hover{background:var(--surface);}
+.bnav-btn.primary{background:var(--c1); color:#fff; border-color:var(--c1);}
+.bnav-btn:disabled{opacity:.3; cursor:not-allowed;}
+
+/* ── FOOTER ── */
+.page-footer{display:flex; justify-content:space-between; font-size:11px; color:var(--text-3); border-top:1px solid var(--border); margin-top:56px; padding:14px 0; max-width:640px; margin-left:auto; margin-right:auto; padding-left:20px; padding-right:20px;}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="topbar-back" href="index.html">← 化學</a>
+  <span class="topbar-sep">/</span>
+  <span class="topbar-title">第六章 原子與分子</span>
+  <div class="topbar-prog">
+    <div class="prog-label" id="pg-l">6-1 · 1/6</div>
+    <div class="prog-bar"><div class="prog-fill" id="pg-f"></div></div>
+  </div>
+</div>
+
+<!-- SECTION TABS -->
+<div class="stabs" id="stabs" style="--c:var(--c1)">
+  <button class="stab on" onclick="gS(0)" style="--c:var(--c1)">6-1 原子說</button>
+  <button class="stab" onclick="gS(1)" style="--c:var(--c2)">6-2 分子</button>
+  <button class="stab" onclick="gS(2)" style="--c:var(--c3)">6-3 粒子觀點</button>
+  <button class="stab" onclick="gS(3)" style="--c:var(--c4)">6-4 化學式</button>
+  <button class="stab" onclick="gS(4)" style="--c:var(--c5)">6-5 原子量·莫耳</button>
+  <button class="stab" onclick="gS(5)" style="--c:var(--c6)">章末複習</button>
+</div>
+
+<!-- ── 6-1 ─────────────────────────── -->
+<div class="sec-wrap on" id="S0" style="--c:var(--c1);--cl:var(--c1l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(0,0)">① 道耳頓原子說</div>
+    <div class="lpill" onclick="gL(0,1)">② 原子模型演進★</div>
+    <div class="lpill" onclick="gL(0,2)">③ 原子的結構</div>
+    <div class="lpill" onclick="gL(0,3)">④ 原子序與質量數</div>
+    <div class="lpill" onclick="gL(0,4)">⑤ 離子與同位素</div>
+    <div class="lpill" onclick="gL(0,5)">測驗</div>
+  </div>
+
+  <!-- 6-1 L0: 道耳頓原子說 -->
+  <div class="lesson on" id="S0L0">
+    <div class="page-label">6-1 · 道耳頓原子說</div>
+    <div class="page-title">原子——物質的最小積木</div>
+    <div class="page-sub">英國科學家道耳頓在 19 世紀初，根據實驗結果提出了「原子說」，奠定現代化學的基礎。</div>
+
+    <h3>四大核心內容</h3>
+    <div class="card-stack">
+      <div class="row">
+        <div class="row-title">① 原子是最小單位，不可再分割</div>
+        <div class="row-sub">所有物質由稱為「原子」的微小粒子組成，在一般化學反應中不可再分割。</div>
+      </div>
+      <div class="row">
+        <div class="row-title">② 同元素原子完全相同</div>
+        <div class="row-sub">同一種元素的原子，大小、質量、性質完全相同；不同元素就不同。</div>
+      </div>
+      <div class="row">
+        <div class="row-title">③ 化合物由固定比例的原子組成 <span class="badge b3">定比定律</span></div>
+        <div class="row-sub">化合物中不同原子按固定質量比結合。水永遠是 H∶O = 1∶8，不會改變。</div>
+      </div>
+      <div class="row">
+        <div class="row-title">④ 化學反應只是原子重新排列 <span class="badge b2">質量守恆定律</span></div>
+        <div class="row-sub">反應前後原子的數目、種類、質量全都不變，只換了排列方式。</div>
+      </div>
+    </div>
+
+    <hr class="div">
+    <h3>近代科學的三大修正</h3>
+    <div class="warn">
+      <strong>修正①</strong>　原子可經核反應分割為電子、質子、中子。（普通化學反應中仍不可分）<br>
+      <strong>修正②</strong>　同位素的發現——同元素原子的質量可以不同。<br>
+      <strong>修正③</strong>　核反應中，一種元素的原子可轉變為另一種元素。
+    </div>
+    <div class="note">以上三項修正都針對「核反應」這個特殊情境。普通化學反應中道耳頓的說法仍然成立。</div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 為什麼道耳頓能想到原子？</div>
+      <p>道耳頓並非憑空想像，而是發現氣體混合時，每種氣體的壓力相互獨立（分壓定律），再加上定比定律的觀察，才推論出原子的存在。他的天才在於：用看不見的粒子解釋看得見的規律。</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>道耳頓（英，19世紀初）根據實驗提出原子說</li>
+      <li>四大內容：不可分割、同元素相同、固定比例、重新排列</li>
+      <li>③對應定比定律，④對應質量守恆定律</li>
+      <li>三大修正都與核反應有關</li>
+    </ul></div>
+  </div>
+
+  <!-- 6-1 L1: 原子模型演進 (★補充) -->
+  <div class="lesson" id="S0L1">
+    <div class="page-label">6-1 · 補充 ★</div>
+    <div class="page-title">原子模型的演進</div>
+    <div class="page-sub">「原子長什麼樣子？」這個問題，科學家花了一百多年才慢慢搞清楚。每一次實驗都推翻了前一個模型。</div>
+
+    <h3>三大模型演進</h3>
+    <div class="card-stack">
+      <div class="row">
+        <div class="row-title">1897 — 湯姆森的葡萄乾布丁模型</div>
+        <div class="row-sub">湯姆森發現電子後，提出：原子像布丁，帶正電的「布丁體」裡，電子像葡萄乾散佈其中。<br>問題：這個模型把正電想成是「彌漫分布」的，無法解釋後來的實驗。</div>
+      </div>
+      <div class="row">
+        <div class="row-title">1911 — 拉塞福的核式模型</div>
+        <div class="row-sub">拉塞福用 α 粒子轟炸金箔，發現大部分粒子穿透，少數大角度偏折，甚至反彈回來。結論：原子中心有個極小而密集的帶正電「原子核」，電子在外面繞行。大部分空間是「空的」！</div>
+      </div>
+      <div class="row">
+        <div class="row-title">1913 — 波耳的行星模型（國中教的版本）</div>
+        <div class="row-sub">丹麥科學家波耳補充拉塞福的模型：電子只能在特定「軌道」上繞行原子核，就像行星繞太陽。不同軌道對應不同能量。這就是我們課本裡畫的原子結構。</div>
+      </div>
+    </div>
+
+    <hr class="div">
+    <h3>金箔實驗——為什麼顛覆了布丁模型？</h3>
+    <div class="hi">
+      <p>如果原子真的是「布丁」（正電均勻分布），α 粒子應該只被輕微偏折。但拉塞福發現，有極少數粒子幾乎以 180° 反彈——就像把乒乓球射向一張紙，結果有幾顆反彈回來！</p>
+      <p>這唯一的解釋就是：原子的正電和幾乎全部的質量集中在一個極小的點上，這就是原子核。</p>
+    </div>
+
+    <div class="formula-box">原子核的半徑 ≈ 原子半徑的 <strong>1/100,000</strong><br><span style="font-size:13px;color:var(--text-3);">如果原子有棒球場那麼大，原子核只是場中央的一粒沙</span></div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 現代量子力學模型</div>
+      <p>波耳的行星模型對國中階段已足夠，但其實現代物理學告訴我們：電子並沒有固定的「軌道」，而是以「機率雲」（電子雲）的方式分布在原子核周圍。你在某個位置「可能找到」電子，但無法確切預測它的位置。這就是量子力學的世界，高中、大學再深入！</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>湯姆森（1897）：葡萄乾布丁模型——電子嵌在正電體中</li>
+      <li>拉塞福（1911）：核式模型——原子核極小且集中正電和幾乎全部質量</li>
+      <li>波耳（1913）：行星模型——電子在特定軌道上繞核運行</li>
+      <li>現代：電子雲模型（量子力學，高中以上）</li>
+    </ul></div>
+  </div>
+
+  <!-- 6-1 L2: 原子的結構 -->
+  <div class="lesson" id="S0L2">
+    <div class="page-label">6-1 · 原子的結構</div>
+    <div class="page-title">原子內部的三種粒子</div>
+    <div class="page-sub">原子核裡有質子和中子，外圍有電子繞行。這三種粒子的性質決定了一切。</div>
+
+    <h3>發現順序與發現人</h3>
+    <div class="card-stack">
+      <div class="row">
+        <div class="row-title">第 1 名：電子 <span class="badge b1">帶負電</span></div>
+        <div class="row-sub">湯姆森（英國，1897）— 陰極射線管實驗</div>
+      </div>
+      <div class="row">
+        <div class="row-title">第 2 名：質子 <span class="badge btodo">帶正電</span></div>
+        <div class="row-sub">拉塞福（紐西蘭，1911）— α 粒子轟炸金箔實驗</div>
+      </div>
+      <div class="row">
+        <div class="row-title">第 3 名：中子 <span class="bdone badge">不帶電</span></div>
+        <div class="row-sub">查兌克（英國，1932）— 因為不帶電最難偵測，最晚發現</div>
+      </div>
+    </div>
+    <div class="note">口訣：電子（湯）→ 質子（拉）→ 中子（查）</div>
+
+    <hr class="div">
+    <h3>三種粒子比較</h3>
+    <table class="tbl">
+      <thead><tr><th>粒子</th><th>位置</th><th>電性</th><th>相對質量</th></tr></thead>
+      <tbody>
+        <tr><td>質子（P）</td><td>原子核內</td><td>正電 +1</td><td>1</td></tr>
+        <tr><td>中子（N）</td><td>原子核內</td><td>不帶電</td><td>≈ 1</td></tr>
+        <tr><td>電子（E）</td><td>核外軌道</td><td>負電 −1</td><td>1/1836</td></tr>
+      </tbody>
+    </table>
+    <div class="hi"><strong>關鍵：</strong>電中性原子的質子數 = 電子數（正負抵銷）。原子核雖極小，卻集中了原子幾乎所有質量。</div>
+
+    <h3>互動原子建造器</h3>
+    <div id="atomBuilder" class="inter">
+      <div class="atom-counts">
+        <div class="atom-count-cell"><div class="atom-count-n" id="ap" style="color:var(--c5)">6</div><div class="atom-count-l">質子 P⁺</div></div>
+        <div class="atom-count-cell"><div class="atom-count-n" id="an" style="color:var(--text-3)">6</div><div class="atom-count-l">中子 N</div></div>
+        <div class="atom-count-cell"><div class="atom-count-n" id="ae" style="color:var(--c1)">6</div><div class="atom-count-l">電子 E⁻</div></div>
+      </div>
+      <div class="atom-ctrls">
+        <div class="atom-ctrl">
+          <div class="atom-ctrl-label">質子數</div>
+          <div class="atom-ctrl-btns">
+            <button class="ac-btn" onclick="adj('p',-1)">−</button>
+            <button class="ac-btn" onclick="adj('p',1)">+</button>
+          </div>
+        </div>
+        <div class="atom-ctrl">
+          <div class="atom-ctrl-label">中子數</div>
+          <div class="atom-ctrl-btns">
+            <button class="ac-btn" onclick="adj('n',-1)">−</button>
+            <button class="ac-btn" onclick="adj('n',1)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="atom-name" id="aname">碳（C）· 原子序 6 · 質量數 12</div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>發現順序：電子（湯）→ 質子（拉）→ 中子（查）</li>
+      <li>質子帶正電，電子帶負電，中子不帶電</li>
+      <li>電子質量只有質子的 1/1836</li>
+      <li>電中性原子：質子數 = 電子數</li>
+    </ul></div>
+  </div>
+
+  <!-- 6-1 L3: 原子序與質量數 -->
+  <div class="lesson" id="S0L3">
+    <div class="page-label">6-1 · 原子序與質量數</div>
+    <div class="page-title">解碼元素符號</div>
+    <div class="page-sub">¹²₆C 這樣的符號藏著所有資訊——學會讀它，就能立刻算出質子、中子、電子數。</div>
+
+    <h3>兩個核心公式</h3>
+    <div class="hi"><strong>原子序（Z）= 質子數</strong>（= 電中性原子的電子數）<br>→ 決定是哪種元素！</div>
+    <div class="hi"><strong>質量數（A）= 質子數 + 中子數</strong><br>→ 中子數 = A − Z</div>
+
+    <div class="formula-box">
+      <span style="font-family:Georgia,serif;font-size:28px;">
+        <sup style="font-size:16px;color:var(--c5)">A</sup>X<sub style="font-size:16px;color:var(--c2)">Z</sub>
+      </span><br>
+      <span style="font-size:12px;color:var(--text-3)">左上 A = 質量數　　左下 Z = 原子序</span>
+    </div>
+
+    <h3>常見元素對照</h3>
+    <table class="tbl">
+      <thead><tr><th>元素</th><th>符號</th><th>Z</th><th>A</th><th>質子</th><th>電子</th><th>中子</th></tr></thead>
+      <tbody>
+        <tr><td>氫 H</td><td>¹H</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><td>碳 C</td><td>¹²C</td><td>6</td><td>12</td><td>6</td><td>6</td><td>6</td></tr>
+        <tr><td>氧 O</td><td>¹⁶O</td><td>8</td><td>16</td><td>8</td><td>8</td><td>8</td></tr>
+        <tr><td>鎂 Mg</td><td>²⁴Mg</td><td>12</td><td>24</td><td>12</td><td>12</td><td>12</td></tr>
+        <tr><td>鋁 Al</td><td>²⁷Al</td><td>13</td><td>27</td><td>13</td><td>13</td><td>14</td></tr>
+        <tr><td>氯 Cl</td><td>³⁵Cl</td><td>17</td><td>35</td><td>17</td><td>17</td><td>18</td></tr>
+      </tbody>
+    </table>
+
+    <h3>原子計算機</h3>
+    <div class="inter" style="--c:var(--c1);--cl:var(--c1l)">
+      <span class="inter-label">原子序 Z</span>
+      <input type="number" id="cz" placeholder="例：13" min="1" max="118">
+      <span class="inter-label">質量數 A</span>
+      <input type="number" id="ca" placeholder="例：27" min="1" max="300">
+      <span class="inter-label">狀態</span>
+      <select id="cq">
+        <option value="0">電中性原子</option>
+        <option value="1">失去 1 個電子（+1 離子）</option>
+        <option value="2">失去 2 個電子（+2 離子）</option>
+        <option value="3">失去 3 個電子（+3 離子）</option>
+        <option value="-1">得到 1 個電子（−1 離子）</option>
+        <option value="-2">得到 2 個電子（−2 離子）</option>
+      </select>
+      <button class="inter-btn" onclick="calcAtom()">計算</button>
+      <div class="inter-result" id="atom-res"></div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>原子序 Z = 質子數（決定元素種類）</li>
+      <li>質量數 A = 質子數 + 中子數；中子數 = A − Z</li>
+      <li>電中性原子：質子數 = 電子數</li>
+      <li>符號左上是 A（質量數），左下是 Z（原子序）</li>
+    </ul></div>
+  </div>
+
+  <!-- 6-1 L4: 離子與同位素 -->
+  <div class="lesson" id="S0L4">
+    <div class="page-label">6-1 · 離子與同位素</div>
+    <div class="page-title">電子的得失與原子的「兄弟」</div>
+
+    <div class="sec-head"><span class="sec-head-label">A　離子的形成</span><div class="sec-head-line"></div></div>
+    <div class="hi"><strong>普通反應中只有電子可以轉移</strong>（質子和中子不動）<br>失去電子 → 正（陽）離子　　得到電子 → 負（陰）離子</div>
+
+    <table class="tbl">
+      <thead><tr><th>例子</th><th>原子序</th><th>變化</th><th>質子</th><th>電子</th><th>符號</th></tr></thead>
+      <tbody>
+        <tr><td>鋁 Al</td><td>13</td><td>失去 3 個電子</td><td>13</td><td>10</td><td>Al³⁺</td></tr>
+        <tr><td>鈉 Na</td><td>11</td><td>失去 1 個電子</td><td>11</td><td>10</td><td>Na⁺</td></tr>
+        <tr><td>氯 Cl</td><td>17</td><td>得到 1 個電子</td><td>17</td><td>18</td><td>Cl⁻</td></tr>
+        <tr><td>氧 O</td><td>8</td><td>得到 2 個電子</td><td>8</td><td>10</td><td>O²⁻</td></tr>
+      </tbody>
+    </table>
+    <div class="warn"><strong>基本電荷（e）：</strong>電量只能是基本電荷的整數倍。帶 2.5e 的電量不可能存在！</div>
+
+    <h3>互動離子模擬器</h3>
+    <div class="inter" style="--c:var(--c1);--cl:var(--c1l)">
+      <span class="inter-label">選擇元素</span>
+      <select id="ion-elem" onchange="updateIon()">
+        <option value="8:O:氧">O — 氧（原子序 8）</option>
+        <option value="11:Na:鈉" selected>Na — 鈉（原子序 11）</option>
+        <option value="12:Mg:鎂">Mg — 鎂（原子序 12）</option>
+        <option value="13:Al:鋁">Al — 鋁（原子序 13）</option>
+        <option value="17:Cl:氯">Cl — 氯（原子序 17）</option>
+        <option value="20:Ca:鈣">Ca — 鈣（原子序 20）</option>
+      </select>
+      <div class="slider-wrap">
+        <span style="font-size:12px;font-weight:500;color:var(--text-3)">電子轉移</span>
+        <input type="range" id="ion-sl" min="-3" max="3" value="0" oninput="updateIon()">
+        <span class="slider-val" id="ion-sv">0</span>
+      </div>
+      <div class="ion-big">
+        <div class="ion-sym" id="ion-sym">Na</div>
+        <div class="ion-desc" id="ion-desc">電中性 · 質子=11 · 電子=11</div>
+      </div>
+    </div>
+
+    <hr class="div">
+    <div class="sec-head"><span class="sec-head-label">B　同位素</span><div class="sec-head-line"></div></div>
+    <div class="hi"><strong>同位素：</strong>原子序（質子數）相同，但中子數不同的原子。<br>化學性質相似（電子數相同），物理性質不同（質量不同）。</div>
+
+    <p style="font-size:13px;color:var(--text-3);margin-bottom:6px;">碳（C）的三種同位素</p>
+    <div class="iso-grid" id="iso-c-grid">
+      <div class="iso-card on" onclick="showIso('c','12',this)"><div class="is">¹²C</div><div class="il">碳-12</div></div>
+      <div class="iso-card" onclick="showIso('c','13',this)"><div class="is">¹³C</div><div class="il">碳-13</div></div>
+      <div class="iso-card" onclick="showIso('c','14',this)"><div class="is">¹⁴C</div><div class="il">碳-14</div></div>
+    </div>
+    <div class="iso-detail" id="iso-c-det">質子=6 · 電子=6 · 中子=<strong>6</strong><br>自然界最常見的碳（98.9%），化學計算的標準。</div>
+
+    <p style="font-size:13px;color:var(--text-3);margin-bottom:6px;">氫（H）的三種同位素</p>
+    <div class="iso-grid" id="iso-h-grid">
+      <div class="iso-card on" onclick="showIso('h','1',this)"><div class="is">¹H</div><div class="il">氕</div></div>
+      <div class="iso-card" onclick="showIso('h','2',this)"><div class="is">²H</div><div class="il">氘（重氫）</div></div>
+      <div class="iso-card" onclick="showIso('h','3',this)"><div class="is">³H</div><div class="il">氚</div></div>
+    </div>
+    <div class="iso-detail" id="iso-h-det">質子=1 · 電子=1 · 中子=<strong>0</strong><br>氕是唯一沒有中子的元素，佔自然界氫的 99.98%。</div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 碳-14 考古定年法</div>
+      <p>¹⁴C 具有放射性，半衰期約 5,730 年。生物活著時會持續更新碳，死後停止吸收，¹⁴C 開始衰減。科學家測量遺骸中剩餘的 ¹⁴C 比例，就能算出它死亡距今多少年——這就是考古學中「碳定年法」的原理。</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>一般反應中只有電子可轉移；失去電子→正離子，得到電子→負離子</li>
+      <li>電量只能是基本電荷 e 的整數倍</li>
+      <li>同位素：質子數相同，中子數不同</li>
+      <li>¹⁴C 用於考古定年法（半衰期 5,730 年）</li>
+    </ul></div>
+  </div>
+
+  <!-- 6-1 L5: 測驗 -->
+  <div class="lesson" id="S0L5">
+    <div class="page-label">6-1 · 測驗</div>
+    <div class="page-title">原子說與原子結構</div>
+    <div class="page-sub">15 題，全部作答後批改，每題附詳解。</div>
+    <div id="qs1-score"></div>
+    <div id="qs1" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs1-btn" onclick="checkQ('s1')" disabled>批改</button>
+      <button class="qbtn" id="qs1-retry" onclick="retryQ('s1')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6-2 ─────────────────────────── -->
+<div class="sec-wrap" id="S1" style="--c:var(--c2);--cl:var(--c2l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(1,0)">① 蓋呂薩克定律</div>
+    <div class="lpill" onclick="gL(1,1)">② 亞佛加厥學說</div>
+    <div class="lpill" onclick="gL(1,2)">③ 分子的種類</div>
+    <div class="lpill" onclick="gL(1,3)">④ 體積比計算</div>
+    <div class="lpill" onclick="gL(1,4)">測驗</div>
+  </div>
+
+  <div class="lesson on" id="S1L0">
+    <div class="page-label">6-2 · 蓋呂薩克定律</div>
+    <div class="page-title">氣體反應的整數規律</div>
+    <div class="page-sub">1808 年，法國科學家蓋呂薩克發現：氣體反應時，各氣體的體積比永遠是漂亮的整數。</div>
+    <div class="hi"><strong>蓋呂薩克定律：</strong>在定溫定壓下，氣體反應消耗或產生的各氣體體積比，為簡單整數比。</div>
+    <table class="tbl">
+      <thead><tr><th>反應</th><th>體積比</th></tr></thead>
+      <tbody>
+        <tr><td>H₂ + O₂ → H₂O（水蒸氣）</td><td>2 : 1 : 2</td></tr>
+        <tr><td>H₂ + Cl₂ → HCl</td><td>1 : 1 : 2</td></tr>
+        <tr><td>N₂ + H₂ → NH₃</td><td>1 : 3 : 2</td></tr>
+      </tbody>
+    </table>
+    <div class="warn">用道耳頓的原子說解釋不了：1 體積 H₂ + 1 體積 Cl₂ → 2 體積 HCl，代表 1 個 H 原子產生 2 個 HCl——原子不可分割啊！→ 需要亞佛加厥的「分子說」。</div>
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>蓋呂薩克（法，1808）：定溫定壓下氣體反應體積比為整數</li>
+      <li>此現象用道耳頓原子說無法圓滿解釋</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S1L1">
+    <div class="page-label">6-2 · 亞佛加厥學說</div>
+    <div class="page-title">分子——原子手牽手的團隊</div>
+    <div class="page-sub">義大利科學家亞佛加厥在 1811 年提出：氣體是由「分子」組成的，完美解釋了蓋呂薩克的難題。</div>
+
+    <div class="card-stack">
+      <div class="row">
+        <div class="row-title">重點① — 等體積等分子數</div>
+        <div class="row-sub">在同溫同壓下，體積相同的任何氣體，分子數目相同。<br>→ <strong>體積比 = 分子數比</strong>（只限氣體！）</div>
+      </div>
+      <div class="row">
+        <div class="row-title">重點② — 分子的定義</div>
+        <div class="row-sub">分子是由若干個原子組成，能代表物質特性的最小單位。</div>
+      </div>
+    </div>
+
+    <h3>如何解釋蓋呂薩克的難題？</h3>
+    <div class="formula-box">1 個 H₂ 分子  +  1 個 Cl₂ 分子  →  2 個 HCl 分子<br><span style="font-size:12px;color:var(--text-3)">分子拆開後重新配對，原子沒有被分裂！</span></div>
+
+    <div class="warn"><strong>重要：</strong>亞佛加厥定律只對「氣體」成立。水（H₂O）在 25°C 是液態，不能套用！這是最常見的考試陷阱。</div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 分子有多小？</div>
+      <p>一個水分子（H₂O）的直徑約 0.3 奈米（0.0000003 公釐）。一滴水（約 0.05 毫升）含有約 1.67×10²¹ 個水分子——比全地球的沙粒總數還多。這就是為什麼科學家需要發明「莫耳」這個單位。</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>亞佛加厥（義大利，1811）：同溫同壓下等體積氣體含等數目分子</li>
+      <li>體積比 = 分子數比（僅限氣體！）</li>
+      <li>分子是由原子組成、代表物質特性的最小單位</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S1L2">
+    <div class="page-label">6-2 · 分子的種類</div>
+    <div class="page-title">元素分子 vs 化合物分子</div>
+    <div class="g2">
+      <div class="card"><strong>元素分子</strong><p style="margin-top:6px;font-size:13px;">由同種原子組成<br>H₂、O₂、N₂、Cl₂、O₃</p></div>
+      <div class="card"><strong>化合物分子</strong><p style="margin-top:6px;font-size:13px;">由不同種原子組成<br>H₂O、CO₂、HCl、NH₃</p></div>
+    </div>
+    <div class="note">判斷：分子式裡只有 1 種元素 → 元素分子；2 種以上 → 化合物分子</div>
+    <div class="warn"><strong>H₂ ≠ 2H</strong>　H₂ = 1 個氫分子（2 個 H 鍵結）；2H = 2 個獨立氫原子（沒有鍵結）。原子也可以單獨存在，例如惰性氣體 He、Ar。</div>
+
+    <h3>點擊分類練習</h3>
+    <div class="mol-grid">
+      <div class="mol-item" onclick="showMol(this,'H₂','氫氣','元素分子','只有 H 原子，雙原子。')"><div class="mf">H₂</div><div class="mn">氫氣</div></div>
+      <div class="mol-item" onclick="showMol(this,'H₂O','水','化合物分子','含 H 和 O 兩種原子。')"><div class="mf">H₂O</div><div class="mn">水</div></div>
+      <div class="mol-item" onclick="showMol(this,'O₂','氧氣','元素分子','只有 O 原子，雙原子。')"><div class="mf">O₂</div><div class="mn">氧氣</div></div>
+      <div class="mol-item" onclick="showMol(this,'CO₂','二氧化碳','化合物分子','含 C 和 O 兩種原子。')"><div class="mf">CO₂</div><div class="mn">二氧化碳</div></div>
+      <div class="mol-item" onclick="showMol(this,'N₂','氮氣','元素分子','只有 N 原子，雙原子。')"><div class="mf">N₂</div><div class="mn">氮氣</div></div>
+      <div class="mol-item" onclick="showMol(this,'O₃','臭氧','元素分子','只有 O 原子，但 3 個！是 O₂ 的同素異形體。')"><div class="mf">O₃</div><div class="mn">臭氧</div></div>
+      <div class="mol-item" onclick="showMol(this,'Cl₂','氯氣','元素分子','只有 Cl 原子，雙原子，黃綠色有毒。')"><div class="mf">Cl₂</div><div class="mn">氯氣</div></div>
+      <div class="mol-item" onclick="showMol(this,'NH₃','氨','化合物分子','含 N 和 H 兩種原子。')"><div class="mf">NH₃</div><div class="mn">氨</div></div>
+      <div class="mol-item" onclick="showMol(this,'SO₂','二氧化硫','化合物分子','含 S 和 O 兩種原子，酸雨的成因之一。')"><div class="mf">SO₂</div><div class="mn">二氧化硫</div></div>
+    </div>
+    <div class="mol-reveal" id="mol-reveal" style="color:var(--text-3)">點擊上方任一個分子</div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>元素分子：同種原子（H₂、O₂、N₂）</li>
+      <li>化合物分子：不同種原子（H₂O、CO₂）</li>
+      <li>H₂ ≠ 2H；原子也可單獨存在（惰性氣體）</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S1L3">
+    <div class="page-label">6-2 · 體積比計算</div>
+    <div class="page-title">體積比 = 分子數比 ≠ 原子數比</div>
+    <div class="hi"><strong>同溫同壓氣體：</strong>體積比 = 分子數比<br>原子數比需另外計算：分子數比 × 每分子原子數</div>
+    <div class="card">
+      <strong>例：1L O₂ vs 1L CO₂</strong>
+      <table class="tbl" style="margin-top:8px;">
+        <thead><tr><th></th><th>1L O₂</th><th>1L CO₂</th></tr></thead>
+        <tbody>
+          <tr><td>分子數</td><td>n</td><td>n（相同！）</td></tr>
+          <tr><td>每分子原子數</td><td>2</td><td>3</td></tr>
+          <tr><td>原子總數</td><td>2n</td><td>3n</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--c2);margin-top:8px;">分子數比 = 1:1，原子數比 = 2:3</p>
+    </div>
+
+    <h3>互動體積比計算器</h3>
+    <div class="vol-calc" style="--c:var(--c2)">
+      <label>氣體甲</label>
+      <select id="ga"><option value="H2:2">H₂（氫氣）</option><option value="O2:2">O₂（氧氣）</option><option value="N2:2">N₂（氮氣）</option><option value="CO2:3" selected>CO₂（二氧化碳）</option><option value="SO2:3">SO₂（二氧化硫）</option><option value="NH3:4">NH₃（氨）</option><option value="H2O:3">H₂O（水蒸氣）</option></select>
+      <label>甲的體積（L）</label>
+      <input type="number" id="va" value="1" min="0.1" step="0.5">
+      <label>氣體乙</label>
+      <select id="gb"><option value="H2:2" selected>H₂（氫氣）</option><option value="O2:2">O₂（氧氣）</option><option value="N2:2">N₂（氮氣）</option><option value="CO2:3">CO₂（二氧化碳）</option><option value="SO2:3">SO₂（二氧化硫）</option><option value="NH3:4">NH₃（氨）</option><option value="H2O:3">H₂O（水蒸氣）</option></select>
+      <label>乙的體積（L）</label>
+      <input type="number" id="vb" value="1" min="0.1" step="0.5">
+      <button onclick="calcVol()">計算</button>
+      <div class="vol-result" id="vol-res"></div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>同溫同壓：體積比 = 分子數比</li>
+      <li>原子數比要額外乘以每分子原子數</li>
+      <li>水在 25°C 是液態，不適用亞佛加厥定律</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S1L4">
+    <div class="page-label">6-2 · 測驗</div>
+    <div class="page-title">分子的形成</div>
+    <div id="qs2-score"></div>
+    <div id="qs2" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs2-btn" onclick="checkQ('s2')" disabled>批改</button>
+      <button class="qbtn" id="qs2-retry" onclick="retryQ('s2')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6-3 ─────────────────────────── -->
+<div class="sec-wrap" id="S2" style="--c:var(--c3);--cl:var(--c3l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(2,0)">① 物質三態</div>
+    <div class="lpill" onclick="gL(2,1)">② 物理 vs 化學變化</div>
+    <div class="lpill" onclick="gL(2,2)">③ 溶解・元素・純物質</div>
+    <div class="lpill" onclick="gL(2,3)">測驗</div>
+  </div>
+
+  <div class="lesson on" id="S2L0">
+    <div class="page-label">6-3 · 物質三態</div>
+    <div class="page-title">同樣的粒子，不同的排列方式</div>
+    <div class="page-sub">水、冰、水蒸氣是同一種物質，但粒子的排列和距離不同，造成截然不同的性質。</div>
+
+    <h3>粒子動畫模擬器</h3>
+    <div class="state-btns">
+      <button class="state-btn on" id="sb-solid" onclick="setState('solid')">固體</button>
+      <button class="state-btn" id="sb-liquid" onclick="setState('liquid')">液體</button>
+      <button class="state-btn" id="sb-gas" onclick="setState('gas')">氣體</button>
+    </div>
+    <div class="state-canvas-wrap"><canvas id="stateCanvas" width="400" height="160"></canvas></div>
+    <div class="note" id="state-note">固體：粒子緊密且位置固定，只能原地振動。體積和形狀都固定，活動能力最弱。</div>
+
+    <h3>三態比較</h3>
+    <table class="tbl">
+      <thead><tr><th>性質</th><th>固體</th><th>液體</th><th>氣體</th></tr></thead>
+      <tbody>
+        <tr><td>粒子排列</td><td>緊密固定</td><td>互依，不固定</td><td>自由運動</td></tr>
+        <tr><td>活動能力</td><td>弱</td><td>稍強</td><td>最強</td></tr>
+        <tr><td>體積</td><td>固定</td><td>固定</td><td>不固定</td></tr>
+        <tr><td>形狀</td><td>固定</td><td>不固定</td><td>不固定</td></tr>
+      </tbody>
+    </table>
+    <div class="note">水的三態體積不列入一般比較（冰比水輕是特例）。</div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 為什麼冰會浮在水上？</div>
+      <p>幾乎所有物質固態都比液態密度高，但水是例外！水分子結冰時形成「六角形」氫鍵網絡，排列比液態水更稀疏，所以冰的密度（0.917 g/cm³）比液態水（1.0 g/cm³）低。這個特性讓湖面結冰後，水下仍有液態水，魚才能活下來。</p>
+    </div>
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 第四態：電漿</div>
+      <p>除了固、液、氣三態，還有第四態——電漿（plasma）。電漿是氣體在極高溫下電子脫離原子核形成的帶電粒子流。閃電、太陽、霓虹燈管的發光，都是電漿。宇宙中 99% 的可見物質都是電漿態。</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>三態變化是粒子堆積密度改變，成分不變</li>
+      <li>活動能力：氣體 > 液體 > 固體</li>
+      <li>固體體積和形狀都固定；液體體積固定；氣體兩者都不固定</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S2L1">
+    <div class="page-label">6-3 · 物理 vs 化學變化</div>
+    <div class="page-title">有沒有新分子產生？</div>
+    <div class="hi"><strong>最大差異：有沒有新分子產生。</strong></div>
+    <div class="g2">
+      <div class="card"><strong>物理變化</strong><p style="margin-top:6px;font-size:13px;">分子種類和數量不變<br>原子種類數量不變<br><br>水結冰、水蒸發、切割、溶解</p></div>
+      <div class="card"><strong>化學變化</strong><p style="margin-top:6px;font-size:13px;">分子種類改變<br>原子種類數量不變（質量守恆）<br><br>燃燒、電解、生鏽</p></div>
+    </div>
+    <div class="note">食鹽（NaCl）溶於水是物理變化：NaCl 解離為 Na⁺ 和 Cl⁻ 散布水中，蒸乾後可回收食鹽，沒有新分子產生。食鹽水是混合物。</div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 物理變化也可以很劇烈</div>
+      <p>爆炸看起來很「化學」，但金屬鈉（Na）扔進水裡發生的是化學反應（2Na + 2H₂O → 2NaOH + H₂），而乾冰昇華（固態 CO₂ 直接變氣態）是物理變化。判斷標準永遠是：有沒有新分子產生？</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>物理變化：分子種類數量不變</li>
+      <li>化學變化：分子種類改變（有新物質產生）</li>
+      <li>兩種變化中原子種類數量都不變（質量守恆）</li>
+      <li>食鹽溶解是物理變化，食鹽水是混合物</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S2L2">
+    <div class="page-label">6-3 · 溶解・元素・純物質</div>
+    <div class="page-title">從粒子觀點看物質分類</div>
+
+    <div class="sec-head"><span class="sec-head-label">C　溶解與過濾</span><div class="sec-head-line"></div></div>
+    <div class="hi"><strong>過濾：</strong>利用顆粒大小不同來分離。可溶物顆粒極小→通過濾紙；不溶物顆粒大→無法通過。</div>
+
+    <div class="sec-head"><span class="sec-head-label">D　元素與化合物</span><div class="sec-head-line"></div></div>
+    <table class="tbl">
+      <thead><tr><th></th><th>定義（粒子觀點）</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td><strong>元素</strong></td><td>由相同原子組成的純物質</td><td>H₂、O₂、Fe、Au</td></tr>
+        <tr><td><strong>化合物</strong></td><td>由不同種原子化合而成的純物質</td><td>H₂O、NaCl、CO₂</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sec-head"><span class="sec-head-label">E　純物質與混合物</span><div class="sec-head-line"></div></div>
+    <table class="tbl">
+      <thead><tr><th></th><th>定義（粒子觀點）</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td><strong>純物質</strong></td><td>由相同分子組成</td><td>水（H₂O）、食鹽（NaCl）</td></tr>
+        <tr><td><strong>混合物</strong></td><td>由不同分子混合而成</td><td>空氣、食鹽水、黃銅</td></tr>
+      </tbody>
+    </table>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>過濾利用顆粒大小差異分離</li>
+      <li>元素：同種原子；化合物：不同種原子化合</li>
+      <li>純物質：相同分子；混合物：不同分子混合</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S2L3">
+    <div class="page-label">6-3 · 測驗</div>
+    <div class="page-title">粒子觀點</div>
+    <div id="qs3-score"></div>
+    <div id="qs3" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs3-btn" onclick="checkQ('s3')" disabled>批改</button>
+      <button class="qbtn" id="qs3-retry" onclick="retryQ('s3')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6-4 ─────────────────────────── -->
+<div class="sec-wrap" id="S3" style="--c:var(--c4);--cl:var(--c4l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(3,0)">① 單質的化學式</div>
+    <div class="lpill" onclick="gL(3,1)">② 化合物交叉法</div>
+    <div class="lpill" onclick="gL(3,2)">③ 特殊化學式・日常生活★</div>
+    <div class="lpill" onclick="gL(3,3)">④ 翻牌記憶</div>
+    <div class="lpill" onclick="gL(3,4)">測驗</div>
+  </div>
+
+  <div class="lesson on" id="S3L0">
+    <div class="page-label">6-4 · 單質的化學式</div>
+    <div class="page-title">化學式的寫法規則</div>
+    <div class="hi"><strong>化學式：</strong>以元素符號及數字表示純物質組成的式子</div>
+
+    <div class="card-stack">
+      <div class="row">
+        <div class="row-title">金屬 → 直接用元素符號</div>
+        <div class="row-sub">Au（金）、Fe（鐵）、Cu（銅）、Al（鋁）、Zn（鋅）、Mg（鎂）、Pt（鉑）</div>
+      </div>
+      <div class="row">
+        <div class="row-title">非金屬 — 單原子分子（惰性氣體）</div>
+        <div class="row-sub">He、Ne、Ar、Kr、Xe</div>
+      </div>
+      <div class="row">
+        <div class="row-title">非金屬 — 雙原子分子 <span class="badge b4">必背 7 種</span></div>
+        <div class="row-sub">H₂、O₂、N₂、F₂、Cl₂、Br₂、I₂</div>
+      </div>
+      <div class="row">
+        <div class="row-title">非金屬 — 多原子分子</div>
+        <div class="row-sub">O₃（臭氧）、P₄（黃磷）、Pₓ（紅磷）、S₈（硫粉）</div>
+      </div>
+      <div class="row">
+        <div class="row-title">特殊：焦炭、石墨、金剛石</div>
+        <div class="row-sub">三者均為碳的同素異形體，化學式都寫 C</div>
+      </div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>金屬直接用元素符號</li>
+      <li>惰性氣體單原子；7 種雙原子非金屬：H₂ O₂ N₂ F₂ Cl₂ Br₂ I₂</li>
+      <li>多原子：O₃ P₄ S₈；焦炭/石墨/金剛石皆寫 C</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S3L1">
+    <div class="page-label">6-4 · 化合物交叉法</div>
+    <div class="page-title">用原子價推導化學式</div>
+    <div class="hi"><strong>化合物整體電中性：總正價 = 總負價</strong><br>交叉法：兩個離子的電荷數字交叉，分別成為對方的下標。</div>
+
+    <h3>原子價速查表</h3>
+    <div class="g2">
+      <div class="card">
+        <strong style="font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-3)">陽離子（正電）</strong>
+        <table class="tbl" style="margin-top:8px;">
+          <tbody>
+            <tr><td>+1</td><td>H⁺、Na⁺、K⁺、Ag⁺、NH₄⁺</td></tr>
+            <tr><td>+2</td><td>Mg²⁺、Ca²⁺、Zn²⁺、Ba²⁺、Fe²⁺、Cu²⁺</td></tr>
+            <tr><td>+3</td><td>Al³⁺、Fe³⁺</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <strong style="font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-3)">陰離子（負電）</strong>
+        <table class="tbl" style="margin-top:8px;">
+          <tbody>
+            <tr><td>−1</td><td>Cl⁻、F⁻、Br⁻、I⁻、OH⁻、NO₃⁻</td></tr>
+            <tr><td>−2</td><td>O²⁻、S²⁻、SO₄²⁻、CO₃²⁻、SO₃²⁻</td></tr>
+            <tr><td>−3</td><td>PO₄³⁻、N³⁻</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>化學式推導器</h3>
+    <div class="inter" style="--c:var(--c4);--cl:var(--c4l)">
+      <span class="inter-label">陽離子</span>
+      <select id="cat" onchange="buildF()">
+        <option value="Na:1:Na">Na⁺（鈉，+1）</option><option value="K:1:K">K⁺（鉀，+1）</option>
+        <option value="H:1:H">H⁺（氫，+1）</option><option value="Ag:1:Ag">Ag⁺（銀，+1）</option>
+        <option value="NH4:1:NH₄">NH₄⁺（銨根，+1）</option>
+        <option value="Mg:2:Mg" selected>Mg²⁺（鎂，+2）</option><option value="Ca:2:Ca">Ca²⁺（鈣，+2）</option>
+        <option value="Cu:2:Cu">Cu²⁺（銅，+2）</option><option value="Fe2:2:Fe">Fe²⁺（亞鐵，+2）</option>
+        <option value="Zn:2:Zn">Zn²⁺（鋅，+2）</option><option value="Ba:2:Ba">Ba²⁺（鋇，+2）</option>
+        <option value="Al:3:Al">Al³⁺（鋁，+3）</option><option value="Fe3:3:Fe">Fe³⁺（鐵，+3）</option>
+      </select>
+      <span class="inter-label">陰離子</span>
+      <select id="ani" onchange="buildF()">
+        <option value="Cl:1:Cl" selected>Cl⁻（氯，−1）</option><option value="OH:1:OH">OH⁻（氫氧根，−1）</option>
+        <option value="NO3:1:NO₃">NO₃⁻（硝酸根，−1）</option>
+        <option value="O:2:O">O²⁻（氧，−2）</option><option value="S:2:S">S²⁻（硫，−2）</option>
+        <option value="SO4:2:SO₄">SO₄²⁻（硫酸根，−2）</option><option value="CO3:2:CO₃">CO₃²⁻（碳酸根，−2）</option>
+        <option value="PO4:3:PO₄">PO₄³⁻（磷酸根，−3）</option>
+      </select>
+      <div class="fb-result" id="fb-res">
+        <div class="fb-formula">MgCl₂</div>
+        <div class="fb-verify">Mg²⁺×1 + Cl⁻×2 → +2 = −2 ✓　名稱：氯化鎂</div>
+      </div>
+    </div>
+
+    <h3>書寫六大規則</h3>
+    <div class="card-stack">
+      <div class="row"><div class="row-title">① 金屬寫前，非金屬寫後</div></div>
+      <div class="row"><div class="row-title">② 氧化物中，氧的符號寫後面</div></div>
+      <div class="row"><div class="row-title">③ 根（帶電原子團）負根價寫後面</div></div>
+      <div class="row"><div class="row-title">④ 化合物整體電中性：總正價 = 總負價</div></div>
+      <div class="row"><div class="row-title">⑤ 有機化合物：依碳→氫→氧順序書寫</div></div>
+      <div class="row"><div class="row-title">⑥ 中文學名由化學式後往前念（Na₂O → 氧化鈉）</div></div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>交叉法：電荷數字交叉成為對方的下標</li>
+      <li>總正價 = 總負價（化合物電中性）</li>
+      <li>金屬在前，非金屬在後；學名由化學式後往前念</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S3L2">
+    <div class="page-label">6-4 · 特殊化學式 ★</div>
+    <div class="page-title">酸、有機物與日常生活中的化學式</div>
+
+    <div class="sec-head"><span class="sec-head-label">酸 = H + 酸根</span><div class="sec-head-line"></div></div>
+    <table class="tbl">
+      <thead><tr><th>名稱</th><th>化學式</th><th>日常應用</th></tr></thead>
+      <tbody>
+        <tr><td>鹽酸</td><td><strong>HCl</strong></td><td>胃酸的主要成分</td></tr>
+        <tr><td>硫酸</td><td><strong>H₂SO₄</strong></td><td>汽車電池、工業製造</td></tr>
+        <tr><td>硝酸</td><td><strong>HNO₃</strong></td><td>製造化肥、炸藥</td></tr>
+        <tr><td>碳酸</td><td><strong>H₂CO₃</strong></td><td>碳酸飲料（CO₂溶入水）</td></tr>
+        <tr><td>磷酸</td><td><strong>H₃PO₄</strong></td><td>可樂的酸味來源之一</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sec-head"><span class="sec-head-label">有機化合物（必背）</span><div class="sec-head-line"></div></div>
+    <table class="tbl">
+      <thead><tr><th>名稱</th><th>化學式</th><th>日常應用</th></tr></thead>
+      <tbody>
+        <tr><td>甲烷</td><td><strong>CH₄</strong></td><td>天然氣的主成分</td></tr>
+        <tr><td>酒精（乙醇）</td><td><strong>C₂H₅OH</strong></td><td>消毒酒精、飲料酒</td></tr>
+        <tr><td>醋酸（乙酸）</td><td><strong>CH₃COOH</strong></td><td>食醋的酸味成分</td></tr>
+        <tr><td>葡萄糖</td><td><strong>C₆H₁₂O₆</strong></td><td>人體直接吸收的糖類</td></tr>
+        <tr><td>蔗糖</td><td><strong>C₁₂H₂₂O₁₁</strong></td><td>砂糖、白糖</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sec-head"><span class="sec-head-label">其他必記化學式</span><div class="sec-head-line"></div></div>
+    <table class="tbl">
+      <thead><tr><th>名稱</th><th>化學式</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr><td>氨</td><td><strong>NH₃</strong></td><td>氮肥原料；強烈刺鼻味</td></tr>
+        <tr><td>水</td><td><strong>H₂O</strong></td><td>—</td></tr>
+        <tr><td>雙氧水（過氧化氫）</td><td><strong>H₂O₂</strong></td><td>H₂O₂ ≠ H₂O！消毒、漂白</td></tr>
+      </tbody>
+    </table>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 日常生活中的離子化合物</div>
+      <p><strong>小蘇打（NaHCO₃）</strong>：烘焙時加熱分解成 CO₂，讓麵包膨脹；也用來緩解胃酸。<br>
+      <strong>食鹽（NaCl）</strong>：最熟悉的離子化合物，工業上大量用來製造氯氣和氫氧化鈉。<br>
+      <strong>石灰（CaO）</strong>：加水生成 Ca(OH)₂（消石灰），用於建築和農業改善土壤酸性。<br>
+      <strong>漂白水（NaClO）</strong>：次氯酸鈉的水溶液，能殺菌消毒，但濃度太高會傷皮膚。</p>
+    </div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 四種化學式</div>
+      <p><strong>簡式</strong>：最簡整數比（離子化合物常用，如 NaCl、CaCl₂）<br>
+      <strong>分子式</strong>：實際原子數目（分子化合物常用，如 H₂O、CO₂）<br>
+      <strong>結構式</strong>：顯示化學鍵（H—O—H；O=C=O）<br>
+      <strong>示性式</strong>：省略鍵結的縮寫，顯示原子排列（CH₃COOH、C₂H₅OH）<br>
+      乙醇和甲醚分子式相同（C₂H₆O），但結構式不同——稱為「同分異構物」。</p>
+    </div>
+  </div>
+
+  <div class="lesson" id="S3L3">
+    <div class="page-label">6-4 · 翻牌記憶</div>
+    <div class="page-title">化學式記憶訓練</div>
+    <div class="fc-cats" id="fc-cats">
+      <div class="fc-cat on" onclick="fcFilter('all',this)">全部</div>
+      <div class="fc-cat" onclick="fcFilter('elem',this)">單質</div>
+      <div class="fc-cat" onclick="fcFilter('acid',this)">酸類</div>
+      <div class="fc-cat" onclick="fcFilter('organic',this)">有機</div>
+      <div class="fc-cat" onclick="fcFilter('compound',this)">無機化合物</div>
+    </div>
+    <div class="fc-wrap" onclick="flipFC()">
+      <div class="fc-inner" id="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-word" id="fc-w">硝酸</div><div class="fc-hint">點擊翻面</div></div>
+        <div class="fc-face fc-back" style="--c:var(--c4);--cl:var(--c4l)"><div class="fc-word" id="fc-f">HNO₃</div></div>
+      </div>
+    </div>
+    <div class="fc-nav">
+      <button onclick="fcPrev()">← 上一張</button>
+      <span id="fc-n">1 / 25</span>
+      <button onclick="fcNext()">下一張 →</button>
+    </div>
+  </div>
+
+  <div class="lesson" id="S3L4">
+    <div class="page-label">6-4 · 測驗</div>
+    <div class="page-title">化學式的寫法</div>
+    <div id="qs4-score"></div>
+    <div id="qs4" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs4-btn" onclick="checkQ('s4')" disabled>批改</button>
+      <button class="qbtn" id="qs4-retry" onclick="retryQ('s4')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── 6-5 ─────────────────────────── -->
+<div class="sec-wrap" id="S4" style="--c:var(--c5);--cl:var(--c5l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(4,0)">① 原子量</div>
+    <div class="lpill" onclick="gL(4,1)">② 分子量計算</div>
+    <div class="lpill" onclick="gL(4,2)">③ 莫耳★</div>
+    <div class="lpill" onclick="gL(4,3)">④ 計算器</div>
+    <div class="lpill" onclick="gL(4,4)">測驗</div>
+  </div>
+
+  <div class="lesson on" id="S4L0">
+    <div class="page-label">6-5 · 原子量</div>
+    <div class="page-title">原子的相對質量</div>
+    <div class="hi"><strong>原子量：</strong>以 ¹²C（碳-12）的原子量定為 12.000 作為比較標準，推算出的各元素相對質量。<br>原子量是比較值，<strong>沒有單位</strong>。</div>
+
+    <h3>必背原子量</h3>
+    <div class="elem-chips">
+      <div class="ec"><div class="s">H</div><div class="n">氫</div><div class="a">1</div></div>
+      <div class="ec"><div class="s">C</div><div class="n">碳</div><div class="a">12</div></div>
+      <div class="ec"><div class="s">N</div><div class="n">氮</div><div class="a">14</div></div>
+      <div class="ec"><div class="s">O</div><div class="n">氧</div><div class="a">16</div></div>
+      <div class="ec"><div class="s">Na</div><div class="n">鈉</div><div class="a">23</div></div>
+      <div class="ec"><div class="s">Mg</div><div class="n">鎂</div><div class="a">24</div></div>
+      <div class="ec"><div class="s">Al</div><div class="n">鋁</div><div class="a">27</div></div>
+      <div class="ec"><div class="s">S</div><div class="n">硫</div><div class="a">32</div></div>
+      <div class="ec"><div class="s">Cl</div><div class="n">氯</div><div class="a">35.5</div></div>
+      <div class="ec"><div class="s">Ca</div><div class="n">鈣</div><div class="a">40</div></div>
+      <div class="ec"><div class="s">Fe</div><div class="n">鐵</div><div class="a">56</div></div>
+      <div class="ec"><div class="s">Cu</div><div class="n">銅</div><div class="a">63.5</div></div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>原子量以 ¹²C = 12.000 為基準</li>
+      <li>原子量沒有單位（相對量）</li>
+      <li>必背：H=1, C=12, N=14, O=16, Na=23, S=32, Cl=35.5, Ca=40, Fe=56, Cu=63.5</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S4L1">
+    <div class="page-label">6-5 · 分子量計算</div>
+    <div class="page-title">把原子量加起來</div>
+    <div class="hi"><strong>分子量 = 分子式中各原子的原子量總和（無單位）</strong></div>
+    <table class="tbl">
+      <thead><tr><th>化學式</th><th>計算過程</th><th>分子量</th></tr></thead>
+      <tbody>
+        <tr><td>H₂O</td><td>1×2 + 16</td><td>18</td></tr>
+        <tr><td>NH₃</td><td>14 + 1×3</td><td>17</td></tr>
+        <tr><td>CO₂</td><td>12 + 16×2</td><td>44</td></tr>
+        <tr><td>H₂SO₄</td><td>1×2 + 32 + 16×4</td><td>98</td></tr>
+        <tr><td>C₆H₁₂O₆</td><td>12×6 + 1×12 + 16×6</td><td>180</td></tr>
+        <tr><td>Fe₂(SO₄)₃</td><td>56×2 + (32+16×4)×3</td><td>400</td></tr>
+        <tr><td>CuSO₄·5H₂O</td><td>63.5+32+64+5×18</td><td>249.5 ≈ 250</td></tr>
+      </tbody>
+    </table>
+
+    <h3>分子量計算器</h3>
+    <div class="inter" style="--c:var(--c5);--cl:var(--c5l)">
+      <span class="inter-label">選擇化合物</span>
+      <select id="mw-pre" onchange="loadMW()">
+        <option value="">自訂...</option>
+        <option value="H:2,O:1">H₂O（水）</option>
+        <option value="C:1,O:2">CO₂（二氧化碳）</option>
+        <option value="N:1,H:3">NH₃（氨）</option>
+        <option value="H:2,S:1,O:4">H₂SO₄（硫酸）</option>
+        <option value="C:6,H:12,O:6">C₆H₁₂O₆（葡萄糖）</option>
+        <option value="Na:1,O:1,H:1">NaOH（氫氧化鈉）</option>
+        <option value="Ca:1,C:1,O:3">CaCO₃（碳酸鈣）</option>
+      </select>
+      <div id="mw-inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;"></div>
+      <button class="inter-btn" onclick="calcMW()">計算分子量</button>
+      <div class="inter-result" id="mw-res"></div>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>分子量 = 各原子的原子量總和（無單位）</li>
+      <li>括號：先算括號內再乘外面係數</li>
+      <li>結晶水（·nH₂O）算入分子量</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S4L2">
+    <div class="page-label">6-5 · 莫耳 ★</div>
+    <div class="page-title">計量原子的橋梁</div>
+    <div class="page-sub">1 莫耳 ≈ 6×10²³ 個（亞佛加厥數），連接「沒有單位的原子量」和「可以稱量的克數」。</div>
+
+    <div class="card" style="border-color:var(--c5)">
+      <strong style="color:var(--c5)">核心公式</strong>
+      <div class="formula-box" style="margin-top:8px;">原子量（克）= 1 莫耳原子的質量<br>分子量（克）= 1 莫耳分子的質量</div>
+      <div class="formula-box">莫耳數 = 質量（克） ÷ 原子量（或分子量）</div>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>例題</th><th>計算</th><th>答案</th></tr></thead>
+      <tbody>
+        <tr><td>63.5 克銅的莫耳數</td><td>63.5 ÷ 63.5</td><td>1 莫耳</td></tr>
+        <tr><td>0.2 莫耳銅重幾克</td><td>63.5 × 0.2</td><td>12.7 克</td></tr>
+        <tr><td>90 克葡萄糖幾莫耳</td><td>90 ÷ 180</td><td>0.5 莫耳</td></tr>
+        <tr><td>0.5 mol H₂O 含幾 mol O</td><td>0.5 × 1</td><td>0.5 莫耳 O</td></tr>
+      </tbody>
+    </table>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 你的身體裡有幾個原子？</div>
+      <p>人體約 60% 是水，加上蛋白質、脂肪等，平均一個 70 公斤的人大約含有 <strong>7×10²⁷ 個原子</strong>（7,000,000,000,000,000,000,000,000,000 個）。其中最多的是氫原子（約 60%），然後是氧（26%）和碳（11%）。</p>
+    </div>
+
+    <div class="extra">
+      <div class="extra-label">延伸知識 — 你身體裡的原子來自恆星</div>
+      <p>地球上所有比氫和氦更重的元素，都是在恆星內部的核融合反應中製造出來的。鐵原子是在大質量恆星的最終核融合中形成，然後在超新星爆炸中散佈到宇宙。你血液裡的鐵，就是幾十億年前某顆星星的殘骸。</p>
+    </div>
+
+    <div class="summary"><h4>這一課</h4><ul>
+      <li>1 莫耳 = 6×10²³ 個（亞佛加厥數）</li>
+      <li>原子量/分子量（克）= 1 莫耳原子/分子的質量</li>
+      <li>莫耳數 = 質量 ÷ 原子量（或分子量）</li>
+    </ul></div>
+  </div>
+
+  <div class="lesson" id="S4L3">
+    <div class="page-label">6-5 · 計算器</div>
+    <div class="page-title">原子量・分子量・莫耳三合一</div>
+    <div class="inter" style="--c:var(--c5);--cl:var(--c5l)">
+      <span class="inter-label">選擇物質</span>
+      <select id="mol-sub" onchange="updateMol()">
+        <option value="H|1">H（氫原子，原子量 1）</option>
+        <option value="O|16">O（氧原子，原子量 16）</option>
+        <option value="C|12">C（碳原子，原子量 12）</option>
+        <option value="Na|23">Na（鈉原子，原子量 23）</option>
+        <option value="Fe|56">Fe（鐵原子，原子量 56）</option>
+        <option value="Cu|63.5">Cu（銅原子，原子量 63.5）</option>
+        <option value="H₂|2">H₂（氫氣，分子量 2）</option>
+        <option value="O₂|32">O₂（氧氣，分子量 32）</option>
+        <option value="H₂O|18" selected>H₂O（水，分子量 18）</option>
+        <option value="CO₂|44">CO₂（二氧化碳，分子量 44）</option>
+        <option value="NH₃|17">NH₃（氨，分子量 17）</option>
+        <option value="NaCl|58.5">NaCl（食鹽，分子量 58.5）</option>
+        <option value="H₂SO₄|98">H₂SO₄（硫酸，分子量 98）</option>
+        <option value="NaOH|40">NaOH（氫氧化鈉，分子量 40）</option>
+        <option value="CaCO₃|100">CaCO₃（碳酸鈣，分子量 100）</option>
+        <option value="C₆H₁₂O₆|180">C₆H₁₂O₆（葡萄糖，分子量 180）</option>
+      </select>
+      <div class="mole-info" id="mol-info">分子量 = 18　→　1 莫耳 = 18 克</div>
+      <div class="mole-pair">
+        <div>
+          <div style="font-size:11px;font-weight:500;color:var(--text-3);margin-bottom:4px;letter-spacing:.04em">質量（克）</div>
+          <input type="number" id="mol-mass" placeholder="輸入克數" oninput="mFromMass()">
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:500;color:var(--text-3);margin-bottom:4px;letter-spacing:.04em">莫耳數（mol）</div>
+          <input type="number" id="mol-mol" placeholder="輸入莫耳" oninput="mFromMol()">
+        </div>
+      </div>
+      <div class="mole-out" id="mol-out">輸入質量或莫耳數，另一個自動計算</div>
+    </div>
+    <div class="note" style="margin-top:10px;">n 莫耳 AB<sub>x</sub> 中：含 n 莫耳 A 原子 + nx 莫耳 B 原子。例：0.5 mol H₂O → 含 1 mol H + 0.5 mol O。</div>
+  </div>
+
+  <div class="lesson" id="S4L4">
+    <div class="page-label">6-5 · 測驗</div>
+    <div class="page-title">原子量・分子量・莫耳</div>
+    <div id="qs5-score"></div>
+    <div id="qs5" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs5-btn" onclick="checkQ('s5')" disabled>批改</button>
+      <button class="qbtn" id="qs5-retry" onclick="retryQ('s5')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── 章末複習 ──────────────────────── -->
+<div class="sec-wrap" id="S5" style="--c:var(--c6);--cl:var(--c6l)">
+  <div class="lpills">
+    <div class="lpill on" onclick="gL(5,0)">① 習題精選 1–12</div>
+    <div class="lpill" onclick="gL(5,1)">② 習題精選 13–24</div>
+    <div class="lpill" onclick="gL(5,2)">③ 補充：亞佛加厥數</div>
+    <div class="lpill" onclick="gL(5,3)">④ 補充：化學式種類</div>
+    <div class="lpill" onclick="gL(5,4)">⑤ 本章大考 20 題</div>
+  </div>
+
+  <div class="lesson on" id="S5L0">
+    <div class="page-label">章末複習 · 習題精選</div>
+    <div class="page-title">第六章習題 第 1–12 題</div>
+    <div class="page-sub">課本習題逐題解析，先想再看答案。</div>
+    <div class="card-stack">
+      <div class="row"><div class="row-title">1. 倍比定律是誰提出的？答：<strong>B 普魯斯特</strong> ✗（錯誤選項）</div><div class="row-sub">普魯斯特提出「定比定律」；倍比定律是道耳頓。選項考的是哪個配對是錯的，答案是 B。</div></div>
+      <div class="row"><div class="row-title">2. 「氣體反應體積定律」由誰提出？答：<strong>D 給呂薩克（蓋呂薩克）</strong></div></div>
+      <div class="row"><div class="row-title">3. 原子核佔原子大部分體積？答：<strong>C 錯誤</strong></div><div class="row-sub">原子核只佔原子體積的十萬分之一，並非大部分。</div></div>
+      <div class="row"><div class="row-title">4. 原子核由帶正電的中子和不帶電的質子構成？答：<strong>B 錯誤</strong></div><div class="row-sub">說反了！正確是：質子帶正電，中子不帶電。</div></div>
+      <div class="row"><div class="row-title">5. 甲（Z=6,N=6）和乙（Z=6,N=7）屬同一元素？答：<strong>A 甲和乙</strong></div><div class="row-sub">兩者質子數都是 6（碳），互為同位素。</div></div>
+      <div class="row"><div class="row-title">6. +3 離子有 23 個電子，原子序為？答：<strong>D 原子序為 23 是錯誤的</strong></div><div class="row-sub">質子數 = 電子數 + 電荷 = 23+3 = 26（鐵 Fe），原子序是 26。</div></div>
+      <div class="row"><div class="row-title">7. 乙（Z=7）和丙（Z=8）為同一種元素？答：<strong>C 錯誤</strong></div><div class="row-sub">質子數不同就是不同元素（氮 N ≠ 氧 O）。</div></div>
+      <div class="row"><div class="row-title">10. Na⁺ 和 F⁻ 電子數相同？答：<strong>B 正確</strong></div><div class="row-sub">Na⁺（失去 1 電子）= 10 個電子；F⁻（得到 1 電子）= 10 個電子。✓</div></div>
+      <div class="row"><div class="row-title">11. XO₂ 分子量 = 64，X 是什麼元素？答：<strong>A 硫 S</strong></div><div class="row-sub">X + 16×2 = 64 → X = 32，原子量 32 就是硫 S，化合物為 SO₂。</div></div>
+      <div class="row"><div class="row-title">12. 20 克 H₂ 的莫耳數最多？答：<strong>B 正確</strong></div><div class="row-sub">20÷2 = 10 mol，遠多於其他選項（H₂ 分子量只有 2）。</div></div>
+    </div>
+  </div>
+
+  <div class="lesson" id="S5L1">
+    <div class="page-label">章末複習 · 習題精選</div>
+    <div class="page-title">第六章習題 第 13–24 題</div>
+    <div class="card-stack">
+      <div class="row"><div class="row-title">13. 含氧原子數為 1 莫耳的是哪個？答：<strong>D 16 克 O₂</strong></div><div class="row-sub">16g O₂ ÷ 32 = 0.5 mol O₂ → 0.5×2 = 1 mol O 原子。✓</div></div>
+      <div class="row"><div class="row-title">15. CO 和 CO₂ 分子數相同時，哪個比為 1:2？答：<strong>B 氧原子數比</strong></div><div class="row-sub">CO 有 1 個 O，CO₂ 有 2 個 O，相同分子數 n 時，O 原子比 = n:2n = 1:2。</div></div>
+      <div class="row"><div class="row-title">16. 1 莫耳 CO₂ 的質量等於 1 莫耳 C + 2 莫耳 O 的質量總和？答：<strong>D 正確</strong></div><div class="row-sub">12 + 32 = 44 克。✓</div></div>
+      <div class="row"><div class="row-title">19. 同種原子組成的物質，性質不一定相同？答：<strong>C 正確</strong></div><div class="row-sub">O₂ 和 O₃ 都由氧原子組成，但性質不同（同素異形體）。</div></div>
+      <div class="row"><div class="row-title">21. 水的三態變化，甲（密排）狀態的體積形狀不隨容器改變？答：<strong>A 正確</strong></div><div class="row-sub">甲是固體，體積和形狀都固定。✓</div></div>
+      <div class="row"><div class="row-title">24. X²⁺ 和 Y⁻ 各有 18 個電子和 20 個中子，³⁵Cl 是 Y 的同位素？答：<strong>B 正確</strong></div><div class="row-sub">Y⁻ 有 18 個電子 → Y 質子數 = 17（Cl），質量數 = 17+20 = 37。³⁵Cl 和 ³⁷Cl 都是 Cl，互為同位素。✓</div></div>
+    </div>
+  </div>
+
+  <div class="lesson" id="S5L2">
+    <div class="page-label">補充資料 · 亞佛加厥數</div>
+    <div class="page-title">1 莫耳 = 6×10²³ 個</div>
+    <div class="hi"><strong>1 莫耳 ≈ 6×10²³ 個</strong>（亞佛加厥數，Avogadro's Number）<br>原子量（克）= 1 莫耳原子的質量 = 6×10²³ 個原子的質量<br>→ 1 個原子的質量 = 原子量 ÷ (6×10²³) 克</div>
+    <table class="tbl">
+      <thead><tr><th>題目</th><th>計算</th><th>答案</th></tr></thead>
+      <tbody>
+        <tr><td>1 mol O₂ 含幾個 O₂ 分子？</td><td>1 × 6×10²³</td><td>6×10²³ 個</td></tr>
+        <tr><td>1 mol O₂ 含幾個 O 原子？</td><td>2 × 6×10²³</td><td>1.2×10²⁴ 個</td></tr>
+        <tr><td>0.5 mol H₂O 含幾個 H 原子？</td><td>0.5×2×6×10²³</td><td>6×10²³ 個</td></tr>
+        <tr><td>6×10²⁴ 個蔗糖分子是幾莫耳？</td><td>6×10²⁴ ÷ 6×10²³</td><td>10 莫耳</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lesson" id="S5L3">
+    <div class="page-label">補充資料 · 化學式種類</div>
+    <div class="page-title">四種化學式</div>
+    <div class="card-stack">
+      <div class="row"><div class="row-title">① 簡式（最簡式）</div><div class="row-sub">顯示原子種類及最簡整數比。離子化合物常用。例：NaCl、CaCl₂、KI</div></div>
+      <div class="row"><div class="row-title">② 分子式</div><div class="row-sub">顯示分子中原子種類及實際數目。非金屬單質及分子化合物常用。例：H₂O、CO₂、C₂H₄O₂</div></div>
+      <div class="row"><div class="row-title">③ 結構式</div><div class="row-sub">以化學鍵結表示原子結合方式。例：水 H—O—H；二氧化碳 O=C=O</div></div>
+      <div class="row"><div class="row-title">④ 示性式</div><div class="row-sub">省略鍵結的縮寫，顯示原子排列特性。有機化合物常用。例：醋酸 CH₃COOH；乙醇 C₂H₅OH</div></div>
+    </div>
+    <div class="warn"><strong>同分異構物：</strong>乙醇（C₂H₅OH）和甲醚（CH₃OCH₃）分子式相同（C₂H₆O），但結構式不同，性質完全不同。分子式相同、結構不同的化合物稱為「同分異構物」。</div>
+  </div>
+
+  <div class="lesson" id="S5L4">
+    <div class="page-label">章末複習 · 本章大考</div>
+    <div class="page-title">第六章綜合測驗</div>
+    <div class="page-sub">涵蓋 6-1 至 6-5 全部重點，共 20 題。</div>
+    <div id="qs6-score"></div>
+    <div id="qs6" class="quiz-wrap"></div>
+    <div class="quiz-footer">
+      <button class="qbtn primary" id="qs6-btn" onclick="checkQ('s6')" disabled>批改</button>
+      <button class="qbtn" id="qs6-retry" onclick="retryQ('s6')" style="display:none">重試</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <button class="bnav-btn" id="prev-btn" onclick="navPrev()" disabled>← 上一課</button>
+  <button class="bnav-btn primary" id="next-btn" onclick="navNext()">下一課 →</button>
+</div>
+
+<div style="padding:0 20px">
+  <div class="page-footer">
+    <span>第六章 原子與分子 · 阿蔓明道國中復習專班</span>
+    <span>V2.0.0</span>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════
+const SL = [6,5,4,5,5,5]; // lessons per section
+const TOTAL = SL.reduce((a,b)=>a+b,0);
+let cS=0, cL=[0,0,0,0,0,0];
+const qBuilt={s1:0,s2:0,s3:0,s4:0,s5:0,s6:0};
+const qSel={s1:{},s2:{},s3:{},s4:{},s5:{},s6:{}};
+
+function gS(s) {
+  document.querySelectorAll('.sec-wrap').forEach((e,i)=>e.classList.toggle('on',i===s));
+  document.querySelectorAll('.stab').forEach((e,i)=>e.classList.toggle('on',i===s));
+  document.querySelectorAll('.lpills').forEach((e,i)=>e.style.display=i===s?'flex':'none');
+  cS=s; updateProg(); updateNav();
+  if(s===2 && !particles.length) setTimeout(()=>setState('solid'),50);
+  window.scrollTo(0,0);
+}
+
+function gL(s,l) {
+  document.getElementById(`S${s}L${cL[s]}`).classList.remove('on');
+  document.querySelectorAll(`#S${s} .lpills .lpill`)[cL[s]]?.classList.remove('on');
+  cL[s]=l;
+  document.getElementById(`S${s}L${l}`).classList.add('on');
+  document.querySelectorAll(`#S${s} .lpills .lpill`)[l]?.classList.add('on');
+  updateProg(); updateNav(); window.scrollTo(0,0);
+  const qmap={0:{5:'s1'},1:{4:'s2'},2:{3:'s3'},3:{4:'s4'},4:{4:'s5'},5:{4:'s6'}};
+  const qid = qmap[s]?.[l];
+  if(qid && !qBuilt[qid]) buildQ(qid);
+}
+
+function navPrev(){const l=cL[cS];if(l>0)gL(cS,l-1);else if(cS>0){gS(cS-1);gL(cS,SL[cS]-1);}}
+function navNext(){const l=cL[cS];if(l<SL[cS]-1)gL(cS,l+1);else if(cS<SL.length-1)gS(cS+1);}
+
+function updateNav(){
+  const l=cL[cS];
+  document.getElementById('prev-btn').disabled=cS===0&&l===0;
+  document.getElementById('next-btn').disabled=cS===SL.length-1&&l===SL[cS]-1;
+}
+function updateProg(){
+  const done=SL.slice(0,cS).reduce((a,b)=>a+b,0)+cL[cS]+1;
+  document.getElementById('pg-f').style.width=Math.round(done/TOTAL*100)+'%';
+  const names=['6-1','6-2','6-3','6-4','6-5','複習'];
+  document.getElementById('pg-l').textContent=`${names[cS]} · ${cL[cS]+1}/${SL[cS]}`;
+  // sync lpills display
+  document.querySelectorAll('.lpills').forEach((e,i)=>e.style.display=i===cS?'flex':'none');
+  // sync section tab --c variable for progress bar color
+  const cs=[`var(--c1)`,`var(--c2)`,`var(--c3)`,`var(--c4)`,`var(--c5)`,`var(--c6)`];
+  document.getElementById('pg-f').style.background=cs[cS].replace('var(','').replace(')','').trim();
+  document.getElementById('pg-f').style.background=`var(--c${cS+1>5?6:cS+1})`;
+}
+updateProg(); updateNav();
+
+// ═══════════════════════════════════════
+// ATOM BUILDER
+// ═══════════════════════════════════════
+const ENAMES={1:'H 氫',2:'He 氦',3:'Li 鋰',4:'Be 鈹',5:'B 硼',6:'C 碳',7:'N 氮',8:'O 氧',9:'F 氟',10:'Ne 氖',11:'Na 鈉',12:'Mg 鎂',13:'Al 鋁',14:'Si 矽',15:'P 磷',16:'S 硫',17:'Cl 氯',18:'Ar 氬',19:'K 鉀',20:'Ca 鈣'};
+const aState={p:6,n:6};
+function adj(t,d){
+  if(t==='p') aState.p=Math.max(1,Math.min(20,aState.p+d));
+  else aState.n=Math.max(0,Math.min(20,aState.n+d));
+  renderAtom();
+}
+function renderAtom(){
+  const {p,n}=aState;
+  document.getElementById('ap').textContent=p;
+  document.getElementById('an').textContent=n;
+  document.getElementById('ae').textContent=p;
+  document.getElementById('aname').textContent=`${ENAMES[p]||'未知'}　· 原子序 ${p} · 質量數 ${p+n} · 中子數 ${n}`;
+}
+renderAtom();
+
+// ═══════════════════════════════════════
+// ATOM CALCULATOR
+// ═══════════════════════════════════════
+function calcAtom(){
+  const z=parseInt(document.getElementById('cz').value);
+  const a=parseInt(document.getElementById('ca').value);
+  const q=parseInt(document.getElementById('cq').value);
+  const r=document.getElementById('atom-res');
+  if(!z||!a||z<1||a<z){r.style.display='block';r.innerHTML='請輸入合理數值（質量數 ≥ 原子序）';return;}
+  const n=a-z,e=z-q;
+  const qNote=q===0?'電中性':q>0?`+${q} 離子（失去 ${q} 個電子）`:`${q} 離子（得到 ${Math.abs(q)} 個電子）`;
+  r.style.display='block';
+  r.innerHTML=`<strong>${ENAMES[z]||'元素'}</strong>　${qNote}<br><br>原子序 Z = ${z}<br>質量數 A = ${a}<br>質子數 = ${z}<br>中子數 = ${n}<br>電子數 = ${e}`;
+}
+
+// ═══════════════════════════════════════
+// ION SIMULATOR
+// ═══════════════════════════════════════
+function updateIon(){
+  const sv=document.getElementById('ion-elem').value.split(':');
+  const z=parseInt(sv[0]),sym=sv[1];
+  const q=parseInt(document.getElementById('ion-sl').value);
+  document.getElementById('ion-sv').textContent=q>=0?'+'+q:q;
+  const e=z-q;
+  const dsp=q===0?'':(Math.abs(q)>1?Math.abs(q):'')+(q>0?'+':'−');
+  document.getElementById('ion-sym').textContent=sym+(dsp||'');
+  let desc=`質子數=${z} · 電子數=${e}`;
+  if(q===0)desc='電中性 · '+desc;
+  else if(q>0)desc=`正（陽）離子，失去 ${q} 個電子 · `+desc;
+  else desc=`負（陰）離子，得到 ${Math.abs(q)} 個電子 · `+desc;
+  document.getElementById('ion-desc').textContent=desc;
+}
+updateIon();
+
+// ═══════════════════════════════════════
+// ISOTOPE TABS
+// ═══════════════════════════════════════
+const isoD={
+  c:{'12':{n:6,t:'自然界最常見（98.9%），化學計算的基準。'},'13':{n:7,t:'占 1.1%，核磁共振（NMR）研究常用。'},'14':{n:8,t:'具放射性，半衰期 5,730 年，用於考古碳定年法。'}},
+  h:{'1':{n:0,t:'氕，唯一沒有中子的元素，占自然界氫的 99.98%。'},'2':{n:1,t:'氘（重氫 D），可組成重水（D₂O）。'},'3':{n:2,t:'氚（T），具放射性，核融合反應的原料。'}}
+};
+function showIso(elem,key,btn){
+  const grid=btn.closest('.iso-grid');
+  grid.querySelectorAll('.iso-card').forEach(c=>c.classList.remove('on'));
+  btn.classList.add('on');
+  const d=isoD[elem][key],z=elem==='c'?6:1;
+  const det=grid.nextElementSibling;
+  if(det)det.innerHTML=`質子=${z} · 電子=${z} · 中子=<strong>${d.n}</strong><br>${d.t}`;
+}
+
+// ═══════════════════════════════════════
+// MOL SORT
+// ═══════════════════════════════════════
+function showMol(btn,f,n,t,d){
+  document.querySelectorAll('.mol-item').forEach(i=>i.style.borderColor='');
+  btn.style.borderColor='var(--c)';
+  const box=document.getElementById('mol-reveal');
+  box.style.color='var(--text-2)';
+  box.innerHTML=`<strong>${f}（${n}）</strong> — ${t}<br><span style="font-size:13px">${d}</span>`;
+}
+
+// ═══════════════════════════════════════
+// VOLUME CALCULATOR
+// ═══════════════════════════════════════
+function calcVol(){
+  const av=document.getElementById('ga').value.split(':');
+  const bv=document.getElementById('gb').value.split(':');
+  const va=parseFloat(document.getElementById('va').value);
+  const vb=parseFloat(document.getElementById('vb').value);
+  const aa=parseInt(av[1]),ba=parseInt(bv[1]);
+  function gcd(a,b){return b===0?a:gcd(b,a%b);}
+  const s=10,A=Math.round(va*aa*s),B=Math.round(vb*ba*s),g=gcd(A,B);
+  document.getElementById('vol-res').style.display='block';
+  document.getElementById('vol-res').innerHTML=`體積比 = ${va} : ${vb}<br>分子數比 = ${va} : ${vb}（同溫同壓下體積比 = 分子數比）<br>${av[0]} 每分子 ${aa} 個原子，${bv[0]} 每分子 ${ba} 個原子<br>原子數比 = ${A/g} : ${B/g}`;
+}
+
+// ═══════════════════════════════════════
+// FORMULA BUILDER
+// ═══════════════════════════════════════
+const cNames={Na:'鈉',K:'鉀',H:'氫',Ag:'銀',NH4:'銨',Mg:'鎂',Ca:'鈣',Cu:'銅',Fe2:'亞鐵',Zn:'鋅',Ba:'鋇',Al:'鋁',Fe3:'鐵'};
+const aNames={Cl:'氯',OH:'氫氧',NO3:'硝酸',O:'氧',S:'硫',SO4:'硫酸',CO3:'碳酸',PO4:'磷酸'};
+const aSym={Cl:'Cl',OH:'OH',NO3:'NO₃',O:'O',S:'S',SO4:'SO₄',CO3:'CO₃',PO4:'PO₄'};
+function gcd(a,b){return b===0?a:gcd(b,a%b);}
+function sub(n){return String(n).replace(/2/g,'₂').replace(/3/g,'₃').replace(/4/g,'₄').replace(/5/g,'₅');}
+function buildF(){
+  const cv=document.getElementById('cat').value.split(':');
+  const av=document.getElementById('ani').value.split(':');
+  const cK=cv[0],cV=parseInt(cv[1]),cS=cv[2];
+  const aK=av[0],aV=parseInt(av[1]),aS=aSym[aK]||av[2];
+  const g=gcd(cV,aV),nC=aV/g,nA=cV/g;
+  const pA=nA>1&&aK.length>1&&!['O','S'].includes(aK);
+  const pC=nC>1&&cK==='NH4';
+  const cf=(pC?`(${cS})`:cS)+(nC>1?sub(nC):'');
+  const af=(pA?`(${aS})`:aS)+(nA>1?sub(nA):'');
+  const cn=cNames[cK]||cK, an=aNames[aK]||aK;
+  document.getElementById('fb-res').innerHTML=`<div class="fb-formula">${cf}${af}</div><div class="fb-verify">${cn === '亞鐵'?'Fe²⁺':''}${cS}${cV>1?'×'+nC:''}（+${cV*nC}）+ ${aS}${aV>1?'×'+nA:''}（−${aV*nA}）= 0 ✓　名稱：${an}化${cn}</div>`;
+}
+buildF();
+
+// ═══════════════════════════════════════
+// FLASHCARD
+// ═══════════════════════════════════════
+const fcAll=[
+  {w:'氫氣',f:'H₂',c:'elem'},{w:'氧氣',f:'O₂',c:'elem'},{w:'氮氣',f:'N₂',c:'elem'},
+  {w:'氯氣',f:'Cl₂',c:'elem'},{w:'溴',f:'Br₂',c:'elem'},{w:'碘',f:'I₂',c:'elem'},
+  {w:'臭氧',f:'O₃',c:'elem'},{w:'硫粉',f:'S₈',c:'elem'},
+  {w:'硝酸',f:'HNO₃',c:'acid'},{w:'硫酸',f:'H₂SO₄',c:'acid'},{w:'碳酸',f:'H₂CO₃',c:'acid'},
+  {w:'磷酸',f:'H₃PO₄',c:'acid'},{w:'鹽酸',f:'HCl',c:'acid'},{w:'亞硫酸',f:'H₂SO₃',c:'acid'},
+  {w:'甲烷',f:'CH₄',c:'organic'},{w:'酒精（乙醇）',f:'C₂H₅OH',c:'organic'},
+  {w:'醋酸（乙酸）',f:'CH₃COOH',c:'organic'},{w:'葡萄糖',f:'C₆H₁₂O₆',c:'organic'},
+  {w:'蔗糖',f:'C₁₂H₂₂O₁₁',c:'organic'},
+  {w:'氨',f:'NH₃',c:'compound'},{w:'雙氧水',f:'H₂O₂',c:'compound'},
+  {w:'氧化鋁',f:'Al₂O₃',c:'compound'},{w:'硫酸鉀',f:'K₂SO₄',c:'compound'},
+  {w:'氫氧化鈣',f:'Ca(OH)₂',c:'compound'},{w:'碳酸鋁',f:'Al₂(CO₃)₃',c:'compound'},
+];
+let fcCards=fcAll.slice(),fcIdx=0,fcFl=false;
+function renderFC(){
+  const card=fcCards[fcIdx];
+  document.getElementById('fc-w').textContent=card.w;
+  document.getElementById('fc-f').textContent=card.f;
+  document.getElementById('fc-n').textContent=`${fcIdx+1} / ${fcCards.length}`;
+  document.getElementById('fc-inner').classList.remove('fl');
+  fcFl=false;
+}
+function flipFC(){fcFl=!fcFl;document.getElementById('fc-inner').classList.toggle('fl',fcFl);}
+function fcNext(){fcIdx=(fcIdx+1)%fcCards.length;renderFC();}
+function fcPrev(){fcIdx=(fcIdx-1+fcCards.length)%fcCards.length;renderFC();}
+function fcFilter(cat,btn){
+  document.querySelectorAll('.fc-cat').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  fcCards=cat==='all'?fcAll.slice():fcAll.filter(c=>c.c===cat);
+  fcIdx=0;renderFC();
+}
+setTimeout(renderFC,200);
+
+// ═══════════════════════════════════════
+// MOLECULAR WEIGHT
+// ═══════════════════════════════════════
+const AW={H:1,C:12,N:14,O:16,F:19,Na:23,Mg:24,Al:27,P:31,S:32,Cl:35.5,K:39,Ca:40,Fe:56,Cu:63.5,Zn:65,Br:80,Ag:108,I:127,Ba:137};
+function loadMW(){
+  const val=document.getElementById('mw-pre').value;
+  if(!val)return;
+  const con=document.getElementById('mw-inputs'); con.innerHTML='';
+  val.split(',').forEach(p=>{
+    const[sym,cnt]=p.split(':');
+    con.innerHTML+=`<div style="display:flex;align-items:center;gap:6px;"><span style="font-size:13px;font-weight:500;width:26px;color:var(--text-1)">${sym}</span><input type="number" id="mw-${sym}" value="${cnt}" min="0" style="padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);font-size:14px;background:var(--surface);flex:1"></div>`;
+  });
+}
+function calcMW(){
+  const inputs=document.querySelectorAll('#mw-inputs input');
+  if(!inputs.length){const r=document.getElementById('mw-res');r.style.display='block';r.innerHTML='請先選擇化合物';return;}
+  let mw=0,bd='';
+  inputs.forEach(i=>{
+    const s=i.id.replace('mw-',''),cnt=parseFloat(i.value)||0,wt=AW[s]||0;
+    if(cnt>0){mw+=wt*cnt;bd+=`${s}×${cnt}=${wt*cnt}　`;}
+  });
+  const r=document.getElementById('mw-res');r.style.display='block';
+  r.innerHTML=`<strong>${mw}</strong><br><span style="font-size:12px;color:var(--text-3)">${bd}</span>`;
+}
+
+// ═══════════════════════════════════════
+// MOLE CALCULATOR
+// ═══════════════════════════════════════
+function updateMol(){
+  const sel=document.getElementById('mol-sub');if(!sel)return;
+  const mw=parseFloat(sel.value.split('|')[1]);
+  document.getElementById('mol-info').textContent=`分子量（或原子量）= ${mw}　→　1 莫耳 = ${mw} 克`;
+  document.getElementById('mol-mass').value='';
+  document.getElementById('mol-mol').value='';
+  document.getElementById('mol-out').textContent='輸入質量或莫耳數，另一個自動計算';
+}
+function mFromMass(){
+  const sel=document.getElementById('mol-sub');if(!sel)return;
+  const mw=parseFloat(sel.value.split('|')[1]);
+  const m=parseFloat(document.getElementById('mol-mass').value);
+  if(isNaN(m)||m<0)return;
+  const mol=+(m/mw).toFixed(4);
+  document.getElementById('mol-mol').value=mol;
+  document.getElementById('mol-out').innerHTML=`<strong>${m} 克</strong> ÷ ${mw} = <strong>${mol} 莫耳</strong>`;
+}
+function mFromMol(){
+  const sel=document.getElementById('mol-sub');if(!sel)return;
+  const mw=parseFloat(sel.value.split('|')[1]);
+  const mol=parseFloat(document.getElementById('mol-mol').value);
+  if(isNaN(mol)||mol<0)return;
+  const m=+(mol*mw).toFixed(4);
+  document.getElementById('mol-mass').value=m;
+  document.getElementById('mol-out').innerHTML=`<strong>${mol} 莫耳</strong> × ${mw} = <strong>${m} 克</strong>`;
+}
+setTimeout(updateMol,100);
+
+// ═══════════════════════════════════════
+// STATE SIMULATOR
+// ═══════════════════════════════════════
+let stateAnim,particles=[],sMode='solid';
+const sInfo={
+  solid:{note:'固體：粒子緊密且位置固定，只能原地振動。體積和形狀都固定，活動能力最弱。'},
+  liquid:{note:'液體：粒子可以移動，但仍相互靠近。體積固定，形狀不固定（隨容器改變）。活動能力稍強。'},
+  gas:{note:'氣體：粒子自由運動，間距大。體積和形狀都不固定（充滿整個容器）。活動能力最強。'}
+};
+function initP(){
+  particles=[];
+  const cv=document.getElementById('stateCanvas');if(!cv)return;
+  const W=cv.offsetWidth||400,H=160;cv.width=W;cv.height=H;
+  const N=sMode==='solid'?24:28;
+  for(let i=0;i<N;i++){
+    if(sMode==='solid'){
+      const c=6,x=30+(i%c)*55,y=22+Math.floor(i/c)*38;
+      particles.push({x,y,ox:x,oy:y,vx:0,vy:0});
+    } else {
+      const spd=sMode==='gas'?2.5:1.2;
+      particles.push({x:Math.random()*W,y:Math.random()*H,ox:0,oy:0,vx:(Math.random()-.5)*spd*2,vy:(Math.random()-.5)*spd*2});
+    }
+  }
+}
+function drawP(){
+  const cv=document.getElementById('stateCanvas');if(!cv)return;
+  const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#F9F8F5';ctx.fillRect(0,0,W,H);
+  const col=sMode==='solid'?'#8BA8C8':sMode==='liquid'?'#7BA891':'#C8A87A';
+  particles.forEach(p=>{
+    if(sMode==='solid'){
+      p.x=p.ox+Math.sin(Date.now()/300+p.ox)*1.2;
+      p.y=p.oy+Math.cos(Date.now()/250+p.oy)*1.2;
+    } else {
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<7||p.x>W-7)p.vx*=-1;
+      if(p.y<7||p.y>H-7)p.vy*=-1;
+    }
+    ctx.beginPath();ctx.arc(p.x,p.y,6,0,Math.PI*2);
+    ctx.fillStyle=col+'CC';ctx.fill();
+    ctx.strokeStyle=col;ctx.lineWidth=1;ctx.stroke();
+  });
+  stateAnim=requestAnimationFrame(drawP);
+}
+function setState(mode){
+  sMode=mode;cancelAnimationFrame(stateAnim);
+  ['solid','liquid','gas'].forEach(m=>{
+    const btn=document.getElementById('sb-'+m);if(btn)btn.classList.toggle('on',m===mode);
+  });
+  document.getElementById('state-note').textContent=sInfo[mode].note;
+  initP();drawP();
+}
+
+// ═══════════════════════════════════════
+// QUIZ SYSTEM
+// ═══════════════════════════════════════
+function buildQ(qid){
+  qBuilt[qid]=1;
+  const data=QD[qid];
+  document.getElementById(`q${qid}`).innerHTML=data.map((q,i)=>`
+    <div class="qcard">
+      <div class="qnum">第 ${i+1} 題</div>
+      <div class="qtxt">${q.q}</div>
+      ${q.o.map((o,j)=>`<div class="qopt" id="${qid}o${i}_${j}" onclick="selQ('${qid}',${i},${j})"><span class="qlabel">${'ABCD'[j]}</span>${o}</div>`).join('')}
+      <div class="qexp" id="${qid}e${i}"></div>
+    </div>`).join('');
+  document.getElementById(`q${qid}-btn`).disabled=true;
+}
+function selQ(qid,qi,oi){
+  if(document.getElementById(`${qid}e${qi}`).style.display==='block')return;
+  qSel[qid][qi]=oi;
+  for(let j=0;j<4;j++){const el=document.getElementById(`${qid}o${qi}_${j}`);if(el)el.className='qopt'+(j===oi?' sel':'');}
+  document.getElementById(`q${qid}-btn`).disabled=Object.keys(qSel[qid]).length<QD[qid].length;
+}
+function checkQ(qid){
+  const data=QD[qid];let correct=0;
+  data.forEach((q,i)=>{
+    const sel=qSel[qid][i];
+    for(let j=0;j<q.o.length;j++){
+      const el=document.getElementById(`${qid}o${i}_${j}`);if(!el)continue;
+      el.className='qopt'+(j===q.a?' ok':j===sel&&sel!==q.a?' no':'');
+    }
+    const ok=sel===q.a;if(ok)correct++;
+    const exp=document.getElementById(`${qid}e${i}`);
+    exp.style.display='block';exp.className='qexp '+(ok?'ok':'no');
+    exp.innerHTML=(ok?'✓ 正確。':'✗ 正確答案：'+'ABCD'[q.a]+'。')+'　'+q.e;
+  });
+  const pct=Math.round(correct/data.length*100);
+  const msg=pct>=85?'優秀！整章掌握得很扎實。':pct>=65?'不錯，把答錯的找回對應課程再複習一次。':'需要再加強，建議從第一課重新看一遍。';
+  document.getElementById(`q${qid}-score`).innerHTML=`<div class="quiz-score"><div class="quiz-score-n">${correct} / ${data.length}　<span style="font-size:16px;color:var(--text-2)">${pct}%</span></div><div class="quiz-score-m">${msg}</div></div>`;
+  document.getElementById(`q${qid}-btn`).style.display='none';
+  document.getElementById(`q${qid}-retry`).style.display='inline-block';
+}
+function retryQ(qid){
+  qSel[qid]={};qBuilt[qid]=0;
+  document.getElementById(`q${qid}-score`).innerHTML='';
+  document.getElementById(`q${qid}-btn`).style.display='inline-block';
+  document.getElementById(`q${qid}-retry`).style.display='none';
+  buildQ(qid);
+}
+
+// ═══════════════════════════════════════
+// QUIZ DATA
+// ═══════════════════════════════════════
+const QD={
+s1:[
+  {q:'1. 道耳頓原子說的四大內容中，哪一項是近代被修正的？',o:['化學反應只是原子重新排列','化合物由固定比例原子組成','同元素原子完全相同','物質由原子組成'],a:2,e:'同位素的發現證明同元素原子的質量可以不同，修正了「同元素原子完全相同」。'},
+  {q:'2. 下列哪一項不是道耳頓原子說的內容？',o:['物質由不可分割的原子組成','原子由電子、質子、中子組成','同元素原子相同','化合物由固定比例原子組成'],a:1,e:'原子由電子質子中子組成是近代才發現的，不是道耳頓的說法。'},
+  {q:'3. 依原子說，化學反應前後改變的是？',o:['原子種類','原子個數','原子質量','原子排列方式'],a:3,e:'道耳頓說化學反應只是原子的重新排列，種類、個數、質量都不變。'},
+  {q:'4. 原子三種基本粒子的發現順序？',o:['質子→中子→電子','電子→中子→質子','中子→質子→電子','電子→質子→中子'],a:3,e:'湯姆森（電子）→ 拉塞福（質子）→ 查兌克（中子）。'},
+  {q:'5. 下列粒子質量最小的是？',o:['質子','中子','電子','以上相同'],a:2,e:'電子質量約為質子的 1/1836，超輕。'},
+  {q:'6. 原子的體積主要決定於？',o:['原子核直徑','電子數目','電子存在的空間','質子數＋中子數'],a:2,e:'原子核極小，原子的體積主要是電子在核外的活動空間。'},
+  {q:'7. 鋁原子序 13，質量數 27。中子數為？',o:['11','13','14','27'],a:2,e:'中子數 = 質量數 − 原子序 = 27 − 13 = 14。'},
+  {q:'8. 一般化學反應中，能在原子間轉移的粒子是？',o:['只有電子','質子與電子','質子與中子','三種均可'],a:0,e:'普通化學反應中只有電子可以轉移，質子和中子不動。'},
+  {q:'9. Na⁺ 比 Na 少什麼？',o:['一個電子','一個質子','一個中子','一個原子核'],a:0,e:'Na⁺ 是鈉失去一個電子形成的正離子，電子數少一個。'},
+  {q:'10. 一帶電體所帶電量，不可能為？',o:['2.5e','5e','10e','250e'],a:0,e:'電量只能是基本電荷 e 的整數倍，2.5e 不可能存在。'},
+  {q:'11. 原子核的敘述，何者錯誤？',o:['原子核帶正電','原子核密度最大','質量幾乎全集中於此','原子核佔原子大部分體積'],a:3,e:'原子核體積只有原子的十萬分之一，並非大部分體積。'},
+  {q:'12. 質子數相同、中子數不同的原子互稱為？',o:['同素異形體','同位素','同分異構物','同族元素'],a:1,e:'同位素定義：質子數相同，中子數不同的原子。'},
+  {q:'13. 甲（Z=6,N=6）和乙（Z=6,N=7）的關係？',o:['同元素，互為同位素','不同元素','相同原子','同素異形體'],a:0,e:'兩者質子數都是 6（碳元素），中子數不同，互為同位素。'},
+  {q:'14. 帶+3電荷的金屬離子有 23 個電子，其中性原子的原子序是？',o:['20','23','26','29'],a:2,e:'質子數 = 電子數 + 電荷 = 23 + 3 = 26（鐵 Fe）。'},
+  {q:'15. ¹²C 被用來作為原子量的比較標準，¹²C 的原子量是？',o:['6','12','12.000','不確定'],a:2,e:'¹²C 的原子量精確定義為 12.000，是所有元素原子量的計算基準。'},
+],
+s2:[
+  {q:'1. 亞佛加厥定律只對哪種物質成立？',o:['固體','液體','氣體','任何物質'],a:2,e:'亞佛加厥定律僅對「同溫同壓下的氣體」成立。'},
+  {q:'2. H₂ 和 2H，哪個說法正確？',o:['二者意義相同','H₂ 是一個氫分子，2H 是兩個氫原子','H₂ 是兩個氫分子，2H 是一個氫原子','H₂ 是一個氫原子，2H 是兩個氫分子'],a:1,e:'H₂ = 1 個氫分子（2 個 H 鍵結）；2H = 2 個獨立氫原子。'},
+  {q:'3. 同溫同壓下，O₂ 和 CO₂ 原子數相同時體積比為？',o:['1:1','1:2','2:3','3:2'],a:3,e:'O₂ 每分子 2 個原子，CO₂ 每分子 3 個原子。原子數相同 → 2n = 3m → 體積比 = 3:2。'},
+  {q:'4. 哪組粒子的電子數不相同？（F=9, Ne=10, Na=11）',o:['Na⁺ 和 F⁻','Na⁺ 和 Ne','F⁻ 和 Ne','F 和 Na'],a:3,e:'Na⁺=10電子，Ne=10電子，F⁻=10電子，三者相同。但 F（9）和 Na（11）電子數不同。'},
+  {q:'5. 25°C、1atm 下，下列哪種物質的「100個分子體積」與其他不同？',o:['CO₂','SO₂','H₂','H₂O'],a:3,e:'25°C 時水是液態，亞佛加厥定律只適用氣體，液態水的體積完全不同。'},
+  {q:'6. 下列分子中，哪個是化合物分子？',o:['O₃（臭氧）','N₂（氮氣）','SO₂（二氧化硫）','Cl₂（氯氣）'],a:2,e:'SO₂ 含有 S 和 O 兩種原子，是化合物分子。其他三個都只有一種原子（元素分子）。'},
+  {q:'7. N₂ + 3H₂ → 2NH₃，此反應各氣體體積比為？',o:['1:3:2','2:6:4','1:2:2','3:1:2'],a:0,e:'體積比等於化學式係數比 = 1:3:2。'},
+  {q:'8. 下列敘述何者錯誤？',o:['分子可以單獨存在','原子可以單獨存在','分子是由原子組成','分子比原子更小'],a:3,e:'分子是由原子組成的，所以分子比原子更大，不是更小。'},
+  {q:'9. 1L CO₂ 和 1L SO₂（同溫同壓），原子總數比為？',o:['1:1','2:3','3:3','4:3'],a:0,e:'兩者都是 3 原子分子，同溫同壓同體積→分子數相同→原子總數相同，比 = 1:1。'},
+  {q:'10. 「氣體反應體積定律」是由誰提出？',o:['道耳頓','亞佛加厥','蓋呂薩克','湯姆森'],a:2,e:'蓋呂薩克（Gay-Lussac）在 1808 年根據實驗提出。'},
+  {q:'11. 同溫同壓，1000 個 H₂ 和 1000 個 O₂ 的體積比較？',o:['H₂ 較大','O₂ 較大','一樣大','無法比較'],a:2,e:'亞佛加厥定律：分子數相同 → 同溫同壓下體積相同。'},
+],
+s3:[
+  {q:'1. 物質發生化學變化時，何者正確？',o:['原子不變，分子不變','原子改變，分子不變','原子不變，分子改變','兩者均改變'],a:2,e:'化學變化：原子種類和數目不變（質量守恆），但分子種類改變（產生新物質）。'},
+  {q:'2. 乾冰（固態 CO₂）加熱變氣態，保持不變的是？',o:['體積','比熱','密度','分子數'],a:3,e:'狀態改變是物理變化，CO₂ 分子本身沒改變，分子數不變。體積、密度、比熱因狀態不同而不同。'},
+  {q:'3. 「水蒸發成水蒸氣」的推論，何者正確？',o:['水分子質量變小','部分水分子脫離液態群體','水分子分解成 H 和 O','分子內原子重新排列'],a:1,e:'蒸發是物理變化，水分子從液態中脫離以氣態單獨運動，分子本身沒有改變。'},
+  {q:'4. 過濾利用什麼性質差異？',o:['活性','延展性','顆粒大小','導電性'],a:2,e:'過濾利用顆粒大小：小粒子通過濾紙，大顆粒無法通過。'},
+  {q:'5. 分子自由運動性大小順序？',o:['固>液>氣','液>氣>固','氣>液>固','氣>固>液'],a:2,e:'氣體分子最自由，固體粒子只能振動，所以氣體 > 液體 > 固體。'},
+  {q:'6. 水的三態變化屬於物理變化，理由為？',o:['水分子間距改變但分子未被破壞','產生了新的分子','分子被破壞但質量不變','水分子被分解但原子數不變'],a:0,e:'物理變化：水分子本身沒有被拆解，只是分子間距離改變。'},
+  {q:'7. 食鹽溶於水，溶液中含有哪些粒子？',o:['Na 原子和 Cl 原子','Na⁺ 和 Cl⁻ 離子','NaCl 分子','H₂O 和 NaCl 分子'],a:1,e:'食鹽溶解是物理變化，NaCl 解離為 Na⁺ 和 Cl⁻ 離子散布水中。'},
+  {q:'8. 空氣是？',o:['元素','化合物','純物質','混合物'],a:3,e:'空氣是 N₂、O₂、CO₂、Ar 等多種氣體的混合物。'},
+  {q:'9. 某化合物燃燒生成 CO₂ 和 H₂O，至少含哪些元素？',o:['C、H','C、O','H、O','C、H、O'],a:0,e:'C 和 H 一定來自原化合物；O 可能來自空氣，不一定在原化合物中。'},
+  {q:'10. 固體、液體、氣體的活動能力大小順序？',o:['固>液>氣','氣>液>固','液>固>氣','氣>固>液'],a:1,e:'氣體分子最自由（最強），固體粒子只能振動（最弱）。'},
+  {q:'11. 甲物質加熱產生乙和丙兩種物質，甲是？',o:['甲必為元素','甲必為混合物','乙必為元素','丙必為化合物'],a:1,e:'甲能分解為兩種不同物質，說明甲含有兩種成分，故甲必為混合物。'},
+  {q:'12. 下列哪種描述符合純物質？',o:['組成可以任意調整','由相同分子組成','一定含兩種以上元素','可以用過濾方法分離'],a:1,e:'純物質由相同分子組成，組成固定不可調整，也不能用物理方法分離。'},
+],
+s4:[
+  {q:'1. X 原子價 −2，Y 原子價 +3，化合物化學式為？',o:['X₂Y₃','X₃Y₂','Y₃X₂','Y₂X₃'],a:3,e:'交叉法：Y(+3) 和 X(−2)，正負交叉 → Y₂X₃。金屬 Y 寫前，非金屬 X 寫後。'},
+  {q:'2. 化合物化學式一般寫法，何者錯誤？',o:['氧化物中氧寫後面','非金屬寫前、金屬寫後','總正價必須等於總負價','有機化合物按碳→氫→氧順序'],a:1,e:'正確規則是金屬在前，非金屬在後。「非金屬在前，金屬在後」是錯的！'},
+  {q:'3. CO₂ 的化學式，何者錯誤？',o:['為二氧化碳的分子式','由 3 種原子組成','代表 1 個分子含 3 個原子','表示二氧化碳是化合物'],a:1,e:'CO₂ 只有 C 和 O 兩種原子。每個分子確實有 3 個原子（1C+2O），但不是 3 種。'},
+  {q:'4. 氫氧化鈉的化學式，何者正確？',o:['NaHO','NaOH','HNaO','OHNa'],a:1,e:'氫氧化鈉是 Na⁺ 和 OH⁻，寫作 NaOH（金屬在前，OH⁻ 根在後）。'},
+  {q:'5. 氯化銨的化學式，何者正確？',o:['ClNH₄','NHCl₄','NH₄Cl','ClH₄N'],a:2,e:'NH₄⁺（銨根，+1）和 Cl⁻（氯，−1），各取 1 個交叉 → NH₄Cl。'},
+  {q:'6. 甲烷的化學式？',o:['CH₂','CH₄','C₂H₆','C₂H₄'],a:1,e:'甲烷是天然氣主成分，CH₄，一個碳原子結合四個氫原子。'},
+  {q:'7. 硫酸的化學式？',o:['HSO₄','H₂SO₄','H₂SO₃','H₃SO₄'],a:1,e:'硫酸：2H⁺ + SO₄²⁻ → H₂SO₄。注意 2 個 H！'},
+  {q:'8. 氧化鋁的化學式？',o:['AlO','AlO₂','Al₂O₃','Al₃O₂'],a:2,e:'Al³⁺（+3）和 O²⁻（−2），交叉法：Al 取 2，O 取 3 → Al₂O₃。'},
+  {q:'9. 碳酸鈣的化學式？',o:['CaCO₃','Ca₂CO₃','CaCO₂','Ca(CO₃)₂'],a:0,e:'Ca²⁺（+2）和 CO₃²⁻（−2），各取 1 個 → CaCO₃。'},
+  {q:'10. 葡萄糖的化學式？',o:['C₆H₁₂O₆','C₁₂H₂₂O₁₁','C₂H₅OH','CH₃COOH'],a:0,e:'葡萄糖 C₆H₁₂O₆；蔗糖 C₁₂H₂₂O₁₁；酒精 C₂H₅OH；醋酸 CH₃COOH。'},
+],
+s5:[
+  {q:'1. 已知氧的原子量為 16，下列何者正確？',o:['1個氧原子重 16 克','1克氧氣含 16 個氧原子','1 莫耳氧原子質量為 16 克','氧原子數量有 16 個'],a:2,e:'原子量（克）= 1 莫耳原子的質量。所以 1 莫耳氧原子 = 16 克。'},
+  {q:'2. 酒精 C₂H₅OH 的分子量？（C=12, H=1, O=16）',o:['60','46','36','29'],a:1,e:'C×2+H×6+O×1 = 24+6+16 = 46。注意 OH 中也有 1 個 H，共 6 個 H！'},
+  {q:'3. 雙原子分子 A₂，原子序 9，中子數 10，分子量約為？',o:['9','10','11','38'],a:3,e:'質量數 = 9+10 = 19；A₂ 分子量 = 19×2 = 38。'},
+  {q:'4. V₂Oₙ 分子量為 182，n 為何？（V=51, O=16）',o:['8','5','4','3'],a:1,e:'51×2+16n = 182 → 102+16n = 182 → n = 5。'},
+  {q:'5. NaOH 8.0 克含鈉質量？（Na=23）',o:['2.3 克','3.2 克','4.6 克','4.0 克'],a:2,e:'NaOH 分子量 = 40，Na 比例 = 23/40，Na 質量 = 8×23/40 = 4.6 克。'},
+  {q:'6. 0.5 mol H₂O 中，何者正確？',o:['含 0.5 mol H 原子','含 0.5 mol O 原子','原子總數 0.5 mol','分子總數 1.5 mol'],a:1,e:'0.5 mol H₂O 含 0.5×1 = 0.5 mol O；含 0.5×2 = 1 mol H；原子總數 = 1.5 mol；分子數 = 0.5 mol。'},
+  {q:'7. 0.5 mol 甘胺酸 C₂H₅O₂N 含碳質量？（C=12）',o:['氧 32 克','氮 14 克','碳 12 克','氫 5 克'],a:2,e:'0.5 mol × 2（每分子 2 個 C）= 1 mol C；質量 = 12 克。'},
+  {q:'8. 氧原子量 16，哪組敘述均正確？（甲：數量16個；乙：1個重16克；丙：1mol重16克；丁：質量是C-12的4/3倍）',o:['甲、丁','甲、乙','丙、丁','乙、丁'],a:2,e:'丙正確：1 mol 氧 = 16 克 ✓。丁正確：16/12 = 4/3 ✓。甲錯（原子量≠個數）；乙錯（1個原子不重16克）。'},
+  {q:'9. 常溫下哪種物質含的氧原子數最多？',o:['0.2 mol O₂','4.4 克 CO₂','0.1 mol CaCO₃','3.6 克 H₂O'],a:0,e:'(A)0.2×2=0.4 mol O 最多！(B)4.4÷44=0.1mol→0.2mol O；(C)→0.3mol O；(D)3.6÷18=0.2mol→0.2mol O。'},
+  {q:'10. 與 54 克鋁原子數目相同的碳，質量為？（Al=27, C=12）',o:['12 克','24 克','27 克','54 克'],a:1,e:'54÷27=2 mol Al = 2 mol C（數目相同）→ 2×12 = 24 克。'},
+],
+s6:[
+  {q:'1. 【理論—提出者】的對應，何者錯誤？',o:['原子說—道耳頓','倍比定律—普魯斯特','行星式原子模型—拉塞福','分子理論—亞佛加厥'],a:1,e:'普魯斯特提出「定比定律」；倍比定律是道耳頓提出的。'},
+  {q:'2. 某原子序 11，質量數 23，中子數為？',o:['11','12','23','34'],a:1,e:'中子數 = 質量數 − 原子序 = 23 − 11 = 12。'},
+  {q:'3. X²⁺ 離子含 18 個電子，X 的原子序為？',o:['16','18','20','22'],a:2,e:'質子數 = 電子數 + 電荷 = 18+2 = 20（鈣 Ca）。'},
+  {q:'4. 同位素之間，哪個相同？',o:['中子數','質量數','物理性質','化學性質'],a:3,e:'同位素質子數相同→電子數相同→化學性質相同。質量數、中子數、物理性質均不同。'},
+  {q:'5. H₂O₂（雙氧水）分子量？（H=1, O=16）',o:['17','18','32','34'],a:3,e:'H₂O₂ = 1×2+16×2 = 34。不要和 H₂O（18）混淆！'},
+  {q:'6. 物理變化時，何者不改變？',o:['粒子間距離','物質狀態','分子種類和數目','粒子活動能力'],a:2,e:'物理變化：分子本身沒有改變，種類和數目不變。'},
+  {q:'7. 硫酸鐵 Fe₂(SO₄)₃ 的分子量？（Fe=56, S=32, O=16）',o:['200','320','400','456'],a:2,e:'56×2+(32+16×4)×3 = 112+288 = 400。'},
+  {q:'8. 48 克 O₂ 含幾莫耳 O 原子？（O=16）',o:['1.5 mol','3 mol','6 mol','12 mol'],a:1,e:'48÷32=1.5 mol O₂；×2（每個 O₂ 有 2 個 O 原子）= 3 mol O 原子。'},
+  {q:'9. 焦炭、石墨、金剛石三者的關係？',o:['互為同位素','互為同素異形體','化學式不同','性質完全相同'],a:1,e:'三者都是碳的同素異形體（化學式都是 C，但結構和性質不同）。'},
+  {q:'10. 同溫同壓，2L N₂ 和 3L CO₂ 的分子數比？',o:['1:1','1:2','2:3','3:2'],a:2,e:'同溫同壓下體積比 = 分子數比 = 2:3。'},
+  {q:'11. 食鹽溶於水，溶液中的粒子是？',o:['Na 原子和 Cl 原子','Na⁺ 和 Cl⁻ 離子','NaCl 分子','H₂O 和 NaCl 分子'],a:1,e:'食鹽溶解（物理變化），NaCl 解離為 Na⁺ 和 Cl⁻ 離子散布水中。'},
+  {q:'12. 20 克 H₂ 的莫耳數？（H=1）',o:['1 mol','5 mol','10 mol','20 mol'],a:2,e:'20 ÷ 2（H₂ 分子量）= 10 mol。H₂ 分子量只有 2，所以莫耳數很大！'},
+  {q:'13. 1 mol H₂O 中含幾個 H 原子？',o:['6×10²³','1.2×10²⁴','3×10²³','1.8×10²⁴'],a:1,e:'1 mol H₂O 含 2 mol H 原子 = 2×6×10²³ = 1.2×10²⁴ 個。'},
+  {q:'14. 下列何者是純物質？',o:['空氣','食鹽水','黃銅（銅鋅合金）','乾冰（固態 CO₂）'],a:3,e:'乾冰是純物質（單一化合物 CO₂）。空氣、食鹽水、黃銅都是混合物。'},
+  {q:'15. 下列關於莫耳，何者正確？',o:['1 mol 任何物質質量都是 6×10²³ 克','1 mol H₂O 質量為 16 克','原子量（克）= 1 mol 原子的質量','莫耳是計量體積的單位'],a:2,e:'原子量（克）= 1 莫耳原子的質量，這是最核心的公式。A 錯（各物質質量不同）；B 錯（H₂O 分子量 18）；D 錯（莫耳計量數目）。'},
+  {q:'16. CO₂ 的 1 mol 質量等於？',o:['12 克','32 克','44 克','56 克'],a:2,e:'CO₂ 分子量 = 12+16×2 = 44，所以 1 mol CO₂ = 44 克。'},
+  {q:'17. 哪個物質莫耳數最多？（C=12, H=1, O=16）',o:['48 克 O₂','20 克 H₂','90 克 H₂O','264 克 CO₂'],a:1,e:'(A)1.5 mol (B)10 mol ← 最多！(C)5 mol (D)6 mol。H₂ 分子量只有 2，莫耳數最大。'},
+  {q:'18. 甲、乙兩化合物分子式相同但結構式不同，稱為？',o:['同位素','同素異形體','同分異構物','同元素化合物'],a:2,e:'分子式相同、結構不同的化合物叫「同分異構物」。例：乙醇和甲醚（都是 C₂H₆O）。'},
+  {q:'19. 碳有 ¹²C、¹³C、¹⁴C 三種同位素，關於 ¹⁴C 何者正確？',o:['質子數為 14','具放射性，半衰期約 5730 年','化學性質與 ¹²C 不同','中子數為 6'],a:1,e:'¹⁴C 質子數=6（碳），中子數=8，具放射性，半衰期約 5730 年，用於碳定年法。'},
+  {q:'20. 下列關於物質三態，何者正確？',o:['氣體分子間距最大，活動能力最弱','固體粒子位置固定，體積和形狀固定','液體的分子數比氣體少','氣體體積固定，形狀不固定'],a:1,e:'固體：粒子位置固定→體積和形狀都固定 ✓。氣體活動能力最強（不是最弱）。氣體體積和形狀都不固定。'},
+]
+};
+</script>
+</body>
+</html>
