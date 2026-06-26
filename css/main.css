@@ -5,35 +5,35 @@
 
 :root {
   /* ── Backgrounds ── */
-  --bg:       #F4F2ED;   /* warm parchment */
+  --bg:       #F6F3FC;   /* warm parchment */
   --surface:  #FFFFFF;
-  --surface2: #F9F8F5;   /* slightly warm white for nested areas */
+  --surface2: #F1ECFA;   /* slightly warm white for nested areas */
 
   /* ── Borders ── */
-  --border:       #E3DFDA;
-  --border-mid:   #CCCAB5; /* was --border-strong */
-  --border-dark:  #B0ADA4;
+  --border:       #E8E1F2;
+  --border-mid:   #CBC0E0; /* was --border-strong */
+  --border-dark:  #A89EC2;
 
   /* ── Typography ── */
-  --text-1: #1A1916;   /* near-black */
-  --text-2: #65635E;   /* secondary */
-  --text-3: #A5A29C;   /* muted/placeholder */
+  --text-1: #2A2335;   /* near-black */
+  --text-2: #6E6580;   /* secondary */
+  --text-3: #A89FBC;   /* muted/placeholder */
 
   /* ── Subject accents (natural materials) ── */
-  --math:        #2B4C7E;  /* slate blue (like deep sea) */
-  --math-light:  #EAF0F8;
-  --phys:        #3A5C42;  /* forest green */
-  --phys-light:  #EBF2EC;
-  --chem:        #7A4E36;  /* warm earth/terracotta */
-  --chem-light:  #F5EDE8;
+  --math:        #5B57C2;  /* slate blue (like deep sea) */
+  --math-light:  #ECEBFA;
+  --phys:        #4DA38E;  /* forest green */
+  --phys-light:  #E6F4EF;
+  --chem:        #A368B0;  /* warm earth/terracotta */
+  --chem-light:  #F4E9F6;
 
   /* ── Status ── */
-  --done:     #3A5C42;
-  --done-bg:  #EBF2EC;
-  --wip:      #78600A;
-  --wip-bg:   #F5EDDA;
-  --todo:     #A5A29C;
-  --todo-bg:  #EEECEA;
+  --done:     #4DA38E;
+  --done-bg:  #E6F4EF;
+  --wip:      #B98A3E;
+  --wip-bg:   #F7EFDD;
+  --todo:     #A89FBC;
+  --todo-bg:  #EFEAF7;
 
   /* ── Spacing & shape ── */
   --r:   4px;   /* card radius */
@@ -192,7 +192,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .item:first-child { border-top: none; }
 .item-link:hover  { background: var(--surface2); }
-.item-link:active { background: #EDEBE5; }
+.item-link:active { background: #EDE7F6; }
 .item.disabled { opacity: .5; pointer-events: none; }
 
 .item-num {

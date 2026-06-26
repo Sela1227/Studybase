@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F4F2ED">
-<link rel="icon" type="image/svg+xml" href="../favicon/sela.svg">
+<meta name="theme-color" content="#634A83">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
@@ -13,15 +12,15 @@
 <style>
 /* ── 北歐極簡設計系統 v1.3 ── */
 :root {
-  --bg:#F4F2ED; --surface:#FFFFFF; --surface2:#F9F8F5;
-  --border:#E3DFDA; --border-mid:#CCCAB5; --border-dark:#B0ADA4;
-  --text-1:#1A1916; --text-2:#65635E; --text-3:#A5A29C;
-  --c1:#2B4C7E; --c1l:#EAF0F8;
-  --c2:#3A5C42; --c2l:#EBF2EC;
-  --c3:#78600A; --c3l:#F5EDD8;
-  --c4:#5A3E6E; --c4l:#EEE8F4;
-  --c5:#7A4E36; --c5l:#F5EDE8;
-  --c6:#2C5F6E; --c6l:#E8F3F5;
+  --bg:#F6F3FC; --surface:#FFFFFF; --surface2:#F1ECFA;
+  --border:#E8E1F2; --border-mid:#CBC0E0; --border-dark:#A89EC2;
+  --text-1:#2A2335; --text-2:#6E6580; --text-3:#A89FBC;
+  --c1:#5B57C2; --c1l:#ECEBFA;
+  --c2:#4DA38E; --c2l:#E6F4EF;
+  --c3:#B98A3E; --c3l:#F7EFDD;
+  --c4:#7A569E; --c4l:#F0E9F8;
+  --c5:#A368B0; --c5l:#F4E9F6;
+  --c6:#5E83C0; --c6l:#E9EFFA;
   --r:4px; --r-s:2px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -109,7 +108,7 @@ strong{font-weight:500; color:var(--text-1);}
 .hi p{color:var(--text-1); margin-bottom:0;}
 .hi strong{color:var(--text-1);}
 .note{border:1px solid var(--border); background:var(--surface2); border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:13px; color:var(--text-2); line-height:1.7;}
-.warn{border-left:3px solid #B84E35; background:#FBF0ED; border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:14px; color:#5C1F0F; line-height:1.7;}
+.warn{border-left:3px solid #A6475E; background:#F4E9F6; border-radius:var(--r); padding:12px 14px; margin-bottom:10px; font-size:14px; color:#4B202A; line-height:1.7;}
 .extra{border:1px solid var(--border-mid); background:var(--surface); border-radius:var(--r); padding:14px 16px; margin-bottom:10px;}
 .extra-label{font-size:10px; font-weight:500; color:var(--text-3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px;}
 .extra p{font-size:13px; color:var(--text-2); margin-bottom:0;}
@@ -142,8 +141,8 @@ strong{font-weight:500; color:var(--text-1);}
 .b4{background:var(--c4l);color:var(--c4);border-color:var(--c4);}
 .b5{background:var(--c5l);color:var(--c5);border-color:var(--c5);}
 .b6{background:var(--c6l);color:var(--c6);border-color:var(--c6);}
-.bdone{background:#EBF2EC;color:#3A5C42;border-color:#7AB888;}
-.btodo{background:#EEECEA;color:#A5A29C;border-color:#CCCAB5;}
+.bdone{background:#E6F4EF;color:#4DA38E;border-color:#8FC9A8;}
+.btodo{background:#EFEAF7;color:#A89FBC;border-color:#CBC0E0;}
 
 /* ── TWO-COL GRID ── */
 .g2{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;}
@@ -215,7 +214,7 @@ strong{font-weight:500; color:var(--text-1);}
 .state-btn{padding:8px; border:1px solid var(--border); border-radius:var(--r); background:var(--surface); color:var(--text-2); font-size:13px; font-weight:500; cursor:pointer;}
 .state-btn:hover{background:var(--surface2);}
 .state-btn.on{border-color:var(--c); color:var(--c); background:var(--cl);}
-.state-canvas-wrap{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:10px; background:#F9F8F5;}
+.state-canvas-wrap{border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:10px; background:#F1ECFA;}
 .state-canvas-wrap canvas{display:block; width:100%; height:160px;}
 
 /* ── MOL SORT ── */
@@ -277,12 +276,12 @@ strong{font-weight:500; color:var(--text-1);}
 .qopt{padding:9px 12px; border:1px solid var(--border); border-radius:var(--r-s); background:var(--surface); margin-bottom:5px; font-size:13px; cursor:pointer; display:flex; gap:8px; color:var(--text-2);}
 .qopt:hover{background:var(--surface2); border-color:var(--border-mid);}
 .qopt.sel{border-color:var(--c); background:var(--cl); color:var(--text-1);}
-.qopt.ok{background:#EBF2EC; border-color:#7AB888; color:#3A5C42;}
-.qopt.no{background:#FBF0ED; border-color:#C47F64; color:#7A4E36;}
+.qopt.ok{background:#E6F4EF; border-color:#8FC9A8; color:#4DA38E;}
+.qopt.no{background:#F4E9F6; border-color:#C99AC0; color:#A368B0;}
 .qlabel{font-weight:500; width:16px; flex-shrink:0; color:var(--text-3);}
 .qexp{display:none; margin-top:8px; padding:10px 12px; border-radius:var(--r-s); font-size:12px; line-height:1.65;}
-.qexp.ok{background:#EBF2EC; color:#3A5C42;}
-.qexp.no{background:#FBF0ED; color:#7A4E36;}
+.qexp.ok{background:#E6F4EF; color:#4DA38E;}
+.qexp.no{background:#F4E9F6; color:#A368B0;}
 .quiz-score{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px; margin-bottom:12px; text-align:center;}
 .quiz-score-n{font-size:26px; font-weight:300; color:var(--text-1);}
 .quiz-score-m{font-size:13px; color:var(--text-2); margin-top:4px;}
@@ -293,9 +292,9 @@ strong{font-weight:500; color:var(--text-1);}
 .qbtn.primary{background:var(--c); color:#fff; border-color:var(--c);}
 
 /* ── SUMMARY ── */
-.summary{background:#EBF2EC; border:1px solid #7AB888; border-radius:var(--r); padding:14px 16px; margin-top:24px;}
-.summary h4{font-size:12px; font-weight:500; color:#3A5C42; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;}
-.summary li{font-size:13px; color:#3A5C42; line-height:1.75; list-style:none; padding-left:18px; position:relative;}
+.summary{background:#E6F4EF; border:1px solid #8FC9A8; border-radius:var(--r); padding:14px 16px; margin-top:24px;}
+.summary h4{font-size:12px; font-weight:500; color:#4DA38E; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;}
+.summary li{font-size:13px; color:#4DA38E; line-height:1.75; list-style:none; padding-left:18px; position:relative;}
 .summary li::before{content:"✓"; position:absolute; left:0; font-weight:500;}
 
 /* ── BOTTOM NAV ── */
@@ -308,6 +307,7 @@ strong{font-weight:500; color:var(--text-1);}
 /* ── FOOTER ── */
 .page-footer{display:flex; justify-content:space-between; font-size:11px; color:var(--text-3); border-top:1px solid var(--border); margin-top:56px; padding:14px 0; max-width:640px; margin-left:auto; margin-right:auto; padding-left:20px; padding-right:20px;}
 </style>
+<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
 <body>
 
@@ -1378,7 +1378,7 @@ strong{font-weight:500; color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第六章 原子與分子 · 阿蔓明道國中復習專班</span>
-    <span>V2.0.0</span>
+    <span>V2.1.0</span>
   </div>
 </div>
 
@@ -1673,8 +1673,8 @@ function drawP(){
   const cv=document.getElementById('stateCanvas');if(!cv)return;
   const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.clearRect(0,0,W,H);
-  ctx.fillStyle='#F9F8F5';ctx.fillRect(0,0,W,H);
-  const col=sMode==='solid'?'#8BA8C8':sMode==='liquid'?'#7BA891':'#C8A87A';
+  ctx.fillStyle='#F1ECFA';ctx.fillRect(0,0,W,H);
+  const col=sMode==='solid'?'#9282D1':sMode==='liquid'?'#90849F':'#C7A97B';
   particles.forEach(p=>{
     if(sMode==='solid'){
       p.x=p.ox+Math.sin(Date.now()/300+p.ox)*1.2;

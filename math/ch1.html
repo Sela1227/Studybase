@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F4F2ED">
-<link rel="icon" type="image/svg+xml" href="../favicon/sela.svg">
+<meta name="theme-color" content="#634A83">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
@@ -12,15 +11,15 @@
 <title>第一章 相似形 — 阿蔓明道國中復習專班</title>
 <style>
 :root{
-  --bg:#F4F2ED; --surface:#FFFFFF; --surface2:#F9F8F5;
-  --border:#E3DFDA; --border-mid:#CCCAB5; --border-dark:#B0ADA4;
-  --text-1:#1A1916; --text-2:#65635E; --text-3:#A5A29C;
+  --bg:#F6F3FC; --surface:#FFFFFF; --surface2:#F1ECFA;
+  --border:#E8E1F2; --border-mid:#CBC0E0; --border-dark:#A89EC2;
+  --text-1:#2A2335; --text-2:#6E6580; --text-3:#A89FBC;
   --r:4px; --r-s:2px;
   /* 四大節 accent */
-  --c1:#2B4C7E; --c1l:#EAF0F8;   /* 相似的意義：板岩藍 */
-  --c2:#3A5C42; --c2l:#EBF2EC;   /* 三角形判別：森林綠 */
-  --c3:#7A4E36; --c3l:#F5EDE8;   /* 平行與相似：赤陶土（核心）*/
-  --c4:#2C5F6E; --c4l:#E8F3F5;   /* 複習大考：北歐藍綠 */
+  --c1:#5B57C2; --c1l:#ECEBFA;   /* 相似的意義：板岩藍 */
+  --c2:#4DA38E; --c2l:#E6F4EF;   /* 三角形判別：森林綠 */
+  --c3:#A368B0; --c3l:#F4E9F6;   /* 平行與相似：赤陶土（核心）*/
+  --c4:#5E83C0; --c4l:#E9EFFA;   /* 複習大考：北歐藍綠 */
   --c:var(--c1);  --cl:var(--c1l);
 }
 *{box-sizing:border-box;}
@@ -85,15 +84,15 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
 .hi .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--c); display:block; margin-bottom:4px;}
 .note{background:var(--surface2); border:1px solid var(--border); border-radius:var(--r);
   padding:12px 14px; margin:14px 0; font-size:13.5px; color:var(--text-2);}
-.warn{border-left:3px solid #B5532E; background:#F7EAE3; border-radius:var(--r);
+.warn{border-left:3px solid #C56B86; background:#FBEDF1; border-radius:var(--r);
   padding:12px 14px; margin:14px 0; font-size:13.5px;}
-.warn .hi-t{color:#B5532E; font-size:11px; font-weight:500; letter-spacing:.08em; display:block; margin-bottom:4px;}
+.warn .hi-t{color:#C56B86; font-size:11px; font-weight:500; letter-spacing:.08em; display:block; margin-bottom:4px;}
 .extra{border:1px solid var(--border-mid); border-radius:var(--r); padding:12px 14px; margin:16px 0; font-size:13.5px; color:var(--text-2);}
 .extra .hi-t{font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); display:block; margin-bottom:5px;}
 .eq{background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
   font-family:Georgia,"Times New Roman",serif; font-size:15px; text-align:center; padding:12px 16px; margin:14px 0;}
-.summary{background:#EBF2EC; border:1px solid #7AB888; border-radius:6px; padding:14px 16px; margin:20px 0 8px; font-size:14px;}
-.summary .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; color:#3A5C42; display:block; margin-bottom:6px;}
+.summary{background:#E6F4EF; border:1px solid #8FC9A8; border-radius:6px; padding:14px 16px; margin:20px 0 8px; font-size:14px;}
+.summary .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; color:#4DA38E; display:block; margin-bottom:6px;}
 .summary ul{margin:0; padding-left:18px;}
 .summary li{margin-bottom:4px;}
 .tbl{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.5px;}
@@ -109,7 +108,7 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
 .inter input:focus{outline:none; border-color:var(--c);}
 .inter-btn{border:1px solid var(--border); background:var(--surface2); cursor:pointer;
   font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border-radius:var(--r); min-height:40px;}
-.inter-btn:active{background:#EDEBE5;}
+.inter-btn:active{background:#EDE7F6;}
 .inter-result{margin-top:8px; padding:10px 12px; background:var(--cl); border-radius:var(--r); font-size:14px; min-height:20px;}
 .inter-result strong{color:var(--c); font-weight:600;}
 .inter svg{display:block; margin:6px auto 10px; max-width:100%;}
@@ -123,13 +122,13 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
   padding:9px 12px; margin-bottom:6px; cursor:pointer; font-size:13.5px; background:var(--surface);}
 .qopt:active{background:var(--surface2);}
 .qopt.sel{border-color:var(--c); background:var(--cl);}
-.qopt.ok{border-color:#3A5C42; background:#EBF2EC;}
-.qopt.no{border-color:#B5532E; background:#F7EAE3;}
+.qopt.ok{border-color:#4DA38E; background:#E6F4EF;}
+.qopt.no{border-color:#C56B86; background:#FBEDF1;}
 .qlabel{font-weight:600; color:var(--text-2); flex:0 0 auto;}
 .qexp{margin-top:8px; padding:10px 12px; border-radius:var(--r); font-size:13px; display:none;}
 .qexp.show{display:block;}
-.qexp.ok{background:#EBF2EC; border:1px solid #7AB888;}
-.qexp.no{background:#F7EAE3; border:1px solid #D9A48C;}
+.qexp.ok{background:#E6F4EF; border:1px solid #8FC9A8;}
+.qexp.no{background:#FBEDF1; border:1px solid #D1B994;}
 .quiz-bar{display:flex; gap:8px; margin:14px 0 4px;}
 .quiz-bar button{flex:1; border:1px solid var(--c); background:var(--c); color:#fff; cursor:pointer;
   font-family:inherit; font-size:14px; font-weight:500; padding:11px; border-radius:var(--r); min-height:44px;}
@@ -153,6 +152,7 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
 
 svg .lbl{font-family:inherit; font-weight:500;}
 </style>
+<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
 <body>
 
@@ -690,7 +690,7 @@ svg .lbl{font-family:inherit; font-weight:500;}
 <!-- FOOTER -->
 <div class="page-footer">
   <span>數學 · 阿蔓明道國中復習專班</span>
-  <span>V2.0.0</span>
+  <span>V2.1.0</span>
 </div>
 
 <script>
