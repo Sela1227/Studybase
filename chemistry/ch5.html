@@ -11,7 +11,7 @@
 <link rel="manifest" href="../favicon/site.webmanifest">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #F9F6F2; color: #19171A; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #F7F2F9; color: #19171A; }
 
 /* ── HEADER ── */
 .hdr { background: #fff; border-bottom: 1px solid #E8E1F2; padding: .875rem 1rem .5rem; position: sticky; top: 0; z-index: 100; }
@@ -26,7 +26,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .lnav::-webkit-scrollbar { display: none; }
 .lpill { flex-shrink: 0; padding: 5px 12px; border-radius: 999px; border: 1px solid #E8E1F2; background: #fff; color: #A89FBC; font-size: 12px; cursor: pointer; transition: all .15s; white-space: nowrap; }
 .lpill.active { background: #5B57C2; color: #fff; border-color: #5B57C2; font-weight: 500; }
-.lpill.done { background: #EAF2E6; color: #4DA38E; border-color: #9CC98A; }
+.lpill.done { background: #E6F2EC; color: #4FA17A; border-color: #8CC7AB; }
 
 /* ── LESSON CONTENT ── */
 .lesson { display: none; padding: 1.25rem 1rem 5.5rem; max-width: 700px; margin: 0 auto; }
@@ -58,8 +58,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .cbox strong { font-weight: 500; }
 
 /* Remember */
-.rbox { background: #F7EFDD; border: 1px solid #C99A5E; border-radius: 10px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #6E4A86; line-height: 1.7; }
-.rbox .rtitle { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; color: #9A6B2E; }
+.rbox { background: #ECE3F1; border: 1px solid #A071B6; border-radius: 10px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #6E4A86; line-height: 1.7; }
+.rbox .rtitle { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; color: #704484; }
 
 /* Wow box */
 .wow { background: #F4E9F6; border: 1px solid #E8A6BE; border-radius: 10px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #8A3D52; line-height: 1.7; }
@@ -73,10 +73,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .tbl td:first-child { text-align: left; color: #6E6580; }
 
 /* Summary */
-.summary { background: #EAF2E6; border: 1px solid #9CC98A; border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; }
-.summary h4 { font-size: 13px; font-weight: 500; color: #4DA38E; margin-bottom: 8px; }
-.summary li { font-size: 13px; color: #3E7E66; line-height: 1.75; list-style: none; padding-left: 1.2rem; position: relative; }
-.summary li::before { content: "✓"; position: absolute; left: 0; color: #4DA38E; }
+.summary { background: #E6F2EC; border: 1px solid #8CC7AB; border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; }
+.summary h4 { font-size: 13px; font-weight: 500; color: #4FA17A; margin-bottom: 8px; }
+.summary li { font-size: 13px; color: #3E7E5F; line-height: 1.75; list-style: none; padding-left: 1.2rem; position: relative; }
+.summary li::before { content: "✓"; position: absolute; left: 0; color: #4FA17A; }
 
 /* Divider */
 .sdiv { border: none; border-top: 1px solid #EDE7F6; margin: 1.25rem 0; }
@@ -84,8 +84,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 /* Badge */
 .badge { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12px; font-weight: 500; }
 .bb { background: #ECEBFA; color: #5B57C2; }
-.ba { background: #F7EFDD; color: #9A6B2E; }
-.bt { background: #E6F4EF; color: #3E7E66; }
+.ba { background: #ECE3F1; color: #704484; }
+.bt { background: #E7F3ED; color: #3E7E5F; }
 .bc { background: #F4E9F6; color: #B85A74; }
 .bp { background: #F0E9F8; color: #5B57C2; }
 
@@ -93,8 +93,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .el-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 6px; margin-bottom: .75rem; }
 .el-tile { background: #fff; border: 1px solid #E8E1F2; border-radius: 8px; padding: 6px 4px; text-align: center; cursor: pointer; transition: all .12s; }
 .el-tile:hover { transform: scale(1.06); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
-.el-tile.metal { border-left: 3px solid #C99A5E; }
-.el-tile.nonmetal { border-left: 3px solid #8FC9A8; }
+.el-tile.metal { border-left: 3px solid #A071B6; }
+.el-tile.nonmetal { border-left: 3px solid #90C8AD; }
 .el-tile.selected { background: #ECEBFA; border-color: #6A54C0; }
 .et-sym { font-size: 16px; font-weight: 500; }
 .et-name { font-size: 10px; color: #A89FBC; margin-top: 2px; }
@@ -123,10 +123,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .ptc { width: 26px; height: 26px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 500; cursor: pointer; flex-shrink: 0; transition: transform .1s; border: .5px solid transparent; }
 .ptc:hover { transform: scale(1.25); z-index: 5; position: relative; }
 .ptc.empty { background: transparent; cursor: default; }
-.ptc.m { background: #F7EFDD; color: #6E4A86; border-color: #C99A5E; }
-.ptc.nm { background: #E6F4EF; color: #2E6E5A; border-color: #8FC9A8; }
-.ptc.alk { background: #C99A5E; color: #fff; border-color: #92713F; }
-.ptc.alt { background: #9CC98A; color: #fff; border-color: #38835F; }
+.ptc.m { background: #ECE3F1; color: #6E4A86; border-color: #A071B6; }
+.ptc.nm { background: #E7F3ED; color: #33694F; border-color: #90C8AD; }
+.ptc.alk { background: #A071B6; color: #fff; border-color: #75478A; }
+.ptc.alt { background: #8CC7AB; color: #fff; border-color: #3E7D5F; }
 .ptc.hal { background: #8B86DE; color: #fff; border-color: #5B57C2; }
 .ptc.nob { background: #B5536A; color: #fff; border-color: #B85A74; }
 .ptc.tr { background: #F4EFFB; color: #6E6580; border-color: #CBC0E0; }
@@ -138,7 +138,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 /* ── ACTIVITY EXPERIMENT ── */
 .act-tabs { display: flex; gap: 6px; margin-bottom: .75rem; flex-wrap: wrap; }
 .act-tab { padding: 6px 14px; border-radius: 6px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
-.act-tab.active { background: #EAF2E6; color: #4DA38E; border-color: #9CC98A; }
+.act-tab.active { background: #E6F2EC; color: #4FA17A; border-color: #8CC7AB; }
 #act-display { background: #fff; border: 1px solid #E8E1F2; border-radius: 10px; padding: .875rem; font-size: 13px; line-height: 1.75; margin-bottom: .75rem; }
 
 /* ── ELEMENT DETAIL CARDS (Lesson 7) ── */
@@ -158,7 +158,7 @@ input[type=number] { width: 110px; }
 .qopt { padding: 7px 12px; border-radius: 8px; border: 1px solid #E8E1F2; background: #fff; margin-bottom: 5px; font-size: 13px; cursor: pointer; display: flex; gap: 8px; transition: all .12s; }
 .qopt:hover { border-color: #A9A6E6; background: #F4F3FA; }
 .qopt.sel { background: #ECEBFA; border-color: #6A54C0; }
-.qopt.ok { background: #EAF2E6; border-color: #9CC98A; color: #4DA38E; }
+.qopt.ok { background: #E6F2EC; border-color: #8CC7AB; color: #4FA17A; }
 .qopt.no { background: #F4E9F6; border-color: #E8A6BE; color: #B85A74; }
 .qlabel { font-weight: 500; color: #CBC0E0; min-width: 20px; }
 .qexp { display: none; margin-top: 8px; padding: .625rem .875rem; border-radius: 8px; font-size: 12px; line-height: 1.65; }
@@ -174,7 +174,7 @@ input[type=number] { width: 110px; }
 <body>
 <div style="
   position:sticky;top:0;z-index:200;
-  background:rgba(244,242,237,.96);
+  background:rgba(246,243,252,.96);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid #E8E1F2;
   padding:0 20px;
@@ -234,7 +234,7 @@ input[type=number] { width: 110px; }
         <h4>純物質</h4>
         <p>整瓶東西從頭到尾都是<strong>同一種</strong>物質，成分固定，有固定的熔點和沸點。<br><br>例：純水（H₂O）、純金（Au）、食鹽（NaCl）</p>
       </div>
-      <div class="card" style="border-top:3px solid #9A6B2E;">
+      <div class="card" style="border-top:3px solid #704484;">
         <h4>混合物</h4>
         <p>由<strong>兩種以上</strong>純物質混在一起，比例可以隨意調整，可以用物理方法分開。<br><br>例：空氣、食鹽水、合金（K金）</p>
       </div>
@@ -253,7 +253,7 @@ input[type=number] { width: 110px; }
     <p>純物質還可以再分：</p>
 
     <div class="grid2">
-      <div class="card" style="border-top:3px solid #8FC9A8;">
+      <div class="card" style="border-top:3px solid #90C8AD;">
         <h4>元素</h4>
         <p>只由<strong>一種</strong>原子組成，用一般化學方法無法再分解。<br><br>例：氧氣 O₂、鐵 Fe、氦氣 He、金 Au</p>
       </div>
@@ -274,9 +274,9 @@ input[type=number] { width: 110px; }
     <div class="card" style="font-size:13px;line-height:2;">
       <strong>物質</strong><br>
       ├── <span style="color:#5B57C2;font-weight:500;">純物質</span><br>
-      │　　├── <span style="color:#3E7E66;font-weight:500;">元素</span>：N₂、H₂、He、O₂、Au、Fe…<br>
+      │　　├── <span style="color:#3E7E5F;font-weight:500;">元素</span>：N₂、H₂、He、O₂、Au、Fe…<br>
       │　　└── <span style="color:#B85A74;font-weight:500;">化合物</span>：H₂O、NaCl、CO₂、H₂SO₄…<br>
-      └── <span style="color:#9A6B2E;font-weight:500;">混合物</span><br>
+      └── <span style="color:#704484;font-weight:500;">混合物</span><br>
       　　　├── 均勻混合（溶液）：合金、糖水、空氣<br>
       　　　└── 不均勻混合：泥水、沙拉
     </div>
@@ -319,11 +319,11 @@ input[type=number] { width: 110px; }
   <div class="sec">
     <h3>元素的第一種分類：金屬 vs 非金屬</h3>
     <div class="grid2">
-      <div class="card" style="border-top:3px solid #C99A5E;">
+      <div class="card" style="border-top:3px solid #A071B6;">
         <h4>金屬元素（94種）</h4>
         <p>銀灰色光澤、能導電傳熱、有延展性（可打薄拉長）、常溫大多是固體</p>
       </div>
-      <div class="card" style="border-top:3px solid #8FC9A8;">
+      <div class="card" style="border-top:3px solid #90C8AD;">
         <h4>非金屬元素（24種）</h4>
         <p>顏色各異、大多不導電、易碎沒有延展性、常溫有固、液、氣三種狀態</p>
       </div>
@@ -351,8 +351,8 @@ input[type=number] { width: 110px; }
   <div class="sec">
     <h3>點擊元素，認識它</h3>
     <div style="display:flex;gap:8px;margin-bottom:.75rem;flex-wrap:wrap;">
-      <span class="badge" style="background:#F7EFDD;color:#6E4A86;padding:3px 10px;">■ 金屬</span>
-      <span class="badge" style="background:#E6F4EF;color:#2E6E5A;padding:3px 10px;">■ 非金屬</span>
+      <span class="badge" style="background:#ECE3F1;color:#6E4A86;padding:3px 10px;">■ 金屬</span>
+      <span class="badge" style="background:#E7F3ED;color:#33694F;padding:3px 10px;">■ 非金屬</span>
     </div>
     <div class="el-grid" id="el-grid"></div>
     <div id="el-detail">點擊上方任一元素，查看詳細資訊。</div>
@@ -365,27 +365,27 @@ input[type=number] { width: 110px; }
     <div class="card" style="padding:.75rem;">
       <div class="section-label" style="margin-bottom:8px;">非金屬（8個）</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">H</div><div style="font-size:11px;color:#3E7E66;">氫·氣</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">O</div><div style="font-size:11px;color:#3E7E66;">氧·氣</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">N</div><div style="font-size:11px;color:#3E7E66;">氮·氣</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">C</div><div style="font-size:11px;color:#3E7E66;">碳·固</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">S</div><div style="font-size:11px;color:#3E7E66;">硫·固</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cl</div><div style="font-size:11px;color:#3E7E66;">氯·氣</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Br</div><div style="font-size:11px;color:#3E7E66;">溴·液</div></div>
-        <div style="background:#E6F4EF;color:#2E6E5A;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">I</div><div style="font-size:11px;color:#3E7E66;">碘·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">H</div><div style="font-size:11px;color:#3E7E5F;">氫·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">O</div><div style="font-size:11px;color:#3E7E5F;">氧·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">N</div><div style="font-size:11px;color:#3E7E5F;">氮·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">C</div><div style="font-size:11px;color:#3E7E5F;">碳·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">S</div><div style="font-size:11px;color:#3E7E5F;">硫·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cl</div><div style="font-size:11px;color:#3E7E5F;">氯·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Br</div><div style="font-size:11px;color:#3E7E5F;">溴·液</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">I</div><div style="font-size:11px;color:#3E7E5F;">碘·固</div></div>
       </div>
       <div class="section-label" style="margin-bottom:8px;">金屬（10個）</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Na</div><div style="font-size:11px;color:#9A6B2E;">鈉</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">K</div><div style="font-size:11px;color:#9A6B2E;">鉀</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Mg</div><div style="font-size:11px;color:#9A6B2E;">鎂</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Al</div><div style="font-size:11px;color:#9A6B2E;">鋁</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Fe</div><div style="font-size:11px;color:#9A6B2E;">鐵</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cu</div><div style="font-size:11px;color:#9A6B2E;">銅</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ag</div><div style="font-size:11px;color:#9A6B2E;">銀</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Au</div><div style="font-size:11px;color:#9A6B2E;">金</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Hg</div><div style="font-size:11px;color:#9A6B2E;">汞·液</div></div>
-        <div style="background:#F7EFDD;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ca</div><div style="font-size:11px;color:#9A6B2E;">鈣</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Na</div><div style="font-size:11px;color:#704484;">鈉</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">K</div><div style="font-size:11px;color:#704484;">鉀</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Mg</div><div style="font-size:11px;color:#704484;">鎂</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Al</div><div style="font-size:11px;color:#704484;">鋁</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Fe</div><div style="font-size:11px;color:#704484;">鐵</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cu</div><div style="font-size:11px;color:#704484;">銅</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ag</div><div style="font-size:11px;color:#704484;">銀</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Au</div><div style="font-size:11px;color:#704484;">金</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Hg</div><div style="font-size:11px;color:#704484;">汞·液</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ca</div><div style="font-size:11px;color:#704484;">鈣</div></div>
       </div>
     </div>
     <div class="rbox">
@@ -500,7 +500,7 @@ input[type=number] { width: 110px; }
   <div class="sec">
     <h3>混合 vs 化合：一個故事</h3>
     <div class="grid2">
-      <div class="card" style="border-top:3px solid #9A6B2E;">
+      <div class="card" style="border-top:3px solid #704484;">
         <h4>混合（物理變化）</h4>
         <p>把氫氣和氧氣裝進同一個罐子，<strong>未達燃點</strong>。<br><br>罐子裡是氫、氧的混合物，保有各自的性質。<br>可以用物理方法（冷卻液化等）分開。</p>
       </div>
@@ -559,7 +559,7 @@ input[type=number] { width: 110px; }
         <span id="r-elb" style="font-weight:500;color:#B85A74;min-width:16px;">O</span>
         <span id="r-result" style="font-size:15px;font-weight:500;color:#B85A74;">—</span>
       </div>
-      <div id="r-total" style="margin-top:8px;font-size:13px;color:#4DA38E;font-weight:500;"></div>
+      <div id="r-total" style="margin-top:8px;font-size:13px;color:#4FA17A;font-weight:500;"></div>
     </div>
   </div>
 
@@ -638,7 +638,7 @@ input[type=number] { width: 110px; }
         style="margin-top:8px;padding:7px 16px;border-radius:6px;border:1px solid #CBC0E0;background:#fff;font-size:13px;cursor:pointer;color:#6E6580;">
         看答案
       </button>
-      <div style="display:none;margin-top:8px;padding:.75rem;background:#EAF2E6;border-radius:8px;font-size:13px;color:#4DA38E;line-height:1.75;">
+      <div style="display:none;margin-top:8px;padding:.75rem;background:#E6F2EC;border-radius:8px;font-size:13px;color:#4FA17A;line-height:1.75;">
         C：O = 3：8<br>
         O = 6 × (8/3) = 6 × 2.67 = <strong>16g</strong><br>
         （也可以想：3g C 配 8g O，6g C 是 3g 的 2 倍，所以 O 也是 8 × 2 = 16g）
@@ -703,7 +703,7 @@ input[type=number] { width: 110px; }
   <div class="sec">
     <h3>金屬 vs 非金屬 性質總比較</h3>
     <div class="grid2">
-      <div class="card" style="border-top:3px solid #C99A5E;">
+      <div class="card" style="border-top:3px solid #A071B6;">
         <h4>金屬</h4>
         <ul>
           <li>銀灰色（除金紅銅）</li>
@@ -714,7 +714,7 @@ input[type=number] { width: 110px; }
           <li>氧化物溶水呈鹼性</li>
         </ul>
       </div>
-      <div class="card" style="border-top:3px solid #8FC9A8;">
+      <div class="card" style="border-top:3px solid #90C8AD;">
         <h4>非金屬</h4>
         <ul>
           <li>顏色各異，無金屬光澤</li>
@@ -735,9 +735,9 @@ input[type=number] { width: 110px; }
       <div style="font-size:15px;font-weight:500;color:#19171A;line-height:2.2;">
         <span style="background:#F4E9F6;color:#8A3D52;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">K、Na</span>
         最活潑，碰到水就爆炸<br>
-        <span style="background:#F7EFDD;color:#6E4A86;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Mg、Al、Zn、Fe</span>
+        <span style="background:#ECE3F1;color:#6E4A86;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Mg、Al、Zn、Fe</span>
         遇鹽酸才冒泡<br>
-        <span style="background:#EAF2E6;color:#3E7E66;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Pb、Cu</span>
+        <span style="background:#E6F2EC;color:#3E7E5F;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Pb、Cu</span>
         最懶，不理水也不理酸
       </div>
     </div>
@@ -797,12 +797,12 @@ input[type=number] { width: 110px; }
   <div class="sec">
     <h3>週期表示意圖（點各色塊查看族群特性）</h3>
     <div class="pt-legend">
-      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#C99A5E;"></div>鹼金族（IA）</div>
-      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#9CC98A;"></div>鹼土族（IIA）</div>
+      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#A071B6;"></div>鹼金族（IA）</div>
+      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#8CC7AB;"></div>鹼土族（IIA）</div>
       <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#F4EFFB;border:1px solid #CBC0E0;"></div>過渡金屬</div>
       <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#8B86DE;"></div>鹵族（VIIA）</div>
       <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#B5536A;"></div>惰氣族（VIIIA）</div>
-      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#E6F4EF;border:1px solid #8FC9A8;"></div>其他非金屬</div>
+      <div class="pt-leg-item"><div class="pt-leg-dot" style="background:#E7F3ED;border:1px solid #90C8AD;"></div>其他非金屬</div>
     </div>
     <div class="pt-wrap" id="pt-wrap"></div>
     <div id="group-info">點上方色塊，查看各族特性。</div>
@@ -902,7 +902,7 @@ input[type=number] { width: 110px; }
           <span style="font-size:12px;color:#A89FBC;margin-left:8px;">→ 諧音：「銅錫」</span></div>
         <div><span style="font-weight:500;color:#5B57C2;">黃銅</span> = 銅（Cu）＋ 鋅（Zn）
           <span style="font-size:12px;color:#A89FBC;margin-left:8px;">→ 黃色，裡面有「鋅」</span></div>
-        <div><span style="font-weight:500;color:#9A6B2E;">K金</span> = 金（Au）＋ 銅（Cu）
+        <div><span style="font-weight:500;color:#704484;">K金</span> = 金（Au）＋ 銅（Cu）
           <span style="font-size:12px;color:#A89FBC;margin-left:8px;">→ 24K = 純金，18K = 75%金</span></div>
         <div><span style="font-weight:500;color:#6E6580;">補牙合金</span> = 銀（Ag）＋ 汞（Hg）
           <span style="font-size:12px;color:#A89FBC;margin-left:8px;">→ 近年改用樹脂（汞有毒）</span></div>
@@ -940,7 +940,7 @@ input[type=number] { width: 110px; }
 
   <div style="display:flex;gap:10px;margin-bottom:1rem;">
     <button id="check-btn" onclick="checkQuiz()" disabled
-      style="padding:9px 24px;border-radius:999px;border:1px solid #9CC98A;background:#EAF2E6;color:#4DA38E;font-size:14px;cursor:pointer;font-weight:500;">
+      style="padding:9px 24px;border-radius:999px;border:1px solid #8CC7AB;background:#E6F2EC;color:#4FA17A;font-size:14px;cursor:pointer;font-weight:500;">
       批改答案
     </button>
     <button id="retry-btn" onclick="retryQuiz()"
@@ -955,7 +955,7 @@ input[type=number] { width: 110px; }
     display:flex;justify-content:space-between;align-items:center;
     font-size:11px;color:#A89FBC;padding-bottom:80px;">
     <span>化學・第五章 · 阿蔓明道國中復習專班</span>
-    <span>V2.1.0</span>
+    <span>V2.1.3</span>
   </div>
 </div>
 
@@ -1009,7 +1009,7 @@ function showAtomInfo() {
     const e=Math.min(maxShell[i],remaining); shells.push(e); remaining-=e;
   }
   const shellStr=shells.join(', '), outerEl=shells[shells.length-1];
-  const outerMsg=outerEl===8||outerEl===2?'最外層已滿 → <strong style="color:#4DA38E;">穩定（不易反應）</strong>':
+  const outerMsg=outerEl===8||outerEl===2?'最外層已滿 → <strong style="color:#4FA17A;">穩定（不易反應）</strong>':
     outerEl<=3?`最外層電子少（${outerEl}個）→ 傾向<strong style="color:#B85A74;">失去電子</strong>，形成陽離子`:
     outerEl>=6?`最外層電子多（${outerEl}個）→ 傾向<strong style="color:#5B57C2;">得到電子</strong>，形成陰離子`:
     `最外層${outerEl}個電子，化學性質介於中間`;
@@ -1042,7 +1042,7 @@ function buildAtomSVG(z,shells){
     for(let ei=0;ei<count;ei++){
       const angle=(2*Math.PI*ei/count)-(Math.PI/2);
       const ex=cx+r*Math.cos(angle),ey=cy+r*Math.sin(angle);
-      svg+=`<circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="5" fill="#C99A5E" stroke="#92713F" stroke-width=".5"/>`;
+      svg+=`<circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="5" fill="#A071B6" stroke="#75478A" stroke-width=".5"/>`;
     }
   });
   svg+=`<text x="${cx}" y="152" text-anchor="middle" font-size="9" fill="#A89FBC" font-family="sans-serif">● 電子</text>`;
@@ -1056,17 +1056,17 @@ const bondData={
   ionic:{title:'離子鍵 ── 一個給、一個收，靠靜電吸在一起',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：金屬元素 ＋ 非金屬元素</strong><br>金屬原子把最外層電子「給出去」→ 變成帶正電的<strong>陽離子（＋）</strong><br>非金屬原子「接收電子」→ 變成帶負電的<strong>陰離子（−）</strong><br>正負離子靠靜電引力吸在一起，形成離子鍵。</div>
     <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;font-size:13px;background:#F4EFFB;border-radius:10px;padding:1rem;">
-      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#F7EFDD;border:2px solid #C99A5E;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#6E4A86;margin:0 auto 4px;">Na</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#B85A74;font-weight:700;">1</span></div></div>
+      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#ECE3F1;border:2px solid #A071B6;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#6E4A86;margin:0 auto 4px;">Na</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#B85A74;font-weight:700;">1</span></div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
       <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#ECEBFA;border:2px solid #6A54C0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#473F9E;margin:0 auto 4px;">Na⁺</div><div style="font-size:11px;color:#A89FBC;">2,8（失1e⁻）</div></div>
       <div style="font-size:20px;color:#5B57C2;font-weight:500;">+</div>
-      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E6F4EF;border:2px solid #8FC9A8;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#2E6E5A;margin:0 auto 4px;">Cl</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#5B57C2;font-weight:700;">7</span></div></div>
+      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E7F3ED;border:2px solid #90C8AD;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#33694F;margin:0 auto 4px;">Cl</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#5B57C2;font-weight:700;">7</span></div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
-      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#EAF2E6;border:2px solid #9CC98A;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#3E7E66;margin:0 auto 4px;">Cl⁻</div><div style="font-size:11px;color:#A89FBC;">2,8,8（得1e⁻）</div></div>
+      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E6F2EC;border:2px solid #8CC7AB;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#3E7E5F;margin:0 auto 4px;">Cl⁻</div><div style="font-size:11px;color:#A89FBC;">2,8,8（得1e⁻）</div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
       <div style="font-size:18px;font-weight:500;color:#5B57C2;">NaCl</div>
     </div>
-    <div style="background:#EAF2E6;border-radius:8px;padding:.625rem .875rem;font-size:12px;color:#3E7E66;line-height:1.6;">性質：高熔點（NaCl熔點801°C）、固態不導電、<strong>溶於水後可導電</strong>（Na⁺和Cl⁻自由移動）</div>`},
+    <div style="background:#E6F2EC;border-radius:8px;padding:.625rem .875rem;font-size:12px;color:#3E7E5F;line-height:1.6;">性質：高熔點（NaCl熔點801°C）、固態不導電、<strong>溶於水後可導電</strong>（Na⁺和Cl⁻自由移動）</div>`},
   covalent:{title:'共價鍵 ── 共用電子，誰也不虧',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：非金屬元素 ＋ 非金屬元素</strong><br>兩個原子各拿出一個（或多個）電子，形成<strong>共用電子對</strong>，兩個原子各自把共用電子計入自己的最外層。兩者都達到穩定，皆大歡喜。</div>
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">
@@ -1082,7 +1082,7 @@ const bondData={
   metallic:{title:'金屬鍵 ── 電子海，大家共用',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：純金屬</strong><br>金屬原子把最外層電子釋放出來，這些電子不屬於任何特定原子，而是在整個金屬中<strong>自由流動</strong>，形成「電子海」。帶正電的金屬離子浸在電子海中，靠靜電力維持在一起。</div>
     <div style="background:#F4EFFB;border-radius:10px;padding:1rem;margin-bottom:12px;text-align:center;">
-      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:6px;">${Array(9).fill(0).map(()=>'<div style="width:32px;height:32px;border-radius:50%;background:#F7EFDD;border:1.5px solid #C99A5E;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#6E4A86;">M⁺</div>').join('')}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:6px;">${Array(9).fill(0).map(()=>'<div style="width:32px;height:32px;border-radius:50%;background:#ECE3F1;border:1.5px solid #A071B6;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#6E4A86;">M⁺</div>').join('')}</div>
       <div style="font-size:11px;color:#A89FBC;">金屬陽離子排列成晶格，電子在縫隙間自由流動（電子海）</div>
     </div>
     <table style="width:100%;border-collapse:collapse;font-size:13px;">
@@ -1157,7 +1157,7 @@ function showEl(sym, type) {
   const e = all.find(x=>x.sym===sym);
   document.getElementById('el-detail').innerHTML =
     `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-      <div style="width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;background:${type==='metal'?'#F7EFDD':'#E6F4EF'};color:${type==='metal'?'#6E4A86':'#2E6E5A'};">${e.sym}</div>
+      <div style="width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;background:${type==='metal'?'#ECE3F1':'#E7F3ED'};color:${type==='metal'?'#6E4A86':'#33694F'};">${e.sym}</div>
       <div><div style="font-size:16px;font-weight:500;">${e.name}（${e.sym}）</div>
       <div style="font-size:12px;color:#A89FBC;">${type==='metal'?'金屬':'非金屬'}・常溫${e.state}態</div></div>
     </div>
@@ -1222,10 +1222,10 @@ const actData = {
   kna:{title:'K、Na — 最活潑，非常危險',color:'#F4E9F6',
     rows:[['新切面外觀','銀灰色，有金屬光澤'],['在水中','上浮（密度＜水）'],['與水的反應','激烈！生成氫氧化物＋氫氣，大量放熱'],['加酚酞顏色','無色→紅色（鹼性）'],['與鹽酸反應','反應太激烈，有爆炸危險！不可操作']],
     warn:'K和Na必須保存在石油中，不可接觸水或皮膚！'},
-  mgalznfe:{title:'Mg、Al、Zn、Fe — 中等活性',color:'#F7EFDD',
+  mgalznfe:{title:'Mg、Al、Zn、Fe — 中等活性',color:'#ECE3F1',
     rows:[['新切面外觀','銀灰色，有金屬光澤'],['在水中','下沉（密度＞水）'],['與水的反應','不反應'],['加酚酞顏色','仍為無色'],['與鹽酸反應','產生氣泡（生成氯化物＋氫氣）']],
     warn:'這四種金屬與鹽酸反應都冒泡，記住：金屬＋鹽酸 → 氯化物＋H₂'},
-  pbcu:{title:'Pb、Cu — 較不活潑',color:'#EAF2E6',
+  pbcu:{title:'Pb、Cu — 較不活潑',color:'#E6F2EC',
     rows:[['Pb新切面','銀灰色，有金屬光澤'],['Cu新切面','紅銅色，有金屬光澤'],['在水中','下沉'],['與水的反應','不反應'],['與鹽酸反應','不反應（—）']],
     warn:'Pb和Cu化性最不活潑，連鹽酸也不理。'}
 };
@@ -1301,8 +1301,8 @@ const elemDetails = {
     完全燃燒 → 淡藍色火焰<br>
     不完全燃燒 → 黃色火焰＋黑煙＋有毒一氧化碳（CO）</div>
     </div>`},
-  Si: {color:'#E6F4EF',tc:'#2E6E5A',
-    html:`<div class="card" style="border-left:4px solid #8FC9A8;">
+  Si: {color:'#E7F3ED',tc:'#33694F',
+    html:`<div class="card" style="border-left:4px solid #90C8AD;">
     <h4>矽 Si ── 科技的基石</h4>
     <ul>
       <li>矽石、砂石、石英、水晶的主成分均為矽</li>
@@ -1311,8 +1311,8 @@ const elemDetails = {
       <li>玻璃和水泥多以矽的化合物製成</li>
     </ul>
     </div>`},
-  S: {color:'#F7EFDD',tc:'#6E4A86',
-    html:`<div class="card" style="border-left:4px solid #C99A5E;">
+  S: {color:'#ECE3F1',tc:'#6E4A86',
+    html:`<div class="card" style="border-left:4px solid #A071B6;">
     <h4>硫 S ── 黃色固體</h4>
     <ul>
       <li>常溫下是<strong>黃色固體</strong></li>
@@ -1352,8 +1352,8 @@ const elemDetails = {
       <li><strong>黃銅</strong> = Cu ＋ Zn（鋅）的合金</li>
     </ul>
     </div>`},
-  Hg: {color:'#E6F4EF',tc:'#2E6E5A',
-    html:`<div class="card" style="border-left:4px solid #8FC9A8;">
+  Hg: {color:'#E7F3ED',tc:'#33694F',
+    html:`<div class="card" style="border-left:4px solid #90C8AD;">
     <h4>汞 Hg（水銀）── 唯一液態金屬</h4>
     <ul>
       <li>熔點 −38.9°C，沸點 357°C，常溫下是<strong>唯一液態金屬</strong></li>
@@ -1373,8 +1373,8 @@ const elemDetails = {
       <li><strong>碘化銀（AgI）</strong>可用來人工造雨</li>
     </ul>
     </div>`},
-  Au: {color:'#F7EFDD',tc:'#6E4A86',
-    html:`<div class="card" style="border-left:4px solid #C99A5E;">
+  Au: {color:'#ECE3F1',tc:'#6E4A86',
+    html:`<div class="card" style="border-left:4px solid #A071B6;">
     <h4>金 Au ── 延展冠軍</h4>
     <ul>
       <li><strong>延展性最佳</strong>的金屬（可打成極薄的金箔）</li>
@@ -1454,13 +1454,13 @@ function checkQuiz() {
     if(isOk)correct++;
     const exp=document.getElementById('qe'+i);
     exp.style.display='block';
-    exp.style.background=isOk?'#EAF2E6':'#F4E9F6';
-    exp.style.color=isOk?'#3E7E66':'#8A3D52';
+    exp.style.background=isOk?'#E6F2EC':'#F4E9F6';
+    exp.style.color=isOk?'#3E7E5F':'#8A3D52';
     exp.innerHTML=(isOk?'✓ 答對！':'✗ 答錯，正確答案：'+('ABCD'[q.ans]))+'<br>'+q.ex;
   });
   const pct=Math.round(correct/qData.length*100);
-  const color=pct>=80?'#3E7E66':pct>=60?'#9A6B2E':'#B85A74';
-  const bg=pct>=80?'#EAF2E6':pct>=60?'#F7EFDD':'#F4E9F6';
+  const color=pct>=80?'#3E7E5F':pct>=60?'#704484':'#B85A74';
+  const bg=pct>=80?'#E6F2EC':pct>=60?'#ECE3F1':'#F4E9F6';
   document.getElementById('quiz-score').innerHTML=
     `<div style="background:${bg};border-radius:12px;padding:1rem;margin-bottom:1rem;">
       <div style="font-size:20px;font-weight:500;color:${color};">${correct} / ${qData.length} 題正確（${pct}%）</div>

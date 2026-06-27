@@ -2,7 +2,7 @@
   <img src="favicon/app-512.png" width="120" alt="Dora Study"/>
   <h1>阿蔓明道國中復習專班</h1>
   <p>明道國中 · 數學・物理・化學 複習教材</p>
-  <p><strong>V2.1.0</strong></p>
+  <p><strong>V2.1.3</strong></p>
 </div>
 
 ---
@@ -14,6 +14,10 @@
 ---
 
 ## 版本歷程
+
+### V2.1.3 — 2026.06 — 程式內雙 logo
+- 首頁 hero 加入 Dora Study app logo、footer 加 SELA 製作者署名（雙軌歸屬入站內）
+- 補上 V2.1.0 換色漏網的 sticky 頂欄/底欄 rgba 舊色 → 薰衣草
 
 ### V2.1.0 — 2026.06 — Dora Study app logo + PWA + 薰衣草配色
 - 整合 Dora Study app logo（從 Gemini 生圖抽出、轉多尺寸套組，取代 SELA favicon 為主視覺）
@@ -35,7 +39,7 @@
 
 ## 部署到 GitHub Pages
 
-用 Git Pusher 匯入 `StudyBase V2.1.0.zip` → 推 main，然後 Settings → Pages → Source: main → `/(root)`。約 1-2 分鐘上線。PWA 在 HTTPS 的 Pages 上才會出現「加入主畫面 / 安裝」。
+用 Git Pusher 匯入 `StudyBase V2.1.3.zip` → 推 main，然後 Settings → Pages → Source: main → `/(root)`。約 1-2 分鐘上線。PWA 在 HTTPS 的 Pages 上才會出現「加入主畫面 / 安裝」。
 
 ---
 

@@ -16,8 +16,8 @@
   --border:#E8E1F2; --border-mid:#CBC0E0; --border-dark:#A89EC2;
   --text-1:#2A2335; --text-2:#6E6580; --text-3:#A89FBC;
   --c1:#5B57C2; --c1l:#ECEBFA;
-  --c2:#4DA38E; --c2l:#E6F4EF;
-  --c3:#B98A3E; --c3l:#F7EFDD;
+  --c2:#4FA17A; --c2l:#E7F3ED;
+  --c3:#8A54A3; --c3l:#ECE3F1;
   --c4:#7A569E; --c4l:#F0E9F8;
   --c5:#A368B0; --c5l:#F4E9F6;
   --c6:#5E83C0; --c6l:#E9EFFA;
@@ -34,7 +34,7 @@ body{
 /* ── TOPBAR ── */
 .topbar{
   height:52px; position:sticky; top:0; z-index:100;
-  background:rgba(244,242,237,.94); backdrop-filter:blur(12px);
+  background:rgba(246,243,252,.94); backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   display:flex; align-items:center; padding:0 20px; gap:10px;
 }
@@ -141,7 +141,7 @@ strong{font-weight:500; color:var(--text-1);}
 .b4{background:var(--c4l);color:var(--c4);border-color:var(--c4);}
 .b5{background:var(--c5l);color:var(--c5);border-color:var(--c5);}
 .b6{background:var(--c6l);color:var(--c6);border-color:var(--c6);}
-.bdone{background:#E6F4EF;color:#4DA38E;border-color:#8FC9A8;}
+.bdone{background:#E7F3ED;color:#4FA17A;border-color:#90C8AD;}
 .btodo{background:#EFEAF7;color:#A89FBC;border-color:#CBC0E0;}
 
 /* ── TWO-COL GRID ── */
@@ -276,11 +276,11 @@ strong{font-weight:500; color:var(--text-1);}
 .qopt{padding:9px 12px; border:1px solid var(--border); border-radius:var(--r-s); background:var(--surface); margin-bottom:5px; font-size:13px; cursor:pointer; display:flex; gap:8px; color:var(--text-2);}
 .qopt:hover{background:var(--surface2); border-color:var(--border-mid);}
 .qopt.sel{border-color:var(--c); background:var(--cl); color:var(--text-1);}
-.qopt.ok{background:#E6F4EF; border-color:#8FC9A8; color:#4DA38E;}
+.qopt.ok{background:#E7F3ED; border-color:#90C8AD; color:#4FA17A;}
 .qopt.no{background:#F4E9F6; border-color:#C99AC0; color:#A368B0;}
 .qlabel{font-weight:500; width:16px; flex-shrink:0; color:var(--text-3);}
 .qexp{display:none; margin-top:8px; padding:10px 12px; border-radius:var(--r-s); font-size:12px; line-height:1.65;}
-.qexp.ok{background:#E6F4EF; color:#4DA38E;}
+.qexp.ok{background:#E7F3ED; color:#4FA17A;}
 .qexp.no{background:#F4E9F6; color:#A368B0;}
 .quiz-score{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px; margin-bottom:12px; text-align:center;}
 .quiz-score-n{font-size:26px; font-weight:300; color:var(--text-1);}
@@ -292,13 +292,13 @@ strong{font-weight:500; color:var(--text-1);}
 .qbtn.primary{background:var(--c); color:#fff; border-color:var(--c);}
 
 /* ── SUMMARY ── */
-.summary{background:#E6F4EF; border:1px solid #8FC9A8; border-radius:var(--r); padding:14px 16px; margin-top:24px;}
-.summary h4{font-size:12px; font-weight:500; color:#4DA38E; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;}
-.summary li{font-size:13px; color:#4DA38E; line-height:1.75; list-style:none; padding-left:18px; position:relative;}
+.summary{background:#E7F3ED; border:1px solid #90C8AD; border-radius:var(--r); padding:14px 16px; margin-top:24px;}
+.summary h4{font-size:12px; font-weight:500; color:#4FA17A; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px;}
+.summary li{font-size:13px; color:#4FA17A; line-height:1.75; list-style:none; padding-left:18px; position:relative;}
 .summary li::before{content:"✓"; position:absolute; left:0; font-weight:500;}
 
 /* ── BOTTOM NAV ── */
-.bnav{position:fixed; bottom:0; left:0; right:0; background:rgba(244,242,237,.94); backdrop-filter:blur(12px); border-top:1px solid var(--border); padding:10px 20px; padding-bottom:max(10px,env(safe-area-inset-bottom)); display:flex; gap:8px; z-index:99;}
+.bnav{position:fixed; bottom:0; left:0; right:0; background:rgba(246,243,252,.94); backdrop-filter:blur(12px); border-top:1px solid var(--border); padding:10px 20px; padding-bottom:max(10px,env(safe-area-inset-bottom)); display:flex; gap:8px; z-index:99;}
 .bnav-btn{flex:1; padding:10px; border:1px solid var(--border-mid); border-radius:var(--r); background:var(--surface2); color:var(--text-1); font-size:13px; font-weight:500; cursor:pointer;}
 .bnav-btn:hover{background:var(--surface);}
 .bnav-btn.primary{background:var(--c1); color:#fff; border-color:var(--c1);}
@@ -1378,7 +1378,7 @@ strong{font-weight:500; color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第六章 原子與分子 · 阿蔓明道國中復習專班</span>
-    <span>V2.1.0</span>
+    <span>V2.1.3</span>
   </div>
 </div>
 
@@ -1674,7 +1674,7 @@ function drawP(){
   const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;
   ctx.clearRect(0,0,W,H);
   ctx.fillStyle='#F1ECFA';ctx.fillRect(0,0,W,H);
-  const col=sMode==='solid'?'#9282D1':sMode==='liquid'?'#90849F':'#C7A97B';
+  const col=sMode==='solid'?'#9282D1':sMode==='liquid'?'#90849F':'#AC83BF';
   particles.forEach(p=>{
     if(sMode==='solid'){
       p.x=p.ox+Math.sin(Date.now()/300+p.ox)*1.2;

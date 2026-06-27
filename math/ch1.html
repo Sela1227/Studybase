@@ -17,7 +17,7 @@
   --r:4px; --r-s:2px;
   /* 四大節 accent */
   --c1:#5B57C2; --c1l:#ECEBFA;   /* 相似的意義：板岩藍 */
-  --c2:#4DA38E; --c2l:#E6F4EF;   /* 三角形判別：森林綠 */
+  --c2:#4FA17A; --c2l:#E7F3ED;   /* 三角形判別：森林綠 */
   --c3:#A368B0; --c3l:#F4E9F6;   /* 平行與相似：赤陶土（核心）*/
   --c4:#5E83C0; --c4l:#E9EFFA;   /* 複習大考：北歐藍綠 */
   --c:var(--c1);  --cl:var(--c1l);
@@ -34,7 +34,7 @@ body{
 /* TOPBAR */
 .topbar{
   height:52px; position:sticky; top:0; z-index:100;
-  background:rgba(244,242,237,.94); backdrop-filter:blur(12px);
+  background:rgba(246,243,252,.94); backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   display:flex; align-items:center; gap:8px; padding:0 16px;
 }
@@ -91,8 +91,8 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
 .extra .hi-t{font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); display:block; margin-bottom:5px;}
 .eq{background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
   font-family:Georgia,"Times New Roman",serif; font-size:15px; text-align:center; padding:12px 16px; margin:14px 0;}
-.summary{background:#E6F4EF; border:1px solid #8FC9A8; border-radius:6px; padding:14px 16px; margin:20px 0 8px; font-size:14px;}
-.summary .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; color:#4DA38E; display:block; margin-bottom:6px;}
+.summary{background:#E7F3ED; border:1px solid #90C8AD; border-radius:6px; padding:14px 16px; margin:20px 0 8px; font-size:14px;}
+.summary .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; color:#4FA17A; display:block; margin-bottom:6px;}
 .summary ul{margin:0; padding-left:18px;}
 .summary li{margin-bottom:4px;}
 .tbl{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.5px;}
@@ -122,13 +122,13 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
   padding:9px 12px; margin-bottom:6px; cursor:pointer; font-size:13.5px; background:var(--surface);}
 .qopt:active{background:var(--surface2);}
 .qopt.sel{border-color:var(--c); background:var(--cl);}
-.qopt.ok{border-color:#4DA38E; background:#E6F4EF;}
+.qopt.ok{border-color:#4FA17A; background:#E7F3ED;}
 .qopt.no{border-color:#C56B86; background:#FBEDF1;}
 .qlabel{font-weight:600; color:var(--text-2); flex:0 0 auto;}
 .qexp{margin-top:8px; padding:10px 12px; border-radius:var(--r); font-size:13px; display:none;}
 .qexp.show{display:block;}
-.qexp.ok{background:#E6F4EF; border:1px solid #8FC9A8;}
-.qexp.no{background:#FBEDF1; border:1px solid #D1B994;}
+.qexp.ok{background:#E7F3ED; border:1px solid #90C8AD;}
+.qexp.no{background:#FBEDF1; border:1px solid #BB9ACB;}
 .quiz-bar{display:flex; gap:8px; margin:14px 0 4px;}
 .quiz-bar button{flex:1; border:1px solid var(--c); background:var(--c); color:#fff; cursor:pointer;
   font-family:inherit; font-size:14px; font-weight:500; padding:11px; border-radius:var(--r); min-height:44px;}
@@ -138,7 +138,7 @@ h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
 
 /* BOTTOM NAV */
 .bnav{position:fixed; bottom:0; left:0; right:0; z-index:90;
-  background:rgba(244,242,237,.96); backdrop-filter:blur(12px); border-top:1px solid var(--border);
+  background:rgba(246,243,252,.96); backdrop-filter:blur(12px); border-top:1px solid var(--border);
   display:flex; gap:10px; padding:12px 20px; max-width:640px; margin:0 auto;}
 .bnav button{flex:1; border:1px solid var(--border); background:var(--surface); cursor:pointer;
   font-family:inherit; font-size:14px; font-weight:500; color:var(--text-1); padding:12px; border-radius:var(--r); min-height:44px;}
@@ -690,7 +690,7 @@ svg .lbl{font-family:inherit; font-weight:500;}
 <!-- FOOTER -->
 <div class="page-footer">
   <span>數學 · 阿蔓明道國中復習專班</span>
-  <span>V2.1.0</span>
+  <span>V2.1.3</span>
 </div>
 
 <script>

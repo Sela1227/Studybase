@@ -19,19 +19,19 @@
   --text-2: #6E6580;   /* secondary */
   --text-3: #A89FBC;   /* muted/placeholder */
 
-  /* ── Subject accents (natural materials) ── */
-  --math:        #5B57C2;  /* slate blue (like deep sea) */
+  /* ── Subject accents (lavender spectrum) ── */
+  --math:        #5B57C2;  /* periwinkle violet */
   --math-light:  #ECEBFA;
-  --phys:        #4DA38E;  /* forest green */
-  --phys-light:  #E6F4EF;
-  --chem:        #A368B0;  /* warm earth/terracotta */
+  --phys:        #6E8BD4;  /* cornflower blue */
+  --phys-light:  #E9EEFB;
+  --chem:        #A368B0;  /* orchid */
   --chem-light:  #F4E9F6;
 
   /* ── Status ── */
-  --done:     #4DA38E;
-  --done-bg:  #E6F4EF;
-  --wip:      #B98A3E;
-  --wip-bg:   #F7EFDD;
+  --done:     #5FB89A;
+  --done-bg:  #E7F5EF;
+  --wip:      #9E7BB5;
+  --wip-bg:   #F1EAF8;
   --todo:     #A89FBC;
   --todo-bg:  #EFEAF7;
 
@@ -65,7 +65,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 /* ── Sticky top bar (back nav) ── */
 .topbar {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(244, 242, 237, 0.94);
+  background: rgba(246, 243, 252, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 0 20px;
@@ -101,6 +101,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .hero-sub {
   font-size: 14px; color: var(--text-2); letter-spacing: .02em;
+}
+.hero-logo {
+  width: 72px; height: 72px; display: block; margin: 0 0 16px;
 }
 
 /* ── Page header (subject pages) ── */
@@ -237,3 +240,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .footer-left  { font-size: 11px; color: var(--text-3); }
 .footer-right { font-size: 11px; color: var(--text-3); }
+.site-credit {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin-top: 16px; font-size: 11px; color: var(--text-3); letter-spacing: .02em;
+}
+.site-credit img { width: 15px; height: 15px; border-radius: 3px; }

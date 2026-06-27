@@ -17,13 +17,13 @@
   --text-1:#2A2335; --text-2:#6E6580; --text-3:#A89FBC;
   --c1:#5E83C0; --c1l:#E9EFFA;
   --c2:#9A6BA6; --c2l:#F3E9F4;
-  --c3:#4DA38E; --c3l:#E6F4EF;
-  --c4:#4DA38E; --c4l:#E6F4EF;
+  --c3:#4FA17A; --c3l:#E7F3ED;
+  --c4:#4FA17A; --c4l:#E7F3ED;
   --r:4px; --r-s:2px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);font-size:15px;line-height:1.7;}
-.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(244,242,237,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:10px;}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:10px;}
 .topbar-back{font-size:13px;color:var(--text-2);min-height:44px;display:flex;align-items:center;gap:4px;text-decoration:none;white-space:nowrap;}
 .topbar-back:hover{color:var(--text-1);}
 .topbar-sep{color:var(--border-mid);font-size:13px;}
@@ -83,7 +83,7 @@ strong{font-weight:500;color:var(--text-1);}
 .b2{background:var(--c2l);color:var(--c2);border-color:var(--c2);}
 .b3{background:var(--c3l);color:var(--c3);border-color:var(--c3);}
 .b4{background:var(--c4l);color:var(--c4);border-color:var(--c4);}
-.bdone{background:#E6F4EF;color:#4DA38E;border-color:#8FC9A8;}
+.bdone{background:#E7F3ED;color:#4FA17A;border-color:#90C8AD;}
 .btodo{background:#EFEAF7;color:#A89FBC;border-color:#CBC0E0;}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
 @media(max-width:440px){.g2{grid-template-columns:1fr;}}
@@ -108,7 +108,7 @@ strong{font-weight:500;color:var(--text-1);}
 .bal-op{color:var(--text-3);font-family:sans-serif;font-size:12px;}
 .bal-arrow{color:var(--border-mid);font-size:16px;flex-shrink:0;}
 .bal-fb{padding:10px 12px;border-radius:var(--r-s);font-size:13px;margin-top:8px;display:none;}
-.bal-fb.ok{background:#E6F4EF;color:#4DA38E;}
+.bal-fb.ok{background:#E7F3ED;color:#4FA17A;}
 .bal-fb.no{background:#F4E9F6;color:#A368B0;}
 .bal-info{font-size:11px;color:var(--text-3);margin-bottom:8px;letter-spacing:.04em;}
 /* Interactive inputs */
@@ -139,11 +139,11 @@ strong{font-weight:500;color:var(--text-1);}
 .qopt{padding:9px 12px;border:1px solid var(--border);border-radius:var(--r-s);background:var(--surface);margin-bottom:5px;font-size:13px;cursor:pointer;display:flex;gap:8px;color:var(--text-2);}
 .qopt:hover{background:var(--surface2);border-color:var(--border-mid);}
 .qopt.sel{border-color:var(--c);background:var(--cl);color:var(--text-1);}
-.qopt.ok{background:#E6F4EF;border-color:#8FC9A8;color:#4DA38E;}
+.qopt.ok{background:#E7F3ED;border-color:#90C8AD;color:#4FA17A;}
 .qopt.no{background:#F4E9F6;border-color:#C99AC0;color:#A368B0;}
 .qlabel{font-weight:500;width:16px;flex-shrink:0;color:var(--text-3);}
 .qexp{display:none;margin-top:8px;padding:10px 12px;border-radius:var(--r-s);font-size:12px;line-height:1.65;}
-.qexp.ok{background:#E6F4EF;color:#4DA38E;}
+.qexp.ok{background:#E7F3ED;color:#4FA17A;}
 .qexp.no{background:#F4E9F6;color:#A368B0;}
 .quiz-score{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px;text-align:center;}
 .quiz-score-n{font-size:26px;font-weight:300;color:var(--text-1);}
@@ -154,12 +154,12 @@ strong{font-weight:500;color:var(--text-1);}
 .qbtn:disabled{opacity:.4;cursor:not-allowed;}
 .qbtn.primary{background:var(--c);color:#fff;border-color:var(--c);}
 /* Summary */
-.summary{background:#E6F4EF;border:1px solid #8FC9A8;border-radius:var(--r);padding:14px 16px;margin-top:24px;}
-.summary h4{font-size:12px;font-weight:500;color:#4DA38E;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
-.summary li{font-size:13px;color:#4DA38E;line-height:1.75;list-style:none;padding-left:18px;position:relative;}
+.summary{background:#E7F3ED;border:1px solid #90C8AD;border-radius:var(--r);padding:14px 16px;margin-top:24px;}
+.summary h4{font-size:12px;font-weight:500;color:#4FA17A;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+.summary li{font-size:13px;color:#4FA17A;line-height:1.75;list-style:none;padding-left:18px;position:relative;}
 .summary li::before{content:"✓";position:absolute;left:0;font-weight:500;}
 /* Bottom nav */
-.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(244,242,237,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;padding-bottom:max(10px,env(safe-area-inset-bottom));display:flex;gap:8px;z-index:99;}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;padding-bottom:max(10px,env(safe-area-inset-bottom));display:flex;gap:8px;z-index:99;}
 .bnav-btn{flex:1;padding:10px;border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);color:var(--text-1);font-size:13px;font-weight:500;cursor:pointer;}
 .bnav-btn:hover{background:var(--surface);}
 .bnav-btn.primary{background:var(--c1);color:#fff;border-color:var(--c1);}
@@ -811,7 +811,7 @@ strong{font-weight:500;color:var(--text-1);}
       <thead><tr><th>化合物</th><th>化學式</th><th>含元素</th><th>加入 AgNO₃ 後</th></tr></thead>
       <tbody>
         <tr><td>氯化鈉 / 氯化鉀</td><td>NaCl / KCl</td><td>Cl</td><td><span class="badge btodo">白色</span> AgCl↓ 沉澱</td></tr>
-        <tr><td>溴化鈉 / 溴化鉀</td><td>NaBr / KBr</td><td>Br</td><td><span class="badge" style="background:#F8F3ED;color:#6F5630;border-color:#C9A86A;font-size:11px">淡黃色</span> AgBr↓ 沉澱</td></tr>
+        <tr><td>溴化鈉 / 溴化鉀</td><td>NaBr / KBr</td><td>Br</td><td><span class="badge" style="background:#F4EEF6;color:#593669;border-color:#A579BA;font-size:11px">淡黃色</span> AgBr↓ 沉澱</td></tr>
         <tr><td>碘化鈉 / 碘化鉀</td><td>NaI / KI</td><td>I</td><td><span class="badge b3">黃色</span> AgI↓ 沉澱</td></tr>
       </tbody>
     </table>
@@ -930,7 +930,7 @@ strong{font-weight:500;color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第七章 化學反應 · 阿蔓明道國中復習專班</span>
-    <span>V2.1.0</span>
+    <span>V2.1.3</span>
   </div>
 </div>
 
@@ -1050,7 +1050,7 @@ function checkBal(){
   if(ok){
     fb.className='bal-fb ok';
     fb.innerHTML=`✓ 正確！答案：${p.a.join(' — ')}。${p.hint}`;
-    document.querySelectorAll('#bal-container .bal-coef').forEach((e,i)=>{e.style.borderColor='#8FC9A8';e.value=p.a[i];});
+    document.querySelectorAll('#bal-container .bal-coef').forEach((e,i)=>{e.style.borderColor='#90C8AD';e.value=p.a[i];});
   } else {
     fb.className='bal-fb no';
     fb.innerHTML=`再試試。提示：${p.hint}`;

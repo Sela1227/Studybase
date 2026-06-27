@@ -19,8 +19,8 @@
 
 ## 〇、當前狀態
 
-- **版本：** V2.1.0
-- **狀態：** Dora Study app logo 整合 + 全站 PWA + 薰衣草紫配色
+- **版本：** V2.1.3
+- **狀態：** 程式內雙 logo 入站（hero + footer 署名）
 - **一句話定位：** 給明道國中學生阿蔓的數理化複習網站（品牌 Dora Study），純靜態、PWA 可安裝、GitHub Pages 託管
 - **英文程式名：** StudyBase（檔名/資料夾）；品牌 wordmark：Dora Study；中文俗稱：阿蔓明道國中復習專班
 - **技術棧：** 純 HTML + CSS + 原生 JS + Service Worker（無框架、無 build step）
@@ -113,7 +113,9 @@ grep -rn "V2.1.0" StudyBase --include=*.html | wc -l
 | V1.7 | 化學第七章加入 |
 | V1.8 | 數學第一章 相似形整合 |
 | V2.0.0 | 對齊 SELA-Kit + 英文化 StudyBase + favicon/品牌（大升級里程碑）|
-| **V2.1.0** | **Dora Study app logo + 全站 PWA + 薰衣草紫配色** |
+| V2.1.0 | Dora Study app logo + 全站 PWA + 薰衣草紫配色 |
+| V2.1.1 | 程式內雙 logo + 補 rgba 換色漏網 |
+| **V2.1.3** | **配色精修：物理去綠改矢車菊藍、內頁 tan/棕→藕紫、綠→薄荷、標頭和諧** |
 
 ---
 
