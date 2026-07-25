@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#634A83">
 <title>第2章 平方根與畢氏定理 — 阿蔓明道國中復習專班</title>
 <style>
-:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#6E6580;--text-3:#A89FBC;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#4DA38E;--mint-l:#E6F4EF;--rose:#C56B86;--rose-l:#FBEDF1;--r:4px;}
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
 .topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
@@ -85,7 +85,8 @@ sup{font-size:.72em}
 .bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 .bnav button:disabled{opacity:.4;cursor:default}
 .page-footer{display:flex;justify-content:space-between;font-size:11px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
-@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans{display:block!important}body{background:#fff}}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.repr,.eg,.mcq,.prob,.errlog,.hi,.note{break-inside:avoid}body{background:#fff}}
+.stab,.lpill,.opt,.prob .toggle,.gate .btn,.bnav button{min-height:44px}.lpill,.prob .toggle{display:inline-flex;align-items:center}.opt.ok::before{content:"\2713 ";font-weight:700}.opt.no::before{content:"\2715 ";font-weight:700}.poscard .meta span,.errlog .leg,.errlog .hint,.page-footer,.repr-item .cap{font-size:12px}.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}.gate .pass a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -100,14 +101,14 @@ sup{font-size:.72em}
     <div class="meta"><span>前置：第1章（平方的概念）</span><span>畢氏會用到平方根，故排在根式之後</span><span>預計 40 分／節</span></div>
   </div>
 
-  <div class="stabs">
+  <div class="stabs" role="tablist">
     <button class="stab on" data-s="0">2-1 平方根與近似值</button>
     <button class="stab" data-s="1">2-2 根式的運算</button>
     <button class="stab" data-s="2">2-3 畢氏定理</button>
   </div>
 
   <!-- ══════ 2-1 平方根與近似值 ══════ -->
-  <div class="sec on" data-s="0">
+  <div class="sec on" data-s="0" role="tabpanel">
     <div class="lpills">
       <button class="lpill on" data-s="0" data-l="0">平方根的意義</button>
       <button class="lpill" data-s="0" data-l="1">完全平方數與估算</button>
@@ -158,12 +159,12 @@ sup{font-size:.72em}
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">分不清 √ 和「平方根」多半屬 A（觀念）。</div></div>
-      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">過了。接著 2-2 根式的運算。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">過了。接著 2-2 根式的運算。</div></div>
     </section>
   </div>
 
   <!-- ══════ 2-2 根式的運算 ══════ -->
-  <div class="sec" data-s="1">
+  <div class="sec" data-s="1" role="tabpanel">
     <div class="lpills">
       <button class="lpill on" data-s="1" data-l="0">根號化簡</button>
       <button class="lpill" data-s="1" data-l="1">加減乘除</button>
@@ -229,12 +230,12 @@ sup{font-size:.72em}
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">化簡沒找最大完全平方因數多屬 B；不知道同類方根才能加屬 A。</div></div>
-      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">過了。接著 2-3 畢氏定理，會用到這裡的開根號。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">過了。接著 2-3 畢氏定理，會用到這裡的開根號。</div></div>
     </section>
   </div>
 
   <!-- ══════ 2-3 畢氏定理 ══════ -->
-  <div class="sec" data-s="2">
+  <div class="sec" data-s="2" role="tabpanel">
     <div class="lpills">
       <button class="lpill on" data-s="2" data-l="0">畢氏定理</button>
       <button class="lpill" data-s="2" data-l="1">求邊長</button>
@@ -308,11 +309,11 @@ sup{font-size:.72em}
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">斜邊擺錯、求股用加多屬 A/C；開根號算錯屬 B。</div></div>
-      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">第2章走完了。下一章是第3章 因式分解，會反過來用第1章的乘法公式。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第2章走完了。<a href="index.html">回數學首頁 →</a></div></div>
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.1.6</span></div>
+  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.1.7</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
@@ -327,13 +328,13 @@ document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('clic
 function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
 function total(){return SL.reduce(function(a,b){return a+b;},0);}
 function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
-function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='最後一課';nb.disabled=true;}else{nb.textContent='下一課 →';nb.disabled=false;}}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
 document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
-document.getElementById('nextBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
-document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),answered=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(answered)return;answered=true;opts[ai].classList.add('ok');if(i!==ai)o.classList.add('no');exp.classList.add('show');updateGate(m);});});});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;}else{o.classList.add('no');}updateGate(m);});});});
 document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
 document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
-function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),done=0,wrong=false;mcqs.forEach(function(m){if(m.querySelector('.opt.ok'))done++;if(m.querySelector('.opt.no'))wrong=true;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2');var mcqPass=(done===mcqs.length&&!wrong&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
 </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* StudyBase PWA service worker */
-const CACHE = 'studybase-v2.1.6';
+const CACHE = 'studybase-v2.1.7';
 const CORE = [
   './', './index.html', './css/main.css',
   './chemistry/index.html', './math/index.html', './physics/index.html',
