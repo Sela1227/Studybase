@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>第2章 平方根與畢氏定理 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#6E6580;--text-3:#A89FBC;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#4DA38E;--mint-l:#E6F4EF;--rose:#C56B86;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:11px;color:var(--text-3);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:3px 8px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:10px 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:7px 13px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.repr{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:16px 0}
+.repr-item{padding:16px 18px;border-top:1px solid var(--border)}.repr-item:first-child{border-top:none}
+.repr-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);background:var(--accent-l);border-radius:2px;padding:2px 8px;margin-bottom:10px}
+.repr-item svg{display:block;margin:4px auto;max-width:100%}
+.repr-item .cap{font-size:13px;color:var(--text-2);text-align:center;margin-top:6px}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-3);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:18px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+sup{font-size:.72em}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-2);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:9px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1)}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint)}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:12px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:5px 10px;cursor:pointer}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2)}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-3);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:7px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-2);font-weight:500;font-size:11px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:11px;color:var(--text-3);margin-top:8px;line-height:1.7}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .btn{margin-top:12px;font-size:14px;padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:11px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans{display:block!important}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">第2章 平方根與畢氏定理</span></div>
+
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二上 · 第2章 平方根與畢氏定理</div>
+    <h1>開根號這件事，一次弄懂</h1>
+    <p>這章前半（平方根、根式）是一組新的運算工具；後半（畢氏定理）會反過來用到它——算三角形邊長時要開根號。跟第1章一樣，先把工具練穩，後面才用得動。</p>
+    <div class="meta"><span>前置：第1章（平方的概念）</span><span>畢氏會用到平方根，故排在根式之後</span><span>預計 40 分／節</span></div>
+  </div>
+
+  <div class="stabs">
+    <button class="stab on" data-s="0">2-1 平方根與近似值</button>
+    <button class="stab" data-s="1">2-2 根式的運算</button>
+    <button class="stab" data-s="2">2-3 畢氏定理</button>
+  </div>
+
+  <!-- ══════ 2-1 平方根與近似值 ══════ -->
+  <div class="sec on" data-s="0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">平方根的意義</button>
+      <button class="lpill" data-s="0" data-l="1">完全平方數與估算</button>
+      <button class="lpill" data-s="0" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">平方根 · 意義</div>
+      <h2>平方根就是「反過來問」</h2>
+      <p class="sub">平方是「一個數乘自己」；平方根是把這件事倒過來問。</p>
+      <p>3<sup>2</sup> = 9。反過來問：<b>什麼數平方會等於 9？</b> 答案有兩個：3 和 −3（因為 3<sup>2</sup>=9、(−3)<sup>2</sup>=9）。所以「9 的平方根」是 <b>±3</b>。</p>
+      <div class="hi"><span class="k">根號 √ 只取正的那一個：√9 = 3</span></div>
+      <p>一個正數有兩個平方根（一正一負），但根號 √ 這個符號<b>只代表正的那個</b>（叫算術平方根）。所以 √9 = 3，而不是 ±3。</p>
+      <div class="eg"><div class="q">例：25 的平方根是多少？√25 呢？</div>
+        <div class="step">25 的平方根 = ±5（5<sup>2</sup>=25、(−5)<sup>2</sup>=25）</div>
+        <div class="step">√25 = 5（根號只取正）</div>
+        <div class="why">「…的平方根」是兩個（±）；「√…」只有一個（正）。這兩個問法不一樣。</div></div>
+      <div class="warn"><b>最常錯：</b>把 √9 寫成 ±3。看到根號 √ 就只取正根；只有「9 的平方根」才是 ±3。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">平方根 · 估算</div>
+      <h2>不是整數的平方根，落在哪兩個整數之間</h2>
+      <p class="sub">有些數開根號剛好是整數，有些不是。不是的，就估它在哪兩個整數中間。</p>
+      <p><b>完全平方數</b>：開根號剛好是整數的數 —— 1, 4, 9, 16, 25, 36, 49, 64, 81, 100…（就是 1<sup>2</sup>~10<sup>2</sup>）。</p>
+      <div class="eg"><div class="q">例：√10 在哪兩個整數之間？</div>
+        <div class="step">因為 3<sup>2</sup>=9 &lt; 10 &lt; 16=4<sup>2</sup></div>
+        <div class="step">所以 3 &lt; √10 &lt; 4，而且比較靠近 3</div>
+        <div class="why">找出 10 夾在哪兩個完全平方數之間（9 和 16），它的根號就在對應的兩個整數（3 和 4）之間。</div></div>
+      <div class="eg"><div class="q">例：√50 在哪兩個整數之間？</div>
+        <div class="step">7<sup>2</sup>=49 &lt; 50 &lt; 64=8<sup>2</sup> → 7 &lt; √50 &lt; 8，靠近 7</div></div>
+      <div class="note">把 1~15 的平方背熟（1,4,9,16,25,36,49,64,81,100,121,144,169,196,225），估算會快很多。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>自己做一遍，錯的要分類</h2>
+      <p class="sub">先自己算，再對解答。做錯的填最下面的表格。</p>
+      <div class="qsec"><h3>觀念辨識</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. √16 = ?</div><button class="opt">±4</button><button class="opt">4</button><button class="opt">8</button><div class="exp">根號只取正根，√16 = 4。（16 的平方根才是 ±4）</div></div>
+        <div class="mcq" data-a="2"><div class="qt">2. 「49 的平方根」是？</div><button class="opt">7</button><button class="opt">√7</button><button class="opt">±7</button><div class="exp">一個正數有兩個平方根，一正一負：±7。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. √20 在哪兩個整數之間？</div><button class="opt">4 和 5</button><button class="opt">2 和 3</button><button class="opt">5 和 6</button><div class="exp">16 &lt; 20 &lt; 25，即 4<sup>2</sup>&lt;20&lt;5<sup>2</sup>，所以在 4 和 5 之間。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① √81 = ?　② 100 的平方根 = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">① √81 = 9　② 100 的平方根 = ±10</div><div class="why">注意兩種問法的差別。</div></div></div>
+        <div class="prob"><div class="pq">③ √30 在哪兩個整數之間？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">25 &lt; 30 &lt; 36 → 5 和 6 之間</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">分不清 √ 和「平方根」多半屬 A（觀念）。</div></div>
+      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">過了。接著 2-2 根式的運算。</div></div>
+    </section>
+  </div>
+
+  <!-- ══════ 2-2 根式的運算 ══════ -->
+  <div class="sec" data-s="1">
+    <div class="lpills">
+      <button class="lpill on" data-s="1" data-l="0">根號化簡</button>
+      <button class="lpill" data-s="1" data-l="1">加減乘除</button>
+      <button class="lpill" data-s="1" data-l="2">分母有理化</button>
+      <button class="lpill" data-s="1" data-l="3">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="1" data-l="0">
+      <div class="plabel2">根式 · 化簡</div>
+      <h2>把藏在根號裡的完全平方「開出來」</h2>
+      <p class="sub">根號裡如果有完全平方數的因數（4、9、16…），可以把它開出來放到根號外。</p>
+      <div class="hi"><span class="k">√(a<sup>2</sup>b) = a√b　(a ≥ 0)</span></div>
+      <div class="eg"><div class="q">例：化簡 √12</div>
+        <div class="step">√12 = √(4 × 3) = √4 × √3 = 2√3</div>
+        <div class="why">把 12 拆成「最大的完全平方因數 × 剩下的」：12 = 4 × 3，4 開出來變 2。</div></div>
+      <div class="eg"><div class="q">例：化簡 √72</div>
+        <div class="step">√72 = √(36 × 2) = 6√2</div>
+        <div class="why">36 是 72 裡最大的完全平方因數，開出來是 6。</div></div>
+      <div class="warn"><b>常見錯誤：</b>√12 拆成 √4 + √8。根號裡是「相乘」才能拆開，<b>相加不行</b>。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="1">
+      <div class="plabel2">根式 · 四則</div>
+      <h2>加減看「同不同類」，乘除直接進根號</h2>
+      <p class="sub">加減跟合併同類項一樣；乘除則可以合進同一個根號。</p>
+      <div class="repr-eq">同類方根才能加減：2√3 + 5√3 = 7√3　<small>（係數相加，√3 不變）</small></div>
+      <div class="repr-eq">乘除進根號：√a × √b = √(ab)</div>
+      <div class="eg"><div class="q">例：2√3 + 5√3 − √3</div>
+        <div class="step">= (2 + 5 − 1)√3 = 6√3</div>
+        <div class="why">根號裡都是 3，是同類方根，就像同類項一樣把係數加起來，√3 不動。</div></div>
+      <div class="eg"><div class="q">例：√2 × √8</div>
+        <div class="step">= √(2 × 8) = √16 = 4</div></div>
+      <div class="warn"><b>常見錯誤：</b>2√3 + 5√3 算成 7√6（把根號裡也加了）。根號不變，只有前面係數相加。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="2">
+      <div class="plabel2">根式 · 有理化</div>
+      <h2>分母有根號？上下同乘把它變整數</h2>
+      <p class="sub">習慣上不讓分母留根號。上下同乘那個根號，分母就變整數了。</p>
+      <div class="hi"><span class="k">1/√a = √a / a</span></div>
+      <div class="eg"><div class="q">例：把 1/√2 有理化</div>
+        <div class="step">= (1 × √2) / (√2 × √2) = √2 / 2</div>
+        <div class="why">上下同乘 √2。分母 √2×√2 = 2，就不再有根號了。</div></div>
+      <div class="eg"><div class="q">例：3/√5</div>
+        <div class="step">= 3√5 / (√5×√5) = 3√5 / 5</div></div>
+      <div class="warn"><b>提醒：</b>上下要乘「同一個」根號，值才不變（等於乘 1）。只乘分母會改變大小。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>自己做一遍，錯的要分類</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. √18 化簡後是？</div><button class="opt">9√2</button><button class="opt">3√2</button><button class="opt">2√3</button><div class="exp">18 = 9 × 2，√9=3，所以 √18 = 3√2。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">2. 3√5 + 2√5 = ?</div><button class="opt">5√5</button><button class="opt">5√10</button><button class="opt">6√5</button><div class="exp">同類方根，係數 3+2=5，√5 不變 → 5√5。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">3. 1/√3 有理化後是？</div><button class="opt">1/3</button><button class="opt">√3</button><button class="opt">√3/3</button><div class="exp">上下同乘 √3：√3/(√3·√3)=√3/3。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 化簡 √48</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">√48 = √(16×3) = 4√3</div></div></div>
+        <div class="prob"><div class="pq">② √3 × √12</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= √36 = 6</div></div></div>
+        <div class="prob"><div class="pq">③ 把 5/√2 有理化</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 5√2/2</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">化簡沒找最大完全平方因數多屬 B；不知道同類方根才能加屬 A。</div></div>
+      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">過了。接著 2-3 畢氏定理，會用到這裡的開根號。</div></div>
+    </section>
+  </div>
+
+  <!-- ══════ 2-3 畢氏定理 ══════ -->
+  <div class="sec" data-s="2">
+    <div class="lpills">
+      <button class="lpill on" data-s="2" data-l="0">畢氏定理</button>
+      <button class="lpill" data-s="2" data-l="1">求邊長</button>
+      <button class="lpill" data-s="2" data-l="2">逆定理與應用</button>
+      <button class="lpill" data-s="2" data-l="3">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="2" data-l="0">
+      <div class="plabel2">畢氏定理 · 意義</div>
+      <h2>直角三角形：兩股平方和 = 斜邊平方</h2>
+      <p class="sub">這是直角三角形專屬的關係。先認清楚哪條是「股」、哪條是「斜邊」。</p>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">圖</span>
+          <svg viewBox="0 0 240 180" width="240" height="180" aria-label="直角三角形">
+            <polygon points="40,150 200,150 40,40" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="40" y="138" width="12" height="12" fill="none" stroke="#5B57C2"/>
+            <text x="28" y="98" text-anchor="middle" font-size="15" fill="#2A2335" font-family="Georgia">a</text>
+            <text x="120" y="168" text-anchor="middle" font-size="15" fill="#2A2335" font-family="Georgia">b</text>
+            <text x="128" y="88" text-anchor="middle" font-size="15" fill="#5B57C2" font-family="Georgia">c</text></svg>
+          <div class="cap">a、b 是夾直角的兩股；c 是對著直角的斜邊（最長）</div></div>
+        <div class="repr-item"><span class="repr-tag">代數</span><div class="repr-eq">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></div></div>
+        <div class="repr-item"><span class="repr-tag">白話</span><p style="margin:0;font-size:14px">兩條夾著直角的邊（股），各自平方加起來，剛好等於對著直角那條最長邊（斜邊）的平方。</p></div>
+      </div>
+      <div class="hi"><span class="k">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>　（c 為斜邊）</span></div>
+      <div class="warn"><b>最常錯：</b>把斜邊 c 擺錯。c 一定是「對著直角、最長」那條。位置擺錯，整條式子就錯。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="1">
+      <div class="plabel2">畢氏定理 · 求邊長</div>
+      <h2>知道兩邊，開根號求第三邊</h2>
+      <p class="sub">這裡就用到 2-1、2-2 的開根號了。</p>
+      <div class="eg"><div class="q">例：兩股 3、4，求斜邊 c</div>
+        <div class="step">c<sup>2</sup> = 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25</div>
+        <div class="step">c = √25 = 5</div>
+        <div class="why">求斜邊：兩股平方相加，再開根號。</div></div>
+      <div class="eg"><div class="q">例：斜邊 13、一股 5，求另一股 b</div>
+        <div class="step">b<sup>2</sup> = 13<sup>2</sup> − 5<sup>2</sup> = 169 − 25 = 144</div>
+        <div class="step">b = √144 = 12</div>
+        <div class="why">求股：是「斜邊平方 − 已知股平方」，再開根號。</div></div>
+      <div class="note">常見整數組（背起來很省時）：(3,4,5)、(6,8,10)、(5,12,13)、(8,15,17)。</div>
+      <div class="warn"><b>常見錯誤：</b>求「股」時用相加。求股是<b>斜邊平方減股平方</b>，不是相加。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="2">
+      <div class="plabel2">畢氏定理 · 逆定理與應用</div>
+      <h2>反過來，也能用它判斷是不是直角</h2>
+      <p class="sub">畢氏定理反過來也成立，可以用三邊長判斷一個三角形是不是直角三角形。</p>
+      <div class="hi"><span class="k">若最長邊<sup>2</sup> = 另兩邊平方和，則為直角三角形</span></div>
+      <div class="eg"><div class="q">例：三邊 6、8、10，是直角三角形嗎？</div>
+        <div class="step">最長邊 10：6<sup>2</sup> + 8<sup>2</sup> = 36 + 64 = 100 = 10<sup>2</sup> ✓</div>
+        <div class="step">成立，所以是直角三角形。</div></div>
+      <div class="eg"><div class="q">例（應用）：一支梯子靠牆，底部離牆 3 公尺，梯頂高 4 公尺，梯子多長？</div>
+        <div class="step">梯長<sup>2</sup> = 3<sup>2</sup> + 4<sup>2</sup> = 25 → 梯長 = 5 公尺</div>
+        <div class="why">牆與地面成直角，梯子就是斜邊。畢氏定理最常出現在這種「求直線距離」的情境。</div></div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>自己做一遍，錯的要分類</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識</h3>
+        <div class="mcq" data-a="2"><div class="qt">1. 直角三角形裡，斜邊是哪一條？</div><button class="opt">最短的</button><button class="opt">夾直角的</button><button class="opt">對著直角、最長的</button><div class="exp">斜邊對著直角，也是最長的一條。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 兩股 6、8，斜邊是？</div><button class="opt">100</button><button class="opt">10</button><button class="opt">14</button><div class="exp">6<sup>2</sup>+8<sup>2</sup>=100，斜邊要再開根號 √100=10（100 是還沒開根號、14 是誤把邊長相加）。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. 三邊 5、12、13 是直角三角形嗎？</div><button class="opt">是（5²+12²=13²）</button><button class="opt">不是</button><button class="opt">無法判斷</button><div class="exp">25+144=169=13²，成立，是直角三角形。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 兩股 9、12，求斜邊</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">c=√(81+144)=√225=15</div></div></div>
+        <div class="prob"><div class="pq">② 斜邊 17、一股 8，求另一股</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">b=√(289−64)=√225=15</div><div class="why">求股用相減。</div></div></div>
+        <div class="prob"><div class="pq">③ 三邊 7、24、25，是直角三角形嗎？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">7²+24²=49+576=625=25² → 是</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">斜邊擺錯、求股用加多屬 A/C；開根號算錯屬 B。</div></div>
+      <div class="gate"><h3>這一課過了嗎</h3><ul><li class="g1">觀念辨識 3 題全對</li><li class="g2">基本計算都自己算過、對過答案</li></ul><button class="btn">我基本計算都做完了</button><div class="pass">第2章走完了。下一章是第3章 因式分解，會反過來用第1章的乘法公式。</div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.1.6</span></div>
+</div>
+
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
+
+<script>
+var SL=[3,4,4], cS=0, cL=[0,0,0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){t.classList.toggle('on',+t.dataset.s===s);});showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t){t.addEventListener('click',function(){showSec(+t.dataset.s);});});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='最後一課';nb.disabled=true;}else{nb.textContent='下一課 →';nb.disabled=false;}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),answered=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(answered)return;answered=true;opts[ai].classList.add('ok');if(i!==ai)o.classList.add('no');exp.classList.add('show');updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),done=0,wrong=false;mcqs.forEach(function(m){if(m.querySelector('.opt.ok'))done++;if(m.querySelector('.opt.no'))wrong=true;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2');var mcqPass=(done===mcqs.length&&!wrong&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+</script>
+</body>
+</html>
