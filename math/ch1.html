@@ -4,867 +4,503 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#634A83">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-<link rel="manifest" href="../favicon/site.webmanifest">
-<title>第一章 相似形 — 阿蔓明道國中復習專班</title>
+<title>第1章 乘法公式與多項式 — 阿蔓明道國中復習專班</title>
 <style>
-:root{
-  --bg:#F6F3FC; --surface:#FFFFFF; --surface2:#F1ECFA;
-  --border:#E8E1F2; --border-mid:#CBC0E0; --border-dark:#A89EC2;
-  --text-1:#2A2335; --text-2:#6E6580; --text-3:#A89FBC;
-  --r:4px; --r-s:2px;
-  /* 四大節 accent */
-  --c1:#5B57C2; --c1l:#ECEBFA;   /* 相似的意義：板岩藍 */
-  --c2:#4FA17A; --c2l:#E7F3ED;   /* 三角形判別：森林綠 */
-  --c3:#A368B0; --c3l:#F4E9F6;   /* 平行與相似：赤陶土（核心）*/
-  --c4:#5E83C0; --c4l:#E9EFFA;   /* 複習大考：北歐藍綠 */
-  --c:var(--c1);  --cl:var(--c1l);
-}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  background:var(--bg); color:var(--text-1);
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;
-  font-weight:400; line-height:1.7; -webkit-font-smoothing:antialiased;
-  padding-bottom:84px;
-}
-
-/* TOPBAR */
-.topbar{
-  height:52px; position:sticky; top:0; z-index:100;
-  background:rgba(246,243,252,.94); backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  display:flex; align-items:center; gap:8px; padding:0 16px;
-}
-.topbar a{color:var(--text-2); text-decoration:none; font-size:13px; min-height:44px; display:flex; align-items:center;}
-.topbar .sep{color:var(--text-3); font-size:13px;}
-.topbar .cur{font-size:13px; color:var(--text-1); font-weight:500;}
-
-/* PROGRESS */
-.prog{padding:10px 20px 0; max-width:640px; margin:0 auto;}
-.prog-track{height:4px; background:var(--border); border-radius:2px; overflow:hidden;}
-.prog-fill{height:100%; background:var(--c); width:0; transition:width .3s, background .3s;}
-.prog-label{font-size:10px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); margin-top:6px;}
-
-/* SECTION TABS */
-.stabs{display:flex; gap:4px; overflow-x:auto; padding:12px 16px 0; max-width:640px; margin:0 auto;
-  -webkit-overflow-scrolling:touch; scrollbar-width:none;}
-.stabs::-webkit-scrollbar{display:none;}
-.stab{flex:0 0 auto; border:none; background:none; cursor:pointer; font-family:inherit;
-  font-size:13px; color:var(--text-3); padding:8px 4px; border-bottom:2px solid transparent;
-  white-space:nowrap; min-height:40px;}
-.stab.on{color:var(--c); border-bottom-color:var(--c); font-weight:500;}
-
-/* LESSON PILLS */
-.lpills{display:flex; gap:6px; overflow-x:auto; padding:12px 16px 4px; max-width:640px; margin:0 auto;
-  scrollbar-width:none;}
-.lpills::-webkit-scrollbar{display:none;}
-.lpill{flex:0 0 auto; border:1px solid var(--border); background:var(--surface); cursor:pointer;
-  font-family:inherit; font-size:12px; color:var(--text-2); padding:6px 12px; border-radius:var(--r);
-  white-space:nowrap; min-height:32px;}
-.lpill.on{background:var(--cl); border-color:var(--c); color:var(--c); font-weight:500;}
-
-/* LESSON */
-.sec-wrap{display:none;}
-.sec-wrap.on{display:block;}
-.lesson{display:none; max-width:640px; margin:0 auto; padding:18px 20px 0;}
-.lesson.on{display:block;}
-.page-label{font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--c);}
-.page-title{font-size:22px; font-weight:300; margin:4px 0 4px;}
-.page-sub{font-size:14px; color:var(--text-2); margin:0 0 18px;}
-.lesson p{font-size:14.5px; margin:0 0 12px;}
-.lesson b{font-weight:500;}
-h3{font-size:15px; font-weight:500; margin:22px 0 8px;}
-
-/* 內容元件 */
-.hi{border-left:3px solid var(--c); background:var(--cl); border-radius:var(--r);
-  padding:12px 14px; margin:14px 0; font-size:14px;}
-.hi .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--c); display:block; margin-bottom:4px;}
-.note{background:var(--surface2); border:1px solid var(--border); border-radius:var(--r);
-  padding:12px 14px; margin:14px 0; font-size:13.5px; color:var(--text-2);}
-.warn{border-left:3px solid #C56B86; background:#FBEDF1; border-radius:var(--r);
-  padding:12px 14px; margin:14px 0; font-size:13.5px;}
-.warn .hi-t{color:#C56B86; font-size:11px; font-weight:500; letter-spacing:.08em; display:block; margin-bottom:4px;}
-.extra{border:1px solid var(--border-mid); border-radius:var(--r); padding:12px 14px; margin:16px 0; font-size:13.5px; color:var(--text-2);}
-.extra .hi-t{font-size:10px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--text-3); display:block; margin-bottom:5px;}
-.eq{background:var(--bg); border:1px solid var(--border); border-radius:var(--r);
-  font-family:Georgia,"Times New Roman",serif; font-size:15px; text-align:center; padding:12px 16px; margin:14px 0;}
-.summary{background:#E7F3ED; border:1px solid #90C8AD; border-radius:6px; padding:14px 16px; margin:20px 0 8px; font-size:14px;}
-.summary .hi-t{font-size:11px; font-weight:500; letter-spacing:.1em; color:#4FA17A; display:block; margin-bottom:6px;}
-.summary ul{margin:0; padding-left:18px;}
-.summary li{margin-bottom:4px;}
-.tbl{width:100%; border-collapse:collapse; margin:14px 0; font-size:13.5px;}
-.tbl th,.tbl td{border:1px solid var(--border); padding:8px 10px; text-align:center;}
-.tbl th{background:var(--surface2); font-weight:500; color:var(--text-2);}
-
-/* 互動計算器 */
-.inter{border:1px solid var(--c); border-radius:var(--r); padding:14px; margin:16px 0; background:var(--surface);}
-.inter-label{font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); display:block; margin-bottom:8px;}
-.inter-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px;}
-.inter input{width:64px; padding:7px 8px; border:1px solid var(--border); border-radius:var(--r);
-  font-family:inherit; font-size:14px; text-align:center;}
-.inter input:focus{outline:none; border-color:var(--c);}
-.inter-btn{border:1px solid var(--border); background:var(--surface2); cursor:pointer;
-  font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border-radius:var(--r); min-height:40px;}
-.inter-btn:active{background:#EDE7F6;}
-.inter-result{margin-top:8px; padding:10px 12px; background:var(--cl); border-radius:var(--r); font-size:14px; min-height:20px;}
-.inter-result strong{color:var(--c); font-weight:600;}
-.inter svg{display:block; margin:6px auto 10px; max-width:100%;}
-
-/* 測驗 */
-.qhead{font-size:11px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--c); margin:8px 0 14px;}
-.qcard{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:14px 16px; margin-bottom:10px;}
-.qtxt{font-size:14px; font-weight:500; margin-bottom:10px;}
-.qtxt .qn{display:inline-block; min-width:22px; color:var(--text-3); font-weight:400;}
-.qopt{display:flex; align-items:flex-start; gap:8px; border:1px solid var(--border); border-radius:var(--r);
-  padding:9px 12px; margin-bottom:6px; cursor:pointer; font-size:13.5px; background:var(--surface);}
-.qopt:active{background:var(--surface2);}
-.qopt.sel{border-color:var(--c); background:var(--cl);}
-.qopt.ok{border-color:#4FA17A; background:#E7F3ED;}
-.qopt.no{border-color:#C56B86; background:#FBEDF1;}
-.qlabel{font-weight:600; color:var(--text-2); flex:0 0 auto;}
-.qexp{margin-top:8px; padding:10px 12px; border-radius:var(--r); font-size:13px; display:none;}
-.qexp.show{display:block;}
-.qexp.ok{background:#E7F3ED; border:1px solid #90C8AD;}
-.qexp.no{background:#FBEDF1; border:1px solid #BB9ACB;}
-.quiz-bar{display:flex; gap:8px; margin:14px 0 4px;}
-.quiz-bar button{flex:1; border:1px solid var(--c); background:var(--c); color:#fff; cursor:pointer;
-  font-family:inherit; font-size:14px; font-weight:500; padding:11px; border-radius:var(--r); min-height:44px;}
-.quiz-bar button.ghost{background:var(--surface); color:var(--c);}
-.quiz-score{text-align:center; font-size:15px; font-weight:500; color:var(--c); margin:12px 0; display:none;}
-.quiz-score.show{display:block;}
-
-/* BOTTOM NAV */
-.bnav{position:fixed; bottom:0; left:0; right:0; z-index:90;
-  background:rgba(246,243,252,.96); backdrop-filter:blur(12px); border-top:1px solid var(--border);
-  display:flex; gap:10px; padding:12px 20px; max-width:640px; margin:0 auto;}
-.bnav button{flex:1; border:1px solid var(--border); background:var(--surface); cursor:pointer;
-  font-family:inherit; font-size:14px; font-weight:500; color:var(--text-1); padding:12px; border-radius:var(--r); min-height:44px;}
-.bnav button.primary{background:var(--c); color:#fff; border-color:var(--c);}
-.bnav button:disabled{opacity:.4; cursor:default;}
-
-/* FOOTER */
-.page-footer{max-width:640px; margin:40px auto 0; padding:14px 20px;
-  display:flex; justify-content:space-between; border-top:1px solid var(--border);
-  font-size:11px; color:var(--text-3);}
-
-svg .lbl{font-family:inherit; font-weight:500;}
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.prereq{border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);padding:14px 16px;margin:14px 0}
+.prereq .t{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text-2);text-transform:uppercase;margin-bottom:8px}
+.prereq p{font-size:14px;margin:6px 0}
+.repr{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:16px 0}
+.repr-item{padding:16px 18px;border-top:1px solid var(--border)}.repr-item:first-child{border-top:none}
+.repr-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--accent);background:var(--accent-l);border-radius:2px;padding:2px 8px;margin-bottom:10px}
+.repr-item svg{display:block;margin:4px auto;max-width:100%}
+.repr-item .cap{font-size:13px;color:var(--text-2);text-align:center;margin-top:6px}
+.repr-item .note-pos{font-size:12px;color:var(--text-3);text-align:center;margin-top:4px}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-2);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:18px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+.longdiv{font-family:"Courier New",monospace;font-size:14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin:10px 0;white-space:pre;overflow-x:auto;line-height:1.5}
+sup{font-size:.72em}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.repr,.eg,.mcq,.prob,.errlog,.hi,.note,.rev{break-inside:avoid}body{background:#fff}}
 </style>
-<script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <a href="index.html">← 數學</a>
-  <span class="sep">/</span>
-  <span class="cur">第一章 相似形</span>
-</div>
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">第1章 乘法公式與多項式</span></div>
 
-<!-- PROGRESS -->
-<div class="prog">
-  <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
-  <div class="prog-label" id="progLabel">第 1 課 / 共 14 課</div>
-</div>
-
-<!-- SECTION TABS -->
-<div class="stabs" id="stabs">
-  <button class="stab on" onclick="gS(0)">① 相似的意義</button>
-  <button class="stab" onclick="gS(1)">② 三角形判別</button>
-  <button class="stab" onclick="gS(2)">③ 平行與相似 ✦</button>
-  <button class="stab" onclick="gS(3)">④ 複習・大考</button>
-</div>
-
-<!-- ============ SECTION 0 ============ -->
-<div class="sec-wrap on" id="sec0">
-  <div class="lpills">
-    <button class="lpill on" onclick="gL(0,0)">相似是什麼</button>
-    <button class="lpill" onclick="gL(0,1)">相似多邊形</button>
-    <button class="lpill" onclick="gL(0,2)">✎ 小測驗</button>
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二上 · 第1章 乘法公式與多項式</div>
+    <h1>先蓋這塊，後面才接得上</h1>
+    <p>這是國二上的第一章，也是整條代數的第一塊磚。這裡熟練後，第3章因式分解、第4章一元二次方程式都會更好懂——它們反過來會用到這裡的公式。</p>
+    <div class="meta"><span>前置快篩：乘方、正負號、分配律、單項式乘法、同類項合併</span><span>預計 40 分鐘／節</span><span>當「從頭學」設計，不預設你記得</span></div>
   </div>
 
-  <!-- S0L0 -->
-  <div class="lesson on" id="S0L0">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">相似是什麼？</h1>
-    <p class="page-sub">同樣的形狀，不一樣的大小</p>
-
-    <p>把一張照片放大或縮小，照片裡的人不會變胖也不會變瘦——<b>形狀沒變，只有大小變了</b>。數學上就把這種關係叫做「相似」，記號是 <b>∼</b>。</p>
-
-    <div class="hi">
-      <span class="hi-t">核心定義</span>
-      兩個圖形<b>形狀相同</b>（可以放大或縮小後完全重疊），就稱為<b>相似</b>。<br>
-      放大縮小的倍數，叫做<b>相似比</b>。
-    </div>
-
-    <p>那「全等」呢？全等是「形狀一樣，大小也一樣」。所以——</p>
-    <div class="eq">全等　＝　相似比剛好是 1 : 1 的相似</div>
-    <p>換句話說，<b>全等是相似的特例</b>。會相似不一定全等，但全等一定相似。</p>
-
-    <div class="warn">
-      <span class="hi-t">容易搞混</span>
-      「相似」不是「差不多像」。它有嚴格條件（下一課會講）。兩個都是長方形，看起來很像，但不一定相似喔。
-    </div>
-
-    <div class="extra">
-      <span class="hi-t">延伸知識・歷史故事</span>
-      兩千多年前，古希臘的<b>泰勒斯</b>站在金字塔旁，用自己影子的長度測出金字塔的高度——當人影和身高一樣長時，金字塔的影子也會和它的高一樣長。這就是用「相似三角形」做測量，本章最後會教你怎麼算。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>相似＝形狀相同、大小可不同，記號 ∼</li>
-        <li>放大縮小的倍數＝相似比</li>
-        <li>全等是相似比 1:1 的特例</li>
-      </ul>
-    </div>
+  <div class="stabs" role="tablist" aria-label="第1章各節">
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">1-1 乘法公式</button>
+    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">1-2 多項式加減</button>
+    <button class="stab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-s="2">1-3 多項式乘除</button>
   </div>
 
-  <!-- S0L1 -->
-  <div class="lesson" id="S0L1">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">相似多邊形</h1>
-    <p class="page-sub">要同時滿足「兩個」條件</p>
-
-    <p>兩個多邊形要相似，光「看起來像」不夠，必須同時做到兩件事：</p>
-
-    <div class="hi">
-      <span class="hi-t">相似的兩個條件</span>
-      ① <b>對應角</b>全部相等<br>
-      ② <b>對應邊</b>全部成比例（比值都一樣）
+  <!-- ══════ 1-1 乘法公式 ══════ -->
+  <div class="sec on" data-s="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">和的平方</button>
+      <button class="lpill" data-s="0" data-l="1">差的平方</button>
+      <button class="lpill" data-s="0" data-l="2">平方差</button>
+      <button class="lpill" data-s="0" data-l="3">練習與訂正</button>
     </div>
 
-    <p>舉例：兩個多邊形 ABCD ∼ EFGH，那麼</p>
-    <div class="eq">∠A=∠E，∠B=∠F，…（角相等）<br>AB:EF ＝ BC:FG ＝ CD:GH ＝ …（邊成比例）</div>
-    <p>這個共同的比值，就是它們的<b>相似比</b>。</p>
-
-    <div class="warn">
-      <span class="hi-t">一個條件不夠！</span>
-      • 只有<b>角</b>相等：正方形和長方形角都是 90°，但不相似。<br>
-      • 只有<b>邊</b>成比例：正方形和菱形邊都成比例，但不相似。<br>
-      兩個條件要<b>一起</b>成立才算相似。
-    </div>
-
-    <h3>動手算：相似比與未知邊</h3>
-    <div class="inter">
-      <span class="inter-label">相似比計算機</span>
-      <div class="inter-row">
-        一組對應邊：<input id="sa" type="number" value="6"> ∶ <input id="sb" type="number" value="9">
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">乘法公式 · 和的平方</div>
+      <h2>(a+b)<sup>2</sup> 到底等於什麼？</h2>
+      <p class="sub">先講一個超常見的錯：很多人以為 (a+b)<sup>2</sup> = a<sup>2</sup>+b<sup>2</sup>。這是錯的。在看公式前，先確認兩個基礎動作。</p>
+      <div class="prereq">
+        <div class="t">開始前先記住兩件事</div>
+        <p><b>① 平方的意思：</b>(a+b)<sup>2</sup> 是 (a+b)(a+b)，<b>不是</b>把括號裡各自平方。</p>
+        <p><b>② 兩個括號相乘：</b>第一個括號的每一項，都要分別乘第二個括號的每一項：</p>
+        <div class="repr-eq">(a+b)(a+b) = a·a + a·b + b·a + b·b</div>
       </div>
-      <div class="inter-row">
-        另一邊 a 邊長 <input id="sc" type="number" value="8">，求對應的 b 邊
+      <div class="note"><b>公式裡的 a、b 代表「一整項」：</b>不一定是單一字母，可以是一個數、一個單項式、或整個式子。例如 (2x−5)<sup>2</sup> 要把 <b>2x 整體</b>當成 a。</div>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">圖</span>
+          <svg viewBox="0 0 240 240" width="240" height="240" aria-label="(a+b)平方面積圖">
+            <rect x="20" y="20" width="140" height="140" fill="#ECEBFA" stroke="#CBC0E0"/><rect x="160" y="20" width="60" height="140" fill="#E6F4EF" stroke="#CBC0E0"/>
+            <rect x="20" y="160" width="140" height="60" fill="#E6F4EF" stroke="#CBC0E0"/><rect x="160" y="160" width="60" height="60" fill="#F1ECFA" stroke="#CBC0E0"/>
+            <text x="90" y="95" text-anchor="middle" font-size="18" fill="#2A2335" font-family="Georgia">a²</text><text x="190" y="95" text-anchor="middle" font-size="15" fill="#3E8F79" font-family="Georgia">ab</text>
+            <text x="90" y="195" text-anchor="middle" font-size="15" fill="#3E8F79" font-family="Georgia">ab</text><text x="190" y="195" text-anchor="middle" font-size="15" fill="#2A2335" font-family="Georgia">b²</text>
+            <text x="90" y="14" text-anchor="middle" font-size="13" fill="#645B78">a</text><text x="190" y="14" text-anchor="middle" font-size="13" fill="#645B78">b</text>
+            <text x="12" y="95" text-anchor="middle" font-size="13" fill="#645B78">a</text><text x="12" y="195" text-anchor="middle" font-size="13" fill="#645B78">b</text></svg>
+          <div class="cap">邊長 (a+b) 的正方形，切成四塊：a<sup>2</sup>、ab、ab、b<sup>2</sup></div>
+          <div class="note-pos">圖以正數示意；公式對正數、負數與 0 都成立</div></div>
+        <div class="repr-item"><span class="repr-tag">代數</span>
+          <div class="repr-eq">(a+b)<sup>2</sup> = (a+b)(a+b) = a<sup>2</sup> + ab + ab + b<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></div></div>
+        <div class="repr-item"><span class="repr-tag">白話</span>
+          <p style="margin:0;font-size:14px">平方一個「和」，中間會多出兩塊 ab（合起來 2ab）。<b>漏掉這個 2ab，就是最常見的錯。</b></p></div>
       </div>
-      <button class="inter-btn" onclick="calcRatio()">計算</button>
-      <div class="inter-result" id="ratioOut">輸入後按計算</div>
-    </div>
+      <div class="hi"><span class="k">(a+b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></span></div>
+      <div class="eg"><div class="q">例：展開 (x+3)<sup>2</sup></div>
+        <div class="step">= x<sup>2</sup> + 2·(x)·(3) + 3<sup>2</sup> = x<sup>2</sup> + 6x + 9</div>
+        <div class="why">a=x、b=3。中間 6x 就是 2ab=2·x·3。</div></div>
+      <div class="warn"><b>常見錯誤：</b>把 (x+3)<sup>2</sup> 寫成 x<sup>2</sup>+9，漏掉中間 6x。看到平方，先問「中間那項呢？」</div>
+    </section>
 
-    <div class="extra">
-      <span class="hi-t">延伸知識・生活應用</span>
-      地圖上的「比例尺 1:25000」就是相似比！圖上量到 4 公分，實際就是 4×25000＝100000 公分＝1 公里。地圖和真實世界，是一對相似圖形。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>相似多邊形：對應角相等 ＋ 對應邊成比例（兩者都要）</li>
-        <li>共同比值＝相似比</li>
-        <li>少一個條件就不一定相似</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S0L2 測驗 -->
-  <div class="lesson" id="S0L2">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">小測驗</h1>
-    <p class="page-sub">相似的意義　共 5 題</p>
-    <div id="q-s1"></div>
-    <div class="quiz-bar">
-      <button onclick="checkQ('s1')">批改</button>
-      <button class="ghost" onclick="retryQ('s1')">重作</button>
-    </div>
-    <div class="quiz-score" id="score-s1"></div>
-  </div>
-</div>
-
-<!-- ============ SECTION 1 ============ -->
-<div class="sec-wrap" id="sec1">
-  <div class="lpills">
-    <button class="lpill on" onclick="gL(1,0)">AA 相似</button>
-    <button class="lpill" onclick="gL(1,1)">SAS 相似</button>
-    <button class="lpill" onclick="gL(1,2)">SSS 相似</button>
-    <button class="lpill" onclick="gL(1,3)">✎ 小測驗</button>
-  </div>
-
-  <!-- S1L0 -->
-  <div class="lesson on" id="S1L0">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">AA 相似（最常用）</h1>
-    <p class="page-sub">三角形很特別：只看角就夠了</p>
-
-    <p>前一節說「相似要角相等＋邊成比例」。但<b>三角形是個例外</b>——因為三角形「三角定形狀」，只要角對了，邊一定自動成比例。</p>
-
-    <div class="hi">
-      <span class="hi-t">AA 相似性質</span>
-      兩個三角形若有<b>兩個角對應相等</b>，這兩個三角形就相似。<br>
-      （第三個角會自動相等，因為三角形內角和都是 180°。）
-    </div>
-
-    <p>這是本章<b>最常用</b>的判別法。考試裡只要能找到兩組相等的角（常常來自平行線的內錯角、同位角，或共用角、對頂角），就能說相似。</p>
-
-    <div class="note">為什麼四邊形不行？因為四邊形可以「壓扁」變形（想像一個會晃的方形相框），角不能定形狀。三角形不會晃，這叫三角形的「剛性」。</div>
-
-    <div class="extra">
-      <span class="hi-t">延伸知識・生活應用</span>
-      橋樑、鐵塔、起重機的骨架都用大量三角形，就是利用三角形不會變形的剛性。下次看到鐵橋，數數看有多少三角形。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>AA：兩角對應相等 ⟹ 相似</li>
-        <li>最常用；常從平行線、共用角、對頂角找到相等的角</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S1L1 -->
-  <div class="lesson" id="S1L1">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">SAS 相似</h1>
-    <p class="page-sub">兩邊成比例，夾角相等</p>
-
-    <div class="hi">
-      <span class="hi-t">SAS 相似性質</span>
-      兩個三角形若有<b>兩組對應邊成比例</b>，而且這兩邊的<b>夾角相等</b>，就相似。
-    </div>
-
-    <p>關鍵字是「<b>夾</b>角」——相等的那個角，必須是被兩條成比例的邊夾住的角，不能是別的角。</p>
-
-    <div class="eq">AB:DE ＝ AC:DF　且　∠A ＝ ∠D　⟹　△ABC ∼ △DEF</div>
-
-    <p>例：△ABC 中 AB=4、AC=6；△DEF 中 DE=6、DF=9，且 ∠A=∠D。<br>
-    檢查比例：AB:DE＝4:6＝2:3，AC:DF＝6:9＝2:3，兩比相同，夾角又相等 ⟹ 相似。</p>
-
-    <div class="warn">
-      <span class="hi-t">注意</span>
-      相等的角若<b>不是</b>那兩條邊的夾角，就不能直接用 SAS。位置要對。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>SAS：兩邊成比例 ＋ 夾角相等 ⟹ 相似</li>
-        <li>相等的角必須是「夾角」</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S1L2 -->
-  <div class="lesson" id="S1L2">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">SSS 相似</h1>
-    <p class="page-sub">三邊都成比例</p>
-
-    <div class="hi">
-      <span class="hi-t">SSS 相似性質</span>
-      兩個三角形若<b>三組對應邊都成比例</b>，就相似。
-    </div>
-
-    <div class="eq">AB:DE ＝ BC:EF ＝ CA:FD　⟹　△ABC ∼ △DEF</div>
-
-    <p>例：邊長 3、4、5 的三角形，和邊長 6、8、10 的三角形，每組比都是 1:2，所以相似（相似比 1:2）。</p>
-
-    <h3>三種判別法總整理</h3>
-    <table class="tbl">
-      <tr><th>判別法</th><th>需要的條件</th></tr>
-      <tr><td><b>AA</b></td><td>兩角對應相等</td></tr>
-      <tr><td><b>SAS</b></td><td>兩邊成比例＋夾角相等</td></tr>
-      <tr><td><b>SSS</b></td><td>三邊都成比例</td></tr>
-    </table>
-
-    <div class="extra">
-      <span class="hi-t">延伸知識・反直覺</span>
-      所有的正三角形彼此都相似，所有的正方形也都相似——因為它們的角固定、邊也固定成比例。但「所有的長方形」就不一定相似，因為長寬比可以不同。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>SSS：三邊成比例 ⟹ 相似</li>
-        <li>三大判別法：AA、SAS、SSS</li>
-        <li>找角優先用 AA，最快</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S1L3 測驗 -->
-  <div class="lesson" id="S1L3">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">小測驗</h1>
-    <p class="page-sub">三角形相似的判別　共 6 題</p>
-    <div id="q-s2"></div>
-    <div class="quiz-bar">
-      <button onclick="checkQ('s2')">批改</button>
-      <button class="ghost" onclick="retryQ('s2')">重作</button>
-    </div>
-    <div class="quiz-score" id="score-s2"></div>
-  </div>
-</div>
-
-<!-- ============ SECTION 2 ============ -->
-<div class="sec-wrap" id="sec2">
-  <div class="lpills">
-    <button class="lpill on" onclick="gL(2,0)">平行截比例</button>
-    <button class="lpill" onclick="gL(2,1)">沙漏形 ✦</button>
-    <button class="lpill" onclick="gL(2,2)">子母形</button>
-    <button class="lpill" onclick="gL(2,3)">中點連線</button>
-    <button class="lpill" onclick="gL(2,4)">✎ 小測驗</button>
-  </div>
-
-  <!-- S2L0 -->
-  <div class="lesson on" id="S2L0">
-    <div class="page-label">數學 · 相似形　★ 核心單元</div>
-    <h1 class="page-title">平行線截比例線段</h1>
-    <p class="page-sub">相似最常出現的地方，就是平行線</p>
-
-    <div class="hi">
-      <span class="hi-t">平行線截比例</span>
-      一組<b>平行線</b>被兩條直線所截，截到的對應線段會<b>成比例</b>。
-    </div>
-
-    <p>像梯子一樣：三條平行的橫桿，被兩根斜斜的扶手切過，左邊扶手被分成的比，會等於右邊扶手被分成的比。</p>
-
-    <div class="eq">L₁ ∥ L₂ ∥ L₃　⟹　AB : BC ＝ DE : EF</div>
-
-    <p>特別是在三角形裡：如果一條線<b>平行於底邊</b>，它就會把另外兩邊切成相同的比。</p>
-    <div class="eq">△ABC 中 DE ∥ BC　⟹　AD : DB ＝ AE : EC</div>
-
-    <div class="note">這個觀念是整個第三節的地基。接下來的「沙漏形」「子母形」都是它的應用。</div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>平行線截兩直線 ⟹ 對應線段成比例</li>
-        <li>三角形內平行底邊的線 ⟹ 兩腰被切成相同比例</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S2L1 沙漏形 -->
-  <div class="lesson" id="S2L1">
-    <div class="page-label">數學 · 相似形　★ 核心單元</div>
-    <h1 class="page-title">沙漏形相似（X 形）</h1>
-    <p class="page-sub">第 17 題就是靠這招</p>
-
-    <p>當<b>兩條平行線</b>，被<b>通過同一點的兩條直線</b>交叉，就會形成一個像沙漏、像英文字母 X 的圖形，上下各一個三角形。</p>
-
-    <div class="inter" style="--c:var(--c3)">
-      <span class="inter-label">沙漏形圖解</span>
-      <svg viewBox="0 0 300 200" width="300" height="200">
-        <line x1="40" y1="40" x2="190" y2="40" stroke="var(--c3)" stroke-width="3"/>
-        <line x1="70" y1="160" x2="260" y2="160" stroke="var(--c3)" stroke-width="3"/>
-        <line x1="40" y1="40" x2="260" y2="160" stroke="var(--text-2)" stroke-width="1.5"/>
-        <line x1="190" y1="40" x2="70" y2="160" stroke="var(--text-2)" stroke-width="1.5"/>
-        <circle cx="118" cy="100" r="4" fill="var(--c3)"/>
-        <text class="lbl" x="30" y="36" font-size="13" fill="var(--text-1)">A</text>
-        <text class="lbl" x="190" y="36" font-size="13" fill="var(--text-1)">B</text>
-        <text class="lbl" x="58" y="176" font-size="13" fill="var(--text-1)">D</text>
-        <text class="lbl" x="262" y="176" font-size="13" fill="var(--text-1)">C</text>
-        <text class="lbl" x="124" y="98" font-size="13" fill="var(--c3)">P</text>
-        <text class="lbl" x="105" y="34" font-size="11" fill="var(--text-3)">上邊 AB</text>
-        <text class="lbl" x="150" y="178" font-size="11" fill="var(--text-3)">下邊 DC</text>
-      </svg>
-    </div>
-
-    <div class="hi">
-      <span class="hi-t">沙漏形性質</span>
-      上三角形 △PAB 與下三角形 △PCD <b>相似</b>（AA：對頂角相等 ＋ 平行造成的內錯角相等）。<br>
-      它們的比，就等於<b>兩條平行邊的比</b>：
-      <div class="eq" style="margin:8px 0 0">AP : PC ＝ BP : PD ＝ AB : CD</div>
-    </div>
-
-    <p style="font-weight:500">口訣：上下沙漏一個樣，比例就看平行邊。</p>
-
-    <h3>動手算：交點把線段切成幾比幾</h3>
-    <div class="inter" style="--c:var(--c3)">
-      <span class="inter-label">沙漏形比例計算機</span>
-      <div class="inter-row">
-        上平行邊 <input id="ha" type="number" value="3">　下平行邊 <input id="hb" type="number" value="5">
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">乘法公式 · 差的平方</div>
+      <h2>(a−b)<sup>2</sup> 只差一個符號</h2>
+      <p class="sub">跟和的平方幾乎一樣，只是中間那項變號。看圖就懂為什麼是 −2ab。</p>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">圖</span>
+          <svg viewBox="0 0 200 200" width="200" height="200" aria-label="(a-b)平方面積圖">
+            <rect x="30" y="20" width="110" height="110" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="110" y="20" width="30" height="110" fill="#3E8F79" fill-opacity="0.4" stroke="#CBC0E0"/>
+            <rect x="30" y="100" width="110" height="30" fill="#3E8F79" fill-opacity="0.4" stroke="#CBC0E0"/>
+            <text x="70" y="72" text-anchor="middle" font-size="14" fill="#2A2335" font-family="Georgia">(a−b)²</text>
+            <text x="125" y="70" text-anchor="middle" font-size="12" fill="#2A2335" font-family="Georgia">ab</text>
+            <text x="70" y="119" text-anchor="middle" font-size="12" fill="#2A2335" font-family="Georgia">ab</text>
+            <text x="125" y="119" text-anchor="middle" font-size="11" fill="#B7476A" font-family="Georgia">b²</text>
+            <text x="70" y="145" text-anchor="middle" font-size="12" fill="#645B78">a−b</text>
+            <text x="125" y="145" text-anchor="middle" font-size="12" fill="#645B78">b</text>
+            <text x="18" y="72" text-anchor="middle" font-size="12" fill="#645B78">a−b</text>
+            <text x="82" y="14" text-anchor="middle" font-size="12" fill="#645B78">a</text></svg>
+          <div class="cap">從 a<sup>2</sup> 扣掉兩條 ab，右下角的 b<sup>2</sup> 被扣了兩次，要補回來：a<sup>2</sup> − ab − ab + b<sup>2</sup> = (a−b)<sup>2</sup></div>
+          <div class="note-pos">圖以正數（且 a &gt; b）示意；公式對正數、負數與 0 都成立</div></div>
+        <div class="repr-item"><span class="repr-tag">代數</span>
+          <div class="repr-eq">(a−b)<sup>2</sup> = (a−b)(a−b) = a<sup>2</sup> − ab − ab + b<sup>2</sup> = a<sup>2</sup> − 2ab + b<sup>2</sup></div></div>
+        <div class="repr-item"><span class="repr-tag">白話</span>
+          <p style="margin:0;font-size:14px">跟和的平方長得一樣，只有<b>中間那項變減號</b>。最後一項 b<sup>2</sup> 還是加的（負負得正）。</p></div>
       </div>
-      <div class="inter-row">
-        一條斜線總長 <input id="hl" type="number" value="16">
+      <div class="hi"><span class="k">(a−b)<sup>2</sup> = a<sup>2</sup> − 2ab + b<sup>2</sup></span></div>
+      <div class="eg"><div class="q">例：展開 (2x−5)<sup>2</sup></div>
+        <div class="step">= (2x)<sup>2</sup> − 2·(2x)·(5) + 5<sup>2</sup> = 4x<sup>2</sup> − 20x + 25</div>
+        <div class="why">a=2x，所以 a<sup>2</sup>=(2x)<sup>2</sup>=4x<sup>2</sup>，係數 2 也要平方。</div></div>
+      <div class="warn"><b>常見錯誤：</b>(2x−5)<sup>2</sup> 第一項寫成 2x<sup>2</sup>。要 (2x)<sup>2</sup>=4x<sup>2</sup>，把 2x 整體當 a。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">乘法公式 · 平方差</div>
+      <h2>同兩項、一加一減，中間才會抵消</h2>
+      <p class="sub"><b>同樣的兩項，一個相加、一個相減</b>時，相乘的中間兩項才會互相抵消，只剩兩個平方相減。</p>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">圖 · 切割重排</span>
+          <svg viewBox="0 0 320 130" width="320" height="130" aria-label="平方差切割重排圖">
+            <!-- 左：L 形（a² 挖角 b²），切成兩塊 -->
+            <rect x="20" y="20" width="90" height="60" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="20" y="80" width="60" height="30" fill="#3E8F79" fill-opacity="0.4" stroke="#5B57C2"/>
+            <rect x="80" y="80" width="30" height="30" fill="#FFFFFF" stroke="#B7476A" stroke-dasharray="3 2"/>
+            <text x="88" y="98" text-anchor="middle" font-size="9" fill="#B7476A" font-family="Georgia">b²</text>
+            <text x="12" y="53" text-anchor="middle" font-size="11" fill="#645B78">a−b</text>
+            <text x="65" y="15" text-anchor="middle" font-size="11" fill="#645B78">a</text>
+            <text x="50" y="99" text-anchor="middle" font-size="10" fill="#645B78">a−b</text>
+            <!-- 箭頭 -->
+            <text x="150" y="70" text-anchor="middle" font-size="20" fill="#756C89">→</text>
+            <!-- 右：重排成 (a+b)(a−b) -->
+            <rect x="180" y="30" width="90" height="60" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="270" y="30" width="30" height="60" fill="#3E8F79" fill-opacity="0.4" stroke="#5B57C2"/>
+            <text x="240" y="108" text-anchor="middle" font-size="11" fill="#645B78">a + b</text>
+            <text x="312" y="63" text-anchor="middle" font-size="11" fill="#645B78">a−b</text>
+            <text x="225" y="64" text-anchor="middle" font-size="12" fill="#2A2335" font-family="Georgia">a²−b²</text></svg>
+          <div class="cap">左：邊長 a 的正方形挖掉角落 b<sup>2</sup>，把下面那塊（綠）切下來、轉 90° 移到右邊；右：重排成長 (a+b)、寬 (a−b) 的長方形。所以 a<sup>2</sup>−b<sup>2</sup> = (a+b)(a−b)。</div>
+          <div class="note-pos">圖以正數（且 a &gt; b）示意；公式對正數、負數與 0 都成立</div></div>
+        <div class="repr-item"><span class="repr-tag">代數</span>
+          <div class="repr-eq">(a+b)(a−b) = a<sup>2</sup> − ab + ab − b<sup>2</sup> = a<sup>2</sup> − b<sup>2</sup> <small>（中間 −ab+ab 抵消）</small></div></div>
+        <div class="repr-item"><span class="repr-tag">白話</span>
+          <p style="margin:0;font-size:14px">只有「同兩項、一加一減」中間才抵消。像 (x+5)(x−3) 這種兩項不同的，<b>不會</b>抵消，不能用平方差。</p></div>
       </div>
-      <button class="inter-btn" onclick="calcHour()">計算</button>
-      <div class="inter-result" id="hourOut">輸入後按計算</div>
-    </div>
+      <div class="hi"><span class="k">(a+b)(a−b) = a<sup>2</sup> − b<sup>2</sup></span></div>
+      <div class="eg"><div class="q">例：展開 (x+4)(x−4)</div>
+        <div class="step">= x<sup>2</sup> − 4<sup>2</sup> = x<sup>2</sup> − 16</div>
+        <div class="why">符合「同兩項、一加一減」，直接套平方差。</div></div>
+      <div class="warn"><b>用之前先確認：</b>兩括號要「同兩項、只差 +/−」。(x+4)(x+4) 是和的平方；(x+4)(x−3) 兩者都不是。</div>
+    </section>
 
-    <div class="extra">
-      <span class="hi-t">延伸知識・連結第 17 題</span>
-      平行四邊形 ABCD 裡，把 BC 延長到 G，拉一條繩子 AG。AD 和 GC 平行 → 在 F 點形成沙漏；AD 和 GB 平行 → 在 E 點又形成沙漏。兩次沙漏，就能把繩子切出 4:3。最後一節會完整重做這題。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>兩平行線＋交叉兩線 ⟹ 沙漏形（X 形）兩三角形相似</li>
-        <li>分點比＝兩平行邊比</li>
-        <li>這是平行四邊形截線題的萬用招</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S2L2 子母形 -->
-  <div class="lesson" id="S2L2">
-    <div class="page-label">數學 · 相似形　★ 核心單元</div>
-    <h1 class="page-title">子母三角形（共用一個角）</h1>
-    <p class="page-sub">大三角形裡藏一個小三角形</p>
-
-    <p>在 △ABC 裡，畫一條<b>平行於底邊 BC</b> 的線 DE（D 在 AB 上、E 在 AC 上）。這時上面的小三角形 △ADE，會和整個大三角形 △ABC 相似。</p>
-
-    <div class="inter" style="--c:var(--c3)">
-      <span class="inter-label">子母形圖解</span>
-      <svg viewBox="0 0 280 190" width="280" height="190">
-        <polygon points="140,20 40,170 240,170" fill="var(--c3l)" stroke="var(--text-2)" stroke-width="1.5"/>
-        <line x1="90" y1="95" x2="190" y2="95" stroke="var(--c3)" stroke-width="3"/>
-        <text class="lbl" x="134" y="16" font-size="13">A</text>
-        <text class="lbl" x="28" y="184" font-size="13">B</text>
-        <text class="lbl" x="240" y="184" font-size="13">C</text>
-        <text class="lbl" x="74" y="98" font-size="13">D</text>
-        <text class="lbl" x="194" y="98" font-size="13">E</text>
-        <text class="lbl" x="118" y="90" font-size="11" fill="var(--c3)">小</text>
-        <text class="lbl" x="128" y="150" font-size="11" fill="var(--text-3)">大</text>
-      </svg>
-    </div>
-
-    <div class="hi">
-      <span class="hi-t">子母形性質</span>
-      DE ∥ BC ⟹ △ADE ∼ △ABC（AA：共用頂角 ∠A ＋ 同位角相等）。<br>
-      所以對應邊成比例：
-      <div class="eq" style="margin:8px 0 0">AD : AB ＝ AE : AC ＝ DE : BC</div>
-    </div>
-
-    <div class="warn">
-      <span class="hi-t">小心分母</span>
-      子母形比的是「<b>從頂點算起的整段</b>」：AD 對 AB（不是 AD 對 DB）。若要 AD:DB，得另外換算。沙漏形和子母形的「對應邊」不一樣，別搞混。
-    </div>
-
-    <div class="extra">
-      <span class="hi-t">延伸知識・進階</span>
-      直角三角形斜邊上畫一條高，會把它切成兩個小三角形，這兩個都和原本的大三角形相似——這就是「母子相似」，是國三證明商高定理（畢氏定理）的關鍵。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>平行底邊的線 ⟹ 子母形 △ADE ∼ △ABC</li>
-        <li>比的是從頂點算起的整段：AD:AB</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S2L3 中點連線 -->
-  <div class="lesson" id="S2L3">
-    <div class="page-label">數學 · 相似形　★ 核心單元</div>
-    <h1 class="page-title">中點連線定理</h1>
-    <p class="page-sub">子母形最漂亮的特例</p>
-
-    <div class="hi">
-      <span class="hi-t">中點連線定理</span>
-      三角形<b>兩邊中點</b>的連線，會<b>平行於第三邊</b>，而且長度剛好是第三邊的<b>一半</b>。
-    </div>
-
-    <div class="eq">D、E 為 AB、AC 中點　⟹　DE ∥ BC　且　DE ＝ ½ BC</div>
-
-    <p>為什麼？因為 D、E 是中點，AD:AB＝AE:AC＝1:2，這正是子母形相似比 1:2 的情況，所以 DE 也是 BC 的一半。</p>
-
-    <p>例：BC＝10，D、E 是兩腰中點，那 DE＝5，而且 DE 平行 BC。</p>
-
-    <div class="extra">
-      <span class="hi-t">延伸知識・跨章連結</span>
-      把四邊形四個邊的中點連起來，永遠會圍出一個平行四邊形（不管原本是什麼形狀）——這個神奇結論就是用中點連線定理證出來的。
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>兩邊中點連線 ∥ 第三邊，且＝第三邊一半</li>
-        <li>它是子母形相似比 1:2 的特例</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- S2L4 測驗 -->
-  <div class="lesson" id="S2L4">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">小測驗</h1>
-    <p class="page-sub">平行線與相似形　共 7 題（含第 17 題拆解）</p>
-    <div id="q-s3"></div>
-    <div class="quiz-bar">
-      <button onclick="checkQ('s3')">批改</button>
-      <button class="ghost" onclick="retryQ('s3')">重作</button>
-    </div>
-    <div class="quiz-score" id="score-s3"></div>
-  </div>
-</div>
-
-<!-- ============ SECTION 3 ============ -->
-<div class="sec-wrap" id="sec3">
-  <div class="lpills">
-    <button class="lpill on" onclick="gL(3,0)">面積比與實戰</button>
-    <button class="lpill" onclick="gL(3,1)">✎ 章末大考</button>
-  </div>
-
-  <!-- S3L0 -->
-  <div class="lesson on" id="S3L0">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">面積比與第 17 題實戰</h1>
-    <p class="page-sub">把整章串起來</p>
-
-    <div class="hi">
-      <span class="hi-t">相似比 → 周長比 → 面積比</span>
-      相似比是 <b>k</b> 時：<br>
-      周長比也是 <b>k</b>，但面積比是 <b>k²</b>（平方）。
-    </div>
-
-    <p>例：兩個相似三角形相似比 2:3，則周長比 2:3，面積比是 2²:3² ＝ <b>4:9</b>。長度差一點點，面積就差更多。</p>
-
-    <div class="inter">
-      <span class="inter-label">面積比計算機</span>
-      <div class="inter-row">
-        相似比 <input id="ka" type="number" value="2"> ∶ <input id="kb" type="number" value="3">
+    <section class="lesson" data-s="0" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先分清楚，再自己做</h2>
+      <p class="sub">先用下面的表分清三個公式，再做練習。做錯不要緊，訂正後答對一樣過關。</p>
+      <table class="tbl">
+        <tr><th>外觀</th><th>用哪個公式</th><th>中間項</th></tr>
+        <tr><td>兩個相同的「加」括號 (a+b)<sup>2</sup></td><td>和的平方</td><td>+2ab</td></tr>
+        <tr><td>兩個相同的「減」括號 (a−b)<sup>2</sup></td><td>差的平方</td><td>−2ab</td></tr>
+        <tr><td>同兩項、一加一減 (a+b)(a−b)</td><td>平方差</td><td>抵消（沒有）</td></tr>
+      </table>
+      <div class="rev"><b>以後會反過來認：</b>第3章因式分解，就是把展開的結果反著看。現在只要「看得出是同一個公式」就好：<br>x<sup>2</sup>+6x+9 = (x+3)<sup>2</sup>　；　x<sup>2</sup>−16 = (x+4)(x−4)</div>
+      <div class="qsec"><h3>觀念辨識（答錯可再選，訂正後一樣算過）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. (a+b)<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>，對嗎？</div>
+          <button class="opt">對</button><button class="opt">錯，中間漏了 2ab</button><div class="exp">正確是 a<sup>2</sup>+2ab+b<sup>2</sup>。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. (x−7)<sup>2</sup> 的中間項是？</div>
+          <button class="opt">+14x</button><button class="opt">−14x</button><button class="opt">−49</button><div class="exp">差的平方中間帶減號：−2·x·7 = −14x。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. 哪一個可以直接套「平方差」？</div>
+          <button class="opt">(x+5)(x−5)</button><button class="opt">(x+5)(x+5)</button><button class="opt">(x+5)(x−3)</button><div class="exp">要「同兩項、一加一減」。只有 (x+5)(x−5)。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">4. (3x+1)<sup>2</sup> 的第一項是？</div>
+          <button class="opt">3x<sup>2</sup></button><button class="opt">6x<sup>2</sup></button><button class="opt">9x<sup>2</sup></button><div class="exp">a=3x，a<sup>2</sup>=(3x)<sup>2</sup>=9x<sup>2</sup>。</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
-      <button class="inter-btn" onclick="calcArea()">計算</button>
-      <div class="inter-result" id="areaOut">輸入後按計算</div>
-    </div>
-
-    <h3>第 17 題：完整重做</h3>
-    <p><b>題目：</b>平行四邊形 ABCD 中，BC:CG＝3:1，求 AE:EF。（AG 交對角線 BD 於 E、交 DC 於 F）</p>
-
-    <div class="note">
-      <b>設長度：</b>BC＝3、CG＝1，所以 BG＝4。又 AD＝BC＝3。
-    </div>
-    <p><b>第一刀（F 點）：</b>AD ∥ GC，沙漏形 △ADF ∼ △GCF</p>
-    <div class="eq">AF : FG ＝ AD : GC ＝ 3 : 1　⟹　AF ＝ ¾ AG</div>
-    <p><b>第二刀（E 點）：</b>AD ∥ GB，沙漏形 △ADE ∼ △GBE</p>
-    <div class="eq">AE : EG ＝ AD : GB ＝ 3 : 4　⟹　AE ＝ ³⁄₇ AG</div>
-    <p><b>切成 28 顆珠子：</b>7 和 4 的最小公倍數是 28。</p>
-    <div class="eq">AE ＝ ³⁄₇ ＝ ¹²⁄₂₈　，　AF ＝ ¾ ＝ ²¹⁄₂₈<br>EF ＝ 21 − 12 ＝ 9</div>
-    <div class="hi">
-      <span class="hi-t">答案</span>
-      AE : EF ＝ 12 : 9 ＝ <b>4 : 3</b>
-    </div>
-
-    <div class="summary">
-      <span class="hi-t">這一課的重點</span>
-      <ul>
-        <li>相似比 k：周長比 k、面積比 k²</li>
-        <li>平行四邊形截線題：找平行邊 → 沙漏形 → 兩次相似 → 通分數一數</li>
-      </ul>
-    </div>
+      <div class="qsec"><h3>基本計算（自己算，再按「顯示解答」核對）</h3>
+        <p style="font-size:13px;color:var(--text-2)">先看一題「半完成」的，把中間空格補起來：</p>
+        <div class="prob"><div class="pq">① (2x+3)<sup>2</sup> = (2x)<sup>2</sup> + ▢ + 3<sup>2</sup>　（▢ 是多少？）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">▢ = 2·(2x)·(3) = 12x　→　4x<sup>2</sup> + 12x + 9</div></div></div>
+        <div class="prob"><div class="pq">② 展開 (x+6)<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= x<sup>2</sup> + 12x + 36</div></div></div>
+        <div class="prob"><div class="pq">③ 展開 (2a−3)<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 4a<sup>2</sup> − 12a + 9</div></div></div>
+        <div class="prob"><div class="pq">④ 展開 (3a+2b)<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 9a<sup>2</sup> + 12ab + 4b<sup>2</sup></div><div class="why">第一項是 3a、第二項是 2b：各自平方 (3a)<sup>2</sup>=9a<sup>2</sup>、(2b)<sup>2</sup>=4b<sup>2</sup>，中間 2·(3a)·(2b)=12ab。</div></div></div>
+        <div class="prob"><div class="pq">⑤ 展開 (4x−1)<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 16x<sup>2</sup> − 8x + 1</div></div></div>
+        <div class="prob"><div class="pq">⑥ 展開 (y+8)(y−8)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= y<sup>2</sup> − 64</div></div></div>
+        <div class="prob"><div class="pq">⑦ 展開 (3x+2)(3x−2)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 9x<sup>2</sup> − 4</div><div class="why">第一項 3x：(3x)<sup>2</sup>=9x<sup>2</sup>；第二項 2：2<sup>2</sup>=4。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3>
+        <div class="hint">寫進做錯的題號，勾一個最接近的原因。這張表能幫你和老師看出下一步要補強哪一種能力。可以印出來寫（手機上表格可左右滑）。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
+          <tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">怎麼分：分不清該用哪個公式 → <b>A</b>；漏掉中間 2ab、正負號寫錯、係數或整項沒平方 → 多半是 <b>B</b>；把題目條件看錯 → <b>C</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3>
+        <ul><li class="g1">觀念辨識全部答對（訂正後答對也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul>
+        <div class="stats"></div>
+        <button class="btn">我已自行完成並核對這幾題</button>
+        <div class="pass">這一課的自我檢查完成了。接著學 1-2 多項式加減，先熟悉同類項與去括號，為後面的展開運算打好基礎。</div></div>
+    </section>
   </div>
 
-  <!-- S3L1 大考 -->
-  <div class="lesson" id="S3L1">
-    <div class="page-label">數學 · 相似形</div>
-    <h1 class="page-title">章末大考</h1>
-    <p class="page-sub">綜合測驗　共 8 題（含第 17 題本題）</p>
-    <div id="q-s4"></div>
-    <div class="quiz-bar">
-      <button onclick="checkQ('s4')">批改</button>
-      <button class="ghost" onclick="retryQ('s4')">重作</button>
+  <!-- ══════ 1-2 多項式加減 ══════ -->
+  <div class="sec" data-s="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+    <div class="lpills">
+      <button class="lpill on" data-s="1" data-l="0">什麼是多項式</button>
+      <button class="lpill" data-s="1" data-l="1">合併同類項</button>
+      <button class="lpill" data-s="1" data-l="2">加減與去括號</button>
+      <button class="lpill" data-s="1" data-l="3">練習與訂正</button>
     </div>
-    <div class="quiz-score" id="score-s4"></div>
+
+    <section class="lesson on" data-s="1" data-l="0">
+      <div class="plabel2">多項式加減 · 名詞</div>
+      <h2>先把名字認清楚</h2>
+      <p class="sub">不用背定義，先看懂這幾個詞，後面才知道「同類」是什麼意思。</p>
+      <div class="hi"><span class="k">多項式 = 一個或多個「單項式」相加減，且文字的指數都是 0、1、2、3…（不能是負數或分數）</span></div>
+      <p>例如 3x<sup>2</sup> − 5x + 2 是多項式；<b>單獨一項 3x<sup>2</sup> 也算多項式</b>。但 x<sup>−1</sup>（＝1/x）、√x 這種指數是負數或分數的，<b>不是</b>多項式。</p>
+      <table class="tbl">
+        <tr><th>詞</th><th>意思</th><th>在 3x<sup>2</sup> − 5x + 2 裡</th></tr>
+        <tr><td>項</td><td>被加減分開的每一塊</td><td>3x<sup>2</sup>、−5x、2 共三項</td></tr>
+        <tr><td>係數</td><td>項前面的數字</td><td>3、−5</td></tr>
+        <tr><td>常數項</td><td>沒有文字的項</td><td>2</td></tr>
+      </table>
+      <div class="note"><b>次數怎麼算：</b>一個單項式的次數是「各文字指數的<b>總和</b>」——例如 3a<sup>2</sup>b 是 2+1=3 次。多項式的次數，是各項中<b>最高</b>的那個次數（3x<sup>2</sup>−5x+2 是二次）。目前只有一個 x 的式子，一項的次數就等於 x 的指數。</div>
+      <div class="hi" style="border-color:var(--accent)"><span class="k">同類項 = 文字部分「完全一樣」的項</span></div>
+      <p>3x 和 −5x 是同類（都是 x）；3x 和 3x<sup>2</sup> <b>不是</b>同類（一次 vs 二次）。這個判斷是下一課的關鍵。</p>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="1">
+      <div class="plabel2">多項式加減 · 合併同類項</div>
+      <h2>同類才能合，係數相加、文字不變</h2>
+      <p class="sub">合併同類項是多項式最基本的動作。</p>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">白話</span>
+          <p style="margin:0;font-size:14px">3 個 x 加 2 個 x，是 5 個 x——像 3 顆蘋果加 2 顆蘋果。但蘋果不能跟橘子合：x 和 x<sup>2</sup> 不同類，不能加。</p></div>
+        <div class="repr-item"><span class="repr-tag">代數</span>
+          <div class="repr-eq">3x + 2x = (3+2)x = 5x　<small>係數相加，x 不動</small></div>
+          <div class="repr-eq">3x + 2x<sup>2</sup> <small>不同類，不能合</small></div></div>
+        <div class="repr-item"><span class="repr-tag">分類</span>
+          <table class="tbl" style="margin:0"><tr><th>同類（可合）</th><th>不同類（不可合）</th></tr>
+            <tr><td>7a 與 −2a</td><td>7a 與 7b</td></tr><tr><td>x<sup>2</sup> 與 4x<sup>2</sup></td><td>x<sup>2</sup> 與 x</td></tr><tr><td>5 與 −3（常數）</td><td>5 與 5x</td></tr></table></div>
+      </div>
+      <div class="eg"><div class="q">例：合併 4x + 3 − x + 5</div>
+        <div class="step">= (4x − x) + (3 + 5) = 3x + 8</div>
+        <div class="why">同類擺一起：x 類合成 3x，常數合成 8。不同類的分開寫。</div></div>
+      <div class="warn"><b>常見錯誤：</b>把 3x + 8 再算成 11x。x 類和常數不同類，答案就是 3x + 8。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="2">
+      <div class="plabel2">多項式加減 · 去括號</div>
+      <h2>減號去括號，裡面全變號</h2>
+      <p class="sub">這是整個第1章最容易掉分的地方，慢慢看。</p>
+      <div class="hi"><span class="k">− ( a − b + c ) = − a + b − c</span></div>
+      <p>括號前面是 <b>加號</b>：直接拿掉，裡面不變。<br>括號前面是 <b>減號</b>：括號拿掉時，裡面<b>每一項</b>都要變號——不是只有第一項。</p>
+      <div class="eg"><div class="q">例：(3x<sup>2</sup> + 2x − 1) − (x<sup>2</sup> − 4x + 5)</div>
+        <div class="step">= 3x<sup>2</sup> + 2x − 1 <b style="color:#B7476A">− x<sup>2</sup> + 4x − 5</b></div>
+        <div class="step">= 2x<sup>2</sup> + 6x − 6</div>
+        <div class="why">紅色是重點：第二個括號前面是減號，x<sup>2</sup>→−x<sup>2</sup>、−4x→+4x、+5→−5，<b>三項全變號</b>，再合併。</div></div>
+      <div class="warn"><b>最常見的錯：</b>減號只把第一項變號，後面照抄。這一項沒變號，後面整題就會算錯。去減號括號時，每一項都盯著變號。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>自己做一遍，錯的訂正後一樣算過</h2>
+      <p class="sub">先自己算，再對解答。做錯的填最下面表格。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 下列哪組是同類項？</div>
+          <button class="opt">3x 與 3x<sup>2</sup></button><button class="opt">3x 與 −7x</button><button class="opt">3x 與 3y</button><div class="exp">文字要完全一樣。3x 與 −7x 都是 x。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. −(x − 3) 去括號等於？</div>
+          <button class="opt">−x − 3</button><button class="opt">−x + 3</button><button class="opt">x − 3</button><div class="exp">每項變號：x→−x、−3→+3，得 −x+3。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">3. 4a + 5 − a 合併後是？</div>
+          <button class="opt">8a</button><button class="opt">9a</button><button class="opt">3a + 5</button><div class="exp">a 類 4a−a=3a；常數 5 留著。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 合併 5x + 2 − 3x + 7</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 2x + 9</div></div></div>
+        <div class="prob"><div class="pq">② (2x<sup>2</sup> + x) + (x<sup>2</sup> − 3x)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 3x<sup>2</sup> − 2x</div></div></div>
+        <div class="prob"><div class="pq">③ (4x − 1) − (x − 6)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 4x − 1 − x + 6 = 3x + 5</div></div></div>
+        <div class="prob"><div class="pq">④ (x<sup>2</sup> − 2x + 3) − (2x<sup>2</sup> + x − 5)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= −x<sup>2</sup> − 3x + 8</div><div class="why">第二括號三項全變號後再合併。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
+          <tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">去括號變號沒做完 → 多半是 <b>B</b>；不知道什麼是同類項 → <b>A</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 1-3 多項式乘除，把公式拿去實際展開與相除。</div></div>
+    </section>
   </div>
+
+  <!-- ══════ 1-3 多項式乘除 ══════ -->
+  <div class="sec" data-s="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+    <div class="lpills">
+      <button class="lpill on" data-s="2" data-l="0">分配律</button>
+      <button class="lpill" data-s="2" data-l="1">多項式相乘</button>
+      <button class="lpill" data-s="2" data-l="2">除以單項式</button>
+      <button class="lpill" data-s="2" data-l="3">多項式÷多項式</button>
+      <button class="lpill" data-s="2" data-l="4">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="2" data-l="0">
+      <div class="plabel2">多項式乘除 · 分配律</div>
+      <h2>外面那個，要乘進去每一項</h2>
+      <p class="sub">乘法的根本動作只有一個：分配律。先把「指數怎麼算」講清楚。</p>
+      <div class="prereq">
+        <div class="t">單項式乘除先備</div>
+        <p><b>同底數相乘，指數相加：</b>x<sup>m</sup> · x<sup>n</sup> = x<sup>m+n</sup>（例：x·x<sup>2</sup> = x<sup>3</sup>）</p>
+        <p><b>同底數相除，指數相減：</b>x<sup>m</sup> ÷ x<sup>n</sup> = x<sup>m−n</sup>（x ≠ 0）</p>
+        <p>數字係數照一般乘除算，例如 2x · 3x<sup>2</sup> = 6x<sup>3</sup>。</p>
+      </div>
+      <div class="repr">
+        <div class="repr-item"><span class="repr-tag">圖</span>
+          <svg viewBox="0 0 260 140" width="260" height="140" aria-label="分配律面積圖">
+            <rect x="20" y="30" width="140" height="80" fill="#ECEBFA" stroke="#CBC0E0"/><rect x="160" y="30" width="80" height="80" fill="#E6F4EF" stroke="#CBC0E0"/>
+            <text x="90" y="75" text-anchor="middle" font-size="16" fill="#2A2335" font-family="Georgia">a·b</text><text x="200" y="75" text-anchor="middle" font-size="16" fill="#2A2335" font-family="Georgia">a·c</text>
+            <text x="90" y="24" text-anchor="middle" font-size="13" fill="#645B78">b</text><text x="200" y="24" text-anchor="middle" font-size="13" fill="#645B78">c</text><text x="12" y="74" text-anchor="middle" font-size="13" fill="#645B78">a</text></svg>
+          <div class="cap">高 a、底 (b+c) 的長方形＝兩塊 a·b + a·c</div></div>
+        <div class="repr-item"><span class="repr-tag">代數</span><div class="repr-eq">a(b + c) = ab + ac</div></div>
+        <div class="repr-item"><span class="repr-tag">白話</span><p style="margin:0;font-size:14px">括號外面那一個，要分別乘進括號裡的<b>每一項</b>，一項都不能漏。</p></div>
+      </div>
+      <div class="hi"><span class="k">a(b + c) = ab + ac</span></div>
+      <div class="eg"><div class="q">例：2x(3x − 4)</div>
+        <div class="step">= 2x·3x − 2x·4 = 6x<sup>2</sup> − 8x</div>
+        <div class="why">2x 分別乘 3x 和 −4。x·x=x<sup>2</sup>。</div></div>
+      <div class="warn"><b>常見錯誤：</b>只乘第一項，寫成 6x<sup>2</sup> − 4，漏了 2x 乘 −4。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="1">
+      <div class="plabel2">多項式乘除 · 相乘</div>
+      <h2>兩個括號：逐項乘，一項不漏</h2>
+      <p class="sub">(a+b)(c+d) 就是前面每一項分別乘後面每一項，四塊全加起來。</p>
+      <div class="repr-eq">(a+b)(c+d) = ac + ad + bc + bd</div>
+      <div class="eg"><div class="q">例：(x + 2)(x + 3)</div>
+        <div class="step">= x<sup>2</sup> + 3x + 2x + 6 = x<sup>2</sup> + 5x + 6</div>
+        <div class="why">四塊乘完，再合併同類項（3x、2x）。</div></div>
+      <div class="note">其實 1-1 的乘法公式就是這個的<b>特例</b>：(x+3)(x+3) 是和的平方、(x+4)(x−4) 是平方差。認得長相就能跳過逐項乘。</div>
+      <div class="warn"><b>常見錯誤：</b>只乘「頭乘頭、尾乘尾」兩塊，漏掉中間交叉兩塊。四塊都要。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="2">
+      <div class="plabel2">多項式乘除 · 除以單項式</div>
+      <h2>除以單項式：每一項各除</h2>
+      <p class="sub">最常考的除法，把每一項分別除。</p>
+      <div class="hi"><span class="k">(ab + ac) ÷ a = b + c　(a ≠ 0)</span></div>
+      <div class="eg"><div class="q">例：(6x<sup>2</sup> + 4x) ÷ 2x　(x ≠ 0)</div>
+        <div class="step">= 6x<sup>2</sup>÷2x + 4x÷2x = 3x + 2</div>
+        <div class="why">每一項各除以 2x。6x<sup>2</sup>÷2x=3x（指數相減）、4x÷2x=2。因為除式是 2x，此計算須在 x≠0 時成立。</div></div>
+      <div class="warn"><b>常見錯誤：</b>只把第一項除、後面照抄。每一項都要除到。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="3">
+      <div class="plabel2">多項式乘除 · 多項式÷多項式</div>
+      <h2>除式有兩項以上：用直式長除法</h2>
+      <p class="sub">除式含兩項（例如 x+2）時，像整數的長除法一樣，一階一階除。</p>
+      <div class="hi"><span class="k">首項除首項 → 回乘 → 相減 → 落下一項 → 再一輪</span></div>
+      <div class="eg"><div class="q">例（整除）：(x<sup>2</sup> + 5x + 6) ÷ (x + 2)</div>
+        <div class="step">① x<sup>2</sup>÷x = x（商第一項）；x·(x+2)=x<sup>2</sup>+2x</div>
+        <div class="step">② 相減：(x<sup>2</sup>+5x)−(x<sup>2</sup>+2x)=3x，落下 +6 → 3x+6</div>
+        <div class="step">③ 3x÷x = 3（商第二項）；3·(x+2)=3x+6；相減 = 0</div>
+        <div class="step"><b>商 = x + 3，餘 0</b></div>
+        <div class="why">驗算：(x+2)(x+3)=x<sup>2</sup>+5x+6 ✓</div></div>
+      <div class="note" style="margin-bottom:6px">寫成直式（跟紙本一樣的排版）：</div>
+      <div class="longdiv">        x  +  3
+      ┌──────────────
+x + 2 │ x² + 5x + 6
+        x² + 2x
+        ──────────
+             3x + 6
+             3x + 6
+             ───────
+                  0</div>
+      <div class="eg"><div class="q">例（有餘式）：(x<sup>2</sup> + 3x + 5) ÷ (x + 1)</div>
+        <div class="step">商 x：x·(x+1)=x<sup>2</sup>+x；相減得 2x，落下 +5 → 2x+5</div>
+        <div class="step">商 +2：2·(x+1)=2x+2；相減得 3</div>
+        <div class="step"><b>商 = x + 2，餘 3</b></div></div>
+      <div class="warn"><b>缺項要補 0（佔位）：</b>例如 x<sup>3</sup> − 4x + 3 沒有 x<sup>2</sup> 項，要當成 x<sup>3</sup> + <b>0x<sup>2</sup></b> − 4x + 3 再除，不然位子會對錯。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="4">
+      <div class="plabel2">練習與訂正</div>
+      <h2>自己做一遍，錯的訂正後一樣算過</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 3(x + 4) 等於？</div>
+          <button class="opt">3x + 4</button><button class="opt">3x + 12</button><button class="opt">3x</button><div class="exp">3 要乘進每一項：3x + 12。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">2. x · x<sup>2</sup> 等於？</div>
+          <button class="opt">x<sup>2</sup></button><button class="opt">2x<sup>3</sup></button><button class="opt">x<sup>3</sup></button><div class="exp">同底數相乘指數相加：x<sup>1</sup>·x<sup>2</sup>=x<sup>3</sup>。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. (x<sup>2</sup>+5x+6)÷(x+2) 的商是？</div>
+          <button class="opt">x + 3</button><button class="opt">x + 2</button><button class="opt">x + 6</button><div class="exp">長除法：商 x+3，餘 0。驗算 (x+2)(x+3)=x²+5x+6。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 展開 3x(2x − 5)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 6x<sup>2</sup> − 15x</div></div></div>
+        <div class="prob"><div class="pq">② 展開 (x + 5)(x + 2)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= x<sup>2</sup> + 7x + 10</div></div></div>
+        <div class="prob"><div class="pq">③ (8x<sup>2</sup> − 6x) ÷ 2x　(x≠0)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 4x − 3</div></div></div>
+        <div class="prob"><div class="pq">④ (x<sup>2</sup> + 7x + 12) ÷ (x + 3)（長除法）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">商 = x + 4，餘 0</div><div class="why">x·(x+3)=x²+3x，減得 4x+12；4·(x+3)=4x+12，減得 0。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
+          <tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">漏乘某一項、長除法沒對齊 → 多半是 <b>B</b>；不知道指數相加、缺項要補 0 → <b>A</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第1章走完了。<a href="index.html">回數學首頁 →</a></div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.2.0</span></div>
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="bnav">
-  <button id="prevBtn" onclick="navPrev()">← 上一課</button>
-  <button id="nextBtn" class="primary" onclick="navNext()">下一課 →</button>
-</div>
-
-<!-- FOOTER -->
-<div class="page-footer">
-  <span>數學 · 阿蔓明道國中復習專班</span>
-  <span>V2.1.9</span>
-</div>
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-/* ===== 導覽資料 ===== */
-const SL=[3,4,5,2];
-const TOTAL=SL.reduce((a,b)=>a+b,0);
-const SCOL=['--c1','--c2','--c3','--c4'];
-const SCOLL=['--c1l','--c2l','--c3l','--c4l'];
-const qm={0:{2:'s1'},1:{3:'s2'},2:{4:'s3'},3:{1:'s4'}};
-let cS=0, cL=[0,0,0,0];
-
-function setAccent(s){
-  const root=document.documentElement.style;
-  root.setProperty('--c', getComputedStyle(document.documentElement).getPropertyValue(SCOL[s]).trim());
-  root.setProperty('--cl', getComputedStyle(document.documentElement).getPropertyValue(SCOLL[s]).trim());
-}
-
-function gS(s){
-  cS=s;
-  document.querySelectorAll('.sec-wrap').forEach((w,i)=>w.classList.toggle('on',i===s));
-  document.querySelectorAll('.stab').forEach((t,i)=>t.classList.toggle('on',i===s));
-  setAccent(s);
-  gL(s, cL[s]);
-}
-
-function gL(s,l){
-  cS=s; cL[s]=l;
-  const wrap=document.getElementById('sec'+s);
-  wrap.querySelectorAll('.lesson').forEach(le=>le.classList.remove('on'));
-  const lesson=document.getElementById('S'+s+'L'+l);
-  if(lesson) lesson.classList.add('on');
-  wrap.querySelectorAll('.lpill').forEach((p,i)=>p.classList.toggle('on',i===l));
-  // 觸發測驗建立
-  if(qm[s] && qm[s][l]){
-    const qid=qm[s][l];
-    if(!document.getElementById('q-'+qid).hasChildNodes()) buildQ(qid);
-  }
-  updateNav(); updateProg();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function navNext(){
-  if(cL[cS] < SL[cS]-1){ gL(cS, cL[cS]+1); }
-  else if(cS < SL.length-1){ gS(cS+1); gL(cS+1,0); }
-}
-function navPrev(){
-  if(cL[cS] > 0){ gL(cS, cL[cS]-1); }
-  else if(cS > 0){ gS(cS-1); gL(cS-1, SL[cS-1]-1); }
-}
-function updateNav(){
-  document.getElementById('prevBtn').disabled = (cS===0 && cL[0]===0);
-  document.getElementById('nextBtn').disabled = (cS===SL.length-1 && cL[cS]===SL[cS]-1);
-}
-function updateProg(){
-  let done=0; for(let i=0;i<cS;i++) done+=SL[i]; done+=cL[cS]+1;
-  document.getElementById('progFill').style.width=(done/TOTAL*100)+'%';
-  document.getElementById('progLabel').textContent='第 '+done+' 課 / 共 '+TOTAL+' 課';
-}
-
-/* ===== 互動計算器 ===== */
-function calcRatio(){
-  const a=+document.getElementById('sa').value, b=+document.getElementById('sb').value, c=+document.getElementById('sc').value;
-  const out=document.getElementById('ratioOut');
-  if(!a||!b){out.textContent='請輸入有效的對應邊';return;}
-  const r=b/a;
-  out.innerHTML='相似比 ＝ '+a+' : '+b+'　（比值 '+ (r).toFixed(2) +'）<br>對應的 b 邊 ＝ '+c+' × '+b+' ÷ '+a+' ＝ <strong>'+(c*r).toFixed(2)+'</strong>';
-}
-function calcHour(){
-  const a=+document.getElementById('ha').value, b=+document.getElementById('hb').value, l=+document.getElementById('hl').value;
-  const out=document.getElementById('hourOut');
-  if(!a||!b){out.textContent='請輸入兩條平行邊';return;}
-  const top=l*a/(a+b), bot=l*b/(a+b);
-  out.innerHTML='交點把斜線切成 '+a+' : '+b+'<br>上段 ＝ <strong>'+top.toFixed(2)+'</strong>　下段 ＝ <strong>'+bot.toFixed(2)+'</strong>';
-}
-function calcArea(){
-  const a=+document.getElementById('ka').value, b=+document.getElementById('kb').value;
-  const out=document.getElementById('areaOut');
-  if(!a||!b){out.textContent='請輸入相似比';return;}
-  out.innerHTML='相似比 '+a+' : '+b+'<br>周長比 ＝ '+a+' : '+b+'　面積比 ＝ <strong>'+(a*a)+' : '+(b*b)+'</strong>';
-}
-
-/* ===== 測驗資料 ===== */
-const QD={
-  s1:[
-    {q:'下列哪一組圖形「一定」相似？',o:['任意兩個長方形','任意兩個正方形','任意兩個菱形','任意兩個等腰三角形'],a:1,e:'正方形角都 90°、邊都成等比例，必相似。長方形、菱形、等腰三角形都可能形狀不同。'},
-    {q:'兩相似多邊形的對應邊比是 2:5，則對應角的關係是？',o:['比 2:5','比 4:25','相等','互補'],a:2,e:'相似時對應角永遠「相等」，成比例的是邊。'},
-    {q:'△ABC ∼ △DEF，AB=6、DE=9，則相似比（△ABC : △DEF）為？',o:['2 : 3','3 : 2','6 : 9 不能化','無法判斷'],a:0,e:'6:9 約分 ＝ 2:3。'},
-    {q:'承上題，若 BC=8，則 EF=？',o:['12','10','5.33','16'],a:0,e:'BC:EF＝2:3 → EF＝8×3÷2＝12。'},
-    {q:'「全等」是相似比為多少的相似？',o:['0','1','2','全等不算相似'],a:1,e:'全等＝大小也一樣＝相似比 1:1 的特例。'}
-  ],
-  s2:[
-    {q:'兩三角形「兩角對應相等」，判定相似的依據是？',o:['SSS','SAS','AA','不能判定'],a:2,e:'兩角相等就用 AA，第三角自動相等。'},
-    {q:'用 SAS 判相似，需要的條件是？',o:['三邊成比例','兩邊成比例且夾角相等','兩角相等','兩邊相等'],a:1,e:'SAS＝兩邊成比例＋夾角相等。注意是「夾」角。'},
-    {q:'△ABC 中 AB=4、AC=6；△DEF 中 DE=6、DF=9，且 ∠A=∠D，兩者？',o:['SSS 相似','SAS 相似','不相似','無法判斷'],a:1,e:'AB:DE＝AC:DF＝2:3，夾角 ∠A=∠D 相等 → SAS 相似。'},
-    {q:'三邊 3、4、5 的三角形，與三邊 6、8、10 的三角形關係是？',o:['全等','相似比 1:2','不相似','相似比 2:1'],a:1,e:'每組對應邊都 1:2，SSS 相似，相似比 1:2。'},
-    {q:'任意兩個正三角形彼此？',o:['一定全等','一定相似','不一定相似','一定不相似'],a:1,e:'正三角形三角都 60°，AA 成立 → 一定相似（但不一定全等）。'},
-    {q:'∠A=∠D=90°，且 AB:DE＝AC:DF，可判定相似嗎？用哪招？',o:['可以，SAS','可以，AA','不能','可以，SSS'],a:0,e:'兩邊成比例＋夾角（90°）相等 → SAS 相似。'}
-  ],
-  s3:[
-    {q:'三條平行線截兩直線，一線截得 AB=4、BC=6，另一線 DE=6，則 EF=？',o:['4','9','8','10'],a:1,e:'平行截比例：4:6＝6:EF → EF＝9。'},
-    {q:'△ABC 中 DE∥BC，AD=3、DB=2、AE=6，則 EC=？',o:['4','3','9','5'],a:0,e:'AD:DB＝AE:EC → 3:2＝6:EC → EC＝4。'},
-    {q:'沙漏形中兩平行邊長為 3 和 5，交點把一條斜線分成的兩段比為？',o:['5 : 3','3 : 5','3 : 8','無法決定'],a:1,e:'沙漏形分點比＝平行邊比＝3:5。'},
-    {q:'三角形兩邊中點的連線，和第三邊的關係是？',o:['垂直','平行且等長','平行且為一半','長度相等'],a:2,e:'中點連線定理：平行第三邊，且長度為一半。'},
-    {q:'△ABC 中 D、E 分別是 AB、AC 中點，BC=10，則 DE=？',o:['10','5','20','2.5'],a:1,e:'DE＝½ BC＝5。'},
-    {q:'平行四邊形 ABCD，延長 BC 到 G 使 CG＝⅓BC。AG 交 DC 於 F。AD∥GC、AD=3、GC=1，則 AF:FG=？',o:['3 : 1','1 : 3','3 : 4','4 : 3'],a:0,e:'沙漏形 △ADF∼△GCF，AF:FG＝AD:GC＝3:1。（第 17 題第一刀）'},
-    {q:'承上圖，AG 交對角線 BD 於 E。AD∥GB、AD=3、GB=4，則 AE:EG=？',o:['3 : 4','4 : 3','3 : 1','1 : 1'],a:0,e:'沙漏形 △ADE∼△GBE，AE:EG＝AD:GB＝3:4。（第 17 題第二刀）'}
-  ],
-  s4:[
-    {q:'△ABC ∼ △DEF，相似比 2:3，△ABC 面積＝8，則 △DEF 面積＝？',o:['12','18','16','27'],a:1,e:'面積比＝2²:3²＝4:9 → 8×9÷4＝18。'},
-    {q:'兩相似圖形相似比 3:5，周長比＝？',o:['3 : 5','9 : 25','5 : 3','√3 : √5'],a:0,e:'周長比＝相似比＝3:5。（面積才平方）'},
-    {q:'旗桿影子長 12 m，同時 1 m 竹竿影子長 0.8 m，旗桿高？',o:['9.6 m','15 m','10 m','14.4 m'],a:1,e:'相似三角形：1÷0.8＝h÷12 → h＝15 m。（泰勒斯量金字塔法）'},
-    {q:'△ABC 中 DE∥BC，AD:DB＝2:3，則 △ADE 面積 : 梯形 DBCE 面積＝？',o:['4 : 9','2 : 3','4 : 21','4 : 25'],a:2,e:'AD:AB＝2:5，△ADE:△ABC＝4:25，梯形＝25−4＝21 → 4:21。'},
-    {q:'直角三角形斜邊上的高，把它分成的兩個小三角形，與原三角形？',o:['都不相似','都相似','只有一個相似','都全等'],a:1,e:'母子相似：兩個小三角形都與原三角形相似（畢氏定理的關鍵）。'},
-    {q:'兩相似三角形面積比 16:9，則相似比＝？',o:['16 : 9','4 : 3','256 : 81','8 : 3'],a:1,e:'面積比開根號 → 相似比＝√16:√9＝4:3。'},
-    {q:'平行四邊形 ABCD 中 BC:CG＝3:1，則 AE:EF＝？',o:['3 : 1','4 : 3','3 : 4','12 : 9 不能化'],a:1,e:'兩次沙漏：AE＝12/28、AF＝21/28、EF＝9/28 → AE:EF＝12:9＝4:3。（第 17 題本題）'},
-    {q:'地圖比例尺 1:25000，圖上量到 4 cm，代表實際距離？',o:['1 km','10 km','100 km','1000 m'],a:0,e:'4×25000＝100000 cm＝1 km。'}
-  ]
-};
-
-/* ===== 測驗系統 ===== */
-const qState={};
-function buildQ(qid){
-  const data=QD[qid], box=document.getElementById('q-'+qid);
-  qState[qid]={sel:{}, checked:false};
-  box.innerHTML='';
-  data.forEach((item,qi)=>{
-    const card=document.createElement('div'); card.className='qcard';
-    let html='<div class="qtxt"><span class="qn">'+(qi+1)+'.</span> '+item.q+'</div>';
-    item.o.forEach((opt,oi)=>{
-      const lab='ABCD'[oi];
-      html+='<div class="qopt" data-qi="'+qi+'" data-oi="'+oi+'" onclick="selQ(\''+qid+'\','+qi+','+oi+')"><span class="qlabel">'+lab+'</span><span>'+opt+'</span></div>';
-    });
-    html+='<div class="qexp" id="exp-'+qid+'-'+qi+'"></div>';
-    card.innerHTML=html;
-    box.appendChild(card);
-  });
-}
-function selQ(qid,qi,oi){
-  if(qState[qid].checked) return;
-  qState[qid].sel[qi]=oi;
-  document.querySelectorAll('#q-'+qid+' .qopt[data-qi="'+qi+'"]').forEach(o=>{
-    o.classList.toggle('sel', +o.dataset.oi===oi);
-  });
-}
-function checkQ(qid){
-  const data=QD[qid], st=qState[qid];
-  if(!st) return;
-  st.checked=true;
-  let correct=0;
-  data.forEach((item,qi)=>{
-    const chosen=st.sel[qi];
-    document.querySelectorAll('#q-'+qid+' .qopt[data-qi="'+qi+'"]').forEach(o=>{
-      const oi=+o.dataset.oi;
-      o.classList.remove('sel');
-      if(oi===item.a) o.classList.add('ok');
-      else if(oi===chosen) o.classList.add('no');
-    });
-    const exp=document.getElementById('exp-'+qid+'-'+qi);
-    const right=(chosen===item.a);
-    if(right) correct++;
-    exp.className='qexp show '+(right?'ok':'no');
-    exp.innerHTML=(right?'✓ 答對　':'✗ 正解 '+('ABCD'[item.a])+'　')+item.e;
-  });
-  const sc=document.getElementById('score-'+qid);
-  sc.className='quiz-score show';
-  sc.textContent='答對 '+correct+' / '+data.length+' 題';
-}
-function retryQ(qid){
-  buildQ(qid);
-  const sc=document.getElementById('score-'+qid); sc.className='quiz-score';
-}
-
-/* 初始化 */
-setAccent(0); updateNav(); updateProg();
+var SL=[4,4,5], cS=0, cL=[0,0,0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;
+  document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});
+  stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});
+  showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t,idx){
+  t.addEventListener('click',function(){showSec(+t.dataset.s);});
+  t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(idx+1)%stabs.length;else if(e.key==='ArrowLeft')n=(idx-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();showSec(+stabs[n].dataset.s);stabs[n].focus();}});
+});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),retry=m.querySelector('.retry');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;if(retry)retry.classList.remove('show');}else{o.classList.add('no');if(retry)retry.classList.add('show');}updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
 </script>
 </body>
 </html>

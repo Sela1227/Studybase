@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>第3章 因式分解 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.prereq{border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);padding:14px 16px;margin:14px 0}
+.prereq .t{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text-2);text-transform:uppercase;margin-bottom:8px}
+.prereq p{font-size:14px;margin:6px 0}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-2);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:17px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+.cross{font-family:"Courier New",monospace;font-size:15px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin:10px 0;white-space:pre;overflow-x:auto;line-height:1.6;text-align:center}
+sup{font-size:.72em}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.eg,.mcq,.prob,.errlog,.hi,.note,.rev,.cross{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">第3章 因式分解</span></div>
+
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二上 · 第3章 因式分解</div>
+    <h1>把「展開」反過來做</h1>
+    <p>因式分解就是第1章「乘法公式／展開」的<b>反向</b>——把一個多項式寫回「幾個式子相乘」。第4章一元二次方程式要靠它來解，是很關鍵的一塊。第1章熟的話，這章會順很多。</p>
+    <div class="meta"><span>前置：第1章 乘法公式與多項式</span><span>接到第4章 一元二次方程式</span><span>預計 40 分鐘／節</span></div>
+  </div>
+
+  <div class="stabs" role="tablist" aria-label="第3章各節">
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">3-1 提公因式與乘法公式</button>
+    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">3-2 十字交乘法</button>
+  </div>
+
+  <!-- ══════ 3-1 提公因式與乘法公式 ══════ -->
+  <div class="sec on" data-s="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">什麼是因式分解</button>
+      <button class="lpill" data-s="0" data-l="1">提公因式</button>
+      <button class="lpill" data-s="0" data-l="2">乘法公式反用</button>
+      <button class="lpill" data-s="0" data-l="3">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">因式分解 · 意義</div>
+      <h2>因式分解是「展開」的反向</h2>
+      <p class="sub">第1章把括號乘開叫「展開」；反過來，把式子寫回「相乘」的形式，就叫因式分解。</p>
+      <div class="repr-eq">展開：(x+2)(x+3) → x<sup>2</sup>+5x+6<br>因式分解：x<sup>2</sup>+5x+6 → (x+2)(x+3)</div>
+      <div class="hi"><span class="k">因式分解 = 把多項式寫成「幾個因式相乘」（展開的反向）</span></div>
+      <div class="rev"><b>還記得第1章的反向辨識嗎？</b>x<sup>2</sup>+6x+9=(x+3)<sup>2</sup>、x<sup>2</sup>−16=(x+4)(x−4)——那時只要「看得出來」；這章要能自己「分出來」。</div>
+      <div class="warn"><b>兩個重點：</b>① 結果一定是「相乘」，不是相加。② 要分到「不能再分」為止。分完可以乘回去驗算，等於原式才對。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">因式分解 · 提公因式</div>
+      <h2>每一項都有的，提到括號外</h2>
+      <p class="sub">最先要做的一步：先看每一項有沒有「共同的因式」，有就提出來。</p>
+      <div class="hi"><span class="k">找出各項的公因式（共同的數字與文字），提到括號外</span></div>
+      <div class="eg"><div class="q">例：6x<sup>2</sup> + 9x</div>
+        <div class="step">兩項的公因式：數字 3、文字 x → 公因式 3x</div>
+        <div class="step">6x<sup>2</sup> + 9x = 3x(2x + 3)</div>
+        <div class="why">提出 3x 後，括號裡是「原式各項 ÷ 3x」：6x²÷3x=2x、9x÷3x=3。乘回去 3x·2x+3x·3=6x²+9x ✓。</div></div>
+      <div class="eg"><div class="q">例：4x<sup>2</sup> − 8x</div>
+        <div class="step">= 4x(x − 2)</div></div>
+      <div class="warn"><b>提「最大」的公因式：</b>4x<sup>2</sup>−8x 若只提 2 得 2(2x²−4x)，括號裡還能再提，沒分完。要一次提到 4x。分完習慣乘回去檢查。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">因式分解 · 乘法公式反用</div>
+      <h2>把第1章的公式反過來用</h2>
+      <p class="sub">認出式子是某個乘法公式展開的結果，就能直接寫回相乘的形式。</p>
+      <div class="hi"><span class="k">a<sup>2</sup>+2ab+b<sup>2</sup> = (a+b)<sup>2</sup>　；　a<sup>2</sup>−2ab+b<sup>2</sup> = (a−b)<sup>2</sup>　；　a<sup>2</sup>−b<sup>2</sup> = (a+b)(a−b)</span></div>
+      <div class="eg"><div class="q">例（完全平方）：x<sup>2</sup> + 6x + 9</div>
+        <div class="step">首項 x<sup>2</sup>、末項 9=3<sup>2</sup>，中間 6x = 2·x·3 ✓</div>
+        <div class="step">= (x + 3)<sup>2</sup></div>
+        <div class="why">認完全平方：首尾都是平方，中間剛好等於 2×√首×√尾。</div></div>
+      <div class="eg"><div class="q">例（平方差）：x<sup>2</sup> − 16</div>
+        <div class="step">= x<sup>2</sup> − 4<sup>2</sup> = (x + 4)(x − 4)</div></div>
+      <div class="eg"><div class="q">例（含係數的平方差）：4x<sup>2</sup> − 25</div>
+        <div class="step">= (2x)<sup>2</sup> − 5<sup>2</sup> = (2x + 5)(2x − 5)</div></div>
+      <div class="warn"><b>平方差是「相減」才行：</b>x<sup>2</sup>+16（相加）不能分解。只有兩個平方「相減」才用平方差。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先自己做，錯的訂正後一樣算過</h2>
+      <p class="sub">先自己算，再對解答。做錯的填最下面表格。提醒：能提公因式的，先提。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 下列哪個是「因式分解」的結果？</div>
+          <button class="opt">x<sup>2</sup> + 5x + 6</button><button class="opt">(x+2)(x+3)</button><button class="opt">x<sup>2</sup> + 5x</button><div class="exp">因式分解的結果是「相乘」的形式，(x+2)(x+3) 才是。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">2. x<sup>2</sup> − 9 分解後是？</div>
+          <button class="opt">(x+3)(x−3)</button><button class="opt">(x−3)<sup>2</sup></button><button class="opt">不能分解</button><div class="exp">平方差：x²−3²=(x+3)(x−3)。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">3. 6x<sup>2</sup>+3x 的公因式是？</div>
+          <button class="opt">6x</button><button class="opt">3</button><button class="opt">3x</button><div class="exp">數字公因數 3、共同文字 x → 3x。提出得 3x(2x+1)。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 提公因式：8x<sup>2</sup> + 12x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 4x(2x + 3)</div></div></div>
+        <div class="prob"><div class="pq">② 分解：x<sup>2</sup> + 10x + 25</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (x + 5)<sup>2</sup></div><div class="why">25=5²、10x=2·x·5，是完全平方。</div></div></div>
+        <div class="prob"><div class="pq">③ 分解：x<sup>2</sup> − 49</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (x + 7)(x − 7)</div></div></div>
+        <div class="prob"><div class="pq">④ 分解：9x<sup>2</sup> − 4</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (3x + 2)(3x − 2)</div><div class="why">(3x)²−2²，平方差。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">認不出是哪個公式、忘了先提公因式 → 多半是 <b>A</b>；係數平方、符號算錯 → <b>B</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-2 十字交乘法，處理不是完全平方、也不是平方差的二次式。</div></div>
+    </section>
+  </div>
+
+  <!-- ══════ 3-2 十字交乘法 ══════ -->
+  <div class="sec" data-s="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+    <div class="lpills">
+      <button class="lpill on" data-s="1" data-l="0">十字交乘</button>
+      <button class="lpill" data-s="1" data-l="1">含係數的十字交乘</button>
+      <button class="lpill" data-s="1" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="1" data-l="0">
+      <div class="plabel2">十字交乘 · 基本型</div>
+      <h2>x<sup>2</sup>+bx+c：找兩數，積 c、和 b</h2>
+      <p class="sub">不是完全平方、也不是平方差的二次式，用十字交乘：把 x²+bx+c 拆成 (x+p)(x+q)。</p>
+      <div class="hi"><span class="k">x<sup>2</sup>+bx+c = (x+p)(x+q)，其中 p×q = c、p+q = b</span></div>
+      <div class="eg"><div class="q">例：x<sup>2</sup> + 5x + 6</div>
+        <div class="step">找兩數：相乘 = 6、相加 = 5 → 是 2 和 3</div>
+        <div class="cross">x ＼＿ +2
+x ＿／ +3
+────────────
+直乘 x·x = x²，(+2)·(+3) = +6
+交叉相加 3x + 2x = +5x  ✓</div>
+        <div class="step">= (x + 2)(x + 3)</div></div>
+      <div class="eg"><div class="q">例（含負號）：x<sup>2</sup> − 5x + 6</div>
+        <div class="step">積 = 6（正）、和 = −5（負）→ 兩個都負：−2、−3</div>
+        <div class="step">= (x − 2)(x − 3)</div></div>
+      <div class="eg"><div class="q">例（積為負）：x<sup>2</sup> + x − 6</div>
+        <div class="step">積 = −6、和 = +1 → 一正一負：+3、−2</div>
+        <div class="step">= (x + 3)(x − 2)</div></div>
+      <div class="note"><b>符號快判：</b>積為正 → 兩數同號（看和決定正負）；積為負 → 兩數一正一負（絕對值大的跟著和的符號）。</div>
+      <div class="warn"><b>一定要驗算：</b>把 (x+p)(x+q) 乘回去，中間項對了才算對。符號最容易錯。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="1">
+      <div class="plabel2">十字交乘 · 含係數</div>
+      <h2>ax<sup>2</sup>+bx+c：首項係數也要拆</h2>
+      <p class="sub">首項係數不是 1 時，左邊要拆首項係數、右邊拆常數，交叉相乘相加要等於中間項。</p>
+      <div class="eg"><div class="q">例：2x<sup>2</sup> + 7x + 3</div>
+        <div class="cross">2x ＼＿ +1   → 交叉 2x·3 = 6x
+ x ＿／ +3   → 交叉  x·1 =  x
+──────────────
+直乘 2x·x = 2x²，1·3 = +3
+交叉相加 6x + x = +7x  ✓</div>
+        <div class="step">= (2x + 1)(x + 3)</div>
+        <div class="why">左行相乘要得首項 2x²、右行相乘要得常數 3、交叉相乘相加要得中間 7x。三個都對才成立。</div></div>
+      <div class="eg"><div class="q">例：3x<sup>2</sup> + 5x − 2</div>
+        <div class="step">試 (3x−1)(x+2)：直乘 3x²、−2；交叉 6x−x=5x ✓</div>
+        <div class="step">= (3x − 1)(x + 2)</div></div>
+      <div class="warn"><b>可能要試幾組：</b>首項、常數的拆法不只一種，找到「交叉相加＝中間項」的那組才對。每次都乘回去驗算。</div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先自己做，錯的訂正後一樣算過</h2>
+      <p class="sub">先自己算，再對解答。每題都乘回去驗算。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. x<sup>2</sup>+7x+12 要找積 12、和 7 的兩數，是？</div>
+          <button class="opt">2 和 6</button><button class="opt">3 和 4</button><button class="opt">1 和 12</button><div class="exp">3×4=12、3+4=7 ✓ → (x+3)(x+4)。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">2. x<sup>2</sup>−2x−8 分解後是？</div>
+          <button class="opt">(x−4)(x+2)</button><button class="opt">(x+4)(x−2)</button><button class="opt">(x−4)(x−2)</button><div class="exp">積 −8、和 −2 → −4、+2 → (x−4)(x+2)。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">3. 分解 2x<sup>2</sup>+7x+3 前，右邊常數 3 要拆成？</div>
+          <button class="opt">3 和 3</button><button class="opt">2 和 1</button><button class="opt">1 和 3</button><div class="exp">3=1×3。配上首項 2x、x，交叉得 6x+x=7x。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 分解 x<sup>2</sup> + 8x + 15</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (x + 3)(x + 5)</div><div class="why">積15、和8 → 3、5。</div></div></div>
+        <div class="prob"><div class="pq">② 分解 x<sup>2</sup> − 7x + 10</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (x − 2)(x − 5)</div><div class="why">積10、和−7 → −2、−5。</div></div></div>
+        <div class="prob"><div class="pq">③ 分解 x<sup>2</sup> + 2x − 15</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (x + 5)(x − 3)</div><div class="why">積−15、和+2 → +5、−3。</div></div></div>
+        <div class="prob"><div class="pq">④ 分解 2x<sup>2</sup> + 5x + 2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (2x + 1)(x + 2)</div><div class="why">交叉 4x+x=5x ✓。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">找不到兩數、不會判斷符號 → <b>A</b>；兩數對但符號寫錯、沒驗算 → <b>B</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第3章走完了。因式分解會直接用在第4章一元二次方程式。<a href="index.html">回數學首頁 →</a></div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 第3章 因式分解</span><span>V2.2.0</span></div>
+</div>
+
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
+
+<script>
+var SL=[4,3], cS=0, cL=[0,0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t,idx){t.addEventListener('click',function(){showSec(+t.dataset.s);});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(idx+1)%stabs.length;else if(e.key==='ArrowLeft')n=(idx-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();showSec(+stabs[n].dataset.s);stabs[n].focus();}});});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),retry=m.querySelector('.retry');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;if(retry)retry.classList.remove('show');}else{o.classList.add('no');if(retry)retry.classList.add('show');}updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+</script>
+</body>
+</html>
