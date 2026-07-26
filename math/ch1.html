@@ -124,7 +124,8 @@ sup{font-size:.72em}
       <button class="lpill on" data-s="0" data-l="0">和的平方</button>
       <button class="lpill" data-s="0" data-l="1">差的平方</button>
       <button class="lpill" data-s="0" data-l="2">平方差</button>
-      <button class="lpill" data-s="0" data-l="3">練習與訂正</button>
+      <button class="lpill" data-s="0" data-l="3">公式速算（數字版）</button>
+      <button class="lpill" data-s="0" data-l="4">練習與訂正</button>
     </div>
 
     <section class="lesson on" data-s="0" data-l="0">
@@ -230,7 +231,37 @@ sup{font-size:.72em}
       <div class="warn"><b>用之前先確認：</b>兩括號要「同兩項、只差 +/−」。(x+4)(x+4) 是和的平方；(x+4)(x−3) 兩者都不是。</div>
     </section>
 
-    <section class="lesson" data-s="0" data-l="3">
+        <section class="lesson" data-s="0" data-l="3">
+      <div class="plabel2">乘法公式 · 速算（數字版）</div>
+      <h2>公式換上數字外衣：考卷上的速算題</h2>
+      <p class="sub">這種題型在你的考卷上出現過。它們考的不是新東西——就是這三個公式，只是把 a、b 換成數字。訣竅只有一個：<b>把數字改寫成「好算的基準 ± 一點點」</b>。</p>
+      <div class="hi"><span class="k">選基準：挑最近的整十、整百，或兩數的正中間</span></div>
+
+      <div class="eg"><div class="q">例①（暖身）：102<sup>2</sup></div>
+        <div class="step">= (100 + 2)<sup>2</sup> = 100<sup>2</sup> + 2·100·2 + 2<sup>2</sup> = 10000 + 400 + 4 = 10404</div>
+        <div class="why">基準選 100。中間 2ab=400 一樣不能漏。</div></div>
+
+      <div class="eg"><div class="q">例②（帶分數也一樣）：(60⅔)<sup>2</sup> = 60<sup>2</sup> + a，求 a</div>
+        <div class="step">(60 + ⅔)<sup>2</sup> = 60<sup>2</sup> + 2·60·⅔ + (⅔)<sup>2</sup> = 60<sup>2</sup> + 80 + 4/9</div>
+        <div class="step">a = <b>80 4/9</b></div>
+        <div class="why">這題最容易選成 4/9——那就是<b>漏了中間 2ab = 2·60·⅔ = 80</b>。帶分數平方跟 (a+b)² 一模一樣，中間那項照樣在。</div></div>
+
+      <div class="eg"><div class="q">例③（選對基準）：2004 × 1996 − 1995<sup>2</sup> 的十位數字</div>
+        <div class="step">2004×1996 = (2000+4)(2000−4) = 2000<sup>2</sup> − 4<sup>2</sup> = 3,999,984</div>
+        <div class="step">1995<sup>2</sup> = (2000−5)<sup>2</sup> = 4,000,000 − 20,000 + 25 = 3,980,025</div>
+        <div class="step">相減 = 19,959 → 十位數字 = <b>5</b></div>
+        <div class="why">關鍵在<b>基準選 2000</b>：2004 和 1996 的正中間剛好是 2000，湊成「一加一減」直接用平方差。如果硬繞 1995 當基準，兩個括號長得不一樣，就用不了公式、越算越亂。連 1995² 都能再用一次差的平方。</div></div>
+
+      <div class="eg"><div class="q">例④（在數字裡認出公式）：290×288/289 + 1/289 + 2×17×23 + 529</div>
+        <div class="step">前兩項：290×288 = (289+1)(289−1) = 289<sup>2</sup>−1 → (289<sup>2</sup>−1)/289 + 1/289 = 289<sup>2</sup>/289 = 289</div>
+        <div class="step">認出：289 = 17<sup>2</sup>、529 = 23<sup>2</sup></div>
+        <div class="step">所以 289 + 2×17×23 + 529 = 17<sup>2</sup> + 2·17·23 + 23<sup>2</sup> = (17+23)<sup>2</sup> = 40<sup>2</sup> = <b>1600</b></div>
+        <div class="why">兩層公式：分數那邊是平方差；後面是「a²+2ab+b² 的長相」——看到「某數² + 2×甲×乙 + 另一數²」就要想到完全平方。背 17²=289、23²=529 這些常見平方數會快很多。</div></div>
+
+      <div class="warn"><b>速算題三步：</b>① 選基準（整十百／兩數中點）② 改寫成 (基準±小)，認出是哪個公式 ③ 套公式，中間項不漏。認不出公式就會退回硬算——又慢又容易錯，這正是這種題想考的。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="4">
       <div class="plabel2">練習與訂正</div>
       <h2>先分清楚，再自己做</h2>
       <p class="sub">先用下面的表分清三個公式，再做練習。做錯不要緊，訂正後答對一樣過關。</p>
@@ -260,6 +291,11 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">⑤ 展開 (4x−1)<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 16x<sup>2</sup> − 8x + 1</div></div></div>
         <div class="prob"><div class="pq">⑥ 展開 (y+8)(y−8)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= y<sup>2</sup> − 64</div></div></div>
         <div class="prob"><div class="pq">⑦ 展開 (3x+2)(3x−2)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 9x<sup>2</sup> − 4</div><div class="why">第一項 3x：(3x)<sup>2</sup>=9x<sup>2</sup>；第二項 2：2<sup>2</sup>=4。</div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px">速算實戰（用公式，不要硬乘）：</p>
+        <div class="prob"><div class="pq">⑧ 98<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (100−2)<sup>2</sup> = 10000 − 400 + 4 = 9604</div></div></div>
+        <div class="prob"><div class="pq">⑨ 51 × 49</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (50+1)(50−1) = 2500 − 1 = 2499</div><div class="why">基準 50（兩數中點），平方差。</div></div></div>
+        <div class="prob"><div class="pq">⑩ (30½)<sup>2</sup> = 30<sup>2</sup> + a，求 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(30+½)<sup>2</sup> = 30<sup>2</sup> + 2·30·½ + ¼ → a = 30¼</div><div class="why">中間 2ab=30 不能漏，只答 ¼ 就是漏了它。</div></div></div>
+        <div class="prob"><div class="pq">⑪ 3002 × 2998 − 2997<sup>2</sup> 的個位數字</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3002×2998 = 3000<sup>2</sup>−2<sup>2</sup> = 8,999,996；2997<sup>2</sup> = (3000−3)<sup>2</sup> = 8,982,009；相減 = 17,987 → 個位 <b>7</b></div><div class="why">跟考卷那題同型：基準選兩數中點 3000。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3>
         <div class="hint">寫進做錯的題號，勾一個最接近的原因。這張表能幫你和老師看出下一步要補強哪一種能力。可以印出來寫（手機上表格可左右滑）。</div>
@@ -295,6 +331,7 @@ sup{font-size:.72em}
         <tr><td>係數</td><td>項前面的數字</td><td>3、−5</td></tr>
         <tr><td>常數項</td><td>沒有文字的項</td><td>2</td></tr>
       </table>
+      <div class="warn"><b>數字的平方不是次數：</b>4<sup>2</sup>+2x 裡的 4<sup>2</sup> 只是 16（常數），所以 4<sup>2</sup>+2x = 16+2x 是<b>一次</b>多項式，不是二次。次數只看<b>文字</b>的指數，跟數字的指數無關。</div>
       <div class="note"><b>次數怎麼算：</b>一個單項式的次數是「各文字指數的<b>總和</b>」——例如 3a<sup>2</sup>b 是 2+1=3 次。多項式的次數，是各項中<b>最高</b>的那個次數（3x<sup>2</sup>−5x+2 是二次）。目前只有一個 x 的式子，一項的次數就等於 x 的指數。</div>
       <div class="hi" style="border-color:var(--accent)"><span class="k">同類項 = 文字部分「完全一樣」的項</span></div>
       <p>3x 和 −5x 是同類（都是 x）；3x 和 3x<sup>2</sup> <b>不是</b>同類（一次 vs 二次）。這個判斷是下一課的關鍵。</p>
@@ -344,6 +381,10 @@ sup{font-size:.72em}
           <button class="opt">−x − 3</button><button class="opt">−x + 3</button><button class="opt">x − 3</button><div class="exp">每項變號：x→−x、−3→+3，得 −x+3。</div><div class="retry">再看一次，選出正確的。</div></div>
         <div class="mcq" data-a="2"><div class="qt">3. 4a + 5 − a 合併後是？</div>
           <button class="opt">8a</button><button class="opt">9a</button><button class="opt">3a + 5</button><div class="exp">a 類 4a−a=3a；常數 5 留著。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">4. 4<sup>2</sup>+2x 是幾次多項式？</div>
+          <button class="opt">二次</button><button class="opt">一次</button><button class="opt">不是多項式</button><div class="exp">4<sup>2</sup>=16 是常數，式子＝16+2x，最高次是 x 的一次。次數只看文字的指數。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">5. 多項式 −3+3x<sup>2</sup> 的項數是？</div>
+          <button class="opt">2 項</button><button class="opt">3 項</button><button class="opt">1 項</button><div class="exp">被加減分開的只有 −3 和 3x<sup>2</sup> 兩塊，項數 2。（係數的 3 不是一項）</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
       <div class="qsec"><h3>基本計算</h3>
         <div class="prob"><div class="pq">① 合併 5x + 2 − 3x + 7</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 2x + 9</div></div></div>
@@ -473,13 +514,13 @@ x + 2 │ x² + 5x + 6
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.2.1</span></div>
+  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.2.2</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-var SL=[4,4,5], cS=0, cL=[0,0,0];
+var SL=[5,4,5], cS=0, cL=[0,0,0];
 var stabs=document.querySelectorAll('.stab');
 function showSec(s){cS=s;
   document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});
