@@ -305,6 +305,8 @@ sup{font-size:.72em}
       <h2>配方的兩個地雷、除法的一個地雷</h2>
 
       <div class="plabel2" style="margin-top:14px">題型一 · 配方求 (x+a)² = b 的 b</div>
+      <div class="hi"><span class="k">x² + <b>B</b>x 補成完全平方：加 (<b>B</b>/2)² → x² + Bx + (<span class="frac"><span class="fn">B</span><span class="fd">2</span></span>)² = (x + <span class="frac"><span class="fn">B</span><span class="fd">2</span></span>)²</span></div>
+      <div class="note">口訣是「<b>一次項係數 B</b> 除以 2 再平方」——先把 B 框出來（含正負號、含分數），再動手。B = −3/4 時加的是 (−3/8)² = 9/64，不是 (3/2)²。</div>
       <div class="eg"><div class="q">例①【核心必會】2x²+4x−3 = 0 寫成 (x+a)² = b，求 b</div>
         <div class="step">先<b>整個除以首項係數 2</b>：x²+2x = <span class="frac"><span class="fn">3</span><span class="fd">2</span></span></div>
         <div class="step">加「一次項係數一半的平方」＝ 1²：(x+1)² = <span class="frac"><span class="fn">3</span><span class="fd">2</span></span> + 1 = <b><span class="frac"><span class="fn">5</span><span class="fd">2</span></span></b></div>
@@ -317,7 +319,8 @@ sup{font-size:.72em}
       <div class="eg"><div class="q">例③【核心必會】解 5x − 2x² = 0，小安的步驟：①移項 5x = 2x²　②兩邊除以 x 得 5 = 2x　③x = 5/2。哪步開始錯？</div>
         <div class="step">錯在<b>步驟②</b>——除以 x 時默認 x ≠ 0，把 x = 0 這個根丟掉了</div>
         <div class="step">正解：提公因式 x(5−2x) = 0 → x = <b>0 或 5/2</b></div>
-        <div class="why"><b>方程式兩邊不能除以含未知數的式子</b>（它可能是 0）。有公因式就提出來用 AB=0，兩個根一個都不少。</div></div>
+        <div class="why">有公因式就提出來用 AB=0，兩個根一個都不少。</div></div>
+      <div class="warn"><b>方程式兩邊不能任意除以含未知數的式子——它可能等於 0。</b>遇到共同未知數：先移到同一邊、提公因式，再用零乘積性質。這是本章最重要的概念紅線。</div>
       <div class="eg"><div class="q">例④【進階】配方步驟找錯：解 4x²−5x−3 = 0，步驟一 x²−<span class="frac"><span class="fn">5</span><span class="fd">4</span></span>x = <span class="frac"><span class="fn">3</span><span class="fd">4</span></span>；步驟二 兩邊加 (<span class="frac"><span class="fn">5</span><span class="fd">2</span></span>)²。對嗎？</div>
         <div class="step">錯——除以 4 之後一次項係數是 −5/4，該加的是它的一半 (<span class="frac"><span class="fn">5</span><span class="fd">8</span></span>)² 的平方，不是原式 −5 的一半</div>
         <div class="why">找錯題的檢查點固定三個：①首項除乾淨了嗎　②加的是「現在的係數」一半的平方嗎　③開平方有 ± 嗎。逐步對，錯的那步就現形。</div></div>
@@ -390,6 +393,7 @@ sup{font-size:.72em}
         <div class="why">這題直接開平方最快——選方法也是練習的一部分。</div></div>
       <div class="warn"><b>最常見的失分：</b>解出兩個根就照抄，忘了回頭對題意。長度、人數、年齡…不能是負的；「捨去」那一行一定要寫、要給理由。</div>
       <div class="note"><b>但捨去不是機械規則：</b>要不要捨，看未知數<b>代表什麼</b>。長度、人數不能為負；溫度變化、座標、盈虧就可能是負的。也有題目<b>兩個根都合題意</b>——每個根逐一檢驗，不是「負的永遠丟掉」。</div>
+      <div class="rev"><b>每題應用題收尾固定三問：</b>① 根是否為正／符合長度範圍？　② 兩根都檢查過了嗎？　③ 題目問的是<b>未知數本身</b>，還是由它算出的<b>另一個量</b>（面積、答案、周長…）？</div>
     </section>
 
         <section class="lesson" data-s="2" data-l="1">
@@ -405,6 +409,7 @@ sup{font-size:.72em}
         <div class="why">三步：<b>估根區間 → 判每個絕對值內的正負 → 去絕對值後用 a+b、ab 收尾</b>。根號常會整組消掉——那就是這類題的設計。</div></div>
 
       <div class="plabel2" style="margin-top:18px">題型四 · 兩根有特殊關係（a² = b 型）</div>
+      <div class="note"><b>根有特殊條件時（a²=b、皆質數、皆整數…）：先用根積或根和把可能性縮小</b>，不要直接解方程式硬碰。</div>
       <div class="eg"><div class="q">例②【進階】x²+px−8 = 0 的兩根為 a、b 且 a² = b，求 p</div>
         <div class="step">積：ab = a·a² = a³ = −8 → a = −2 → b = 4</div>
         <div class="step">和：a+b = 2 = −p → p = <b>−2</b></div>
@@ -415,6 +420,13 @@ sup{font-size:.72em}
         <div class="step">m = 1/α + 1/β = (α+β)/(αβ) = <b>b/c</b>；n = 1/(αβ) = <b>1/c</b>（即 cn = 1）</div>
         <div class="why">倒數和 = 和÷積——通分就出來。驗算最快：拿 x²−3x+2（根 1、2）→ 倒數根 1、1/2 → 新和 3/2 = b/c ✓、新積 1/2 = 1/c ✓。<b>抽象題用具體數字驗一次</b>。</div></div>
 
+      <table class="tbl">
+        <tr><th>新根（原根 α、β）</th><th>新根和</th><th>新根積</th></tr>
+        <tr><td>1/α、1/β</td><td>(α+β)/αβ</td><td>1/(αβ)</td></tr>
+        <tr><td>−α、−β</td><td>−(α+β)</td><td>αβ</td></tr>
+        <tr><td>α+k、β+k</td><td>(α+β)+2k</td><td>(α+k)(β+k)</td></tr>
+      </table>
+      <div class="note">變形根的題一律走同一條路：<b>先算新根的「和」與「積」，再組新方程式 x²−(和)x+(積) = 0</b>——比背個別結論穩定。</div>
       <div class="plabel2" style="margin-top:18px">題型六 · 兩根皆質數</div>
       <div class="eg"><div class="q">例④【進階】x²−24x+k = 0 兩根皆為質數，且一根小於 7，求 k</div>
         <div class="step">兩根之和 = 24。列小於 7 的質數：2、3、5 → 配對 22（✗ 非質數）、21（✗）、19（✓ 質數）</div>
@@ -428,24 +440,28 @@ sup{font-size:.72em}
       <div class="hi"><span class="k">流程：設未知數 → 畢氏／面積列式 → 解一元二次 → 捨根（檢查範圍）→ 回答所問</span></div>
 
       <div class="plabel2" style="margin-top:14px">題型七 · 兩個根，哪個合法？</div>
-      <div class="eg"><div class="q">例①【核心必會】竹竿長 L：水平比門寬多 8、垂直比門高多 1、斜拿剛好等於對角線。列式並求 L</div>
-        <div class="step">門寬 = L−8、門高 = L−1 → 畢氏：L² = (L−8)² + (L−1)²</div>
-        <div class="step">整理：L²−18L+65 = 0 → (L−5)(L−13) = 0 → L = 5 或 13</div>
-        <div class="step">檢查：門寬 = L−8 必須 ＞ 0 → L ＞ 8 → 捨 5 → L = <b>13</b></div>
-        <div class="why">捨根的依據寫清楚：<b>不是「捨小的」，是「代回題意檢查」</b>——L=5 會讓門寬變負，物理上不存在。</div></div>
-      <div class="eg"><div class="q">例②【進階】正方形 ABCD 邊長 1，BE = DF = x，△AEF 為正三角形，求 x</div>
-        <div class="step">AE² = 1+x²（△ABE 畢氏）；EF² = 2(1−x)²（△ECF 兩股都是 1−x）</div>
-        <div class="step">正三角形 → AE² = EF²：1+x² = 2(1−x)² → x²−4x+1 = 0 → x = 2±√3</div>
-        <div class="step">x 是邊上的一段 → 0 ＜ x ＜ 1 → 捨 2+√3 → x = <b>2−√3</b></div>
-        <div class="why">√3≈1.73 → 2−√3≈0.27 ✓ 在範圍內。<b>幾何題的根一定要跟「長度範圍」對一次</b>。</div></div>
+      <div class="eg"><div class="q">例①【核心必會】竹竿長 L：水平拿比門寬多 2 公尺、垂直拿比門高多 1 公尺、斜著拿剛好等於門的對角線。列式並求 L</div>
+        <table class="tbl" style="max-width:320px"><tr><th>量</th><th>翻譯</th></tr><tr><td>門寬</td><td>L − 2</td></tr><tr><td>門高</td><td>L − 1</td></tr><tr><td>對角線</td><td>L（畢氏！）</td></tr></table>
+        <div class="step">L² = (L−2)² + (L−1)²（斜邊² = 兩股²之和——第2章畢氏回鍋）</div>
+        <div class="step">L² = 2L² − 6L + 5 → L² − 6L + 5 = 0 → (L−1)(L−5) = 0 → L = 1 或 5</div>
+        <div class="step">檢查：L 要比門寬多 2 → L ＞ 2 → L = 1 捨去 → <b>L = 5</b></div>
+        <div class="why">先填翻譯表再列式；解出兩根後<b>回題意檢查</b>——「竿長比門寬還短」的根不合法。原題（門寬多 8、高多 1）在再測⑨。</div></div>
+      <div class="eg"><div class="q">例②【進階】正方形 ABCD 邊長 2，BE = DF = x，△AEF 為正三角形，求 x</div>
+        <div class="step">用畢氏把三邊都寫成 x 的式子：AE² = AB² + BE² = 4 + x²；EF² = EC² + CF² = (2−x)² + (2−x)²</div>
+        <div class="step">正三角形 → AE = EF → 4 + x² = 2(2−x)² → x² − 8x + 4 = 0</div>
+        <div class="step">公式解：x = 4 ± 2√3；x 在 0 與 2 之間 → <b>x = 4 − 2√3</b>（≈ 0.54 ✓）</div>
+        <div class="why">幾何條件（正三角形）翻成「邊長相等」的方程式；兩根用<b>範圍</b>篩——4+2√3 ≈ 7.5 比邊長還大，不可能。原題（邊長 1）在再測⑩。</div></div>
 
       <div class="plabel2" style="margin-top:18px">題型八 · 誤算問題：兩種算法同答案</div>
+      <div class="hi"><span class="k">流程：設未知數 → 分別寫出「正確式」與「錯誤式」 → 令兩式相等 → 解並篩選根 → 回答題目真正所問</span></div>
       <div class="eg"><div class="q">例③【核心必會】正數 n 平方減 4 是正確答案；小美誤把平方看成乘 2、減 4 看成加 4，居然也對。正確答案是多少？</div>
         <div class="step">兩種算法相等：n²−4 = 2n+4 → n²−2n−8 = 0 → (n−4)(n+2) = 0 → n = 4（n 為正數，捨 −2）</div>
         <div class="step">題目問「正確答案」= n²−4 = <b>12</b>（不是 n！）</div>
         <div class="why"><b>答案對象檢查</b>：解出 n 只是半路——題目問的是那個「答案」，還要代回去算一次。</div></div>
 
       <div class="plabel2" style="margin-top:18px">題型九 · 黃金比例與公式解近似（★）</div>
+      <div class="hi"><span class="k">比例鏈先擺對：<span class="frac"><span class="fn">較長部分</span><span class="fd">較短部分</span></span> ＝ <span class="frac"><span class="fn">全部</span><span class="fd">較長部分</span></span>　→ （較長）² ＝（較短）×（全部）</span></div>
+      <div class="note">列式前先認清誰是「較長」「較短」「全部」——上下半身放反，整題就反了。</div>
       <div class="eg"><div class="q">例④【挑戰】黃金比例的列式骨架：下半身 c、全身 h，墊高 x 後滿足「下：上 = 全：下」</div>
         <div class="step">比例式交叉相乘 → <b>(c+x)² = 上半身 × (h+x)</b> → 展開成一元二次 → 公式解</div>
         <div class="step">根號裡的大數<b>用題目給的近似值</b>（題目會附 √N ≒ …），取正根、四捨五入</div>
@@ -483,7 +499,7 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">再測⑨ 竹竿題：(1) L 滿足哪個方程式？ (2) 求 L</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) 門寬 L−8、門高 L−1、對角線 L → <b>(D) L² = (L−8)²+(L−1)²</b></div><div class="st">(2) L²−18L+65=0 → (L−5)(L−13)=0 → L＞8 → L = <b>13</b></div></div></div>
         <div class="prob"><div class="pq">再測⑩【進階】正方形邊長 1、BE=DF=x、△AEF 正三角形，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">1+x² = 2(1−x)² → x²−4x+1=0 → x = 2±√3 → 0＜x＜1 → <b>2−√3</b>（D）</div><div class="why">你這題自己做出來了——捨根寫「因為 x 是邊上的一段、必須小於 1」，理由完整才拿滿。</div></div></div>
         <div class="prob"><div class="pq">再測⑪ 正數平方減 24 為正確答案；小明誤看成乘 2、加 24，也得到正確答案。正確答案是多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">n²−24 = 2n+24 → n²−2n−48=0 → (n−8)(n+6)=0 → n=8 → 正確答案 = 64−24 = <b>40</b></div><div class="why">問的是「答案」不是 n——最後一步要代回。</div></div></div>
-        <div class="prob"><div class="pq">再測⑫【挑戰】甲長方形長比寬的 2 倍多 3。圖(一)兩甲不重疊排 L 型；圖(二)兩甲重疊排 L 型且重疊區為正方形。五邊形 ABCDE 面積比 PQRST 多 30，求甲的周長</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設寬 w、長 2w+3。兩圖的差 = 重疊正方形 w² ＋ 斜邊三角形之差 <span class="frac"><span class="fn">w(w+3)</span><span class="fd">2</span></span></div><div class="st">→ w² + <span class="frac"><span class="fn">w²+3w</span><span class="fd">2</span></span> = 30 → 3w²+3w = 60 → w²+w−20 = 0 → (w+5)(w−4)=0 → w = 4</div><div class="st">長 = 11 → 周長 = 2(4+11) = <b>30</b></div><div class="why">複合圖形的差：<b>只算兩張圖「不一樣的部分」</b>，不要兩張整個都算。</div></div></div>
+        <div class="prob"><div class="pq">再測⑫【挑戰】甲長方形長比寬的 2 倍多 3。圖(一)兩甲不重疊排 L 型；圖(二)兩甲重疊排 L 型且重疊區為正方形。五邊形 ABCDE 面積比 PQRST 多 30，求甲的周長</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設寬 w、長 2w+3。兩圖的差 = 重疊正方形 w² ＋ 斜邊三角形之差 <span class="frac"><span class="fn">w(w+3)</span><span class="fd">2</span></span></div><div class="st">→ w² + <span class="frac"><span class="fn">w²+3w</span><span class="fd">2</span></span> = 30 → 3w²+3w = 60 → w²+w−20 = 0 → (w+5)(w−4)=0 → w = 4</div><div class="st">長 = 11 → 周長 = 2(4+11) = <b>30</b></div><div class="why">複合圖形的差：<b>只算兩張圖「不一樣的部分」</b>，不要兩張整個都算。</div><div class="why"><b>圖形解讀說明：</b>五邊形 ABCDE 是靠斜線 ED 封閉的（L 形本身有六個頂點，不是五邊形），所以面積<b>含</b>斜線切出的三角形——差才會是 w²＋三角形差，解出整數 w=4、周長 30（與課本答案一致）。若把「五邊形」誤當純 L 形，差只剩 w²=30，會得到 6√30+6 這種不像課本答案的結果——遇到分歧時，回到圖上數頂點。</div></div></div>
         <div class="prob"><div class="pq">再測⑬【挑戰】小美身高 160、下半身 97，穿 x 公分的鞋後符合黃金比例（√19845 ≒ 140.9），求 x（四捨五入到整數）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">下：上 = 全：下 → (97+x)² = 63(160+x) → x²+131x−671 = 0</div><div class="st">x = (−131+√19845)/2 ≒ (−131+140.9)/2 ≒ 4.95 → <b>約 5 公分</b></div><div class="why">上半身 = 160−97 = 63。公式解＋題給近似值，取正根。</div></div></div>
 <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
@@ -492,7 +508,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第4章 一元二次方程式</span><span>V2.8.0</span></div>
+  <div class="page-footer"><span>數學 · 第4章 一元二次方程式</span><span>V2.8.1</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
