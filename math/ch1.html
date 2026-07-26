@@ -677,11 +677,26 @@ x + 2 │ x² + 5x + 6
       <div class="eg"><div class="q">例②【核心必會】2x<sup>2</sup>−3x+5 = a(x−1)<sup>2</sup> + b(x−1) + c，求 a+b+c</div>
         <div class="step">右邊代 x = 2 時剛好是 a+b+c（每個括號都變 1）</div>
         <div class="step">左邊代 x = 2：8 − 6 + 5 = 7 → a+b+c = <b>7</b></div>
-        <div class="why">也可以展開比較係數（a=2、b=1、c=4，一樣是 7），但看出「代 x=2」就是一行的事。挑的數要讓右邊變成題目要的組合。</div></div>
+        <div class="why">也可以展開比較係數（a=2、b=1、c=4，一樣是 7），但看出「代 x=2」就是一行的事。</div></div>
+      <table class="tbl">
+        <tr><th>題目外觀</th><th>優先策略</th></tr>
+        <tr><td>左右都是展開好的多項式</td><td>比較係數</td></tr>
+        <tr><td>出現 (x−h)、(x−h)<sup>2</sup></td><td>先試代 x = h（讓它變 0）</td></tr>
+        <tr><td>要求 a+b+c，右邊是 a(x−h)<sup>2</sup>+b(x−h)+c</td><td>代 x = h+1（每個括號變 1）</td></tr>
+        <tr><td>只要求常數或少數係數</td><td>試 x = 0、1、−1</td></tr>
+      </table>
+      <div class="note"><b>兩招都要會：</b>比係數是「全都要」的萬用解；代特殊值是「只要其中幾個」的快捷鍵。先看題目要什麼，再選招。</div>
       <div class="eg"><div class="q">例③【進階・課本以外】餘式定理：f(x) 除以 (x−k)，餘式 = f(k)</div>
         <div class="step">原因：f(x) = (x−k)×商 + 餘。代 x = k，前面整塊變 0 → f(k) = 餘</div>
         <div class="step">例：x<sup>2</sup>+3x+1 除以 (x−2) 的餘式 = f(2) = 4+6+1 = <b>11</b>（不用長除法）</div>
-        <div class="why">這在課本進度之外，但你的考卷考過。它就是「代值法＋除法原理」的合體：除以 (x−1) 的餘式代 1、除以 (x+1) 的餘式代 <b>−1</b>（注意是負的）。</div></div>
+        <div class="why">這在課本進度之外，但你的考卷考過。它就是「代值法＋除法原理」的合體。</div></div>
+      <table class="tbl" style="max-width:340px">
+        <tr><th>除式</th><th>要代入的值</th></tr>
+        <tr><td>x − 3</td><td>x = 3</td></tr>
+        <tr><td>x + 2</td><td>x = <b>−2</b>（x+2 = x−(−2)）</td></tr>
+        <tr><td>2x − 1（進階）</td><td>x = 1/2（讓除式 = 0 的值）</td></tr>
+      </table>
+      <div class="note">口訣：<b>代「讓除式變 0」的那個數</b>。除以 x+1 是代 −1，不是 +1——這裡最容易錯。</div>
       <div class="eg"><div class="q">例④【進階】除法原理：2x<sup>2</sup>+ax+3 除以 (x−1)，商是 2x+5、餘 8，求 a</div>
         <div class="step">寫回乘法：2x<sup>2</sup>+ax+3 = (x−1)(2x+5) + 8</div>
         <div class="step">右邊展開 = 2x<sup>2</sup>+3x−5+8 = 2x<sup>2</sup>+3x+3 → 比較 x 係數：a = <b>3</b></div>
@@ -708,14 +723,22 @@ x + 2 │ x² + 5x + 6
         <div class="step">(Q+P)(Q−P) = 16，且 Q+P 與 Q−P <b>奇偶性相同</b>（兩者相加是偶數 2Q）</div>
         <div class="step">16 拆成同偶：8 × 2 → Q+P=8、Q−P=2 → Q=5、P=3 → P+Q = <b>8</b></div>
         <div class="why">16×1、4×4 為何不行？16×1 一偶一奇 ✗；4×4 → Q−P=4、Q+P=4 → P=0 不合「大於1」✗。列表逐組檢查就不會漏。</div></div>
-      <div class="eg"><div class="q">例④【挑戰・課本以外】分式化簡：2x/(x<sup>2</sup>−9) − 1/(x−3)　(x≠3, x≠−3)</div>
-        <div class="step">分母先分解：x<sup>2</sup>−9 = (x+3)(x−3) → 通分：= [2x − (x+3)] / (x<sup>2</sup>−9)</div>
-        <div class="step">= (x − 3) / [(x+3)(x−3)] = <b>1/(x+3)</b></div>
+      <div class="hi"><span class="k">分式四步驟：① 先寫限制（分母 ≠ 0 的所有值）② 分母因式分解 ③ 通分／約分 ④ 答案旁保留原限制</span></div>
+      <div class="eg"><div class="q">例④【挑戰・課本以外】分式化簡：2x/(x<sup>2</sup>−9) − 1/(x−3)</div>
+        <div class="step">① 限制：x<sup>2</sup>−9≠0 且 x−3≠0 → <b>x ≠ ±3</b>（兩個分母都要看）</div>
+        <div class="step">② 分母分解：x<sup>2</sup>−9 = (x+3)(x−3) → ③ 通分：= [2x − (x+3)] / (x<sup>2</sup>−9)</div>
+        <div class="step">= (x − 3) / [(x+3)(x−3)] = <b>1/(x+3)</b>　（x ≠ ±3）</div>
         <div class="why">兩步都靠公式：分母用平方差分解找公分母；分子相減後<b>再檢查能不能跟分母約分</b>——差一步就選到錯的選項。減整個分式時每項都要變號（1-2 的老朋友）。</div></div>
       <div class="eg"><div class="q">例⑤【核心必會】梯形面積：上底 3x+1、下底 5x+3、高 x+2</div>
         <div class="step">先寫公式：面積 = (上底+下底)×高 ÷ 2</div>
         <div class="step">= ½(8x+4)(x+2) = (4x+2)(x+2) = <b>4x<sup>2</sup> + 10x + 4</b></div>
         <div class="why">½ 先跟 (8x+4) 約分再展開，數字小很多。幾何題永遠「公式先行、再代入、再展開」。</div></div>
+      <div class="eg"><div class="q">例⑥【進階】連鎖消去：(1−1/2<sup>2</sup>)(1−1/3<sup>2</sup>)(1−1/4<sup>2</sup>)</div>
+        <div class="step">每一項用平方差拆：1 − 1/n<sup>2</sup> = (1−1/n)(1+1/n) = (n−1)/n × (n+1)/n</div>
+        <div class="step">= (1/2 · 3/2)(2/3 · 4/3)(3/4 · 5/4)，分成兩串：(1/2·2/3·3/4)×(3/2·4/3·5/4)</div>
+        <div class="step">中間互相消掉，只剩頭尾：= (1/4) × (5/2) = <b>5/8</b></div>
+        <div class="why">三層結構：平方差 → 拆成兩串 → 連鎖消去。項數多的時候（例如乘到 1−1/20²）威力才顯出來——見再測。</div></div>
+      <div class="warn"><b>大數與長串的共同口訣：</b>看到巨大數字、超長連乘，<b>先別代、先別乘</b>——先找能約掉、能合成公式的結構。符號整理完，常常只剩一行。</div>
     </section>
 
 <section class="lesson" data-s="2" data-l="6">
@@ -737,20 +760,21 @@ x + 2 │ x² + 5x + 6
         <div class="prob"><div class="pq">④ (x<sup>2</sup> + 7x + 12) ÷ (x + 3)（長除法）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">商 = x + 4，餘 0</div><div class="why">x·(x+3)=x²+3x，減得 4x+12；4·(x+3)=4x+12，減得 0。</div></div></div>
         <div class="prob"><div class="pq">⑤ (x<sup>2</sup> + 3x + 5) ÷ (x + 1)（有餘式）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">商 = x + 2，餘 3</div><div class="why">x·(x+1)=x²+x，減得 2x+5；2·(x+1)=2x+2，減得 3（次數比除式低，停）。</div></div></div>
         <div class="prob"><div class="pq">⑥ (x<sup>3</sup> − 4x + 3) ÷ (x − 1)（缺項補 0）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">先寫成 x<sup>3</sup> + 0x<sup>2</sup> − 4x + 3；商 = x<sup>2</sup> + x − 3，餘 0</div><div class="why">缺 x² 項要補 0x² 佔位，直式的位置才對得齊。</div></div></div>
-        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答）：</p>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做，不列入基本過關）：</p>
         <div class="prob"><div class="pq">再測① (5x−1)(−4x<sup>2</sup>−2x+6) 展開後，係數的總和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">代 x=1：(5−1)(−4−2+6) = 4×0 = <b>0</b></div><div class="why">係數總和（含常數項）= 代 x=1，不用展開。</div></div></div>
         <div class="prob"><div class="pq">再測② 梯形 AE=2x+3、CF=6x−1、AB=x+7，求綠色梯形面積</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">½[(2x+3)+(6x−1)](x+7) = (4x+1)(x+7) = <b>4x<sup>2</sup>+29x+7</b></div></div></div>
         <div class="prob"><div class="pq">再測③ ax<sup>2</sup>+bx+6 除以 x−1 餘 8、除以 x+1 餘 12，求 a、b</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">f(1)=a+b+6=8、f(−1)=a−b+6=12 → a=<b>4</b>、b=<b>−2</b></div><div class="why">餘式定理：除以 x+1 是代 x=−1。</div></div></div>
-        <div class="prob"><div class="pq">再測④ P、Q 為大於 1 的正整數，P<sup>2</sup>=8x+1、Q<sup>2</sup>=8x+25，求 P+Q</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">Q<sup>2</sup>−P<sup>2</sup>=24 → (Q+P)(Q−P)=24 同偶 → 12×2 → Q=7、P=5 → P+Q=<b>12</b></div></div></div>
+        <div class="prob"><div class="pq">再測④【進階】P、Q 為大於 1 的正整數，P<sup>2</sup>=8x+1、Q<sup>2</sup>=8x+25，求 P+Q</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">Q<sup>2</sup>−P<sup>2</sup>=24 → (Q+P)(Q−P)=24 同偶 → 12×2 → Q=7、P=5 → P+Q=<b>12</b></div></div></div>
         <div class="prob"><div class="pq">再測⑤ 2x<sup>2</sup>+ax−2 除以 cx−1 的商為 −2x+b、餘 2，求 2a+b+c</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x<sup>2</sup>+ax−2 = (cx−1)(−2x+b)+2 → 比較係數：c=−1、b=4、a=−2 → 2a+b+c = <b>−1</b></div></div></div>
         <div class="prob"><div class="pq">再測⑥ 已知 x<sup>2</sup>+2x=3，求 5x<sup>2</sup>+10x+21（用小安與亮宇兩種除法策略）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">小安：÷(x<sup>2</sup>+2x) 商 5 餘 21 → 5·3+21 = <b>36</b>；亮宇：÷(x<sup>2</sup>+2x−3) 商 5 餘 36，而 x<sup>2</sup>+2x−3=0 → <b>36</b></div><div class="why">兩條路答案相同；亮宇的除式剛好等於 0，值就是餘式。</div></div></div>
-        <div class="prob"><div class="pq">再測⑦ x≠2，化簡 2x/(x<sup>2</sup>−4) − 1/(x−2)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= [2x−(x+2)]/(x<sup>2</sup>−4) = (x−2)/[(x+2)(x−2)] = <b>1/(x+2)</b></div><div class="why">分子減完要再跟分母約分。</div></div></div>
-        <div class="prob"><div class="pq">再測⑧ a=8051=90<sup>2</sup>−7<sup>2</sup>，關於 a 的正確敘述？（因數角度）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = (90+7)(90−7) = 97×83 → 正因數 1、83、97、8051，總和 = <b>8232</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑦ 化簡 2x/(x<sup>2</sup>−4) − 1/(x−2)（原題寫 x≠2）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= [2x−(x+2)]/(x<sup>2</sup>−4) = (x−2)/[(x+2)(x−2)] = <b>1/(x+2)</b></div><div class="why">分子減完要再跟分母約分。<b>勘誤：</b>原題只寫 x≠2，但分母 x²−4 在 x=−2 也是 0，完整限制應為 <b>x ≠ ±2</b>——照四步驟自己把限制寫全。</div></div></div>
+        <div class="prob"><div class="pq">再測⑧【進階】a=8051=90<sup>2</sup>−7<sup>2</sup>，關於 a 的正確敘述？（因數角度）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = (90+7)(90−7) = 97×83 → 正因數 1、83、97、8051，總和 = <b>8232</b></div></div></div>
         <div class="prob"><div class="pq">再測⑨ a + 1/a = 6，求 a<sup>2</sup> + 1/a<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 6<sup>2</sup> − 2 = <b>34</b></div></div></div>
         <div class="prob"><div class="pq">再測⑩ x<sup>3</sup>+ax+2 = (x−1)<sup>2</sup>(x+b)，求 ab</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">右邊展開 = x<sup>3</sup>+(b−2)x<sup>2</sup>+(1−2b)x+b → b−2=0 → b=2；a=1−2b=−3 → ab = <b>−6</b></div><div class="why">x² 係數為 0（左邊缺項）是解題入口。</div></div></div>
-        <div class="prob"><div class="pq">再測⑪ E(p,q) 在直線 x+y=1 上，F( p/(p²−q²), q/(p²−q²) )，F 一定在哪條直線上？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">F 的 x−y = (p−q)/(p²−q²) = 1/(p+q) = 1/1 = 1 → <b>x−y=1</b></div></div></div>
-        <div class="prob"><div class="pq">再測⑫ a=2025、b=−2024，求 (1/a + 1/b) × 2ab/(a²+2ab+b²)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (a+b)/ab × 2ab/(a+b)<sup>2</sup> = 2/(a+b) = 2/1 = <b>2</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑪【進階】E(p,q) 在直線 x+y=1 上，F( p/(p²−q²), q/(p²−q²) )，F 一定在哪條直線上？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">F 的 x−y = (p−q)/(p²−q²) = 1/(p+q) = 1/1 = 1 → <b>x−y=1</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑫【進階】a=2025、b=−2024，求 (1/a + 1/b) × 2ab/(a²+2ab+b²)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (a+b)/ab × 2ab/(a+b)<sup>2</sup> = 2/(a+b) = 2/1 = <b>2</b></div></div></div>
         <div class="prob"><div class="pq">再測⑬ 3x<sup>2</sup>−4x+6 = a(x−1)<sup>2</sup>+b(x−1)+c，求 a+b+c</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">代 x=2：12−8+6 = <b>10</b></div><div class="why">右邊代 x=2 剛好是 a+b+c——跟例②同一招。</div></div></div>
+        <div class="prob"><div class="pq">再測⑭【進階】(1−1/10<sup>2</sup>)(1−1/11<sup>2</sup>)⋯(1−1/20<sup>2</sup>) 之值</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">每項拆 (n−1)/n × (n+1)/n → 兩串連鎖消去 = (9/20) × (21/10) = <b>189/200</b></div><div class="why">跟例⑥同一個三層結構，只是串比較長：左串剩 9/20、右串剩 21/10。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
@@ -760,7 +784,7 @@ x + 2 │ x² + 5x + 6
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.4.3</span></div>
+  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.4.4</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
