@@ -106,8 +106,8 @@ sup{font-size:.72em}
   </div>
 
   <div class="stabs" role="tablist" aria-label="第4章各節">
-    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">4-1 因式分解解</button>
-    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">4-2 配方法與公式解</button>
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">4-1 因式分解法</button>
+    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">4-2 配方法與公式解法</button>
     <button class="stab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-s="2">4-3 應用問題</button>
   </div>
 
@@ -126,6 +126,7 @@ sup{font-size:.72em}
       <p class="sub">先認清楚長相，以及「解」到底是什麼意思。</p>
       <div class="hi"><span class="k">標準式：ax<sup>2</sup> + bx + c = 0　(a ≠ 0)</span></div>
       <p>「一元」＝只有一種未知數 x；「二次」＝最高是 x<sup>2</sup>。所以 a 不能是 0（a=0 就變一次方程式了）。解題第一步通常是<b>把所有項移到左邊</b>，整理成標準式。</p>
+      <div class="note"><b>先整理，才能判斷次數：</b>要把兩邊展開、移項、合併後才看最高次。例如 x<sup>2</sup>+x = x<sup>2</sup>+3 兩邊的 x<sup>2</sup> 消掉後是 x = 3——它其實是<b>一次</b>方程式。看到 x<sup>2</sup> 不代表就是二次。</div>
       <div class="eg"><div class="q">例：x<sup>2</sup> = 5x 先整理</div>
         <div class="step">移項：x<sup>2</sup> − 5x = 0（右邊只留 0）</div></div>
       <p><b>「解」（根）的意思：</b>代進去會讓等式成立的數。例如 x=2 代入 x<sup>2</sup>−x−2=0：4−2−2=0 ✓，所以 2 是它的解。</p>
@@ -152,11 +153,15 @@ sup{font-size:.72em}
       <p class="sub">第3章的每一招（提公因式、十字交乘、平方差、完全平方）都能上場。</p>
       <div class="eg"><div class="q">例（十字交乘）：x<sup>2</sup> + 5x + 6 = 0</div>
         <div class="step">(x + 2)(x + 3) = 0 → x = −2 或 −3</div>
-        <div class="why">括號 (x+2)=0 給的是 x=<b>−2</b>——解的符號跟括號裡相反，最容易錯在這。</div></div>
+        <div class="why">因式是 (x+p) 時，解是 x = −p（這裡 (x+2)=0 → x=−2）。<b>因式含係數就不能只變號</b>：要把因式設為 0 再解一次方程式（見下面含係數的例子）。</div></div>
       <div class="eg"><div class="q">例（平方差）：x<sup>2</sup> − 9 = 0</div>
         <div class="step">(x + 3)(x − 3) = 0 → x = 3 或 −3</div></div>
       <div class="eg"><div class="q">例（完全平方＝重根）：x<sup>2</sup> − 6x + 9 = 0</div>
         <div class="step">(x − 3)<sup>2</sup> = 0 → x = 3（兩個解重疊，叫「重根」）</div></div>
+      <div class="eg"><div class="q">例（首項係數不是 1）：2x<sup>2</sup> + 5x + 2 = 0</div>
+        <div class="step">含係數十字交乘（第3章）：(2x + 1)(x + 2) = 0</div>
+        <div class="step">2x + 1 = 0 → x = −1/2　；　x + 2 = 0 → x = −2</div>
+        <div class="why">(2x+1)=0 的解是 <b>−1/2</b>，不是 −1——因式含係數時，把它當一個小方程式解，不能只把常數變號。</div></div>
       <div class="warn"><b>先整理成「= 0」再分解：</b>像 x(x+1)=6 <b>不能</b>直接寫 x=6 或 x+1=6——右邊是 6 不是 0，AB=0 的原理用不上。要先展開移項成 x<sup>2</sup>+x−6=0 再分解。</div>
     </section>
 
@@ -169,7 +174,9 @@ sup{font-size:.72em}
           <button class="opt">x = −4 或 1</button><button class="opt">x = 4 或 −1</button><button class="opt">x = 4 或 1</button><div class="exp">各括號=0：x−4=0→x=4；x+1=0→x=−1。解的符號跟括號裡相反。</div><div class="retry">再看一次，選出正確的。</div></div>
         <div class="mcq" data-a="2"><div class="qt">2. 解 x<sup>2</sup> = 3x，正確的第一步是？</div>
           <button class="opt">兩邊除以 x</button><button class="opt">兩邊開根號</button><button class="opt">移項成 x<sup>2</sup>−3x=0 再提公因式</button><div class="exp">除以 x 會弄丟 x=0 的解。移項提公因式：x(x−3)=0 → x=0 或 3。</div><div class="retry">再看一次，選出正確的。</div></div>
-        <div class="mcq" data-a="0"><div class="qt">3. x(x+2) = 8 可以直接寫成 x=8 或 x+2=8 嗎？</div>
+        <div class="mcq" data-a="1"><div class="qt">3. x<sup>2</sup>+x = x<sup>2</sup>+3 是一元二次方程式嗎？</div>
+          <button class="opt">是，有 x<sup>2</sup></button><button class="opt">不是，整理後是一次</button><button class="opt">無法判斷</button><div class="exp">兩邊 x<sup>2</sup> 消掉 → x=3，是一次方程式。要先整理再判斷次數。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">4. x(x+2) = 8 可以直接寫成 x=8 或 x+2=8 嗎？</div>
           <button class="opt">不行，右邊不是 0</button><button class="opt">可以</button><button class="opt">只有 x=8 對</button><div class="exp">AB=0 的原理只在「=0」時成立。要先移項成 x<sup>2</sup>+2x−8=0 → (x+4)(x−2)=0 → x=−4 或 2。</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
       <div class="qsec"><h3>基本計算（解完代回檢驗）</h3>
@@ -177,6 +184,8 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">② 解 x<sup>2</sup> + x − 12 = 0</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(x+4)(x−3)=0 → x = −4 或 3</div></div></div>
         <div class="prob"><div class="pq">③ 解 x<sup>2</sup> − 16 = 0</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(x+4)(x−4)=0 → x = ±4</div></div></div>
         <div class="prob"><div class="pq">④ 解 x<sup>2</sup> + 8x + 16 = 0</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(x+4)<sup>2</sup>=0 → x = −4（重根）</div></div></div>
+        <div class="prob"><div class="pq">⑤ 解 2x<sup>2</sup> + 5x − 3 = 0（首項含係數）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(2x−1)(x+3)=0 → x = 1/2 或 −3</div><div class="why">2x−1=0 要解成 1/2。</div></div></div>
+        <div class="prob"><div class="pq">⑥ 解 x(x + 3) = 10（先整理）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x<sup>2</sup>+3x−10=0 → (x+5)(x−2)=0 → x = −5 或 2</div><div class="why">右邊不是 0，先展開移項才能分解。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
@@ -197,7 +206,7 @@ sup{font-size:.72em}
     <section class="lesson on" data-s="1" data-l="0">
       <div class="plabel2">4-2 · 直接開平方</div>
       <h2>x<sup>2</sup> = k：開根號，正負都要</h2>
-      <p class="sub">十字交乘拆不開的方程式（例如 x<sup>2</sup>=7），就要靠第2章的平方根。</p>
+      <p class="sub">當方程式可以整理成「<b>某個式子的平方 ＝ 常數</b>」（A<sup>2</sup> = k）時，就能直接開平方——這裡用到第2章的平方根。</p>
       <div class="hi"><span class="k">x<sup>2</sup> = k　(k &gt; 0) → x = √k 或 −√k，記作 x = ±√k</span></div>
       <div class="note"><b>三種情況：</b>k &gt; 0 → 兩個解 ±√k；k = 0 → 只有 x = 0（重根）；k &lt; 0 → <b>沒有實數解</b>（沒有數平方後是負的）。</div>
       <div class="eg"><div class="q">例：x<sup>2</sup> = 25　；　(x − 1)<sup>2</sup> = 5</div>
@@ -205,6 +214,7 @@ sup{font-size:.72em}
         <div class="step">x − 1 = ±√5 → x = 1 + √5 或 1 − √5（合寫 x = 1 ± √5）</div>
         <div class="why">「整個括號」當成一塊開根號，再把 1 移過去。答案是根式就照第2章化到最簡。</div></div>
       <div class="warn"><b>最常錯：</b>x<sup>2</sup>=9 只答 x=3。負的 −3 平方也是 9，<b>兩個解都要</b>。</div>
+      <div class="note"><b>適用範圍：</b>只有「A<sup>2</sup> = k」的形狀才能直接開平方。像 x<sup>2</sup>+3x+1=0 沒有整理成平方＝常數，<b>不能</b>直接開根號——要先配方（下一課）或用公式解。</div>
     </section>
 
     <section class="lesson" data-s="1" data-l="1">
@@ -218,7 +228,31 @@ sup{font-size:.72em}
         <div class="step">③ 左邊變完全平方：(x + 2)<sup>2</sup> = 7</div>
         <div class="step">④ 開平方：x + 2 = ±√7 → x = −2 ± √7</div>
         <div class="why">補的數是「x 係數一半的平方」。兩邊要<b>同加</b>，等式才不變。這裡用到第1章的 (a+b)²。</div></div>
-      <div class="note">若 x<sup>2</sup> 前有係數（如 2x<sup>2</sup>+8x−1=0），先<b>整式除以 2</b> 變成 x<sup>2</sup>+4x−1/2=0 再配。</div>
+      <div class="eg"><div class="q">例（奇數係數也一樣配）：x<sup>2</sup> + 3x − 1 = 0</div>
+        <div class="step">x<sup>2</sup> + 3x = 1 → 兩邊加 (3/2)<sup>2</sup> = 9/4</div>
+        <div class="step">(x + 3/2)<sup>2</sup> = 1 + 9/4 = 13/4</div>
+        <div class="step">x + 3/2 = ±√13/2 → x = (−3 ± √13)/2</div>
+        <div class="why">「係數一半再平方」對奇數一樣成立，只是會出現分數——照規則走就好，不要怕分數。</div></div>
+      <div class="eg"><div class="q">例（x<sup>2</sup> 前有係數）：2x<sup>2</sup> + 8x − 1 = 0</div>
+        <div class="step">先讓 x<sup>2</sup> 係數變 1：<b>方程式兩邊同除以 2</b> → x<sup>2</sup> + 4x − 1/2 = 0</div>
+        <div class="step">x<sup>2</sup> + 4x = 1/2 → 兩邊加 4 → (x + 2)<sup>2</sup> = 9/2</div>
+        <div class="step">x + 2 = ±3√2/2 → x = −2 ± 3√2/2</div>
+        <div class="why">√(9/2) 照第2章有理化成 3√2/2。「除以係數」是<b>兩邊同除</b>，右邊也要除。</div></div>
+      <div class="eg"><div class="q">為什麼補的是 (b/2)<sup>2</sup>？看面積就懂</div>
+        <svg viewBox="0 0 200 200" width="200" height="200" aria-label="配方法面積圖">
+          <rect x="20" y="20" width="110" height="110" fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="130" y="20" width="40" height="110" fill="#E6F4EF" stroke="#CBC0E0"/>
+          <rect x="20" y="130" width="110" height="40" fill="#E6F4EF" stroke="#CBC0E0"/>
+          <rect x="130" y="130" width="40" height="40" fill="#FBEDF1" stroke="#B7476A" stroke-dasharray="4 3"/>
+          <text x="75" y="80" text-anchor="middle" font-size="15" fill="#2A2335" font-family="Georgia">x²</text>
+          <text x="150" y="80" text-anchor="middle" font-size="13" fill="#2A2335" font-family="Georgia">2x</text>
+          <text x="75" y="155" text-anchor="middle" font-size="13" fill="#2A2335" font-family="Georgia">2x</text>
+          <text x="150" y="155" text-anchor="middle" font-size="12" fill="#B7476A" font-family="Georgia">4</text>
+          <text x="75" y="14" text-anchor="middle" font-size="12" fill="#645B78">x</text>
+          <text x="150" y="14" text-anchor="middle" font-size="12" fill="#645B78">2</text></svg>
+        <div class="step">x<sup>2</sup> + 4x ＝ 一個 x×x 正方形 ＋ 兩條 2×x 長方形（4x 平分成兩條）</div>
+        <div class="step">右下角缺一塊 2×2 = 4——補上它，整個就拼成 (x+2)<sup>2</sup></div>
+        <div class="why">補的那塊邊長正好是「x 係數的一半」，面積就是 (b/2)<sup>2</sup>。圖以正數示意；代數對正負與 0 都成立。</div></div>
       <div class="warn"><b>常見錯：</b>只在左邊加 (b/2)²、右邊忘了加——等式就被改掉了。永遠「兩邊同加」。</div>
     </section>
 
@@ -226,20 +260,30 @@ sup{font-size:.72em}
       <div class="plabel2">4-2 · 公式解</div>
       <h2>把配方法做一次到底，就是公式解</h2>
       <p class="sub">對一般的 ax<sup>2</sup>+bx+c=0 走一遍配方法，得到的通用結果就是公式解——背它，等於把配方法隨身攜帶。</p>
-      <div class="hi"><span class="k">x = ( −b ± √(b<sup>2</sup>−4ac) ) / 2a　(a ≠ 0)</span></div>
+      <div class="hi"><span class="k">x = ( −b ± √(b<sup>2</sup>−4ac) ) / (2a)　(a ≠ 0)</span></div>
       <table class="tbl">
         <tr><th>判別式 b<sup>2</sup>−4ac</th><th>解的情況</th></tr>
         <tr><td>&gt; 0</td><td>兩個相異實數解</td></tr>
-        <tr><td>= 0</td><td>一個解（重根）</td></tr>
+        <tr><td>= 0</td><td>一個相異實數解（兩根相等，稱重根）：x = −b/(2a)</td></tr>
         <tr><td>&lt; 0</td><td>沒有實數解</td></tr>
       </table>
+      <div class="hi" style="border-color:var(--accent)"><span class="k">公式解五步：① 整理成 ax²+bx+c=0　② 列 a、b、c（連正負號；缺項寫 0）　③ 先算判別式　④ 代公式　⑤ 化簡根式</span></div>
       <div class="eg"><div class="q">例：解 2x<sup>2</sup> + 3x − 1 = 0</div>
-        <div class="step">a=2、b=3、c=−1；b<sup>2</sup>−4ac = 9 − 4·2·(−1) = 9 + 8 = 17</div>
+        <table class="tbl" style="max-width:220px"><tr><th>係數</th><th>數值</th></tr><tr><td>a</td><td>2</td></tr><tr><td>b</td><td>3</td></tr><tr><td>c</td><td>−1</td></tr></table>
+        <div class="step">b<sup>2</sup>−4ac = 9 − 4·2·(−1) = 9 + 8 = 17</div>
         <div class="step">x = (−3 ± √17) / 4</div>
         <div class="why">c 是 −1，代入 −4ac 時是 −4·2·(−1)=+8——<b>符號是公式解最大的失分點</b>，建議先把 a、b、c 連同正負寫下來再代。</div></div>
+      <div class="note"><b>缺項寫 0：</b>2x<sup>2</sup> − 5 = 0 的係數是 a=2、<b>b=0</b>、c=−5——跟第1章「缺項係數為 0」同一個觀念。</div>
       <div class="eg"><div class="q">例（判別）：x<sup>2</sup> + 2x + 5 = 0 有幾個實數解？</div>
         <div class="step">b<sup>2</sup>−4ac = 4 − 20 = −16 &lt; 0 → <b>沒有實數解</b></div></div>
-      <div class="rev"><b>怎麼挑方法：</b>先試因式分解（最快）→ 拆不開就公式解（萬用）→ 題目指定或式子好配時用配方法。三條路答案一定一樣。</div>
+      <div class="rev"><b>固定判斷流程：先整理 → 能不能直接開平方（已是 A²=k）→ 能不能因式分解 → 否則用公式解（一般情況皆可用）</b>。配方法在題目指定、或式子好湊平方時使用。不同方法答案一定一樣。</div>
+      <table class="tbl">
+        <tr><th>方程式外觀</th><th>優先方法</th></tr>
+        <tr><td>已是 A<sup>2</sup> = k</td><td>直接開平方</td></tr>
+        <tr><td>可整理成「乘積 = 0」</td><td>因式分解法</td></tr>
+        <tr><td>題目指定或容易湊平方</td><td>配方法</td></tr>
+        <tr><td>一般二次方程式</td><td>公式解</td></tr>
+      </table>
     </section>
 
     <section class="lesson" data-s="1" data-l="3">
@@ -247,11 +291,15 @@ sup{font-size:.72em}
       <h2>自己解，解完代回去檢驗</h2>
       <p class="sub">根式答案記得化到最簡（第2章）。</p>
       <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
-        <div class="mcq" data-a="1"><div class="qt">1. x<sup>2</sup> = 9 的解是？</div>
+        <div class="mcq" data-a="0"><div class="qt">1. 選最有效率的方法（不必計算）：(x−3)<sup>2</sup> = 7</div>
+          <button class="opt">直接開平方</button><button class="opt">十字交乘</button><button class="opt">公式解</button><div class="exp">已經是 A²=k 的形狀，直接開平方最快：x−3=±√7。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 選最有效率的方法（不必計算）：x<sup>2</sup> − 7x + 12 = 0</div>
+          <button class="opt">直接開平方</button><button class="opt">因式分解</button><button class="opt">配方法</button><div class="exp">積 12、和 −7 → (x−3)(x−4)，因式分解最快。公式解也可，但慢。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">3. x<sup>2</sup> = 9 的解是？</div>
           <button class="opt">x = 3</button><button class="opt">x = ±3</button><button class="opt">x = 81</button><div class="exp">3 和 −3 平方都是 9，兩個解都要。</div><div class="retry">再看一次，選出正確的。</div></div>
-        <div class="mcq" data-a="2"><div class="qt">2. 配方：x<sup>2</sup> + 6x + □ 要補多少才是完全平方？</div>
+        <div class="mcq" data-a="2"><div class="qt">4. 配方：x<sup>2</sup> + 6x + □ 要補多少才是完全平方？</div>
           <button class="opt">6</button><button class="opt">3</button><button class="opt">9</button><div class="exp">補 (6/2)<sup>2</sup> = 9，得 (x+3)<sup>2</sup>。</div><div class="retry">再看一次，選出正確的。</div></div>
-        <div class="mcq" data-a="0"><div class="qt">3. 判別式 b<sup>2</sup>−4ac = 0 時，方程式有幾個實數解？</div>
+        <div class="mcq" data-a="0"><div class="qt">5. 判別式 b<sup>2</sup>−4ac = 0 時，方程式有幾個實數解？</div>
           <button class="opt">一個（重根）</button><button class="opt">兩個</button><button class="opt">沒有</button><div class="exp">√0 = 0，± 都是同一個值 → 重根。</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
       <div class="qsec"><h3>基本計算</h3>
@@ -259,6 +307,9 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">② 用配方法解 x<sup>2</sup> − 2x − 1 = 0</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x<sup>2</sup>−2x=1 → 兩邊加 1 → (x−1)<sup>2</sup>=2 → x = 1 ± √2</div></div></div>
         <div class="prob"><div class="pq">③ 用公式解 x<sup>2</sup> + 3x + 1 = 0</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">b²−4ac = 9−4 = 5 → x = (−3 ± √5)/2</div></div></div>
         <div class="prob"><div class="pq">④ x<sup>2</sup> − 4x + 4 = 0 有幾個實數解？解是多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">判別式 16−16=0 → 重根；(x−2)<sup>2</sup>=0 → x = 2</div></div></div>
+        <div class="prob"><div class="pq">⑤ 解 (2x − 1)<sup>2</sup> = 7</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x−1 = ±√7 → x = (1 ± √7)/2</div><div class="why">整個括號開根號後，還要解 2x−1=±√7 這個一次方程式。</div></div></div>
+        <div class="prob"><div class="pq">⑥ 用配方法解 x<sup>2</sup> + 3x − 1 = 0（奇數係數）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(x+3/2)<sup>2</sup> = 13/4 → x = (−3 ± √13)/2</div></div></div>
+        <div class="prob"><div class="pq">⑦ 用公式解 2x<sup>2</sup> − 3x − 1 = 0（先列 a、b、c）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a=2、b=−3、c=−1；判別式 = 9+8 = 17 → x = (3 ± √17)/4</div><div class="why">b=−3，代 −b 時變 +3——符號連著寫進表裡就不會丟。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
@@ -280,19 +331,20 @@ sup{font-size:.72em}
       <p class="sub">應用題比計算題多兩步：把文字翻譯成方程式（列），和把不合理的解丟掉（驗）。</p>
       <div class="hi"><span class="k">① 設未知數 → ② 依題意列式 → ③ 解方程式 → ④ 檢驗：解合不合題意？不合的捨去</span></div>
       <div class="eg"><div class="q">例①【核心必會】兩個連續正整數的乘積是 72，求這兩個數</div>
-        <div class="step">設較小的是 x → x(x + 1) = 72</div>
+        <table class="tbl" style="max-width:320px"><tr><th>量</th><th>代數表示</th></tr><tr><td>較小整數</td><td>x</td></tr><tr><td>較大整數</td><td>x+1</td></tr><tr><td>乘積</td><td>x(x+1)</td></tr><tr><td>題目條件</td><td>x(x+1) = 72</td></tr></table>
         <div class="step">展開移項：x<sup>2</sup> + x − 72 = 0 → (x + 9)(x − 8) = 0 → x = −9 或 8</div>
         <div class="step">題目說「正整數」→ 捨去 −9 → x = 8 → 答案是 <b>8 和 9</b></div>
         <div class="why">方程式會給兩個解，但題目情境常常只收一個。「捨去」要寫出理由（負數不是正整數）。</div></div>
       <div class="eg"><div class="q">例②【核心必會】長方形的長比寬多 3 公分，面積 40 平方公分，求長寬</div>
-        <div class="step">設寬 x → 長 x+3 → x(x + 3) = 40</div>
+        <table class="tbl" style="max-width:320px"><tr><th>量</th><th>代數表示</th></tr><tr><td>寬</td><td>x</td></tr><tr><td>長</td><td>x+3</td></tr><tr><td>面積</td><td>x(x+3)</td></tr><tr><td>題目條件</td><td>x(x+3) = 40</td></tr></table>
         <div class="step">x<sup>2</sup> + 3x − 40 = 0 → (x + 8)(x − 5) = 0 → x = −8 或 5</div>
         <div class="step">邊長必須為正 → x = 5 → 寬 5、長 <b>8</b> 公分</div></div>
       <div class="eg"><div class="q">例③【進階】正方形邊長增加 3 公分後，面積變成 64 平方公分，求原邊長</div>
         <div class="step">(x + 3)<sup>2</sup> = 64 → x + 3 = ±8 → x = 5 或 −11</div>
         <div class="step">邊長為正 → 原邊長 <b>5</b> 公分</div>
         <div class="why">這題直接開平方最快——選方法也是練習的一部分。</div></div>
-      <div class="warn"><b>最常見的失分：</b>解出兩個根就照抄，忘了回頭對題意。長度、人數、年齡…都不能是負的；「捨去」那一行一定要寫。</div>
+      <div class="warn"><b>最常見的失分：</b>解出兩個根就照抄，忘了回頭對題意。長度、人數、年齡…不能是負的；「捨去」那一行一定要寫、要給理由。</div>
+      <div class="note"><b>但捨去不是機械規則：</b>要不要捨，看未知數<b>代表什麼</b>。長度、人數不能為負；溫度變化、座標、盈虧就可能是負的。也有題目<b>兩個根都合題意</b>——每個根逐一檢驗，不是「負的永遠丟掉」。</div>
     </section>
 
     <section class="lesson" data-s="2" data-l="1">
@@ -306,9 +358,12 @@ sup{font-size:.72em}
           <button class="opt">x + 2</button><button class="opt">x + 1</button><button class="opt">2x</button><div class="exp">連續偶數差 2（例如 6 和 8）。連續整數才是差 1。</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
       <div class="qsec"><h3>基本計算</h3>
-        <div class="prob"><div class="pq">① 兩個連續正偶數的乘積是 48，求這兩個數</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x(x+2)=48 → x<sup>2</sup>+2x−48=0 → (x+8)(x−6)=0 → x=6（捨 −8）→ <b>6 和 8</b></div></div></div>
+        <div class="prob"><div class="pq">① 兩個連續正偶數的乘積是 48，求這兩個數</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x(x+2)=48 → (x+8)(x−6)=0 → x=6（捨 −8）→ <b>6 和 8</b></div><div class="why">驗算兩件事：x=6 是<b>正偶數</b> ✓（設 x、x+2 只保證差 2，最後要檢查真的是偶數）、6×8=48 ✓。</div></div></div>
         <div class="prob"><div class="pq">② 長方形的長比寬多 5 公尺，面積 36 平方公尺，求長寬</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x(x+5)=36 → (x+9)(x−4)=0 → x=4（捨 −9）→ 寬 4、長 9 公尺</div></div></div>
         <div class="prob"><div class="pq">③ 正方形邊長增加 3 公分後面積為 100 平方公分，求原邊長</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(x+3)<sup>2</sup>=100 → x+3=±10 → x=7（捨 −13）→ 原邊長 7 公分</div></div></div>
+        <div class="prob"><div class="pq">④ 兩個連續正奇數的乘積是 63，求這兩個數</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x(x+2)=63 → (x+9)(x−7)=0 → x=7（捨 −9）→ <b>7 和 9</b></div><div class="why">檢查 7 是正奇數 ✓。</div></div></div>
+        <div class="prob"><div class="pq">⑤ 三角形的底比高多 2 公分，面積 24 平方公分，求底和高</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設高 x、底 x+2 → x(x+2)/2 = 24 → x<sup>2</sup>+2x−48=0 → x=6（捨 −8）→ 高 6、底 8 公分</div><div class="why">先寫面積公式（底×高÷2）再列式——圖形題都是「公式先行」。</div></div></div>
+        <div class="prob"><div class="pq">⑥ 某數的平方等於「5 倍該數減 6」，求該數</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x<sup>2</sup> = 5x − 6 → (x−2)(x−3)=0 → x = <b>2 或 3（兩個都合題意）</b></div><div class="why">這題沒有負根可捨——逐一檢驗：2²=10−6 ✓、3²=15−6 ✓。捨不捨看題意，不是機械丟負的。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
@@ -317,7 +372,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第4章 一元二次方程式</span><span>V2.4.1</span></div>
+  <div class="page-footer"><span>數學 · 第4章 一元二次方程式</span><span>V2.4.2</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
