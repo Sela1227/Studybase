@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>國二下 第3章 三角形的基本性質 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.prereq{border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);padding:14px 16px;margin:14px 0}
+.prereq .t{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text-2);text-transform:uppercase;margin-bottom:8px}
+.prereq p{font-size:14px;margin:6px 0}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-2);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:17px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+sup{font-size:.72em}
+.frac{display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;font-family:Georgia,serif}
+.frac .fn{display:block;padding:0 5px;border-bottom:1px solid currentColor}
+.frac .fd{display:block;padding:0 5px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.eg,.mcq,.prob,.errlog,.hi,.note,.rev{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">國二下 第3章 三角形的基本性質</span></div>
+
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二下 · 第3章 三角形的基本性質</div>
+    <h1>幾何主線的地基：這章穩了，第4章和相似形才站得住</h1>
+    <p>這章是國二下最重要的一章——內外角、全等、中垂線與角平分線、邊角關係，全部是第4章平行四邊形（36 分那次的範圍）和國三相似形的前置。每一節都不長，但每一句性質都要「會用」不只是「背過」。</p>
+    <div class="meta"><span>前置：角度計算、基本作圖工具</span><span>預計 40 分鐘／節 · 共五節，建議分多次完成</span><span>依賴鏈：本章 → 第4章平行四邊形 → 國三相似形</span></div>
+  </div>
+
+  <div class="stabs" role="tablist" aria-label="第3章各節">
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">3-1 內角與外角</button>
+    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">3-2 尺規作圖</button>
+    <button class="stab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-s="2">3-3 全等性質</button>
+    <button class="stab" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1" data-s="3">3-4 中垂線與角平分線</button>
+    <button class="stab" role="tab" id="tab-4" aria-selected="false" aria-controls="panel-4" tabindex="-1" data-s="4">3-5 邊角關係</button>
+  </div>
+
+  <!-- ══ 3-1 ══ -->
+  <div class="sec on" data-s="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">三角形內角與外角</button>
+      <button class="lpill" data-s="0" data-l="1">多邊形內角與外角</button>
+      <button class="lpill" data-s="0" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">3-1 · 三角形</div>
+      <h2>內角和 180°；外角＝不相鄰兩內角的和</h2>
+      <div class="hi"><span class="k">三角形內角和 = 180°　；　一個外角 = 與它不相鄰的兩內角之和</span></div>
+      <div class="eg"><div class="q">看圖記住外角</div>
+        <svg role="img" viewBox="0 0 260 130" width="260" height="130" aria-label="三角形外角示意">
+          <path d="M30 110 L130 20 L200 110 Z" fill="#ECEBFA" stroke="#5B57C2"/>
+          <line x1="200" y1="110" x2="250" y2="110" stroke="#5B57C2"/>
+          <text x="128" y="42" text-anchor="middle" font-size="12" fill="#2A2335">A</text>
+          <text x="52" y="104" font-size="12" fill="#2A2335">B</text>
+          <text x="182" y="104" font-size="12" fill="#2A2335">C</text>
+          <path d="M212 110 A12 12 0 0 0 208 101" fill="none" stroke="#B7476A"/>
+          <text x="224" y="102" font-size="11" fill="#B7476A">外角</text></svg>
+        <div class="step">C 處的外角 = ∠A + ∠B（把 C 的內角補到 180° 剩下的，就是另外兩角的和）</div>
+        <div class="why">兩個理由等價：外角＋∠C=180°，而 ∠A+∠B+∠C=180° → 外角=∠A+∠B。</div></div>
+      <div class="eg"><div class="q">例①【核心必會】兩內角為 50°、60°，求第三角與 50° 那頂點的外角</div>
+        <div class="step">第三角 = 180 − 110 = <b>70°</b>；50° 頂點的外角 = 180−50 = 130°（也 = 60+70 ✓）</div></div>
+      <div class="eg"><div class="q">例②【核心必會】某外角 115°，其中一個不相鄰內角 40°，求另一個</div>
+        <div class="step">115 = 40 + ? → <b>75°</b></div>
+        <div class="why">用「外角=遠處兩內角和」直接一步；不用先算 180−115。</div></div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">3-1 · 多邊形</div>
+      <h2>切成三角形數內角；外角和永遠 360°</h2>
+      <div class="hi"><span class="k">n 邊形內角和 = (n−2) × 180°　；　外角和 = 360°（跟邊數無關）</span></div>
+      <div class="eg"><div class="q">為什麼是 (n−2)？</div>
+        <div class="step">從一個頂點拉對角線，n 邊形被切成 (n−2) 個三角形，每個 180°</div>
+        <div class="why">外角和 360° 想像成「沿著多邊形走一圈，總共轉了一整圈」。</div></div>
+      <div class="eg"><div class="q">例①【核心必會】八邊形內角和？正五邊形每個內角？</div>
+        <div class="step">(8−2)×180 = <b>1080°</b>；正五邊形每內角 = (5−2)×180 ÷ 5 = <b>108°</b></div></div>
+      <div class="eg"><div class="q">例②【進階】內角和 1440° 的多邊形有幾邊？正 n 邊形每個外角 30°，n = ?</div>
+        <div class="step">(n−2)×180 = 1440 → n−2 = 8 → <b>n = 10</b></div>
+        <div class="step">每外角 30° → n = 360 ÷ 30 = <b>12</b></div>
+        <div class="why">正多邊形用「外角」常比內角快：每外角 = 360/n，一除就出來。</div></div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>內角和、外角，交替用</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 任何多邊形的外角和是？</div>
+          <button class="opt">(n−2)×180°</button><button class="opt">360°</button><button class="opt">跟邊數成正比</button><div class="exp">外角和永遠 360°，跟邊數無關；(n−2)×180° 是內角和。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">2. 三角形一個外角等於？</div>
+          <button class="opt">不相鄰兩內角的和</button><button class="opt">相鄰內角</button><button class="opt">三內角的和</button><div class="exp">外角 = 與它不相鄰的兩內角之和。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 三角形兩內角 35°、80°，求第三角</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">180−115 = <b>65°</b></div></div></div>
+        <div class="prob"><div class="pq">② 十二邊形的內角和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(12−2)×180 = <b>1800°</b></div></div></div>
+        <div class="prob"><div class="pq">③ 正六邊形每個內角、每個外角</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">內角 = 720÷6 = <b>120°</b>；外角 = 360÷6 = <b>60°</b>（也可用 180−120）</div></div></div>
+        <div class="prob"><div class="pq">④ 正 n 邊形每個外角 30°，求 n 與內角和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">n = 360÷30 = <b>12</b>；內角和 = 10×180 = <b>1800°</b></div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">內角和/外角和公式混用 → <b>A</b>；(n−2) 忘了減 2 → <b>B</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-2 尺規作圖。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 3-2 ══ -->
+  <div class="sec" data-s="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+    <div class="lpills">
+      <button class="lpill on" data-s="1" data-l="0">規則與基本作圖</button>
+      <button class="lpill" data-s="1" data-l="1">中垂線與角平分線作圖</button>
+      <button class="lpill" data-s="1" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="1" data-l="0">
+      <div class="plabel2">3-2 · 基本</div>
+      <h2>只准用「沒有刻度的直尺」和圓規</h2>
+      <p class="sub">尺規作圖的規則：直尺只能畫直線（不能量長度）、圓規只能畫圓弧與搬距離。</p>
+      <div class="hi"><span class="k">圓規的本事：把「相同的距離」搬到別的地方</span></div>
+      <div class="eg"><div class="q">作圖①：作一線段等於已知線段 AB</div>
+        <div class="step">1. 畫一條射線，取端點 C　2. 圓規張開量 AB 的長　3. 以 C 為圓心畫弧，交射線於 D → CD = AB</div></div>
+      <div class="eg"><div class="q">作圖②：作一角等於已知角 ∠O</div>
+        <div class="step">1. 以 O 為圓心畫弧，交兩邊於 A、B　2. 畫射線取端點 O′，同半徑畫弧交於 A′　3. 圓規量 AB 距離，以 A′ 為圓心畫弧交前弧於 B′　4. 連 O′B′ → ∠O′ = ∠O</div>
+        <div class="why">背後原理是下一節的 SSS 全等：兩個三角形三邊對應相等，角就相等。尺規作圖不是魔術，每一步都有全等在撐。</div></div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="1">
+      <div class="plabel2">3-2 · 兩大作圖</div>
+      <h2>中垂線與角平分線：考最多的兩個</h2>
+      <div class="eg"><div class="q">作圖③：線段 AB 的中垂線（垂直平分線）</div>
+        <svg role="img" viewBox="0 0 240 140" width="240" height="140" aria-label="中垂線作圖示意">
+          <line x1="40" y1="80" x2="200" y2="80" stroke="#5B57C2"/>
+          <line x1="120" y1="15" x2="120" y2="130" stroke="#B7476A"/>
+          <path d="M85 45 A55 55 0 0 1 155 45" fill="none" stroke="#CBC0E0"/>
+          <path d="M85 115 A55 55 0 0 0 155 115" fill="none" stroke="#CBC0E0"/>
+          <text x="32" y="96" font-size="12" fill="#2A2335">A</text><text x="202" y="96" font-size="12" fill="#2A2335">B</text>
+          <text x="126" y="24" font-size="11" fill="#B7476A">中垂線</text></svg>
+        <div class="step">1. 以 A、B 為圓心，取<b>相同</b>且大於 AB 一半的半徑，各畫一弧　2. 兩弧交於上下兩點　3. 連這兩點 → 就是 AB 的中垂線</div>
+        <div class="why">半徑要「大於一半」兩弧才會相交；半徑要「相同」交點才會到 A、B 等距（3-4 的性質）。</div></div>
+      <div class="eg"><div class="q">作圖④：∠O 的角平分線</div>
+        <div class="step">1. 以 O 為圓心畫弧，交兩邊於 A、B　2. 以 A、B 為圓心、相同半徑各畫一弧，交於 P　3. 連 OP → OP 平分 ∠O</div></div>
+      <div class="eg"><div class="q">作圖⑤：過線外一點 P 作垂線</div>
+        <div class="step">1. 以 P 為圓心畫弧，交直線於兩點 A、B　2. 作 AB 的中垂線（作圖③）——它必過 P 且垂直</div>
+        <div class="why">新作圖常是舊作圖的組合——垂線 = 「先造出一段 AB，再作它的中垂線」。</div></div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>作圖題考的是「步驟與理由」</h2>
+      <p class="sub">拿真的圓規在紙上做一遍——看會了不等於手會了。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="2"><div class="qt">1. 尺規作圖中，直尺可以用來？</div>
+          <button class="opt">量長度</button><button class="opt">量角度</button><button class="opt">畫直線</button><div class="exp">直尺沒有刻度，只能畫直線；搬距離是圓規的工作。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 作中垂線時，兩弧的半徑必須？</div>
+          <button class="opt">等於 AB</button><button class="opt">相同、且大於 AB 的一半</button><button class="opt">隨便取</button><div class="exp">大於一半才會相交；相同才保證交點到 A、B 等距。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. 「作等角」的作圖，背後的原理是？</div>
+          <button class="opt">SSS 全等</button><button class="opt">量角器</button><button class="opt">目測</button><div class="exp">三邊搬過去對應相等 → 三角形全等 → 對應角相等。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>動手做（紙上完成）</h3>
+        <div class="prob"><div class="pq">① 畫一線段 AB，作出它的中垂線，並用尺量檢查交點是否為中點</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">照作圖③步驟；檢查：交點到 A、B 距離相同、且夾角為 90°。</div></div></div>
+        <div class="prob"><div class="pq">② 畫一個約 60° 的角，作出角平分線，並量兩半是否相等</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">照作圖④；兩半各約 30°。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">步驟順序背錯 → <b>A</b>（回去看「為什麼」那行）；弧太小沒交點 → 半徑取大於一半。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋動手 ①②）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">動手作圖 ①② 真的在紙上完成</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-3：作圖背後的主角——全等。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 3-3 ══ -->
+  <div class="sec" data-s="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+    <div class="lpills">
+      <button class="lpill on" data-s="2" data-l="0">全等與對應</button>
+      <button class="lpill" data-s="2" data-l="1">五個判別條件</button>
+      <button class="lpill" data-s="2" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="2" data-l="0">
+      <div class="plabel2">3-3 · 意義</div>
+      <h2>全等＝疊起來完全重合</h2>
+      <div class="hi"><span class="k">△ABC ≅ △DEF：對應頂點照順序寫——A↔D、B↔E、C↔F</span></div>
+      <p>全等的三角形，<b>對應邊相等、對應角相等</b>。記號 ≅ 裡的順序就是對應關係：AB 對 DE、∠B 對 ∠E。</p>
+      <div class="eg"><div class="q">例：△ABC ≅ △PQR，AB=5、∠C=70°，能知道什麼？</div>
+        <div class="step">PQ = AB = 5　；　∠R = ∠C = 70°</div>
+        <div class="why">找對應「看字母位置」：AB 是第 1、2 個字母 → 對 PQ；∠C 是第 3 個 → 對 ∠R。順序寫錯，整題跟著錯。</div></div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="1">
+      <div class="plabel2">3-3 · 判別</div>
+      <h2>五個夠用的組合，兩個著名的陷阱</h2>
+      <table class="tbl">
+        <tr><th>條件</th><th>內容</th></tr>
+        <tr><td>SSS</td><td>三邊對應相等</td></tr>
+        <tr><td>SAS</td><td>兩邊與<b>夾角</b>對應相等</td></tr>
+        <tr><td>ASA</td><td>兩角與<b>夾邊</b>對應相等</td></tr>
+        <tr><td>AAS</td><td>兩角與其中一角的<b>對邊</b>對應相等</td></tr>
+        <tr><td>RHS</td><td>直角三角形：斜邊與一股對應相等</td></tr>
+      </table>
+      <div class="warn"><b>兩個不能用的：</b>SSA（兩邊與「非夾角」）——同樣的資料可能拼出兩種不同的三角形；AAA（三角相等）——形狀相同但大小可以不同（那是相似，國三的事）。</div>
+      <div class="eg"><div class="q">例【核心必會】已知 AB=DE、∠B=∠E、BC=EF，全等嗎？用哪個條件？</div>
+        <div class="step">∠B 夾在 AB 與 BC 之間、∠E 夾在 DE 與 EF 之間 → <b>SAS</b> ✓ 全等</div>
+        <div class="why">判斷 SAS 的關鍵一問：「這個角是不是被那兩邊<b>夾住</b>？」不是夾角就掉進 SSA。</div></div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先找對應，再選條件</h2>
+      <p class="sub">先自己判斷，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 下列哪個「不能」保證全等？</div>
+          <button class="opt">SSS</button><button class="opt">AAA</button><button class="opt">ASA</button><div class="exp">AAA 只保證形狀相同（相似），大小可以不同。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">2. SAS 的 A 必須是？</div>
+          <button class="opt">任何一角</button><button class="opt">最大角</button><button class="opt">兩邊的夾角</button><div class="exp">必須是夾角；非夾角就是 SSA，不能用。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. △ABC ≅ △XYZ，則 ∠B 對應？</div>
+          <button class="opt">∠Y</button><button class="opt">∠X</button><button class="opt">∠Z</button><div class="exp">照字母順序：第 2 個對第 2 個 → ∠B ↔ ∠Y。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本判斷</h3>
+        <div class="prob"><div class="pq">① AB=DE、BC=EF、CA=FD → 用哪個條件？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>SSS</b>（三邊對應相等）</div></div></div>
+        <div class="prob"><div class="pq">② ∠A=∠D、AB=DE、∠B=∠E → 用哪個條件？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">AB 夾在 ∠A、∠B 之間 → <b>ASA</b></div></div></div>
+        <div class="prob"><div class="pq">③ 直角△，斜邊 10=10、一股 6=6 → 用哪個條件？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>RHS</b>（直角、斜邊、一股）</div></div></div>
+        <div class="prob"><div class="pq">④ AB=DE、AC=DF、∠B=∠E（∠B 不是夾角）→ 能斷定全等嗎？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>不能</b>——這是 SSA，可能拼出兩種三角形。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">分不清夾角/非夾角 → <b>A</b>；對應順序看錯 → <b>C</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋判斷 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">判斷 ①～④ 都自己想過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-4：全等的兩個經典應用。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 3-4 ══ -->
+  <div class="sec" data-s="3" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+    <div class="lpills">
+      <button class="lpill on" data-s="3" data-l="0">兩條性質</button>
+      <button class="lpill" data-s="3" data-l="1">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="3" data-l="0">
+      <div class="plabel2">3-4 · 性質</div>
+      <h2>中垂線：到兩端等距；角平分線：到兩邊等距</h2>
+      <div class="hi"><span class="k">P 在 AB 的中垂線上 ⇔ PA = PB　；　P 在 ∠O 的角平分線上 ⇔ P 到兩邊的（垂直）距離相等</span></div>
+      <svg role="img" viewBox="0 0 300 130" width="300" height="130" aria-label="中垂線與角平分線性質示意">
+        <line x1="20" y1="100" x2="120" y2="100" stroke="#5B57C2"/>
+        <line x1="70" y1="20" x2="70" y2="118" stroke="#B7476A"/>
+        <circle cx="70" cy="40" r="3" fill="#B7476A"/>
+        <line x1="70" y1="40" x2="20" y2="100" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <line x1="70" y1="40" x2="120" y2="100" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <text x="74" y="38" font-size="11" fill="#B7476A">P</text>
+        <text x="14" y="116" font-size="11" fill="#2A2335">A</text><text x="118" y="116" font-size="11" fill="#2A2335">B</text>
+        <line x1="180" y1="110" x2="290" y2="110" stroke="#5B57C2"/>
+        <line x1="180" y1="110" x2="280" y2="30" stroke="#5B57C2"/>
+        <line x1="180" y1="110" x2="285" y2="65" stroke="#B7476A"/>
+        <circle cx="252" cy="79" r="3" fill="#B7476A"/>
+        <line x1="252" y1="79" x2="252" y2="110" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <line x1="252" y1="79" x2="228" y2="49" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <text x="256" y="76" font-size="11" fill="#B7476A">P</text><text x="172" y="124" font-size="11" fill="#2A2335">O</text></svg>
+      <div class="eg"><div class="q">例①【核心必會】P 在 AB 的中垂線上，PA = 3x−2、PB = x+8，求 x</div>
+        <div class="step">PA = PB → 3x−2 = x+8 → x = <b>5</b></div>
+        <div class="why">看到「中垂線上的點」，反射動作就是寫「到兩端等距」——性質變方程式。</div></div>
+      <div class="eg"><div class="q">例②【進階】為什麼成立？（用全等說一次）</div>
+        <div class="step">設中垂線交 AB 於 M。△PMA 與 △PMB：PM 共用、MA=MB（中點）、夾角都是 90° → SAS 全等 → PA=PB</div>
+        <div class="why">3-3 的全等就是這章所有性質的引擎——性質不是背的，是全等推出來的。角平分線那條用 AAS（或 RHS）同理。</div></div>
+      <div class="note"><b>反過來也對（逆敘述）：</b>PA=PB 的點必在中垂線上；到兩邊等距的點必在角平分線上。「找到兩村莊等距的水井位置」這類題就是在考逆敘述。</div>
+    </section>
+
+    <section class="lesson" data-s="3" data-l="1">
+      <div class="plabel2">練習與訂正</div>
+      <h2>性質 → 等式 → 解</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="0"><div class="qt">1. P 在線段 AB 的中垂線上，一定成立的是？</div>
+          <button class="opt">PA = PB</button><button class="opt">PA = AB</button><button class="opt">P 是中點</button><div class="exp">中垂線上任一點到兩端等距；P 不一定在 AB 上。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 「到角兩邊等距」的點在哪裡？</div>
+          <button class="opt">中垂線上</button><button class="opt">角平分線上</button><button class="opt">角的頂點</button><div class="exp">角平分線性質的逆敘述。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① P 在 AB 中垂線上，PA = 2x+1、PB = 13，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x+1 = 13 → x = <b>6</b></div></div></div>
+        <div class="prob"><div class="pq">② P 在 ∠O 角平分線上，P 到一邊距離 7，到另一邊距離是？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>7</b>（等距）</div></div></div>
+        <div class="prob"><div class="pq">③ 要找一點同時到 A、B 等距、又到 B、C 等距，怎麼找？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">作 AB 的中垂線與 BC 的中垂線，<b>交點</b>就是——它到 A、B、C 三點都等距。</div><div class="why">這個點就是之後「外心」的雛形（國三 3-2 會正式登場）。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">性質與逆敘述混用 → <b>A</b>；「距離」忘了是垂直距離 → <b>A</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～③）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～③ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-5：邊和角的大小關係。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 3-5 ══ -->
+  <div class="sec" data-s="4" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
+    <div class="lpills">
+      <button class="lpill on" data-s="4" data-l="0">三角形不等式</button>
+      <button class="lpill" data-s="4" data-l="1">大邊對大角</button>
+      <button class="lpill" data-s="4" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="4" data-l="0">
+      <div class="plabel2">3-5 · 存在條件</div>
+      <h2>任兩邊之和 大於 第三邊</h2>
+      <div class="hi"><span class="k">三邊能組成三角形 ⇔ 任兩邊之和 ＞ 第三邊（檢查「兩小邊之和 ＞ 最大邊」即可）</span></div>
+      <div class="eg"><div class="q">例①【核心必會】3、5、x 能組成三角形，x 的範圍？整數 x 有幾個？</div>
+        <div class="step">兩邊之差 ＜ x ＜ 兩邊之和 → 2 ＜ x ＜ 8</div>
+        <div class="step">整數 x = 3、4、5、6、7 → <b>5 個</b></div>
+        <div class="why">口訣「差 ＜ 第三邊 ＜ 和」。端點 2 和 8 <b>不含</b>（等於時三點共線、拉不起來）。</div></div>
+      <div class="eg"><div class="q">例②【核心必會】4、4、9 能組成三角形嗎？</div>
+        <div class="step">兩小邊 4+4 = 8 ＜ 9 → <b>不能</b></div>
+        <div class="why">只要檢查「兩小加起來夠不夠跨過最大」這一條就好。</div></div>
+    </section>
+
+    <section class="lesson" data-s="4" data-l="1">
+      <div class="plabel2">3-5 · 邊角對照</div>
+      <h2>大邊對大角、大角對大邊</h2>
+      <div class="hi"><span class="k">同一個三角形內：邊越長，它對面的角越大（反之亦然）</span></div>
+      <div class="eg"><div class="q">例①【核心必會】三邊 5、7、9，哪個角最大？</div>
+        <div class="step">最長邊 9 的<b>對角</b>最大（9 對面的那個角）</div>
+        <div class="why">「對」= 面對面：邊 9 的對角是不碰到這條邊的那個頂點。</div></div>
+      <div class="eg"><div class="q">例②【進階】∠A=50°、∠B=60°，哪條邊最長？</div>
+        <div class="step">∠C = 70° 最大 → 它的對邊 <b>AB</b> 最長</div>
+        <div class="why">先把第三角算出來（3-1 回鍋），再用大角對大邊。角的對邊是「名字裡沒有它的那條」：∠C 的對邊是 AB。</div></div>
+      <div class="warn"><b>只能在「同一個」三角形裡比。</b>兩個不同三角形的邊角不能用這條互比。</div>
+    </section>
+
+    <section class="lesson" data-s="4" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>差＜第三邊＜和；大邊對大角</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 邊長 2、3、5 能組成三角形嗎？</div>
+          <button class="opt">能</button><button class="opt">不能，2+3 沒有大於 5</button><button class="opt">資料不足</button><div class="exp">2+3 = 5 只是「等於」→ 三點共線，拉不成三角形。要「大於」。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">2. 同一個三角形中，最大角的對邊是？</div>
+          <button class="opt">最長邊</button><button class="opt">最短邊</button><button class="opt">不一定</button><div class="exp">大角對大邊。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 7、10、x 能組成三角形，x 的範圍？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">10−7 ＜ x ＜ 10+7 → <b>3 ＜ x ＜ 17</b></div></div></div>
+        <div class="prob"><div class="pq">② 6、6、13 能組成三角形嗎？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">6+6 = 12 ＜ 13 → <b>不能</b></div></div></div>
+        <div class="prob"><div class="pq">③ 三邊 4、8、11，把三個角由大到小排（用對邊表示）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">對 11 的角 ＞ 對 8 的角 ＞ 對 4 的角</div></div></div>
+        <div class="prob"><div class="pq">④ ∠A=40°、∠B=75°，比較三邊長短</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">∠C=65° → 角序 75°＞65°＞40° → 邊序 <b>AC ＞ AB ＞ BC</b>（各取對邊）</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">端點含不含搞混 → <b>A</b>；「對邊」找錯 → <b>A</b>（名字裡沒有它的那條）。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第3章全部走完——幾何地基打好了，第4章平行四邊形（36 分那次的範圍）就建在這上面。<a href="index.html">回數學首頁 →</a></div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 國二下 第3章 三角形的基本性質</span><span>V2.7.0</span></div>
+</div>
+
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
+
+<script>
+var SL=[3,3,3,2,3], cS=0, cL=[0,0,0,0,0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t,idx){t.addEventListener('click',function(){showSec(+t.dataset.s);});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(idx+1)%stabs.length;else if(e.key==='ArrowLeft')n=(idx-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();showSec(+stabs[n].dataset.s);stabs[n].focus();}});});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),retry=m.querySelector('.retry');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;if(retry)retry.classList.remove('show');}else{o.classList.add('no');if(retry)retry.classList.add('show');}updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+</script>
+</body>
+</html>

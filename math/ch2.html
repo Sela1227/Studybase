@@ -103,7 +103,7 @@ sup{font-size:.72em}
     <div class="plabel">國二上 · 第2章 平方根與畢氏定理</div>
     <h1>開根號這件事，一次弄懂</h1>
     <p>這章前半（平方根、根式）是一組新的運算工具；後半（畢氏定理）會反過來用到它——算三角形邊長時要開根號、還要化簡。先把工具練穩，後面才用得動。</p>
-    <div class="meta"><span>前置：第1章（平方的概念）</span><span>畢氏會用到平方根，故排在根式之後</span><span>預計 40 分鐘／節</span></div>
+    <div class="meta"><span>前置快篩：平方與乘法公式、質因數分解、分數運算、簡單不等式與聯立方程式</span><span>畢氏會用到平方根，故排在根式之後</span><span>預計 40 分鐘／節</span></div>
   </div>
 
   <div class="stabs" role="tablist" aria-label="第2章各節">
@@ -151,8 +151,9 @@ sup{font-size:.72em}
 
       <div class="eg"><div class="q">③ 估到十分位：√10</div>
         <div class="step">3.1<sup>2</sup> = 9.61，3.2<sup>2</sup> = 10.24</div>
-        <div class="step">所以 3.1 &lt; √10 &lt; 3.2；因為 √10 ≈ 3.162，取到十分位 ≈ <b>3.2</b></div>
-        <div class="why">要更準可再往百分位夾：3.16<sup>2</sup>=9.9856、3.17<sup>2</sup>=10.0489 → √10 ≈ 3.16。</div></div>
+        <div class="step">所以 3.1 &lt; √10 &lt; 3.2。要四捨五入，就比<b>分界點 3.15</b>：3.15<sup>2</sup> = 9.9225 ＜ 10 → √10 ＞ 3.15</div>
+        <div class="step">→ 取到十分位 √10 ≈ <b>3.2</b></div>
+        <div class="why">四捨五入不是「感覺比較近」，是<b>跟分界點的平方比大小</b>。百分位同理：3.16²=9.9856＜10、分界點 3.165²=10.017225＞10 → 3.16＜√10＜3.165 → 取到百分位 ≈ 3.16。</div></div>
 
       <div class="note">背熟 1~15 的平方（1,4,9,…,225），夾範圍會快很多。</div>
     </section>
@@ -161,22 +162,25 @@ sup{font-size:.72em}
       <div class="plabel2">2-1 · 整數條件與範圍（實戰）</div>
       <h2>什麼時候 √ 會開出整數？——質因數說了算</h2>
       <p class="sub">這幾種題型在你的考卷出現過。心法一句：<b>√N 是整數 ⇔ N 的每個質因數都是偶數次方</b>。缺什麼，就補什麼。</p>
-      <div class="hi"><span class="k">√N 為正整數 ⇔ N 質因數分解後，每個指數都是偶數</span></div>
+      <div class="hi"><span class="k">對正整數 N：√N 為正整數 ⇔ N 質因數分解後，每個指數都是偶數</span></div>
+      <div class="plabel2" style="margin-top:18px">教學群一 · 整數條件與完全平方數</div>
       <div class="eg"><div class="q">例①【核心必會】√(180a)、√(180/b)、√(180+c)、√(180−d) 都是正整數，a、b、c、d 取最小正整數</div>
         <div class="step">先分解：180 = 2<sup>2</sup> × 3<sup>2</sup> × 5　（5 是奇數次方，就差它）</div>
         <div class="step">√(180a)：補一個 5 → a = <b>5</b>（180×5 = 900 = 30<sup>2</sup>）</div>
-        <div class="step">√(180/b)：把 5 除掉 → b = <b>5</b>（180÷5 = 36 = 6<sup>2</sup>）</div>
+        <div class="step">√(180/b)：b 為正整數、且 180/b 要仍是正整數（b 是 180 的因數）→ 把 5 除掉 → b = <b>5</b>（180÷5 = 36 = 6<sup>2</sup>）</div>
         <div class="step">√(180+c)：找 180 之後最近的完全平方數 14<sup>2</sup>=196 → c = <b>16</b></div>
         <div class="step">√(180−d)：找 180 之前最近的 13<sup>2</sup>=169 → d = <b>11</b></div>
         <div class="why">乘除用「質因數補偶」；加減用「夾最近的完全平方數」（√180≈13.4，往上取 14²、往下取 13²）。兩套工具，看題目用哪套。</div></div>
       <div class="eg"><div class="q">例②【進階】√(45a) 為正整數，且 10 ＜ a ＜ 100，這樣的 a 有幾個？</div>
-        <div class="step">45 = 3<sup>2</sup> × 5 → a 必須是 5 × (完全平方數) = 5k<sup>2</sup></div>
-        <div class="step">10 ＜ 5k<sup>2</sup> ＜ 100 → k<sup>2</sup> = 4、9、16 → a = 20、45、80 → <b>3 個</b></div>
+        <div class="step">45 = 3<sup>2</sup> × 5 → a 必須是 5 × (完全平方數) = 5k<sup>2</sup>（k 為正整數）</div>
+        <div class="step">10 ＜ 5k<sup>2</sup> ＜ 100 → 除以 5：2 ＜ k<sup>2</sup> ＜ 20 → 完全平方數只有 4、9、16</div>
+        <div class="step">→ a = 20、45、80 → <b>3 個</b></div>
         <div class="why">a 不是只有一個——先寫出 a 的「形狀」（5k²），再用範圍篩 k。列出來逐一檢查，不會多也不會漏。</div></div>
+      <div class="plabel2" style="margin-top:18px">教學群二 · 根號範圍與面積應用</div>
       <div class="eg"><div class="q">例③【核心必會】√x ＜ 5 的正整數 x 有幾個？√(3x) ≤ 9 呢？</div>
         <div class="step">兩邊平方：x ＜ 25 → x = 1～24 → <b>24 個</b></div>
         <div class="step">3x ≤ 81 → x ≤ 27 → <b>27 個</b></div>
-        <div class="why">√ 的不等式就是「兩邊平方」（兩邊都是正的，方向不變）。x＜25 的<b>正整數</b>是 1～24，別把 25 算進去、也別答成 25 個。</div></div>
+        <div class="why"><b>兩邊皆為非負數時</b>，可以平方且不改變不等號方向。固定四步：① 確認根號內有意義 ② 確認另一邊非負 ③ 兩邊平方 ④ 按「正整數」條件計數。x＜25 的正整數是 1～24，別把 25 算進去、也別答成 25 個。</div></div>
       <div class="eg"><div class="q">例④【進階】√(65<sup>2</sup> − 25<sup>2</sup>) = ?</div>
         <div class="step">根號裡先用平方差：65<sup>2</sup>−25<sup>2</sup> = (65+25)(65−25) = 90 × 40 = 3600</div>
         <div class="step">= √3600 = <b>60</b></div>
@@ -184,6 +188,11 @@ sup{font-size:.72em}
       <div class="eg"><div class="q">例⑤【進階】正方形面積是 2x+y，邊長怎麼寫？</div>
         <div class="step">邊長 = √(面積) = <b>√(2x+y)</b>（整個式子都在根號裡）</div>
         <div class="why">面積↔邊長的橋就是 √ 與平方。反過來：已知邊長是 4，面積就是 16——列成方程式就能解出裡面的 x、y（見再測）。</div></div>
+      <div class="eg"><div class="q">例⑥【核心必會】比例反推面積：正方形土地中，草地占全部的 3/5，草地面積 30 m²，求土地邊長介於哪兩個整數之間</div>
+        <div class="step">先反推總面積：30 ÷ (3/5) = 30 × 5/3 = 50 m²</div>
+        <div class="step">邊長 = √50；夾範圍：7<sup>2</sup> = 49 ＜ 50 ＜ 64 = 8<sup>2</sup> → <b>7 ＜ 邊長 ＜ 8</b></div>
+        <div class="why">三步串起來：<b>比例反推總面積 → 邊長 = √面積 → 用完全平方數夾範圍</b>。題目不一定直接給總面積，先把「全部」找回來。</div></div>
+      <div class="warn"><b>根號的紅線：</b>√(A+B) ≠ √A + √B、√(A−B) ≠ √A − √B——根號可以拆<b>乘除</b>（2-2 學過），<b>不能拆加減</b>。根號裡有加減，先把裡面整團算完或分解完（像例④的兩次提公因式），才能開根號。</div>
       <div class="warn"><b>這課的三套工具：</b>① 整數條件 → 質因數補偶　② 個數問題 → 寫出形狀再用範圍篩　③ 根號裡的運算 → 先算完（或分解完）再開，√(a²−b²) ≠ a−b。</div>
     </section>
 
@@ -199,18 +208,24 @@ sup{font-size:.72em}
       <div class="qsec"><h3>基本計算</h3>
         <div class="prob"><div class="pq">① √81 = ?　② 100 的平方根 = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">① √81 = 9　② ±10</div><div class="why">注意兩種問法。</div></div></div>
         <div class="prob"><div class="pq">③ √30 在哪兩個整數之間？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">25 &lt; 30 &lt; 36 → 5 和 6 之間</div></div></div>
-        <div class="prob"><div class="pq">④ 把 √10 估到十分位</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3.1<sup>2</sup>=9.61、3.2<sup>2</sup>=10.24 → 3.1&lt;√10&lt;3.2；√10≈3.2</div></div></div>
+        <div class="prob"><div class="pq">④ 把 √10 估到十分位</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3.1<sup>2</sup>=9.61、3.2<sup>2</sup>=10.24 → 3.1&lt;√10&lt;3.2；分界點 3.15<sup>2</sup>=9.9225＜10 → √10＞3.15 → ≈3.2</div></div></div>
       </div>
-              <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
+              <p style="font-size:13px;color:var(--text-2);margin-top:14px">整數條件與範圍・核心練習 ⑤～⑧（換了數字的同型題，先練會再進再測）：</p>
+        <div class="prob"><div class="pq">⑤ √(75a) 為正整數，求最小正整數 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">75 = 3 × 5<sup>2</sup> → 差一個 3 → a = <b>3</b></div></div></div>
+        <div class="prob"><div class="pq">⑥ √(28a) 為正整數，且 20 ＜ a ＜ 200，這樣的 a 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">28 = 2<sup>2</sup>×7 → a = 7k<sup>2</sup>（k 為正整數）；20＜7k<sup>2</sup>＜200 → 2.8…＜k<sup>2</sup>＜28.5… → k<sup>2</sup>=4、9、16、25 → a=28、63、112、175 → <b>4 個</b></div></div></div>
+        <div class="prob"><div class="pq">⑦ √(2x) ≤ 10 的正整數 x 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x ≤ 100 → x ≤ 50 → <b>50 個</b></div></div></div>
+        <div class="prob"><div class="pq">⑧ 正方形土地中，花圃占全部的 2/5，花圃面積 8 m²，土地邊長介於哪兩個整數之間？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">總面積 = 8 ÷ (2/5) = 20 → 邊長 = √20；16＜20＜25 → <b>4 ＜ 邊長 ＜ 5</b></div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
         <div class="prob"><div class="pq">再測① √720=26.8…，√(720a)、√(720/b)、√(720+c)、√(720−d) 均為正整數，a、b、c、d 為最小正整數，求 √(a+b+c+d+1)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">720 = 2<sup>4</sup>×3<sup>2</sup>×5 → a=5、b=5；27<sup>2</sup>=729 → c=9；26<sup>2</sup>=676 → d=44 → √(5+5+9+44+1) = √64 = <b>8</b></div></div></div>
-        <div class="prob"><div class="pq">再測②【進階】√(156a) 為正整數，a 為 100 和 800 之間的正整數，符合的 a 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">156 = 2<sup>2</sup>×3×13 → a = 39k<sup>2</sup>；100＜39k<sup>2</sup>＜800 → k<sup>2</sup>=4、9、16 → a=156、351、624 → <b>3 個</b></div></div></div>
+        <div class="prob"><div class="pq">再測②【進階】√(156a) 為正整數，a 為 100 和 800 之間的正整數，符合的 a 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">156 = 2<sup>2</sup>×3×13 → a = 39k<sup>2</sup>（k 為正整數）；100＜39k<sup>2</sup>＜800 → 除以 39：2.56…＜k<sup>2</sup>＜20.5… → k<sup>2</sup>=4、9、16 → a=156、351、624 → <b>3 個</b></div></div></div>
         <div class="prob"><div class="pq">再測③ √(114<sup>2</sup> − 64<sup>2</sup> − 50<sup>2</sup>) = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">114<sup>2</sup>−64<sup>2</sup> = (114+64)(114−64) = 178×50 → 再減 50<sup>2</sup>：50×(178−50) = 50×128 = 6400 → √6400 = <b>80</b></div><div class="why">不能寫成 114−64−50=0——根號裡要先分解算完才能開。</div></div></div>
         <div class="prob"><div class="pq">再測④ (1) √x ＜ 8 的正整數 x 有幾個？　(2) √(6x) ≤ 12 的正整數 x 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) x ＜ 64 → <b>63 個</b>　(2) 6x ≤ 144 → x ≤ 24 → <b>24 個</b></div><div class="why">(1) 最容易答成 15 或 64——x＜64 的正整數是 1～63。</div></div></div>
         <div class="prob"><div class="pq">再測⑤【進階】正方形甲、乙、丙面積為 3x+2y、2x+y+5、x+y。(1) 甲的邊長？ (2) 甲、乙邊長為 6、5 時，丙的邊長？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) √(3x+2y)　(2) 3x+2y=36、2x+y+5=25 → 聯立解得 x=4、y=12 → 丙面積 = 16 → 邊長 <b>4</b></div><div class="why">邊長=√面積；已知邊長就把面積=邊長²列成方程式。</div></div></div>
+        <div class="prob"><div class="pq">再測⑥ 林先生的正方形土地一邊裝柵欄，總長 x 公尺。花圃占全部土地的 2/3，花圃面積 22 m²。(1) x = ?（以根號表示）　(2) x 介於哪兩個連續整數之間？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) 總面積 = 22 ÷ (2/3) = 33 → x = <b>√33</b>　(2) 25 ＜ 33 ＜ 36 → <b>5 ＜ x ＜ 6</b></div><div class="why">柵欄裝在一邊 → x 就是正方形邊長 = √總面積。跟例⑥、練⑧同一條三步鏈。</div></div></div>
 <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫（手機上表格可左右滑）。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">分不清 √ 和「平方根」、忘了括號規則 → 多半是 <b>A</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 2-2 根式的運算。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～⑧）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">平方根基礎 ①～④ 與「整數條件／根號不等式」核心 ⑤～⑧ 都完成（標【進階】者選做，錯題再測依安排完成）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 2-2 根式的運算。</div></div>
     </section>
   </div>
 
@@ -381,7 +396,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.4.5</span></div>
+  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.7.0</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>

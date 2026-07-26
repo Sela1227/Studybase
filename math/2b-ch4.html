@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>國二下 第4章 平行與四邊形 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.prereq{border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);padding:14px 16px;margin:14px 0}
+.prereq .t{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text-2);text-transform:uppercase;margin-bottom:8px}
+.prereq p{font-size:14px;margin:6px 0}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-2);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:17px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+sup{font-size:.72em}
+.frac{display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;font-family:Georgia,serif}
+.frac .fn{display:block;padding:0 5px;border-bottom:1px solid currentColor}
+.frac .fd{display:block;padding:0 5px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.eg,.mcq,.prob,.errlog,.hi,.note,.rev{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">國二下 第4章 平行與四邊形</span></div>
+
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二下 · 第4章 平行與四邊形</div>
+    <h1>36 分那次的範圍——這次把它一格一格拿回來</h1>
+    <p>這章是上次段考最痛的地方。它其實只有三個層：平行線的角（4-1）→ 平行四邊形的性質與判別（4-2）→ 特殊四邊形各自多了什麼（4-3）。每一層都建在第3章的全等上；只要照順序走，性質一句一句用，這章是能整章拿回來的。</p>
+    <div class="meta"><span>前置：第3章（全等、內外角）</span><span>預計 40 分鐘／節</span><span>依賴鏈：第3章 → 本章 → 國三相似形</span></div>
+  </div>
+
+  <div class="stabs" role="tablist" aria-label="第4章各節">
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">4-1 平行</button>
+    <button class="stab" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-s="1">4-2 平行四邊形</button>
+    <button class="stab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-s="2">4-3 特殊四邊形</button>
+  </div>
+
+  <!-- ══ 4-1 ══ -->
+  <div class="sec on" data-s="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">三種角的名字</button>
+      <button class="lpill" data-s="0" data-l="1">用平行求角度</button>
+      <button class="lpill" data-s="0" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">4-1 · 認角</div>
+      <h2>一條截線切兩條線：同位角、內錯角、同側內角</h2>
+      <svg role="img" viewBox="0 0 280 170" width="280" height="170" aria-label="平行線與截線角示意">
+        <line x1="20" y1="55" x2="260" y2="55" stroke="#5B57C2"/>
+        <line x1="20" y1="120" x2="260" y2="120" stroke="#5B57C2"/>
+        <line x1="70" y1="15" x2="200" y2="160" stroke="#B7476A"/>
+        <text x="8" y="59" font-size="11" fill="#645B78">L₁</text><text x="8" y="124" font-size="11" fill="#645B78">L₂</text>
+        <text x="118" y="48" font-size="12" fill="#2A2335">1</text><text x="88" y="50" font-size="12" fill="#2A2335">2</text>
+        <text x="82" y="72" font-size="12" fill="#2A2335">3</text><text x="112" y="74" font-size="12" fill="#2A2335">4</text>
+        <text x="176" y="113" font-size="12" fill="#2A2335">5</text><text x="146" y="115" font-size="12" fill="#2A2335">6</text>
+        <text x="140" y="137" font-size="12" fill="#2A2335">7</text><text x="170" y="139" font-size="12" fill="#2A2335">8</text></svg>
+      <table class="tbl">
+        <tr><th>名稱</th><th>位置關係</th><th>圖中例子</th><th>認字口訣</th></tr>
+        <tr><td>同位角</td><td>截線同側、兩線同方位</td><td>∠1 與 ∠5</td><td>像 <b>F</b> 字形</td></tr>
+        <tr><td>內錯角</td><td>兩線之間、截線兩側</td><td>∠4 與 ∠6</td><td>像 <b>Z</b> 字形</td></tr>
+        <tr><td>同側內角</td><td>兩線之間、截線同側</td><td>∠4 與 ∠5</td><td>像 <b>C（ㄈ）</b>字形</td></tr>
+      </table>
+      <div class="hi"><span class="k">L₁ ∥ L₂ ⇔ 同位角相等 ⇔ 內錯角相等 ⇔ 同側內角互補（和為 180°）</span></div>
+      <div class="note">箭頭是<b>雙向</b>的：平行可以推出角的關係；反過來，只要驗出其中一組角的關係成立，就能判定兩線平行。</div>
+      <div class="warn"><b>前提是平行！</b>兩條不平行的線也有同位角、內錯角——只是它們<b>不相等</b>。用角的關係前，先確認題目給了平行（或先證出平行）。</div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">4-1 · 求角</div>
+      <h2>認出 F、Z、ㄈ，角度就出來</h2>
+      <div class="eg"><div class="q">例①【核心必會】L₁∥L₂，某同位角 = 65°，它的同位角、內錯角、同側內角各是？</div>
+        <div class="step">同位角 = <b>65°</b>；內錯角 = <b>65°</b>；同側內角 = 180−65 = <b>115°</b></div>
+        <div class="why">三句性質各用一次。同側內角是「互補」不是「相等」——這是 4-1 最常見的失分。</div></div>
+      <div class="eg"><div class="q">例②【進階】摺線題：L₁∥L₂，中間折了一個點 P，∠1=40°（靠 L₁）、∠2=35°（靠 L₂），求 ∠P</div>
+        <svg role="img" viewBox="0 0 260 140" width="260" height="140" aria-label="摺線加輔助線示意">
+          <line x1="20" y1="30" x2="240" y2="30" stroke="#5B57C2"/>
+          <line x1="20" y1="115" x2="240" y2="115" stroke="#5B57C2"/>
+          <line x1="20" y1="72" x2="240" y2="72" stroke="#B7476A" stroke-dasharray="4 3"/>
+          <path d="M60 30 L130 72 L55 115" fill="none" stroke="#2A2335"/>
+          <text x="134" y="76" font-size="11" fill="#2A2335">P</text>
+          <text x="246" y="76" font-size="10" fill="#B7476A">輔助線</text></svg>
+        <div class="step">過 P 作一條與 L₁ 平行的<b>輔助線</b>（紅虛線）——∠P 被切成上下兩塊</div>
+        <div class="step">上塊與 ∠1 是內錯角 = 40°；下塊與 ∠2 是內錯角 = 35° → ∠P = 40+35 = <b>75°</b></div>
+        <div class="why">「中間有轉折點」的標準動作：<b>過轉折點補一條平行線</b>，把一個大角拆成兩個 Z 字形。</div></div>
+    </section>
+
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先認形（F／Z／ㄈ），再寫等式</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="2"><div class="qt">1. L₁∥L₂ 時，同側內角的關係是？</div>
+          <button class="opt">相等</button><button class="opt">互餘（和90°）</button><button class="opt">互補（和180°）</button><div class="exp">同位角、內錯角才相等；同側內角是互補。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 兩條「不平行」的線被截線切，同位角會？</div>
+          <button class="opt">仍然相等</button><button class="opt">不相等</button><button class="opt">互補</button><div class="exp">角的相等關係是平行專屬的；不平行時只是有名字、沒有等式。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算（L₁∥L₂）</h3>
+        <div class="prob"><div class="pq">① 一組同位角分別為 2x+10° 與 3x−15°，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">同位角相等：2x+10 = 3x−15 → x = <b>25</b></div></div></div>
+        <div class="prob"><div class="pq">② 一組同側內角分別為 x° 與 2x+30°，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">互補：x + 2x + 30 = 180 → x = <b>50</b></div></div></div>
+        <div class="prob"><div class="pq">③ 內錯角一個是 72°，另一個是多少？對應的同側內角呢？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">內錯角 = <b>72°</b>；同側內角 = 180−72 = <b>108°</b></div></div></div>
+        <div class="prob"><div class="pq">④【進階】摺線：∠1 = 50°、∠2 = 28°，求轉折點的 ∠P</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">過 P 補平行輔助線 → ∠P = 50 + 28 = <b>78°</b></div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">同側內角寫成相等 → <b>A</b>；F/Z/ㄈ 認錯 → <b>A</b>（回上一課的表）。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～③，④進階選做）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～③ 都自己算過、對過答案（④選做）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 4-2：兩雙平行線圍出來的圖形。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 4-2 ══ -->
+  <div class="sec" data-s="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+    <div class="lpills">
+      <button class="lpill on" data-s="1" data-l="0">四條性質</button>
+      <button class="lpill" data-s="1" data-l="1">五個判別</button>
+      <button class="lpill" data-s="1" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="1" data-l="0">
+      <div class="plabel2">4-2 · 性質</div>
+      <h2>平行四邊形：一個定義、四條性質</h2>
+      <p class="sub">定義：<b>兩雙對邊分別平行</b>的四邊形。由定義（加上第3章的全等），可以推出四條性質。</p>
+      <svg role="img" viewBox="0 0 260 130" width="260" height="130" aria-label="平行四邊形與對角線">
+        <path d="M40 100 L90 25 L230 25 L180 100 Z" fill="#ECEBFA" stroke="#5B57C2"/>
+        <line x1="40" y1="100" x2="230" y2="25" stroke="#CBC0E0"/>
+        <line x1="90" y1="25" x2="180" y2="100" stroke="#CBC0E0"/>
+        <circle cx="135" cy="62" r="3" fill="#B7476A"/>
+        <text x="30" y="116" font-size="12" fill="#2A2335">A</text><text x="84" y="18" font-size="12" fill="#2A2335">B</text>
+        <text x="232" y="18" font-size="12" fill="#2A2335">C</text><text x="184" y="116" font-size="12" fill="#2A2335">D</text>
+        <text x="141" y="58" font-size="11" fill="#B7476A">O</text></svg>
+      <table class="tbl">
+        <tr><th>#</th><th>性質</th><th>寫成等式</th></tr>
+        <tr><td>1</td><td>對邊相等</td><td>AB = DC、AD = BC</td></tr>
+        <tr><td>2</td><td>對角相等</td><td>∠A = ∠C、∠B = ∠D</td></tr>
+        <tr><td>3</td><td>鄰角互補</td><td>∠A + ∠B = 180°</td></tr>
+        <tr><td>4</td><td>對角線互相平分</td><td>AO = OC、BO = OD</td></tr>
+      </table>
+      <div class="note">性質 1、2、4 都能用「對角線切出兩個全等三角形」證出來（內錯角＋ASA）——第3章又回來了。性質 3 則是 4-1 的同側內角互補。<b>注意性質 4 說的是「互相平分」，不是「兩條對角線一樣長」</b>——一樣長是矩形才有的（4-3）。</div>
+      <div class="eg"><div class="q">例【核心必會】平行四邊形 ABCD 中 ∠A = 70°，求其他三個角</div>
+        <div class="step">∠C = ∠A = <b>70°</b>（對角）；∠B = ∠D = 180−70 = <b>110°</b>（鄰角互補）</div>
+        <div class="why">知道一個角，全部四個角就都知道了。</div></div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="1">
+      <div class="plabel2">4-2 · 判別</div>
+      <h2>反過來：怎麼證一個四邊形是平行四邊形？</h2>
+      <table class="tbl">
+        <tr><th>#</th><th>判別條件（滿足其一即可）</th></tr>
+        <tr><td>1</td><td>兩雙對邊分別<b>平行</b>（定義）</td></tr>
+        <tr><td>2</td><td>兩雙對邊分別<b>相等</b></td></tr>
+        <tr><td>3</td><td><b>一雙對邊平行且相等</b></td></tr>
+        <tr><td>4</td><td>兩雙<b>對角</b>分別相等</td></tr>
+        <tr><td>5</td><td>對角線<b>互相平分</b></td></tr>
+      </table>
+      <div class="warn"><b>經典陷阱：</b>「一雙對邊平行、<b>另一雙</b>對邊相等」<b>不能</b>判定——等腰梯形正是反例（上下底平行、兩腰相等，但不是平行四邊形）。判別 3 要的是<b>同一雙</b>對邊又平行又相等。</div>
+      <div class="eg"><div class="q">例【核心必會】已知四邊形 ABCD 中 AO=OC、BO=OD（O 為對角線交點），是平行四邊形嗎？</div>
+        <div class="step">對角線互相平分 → 判別 5 → <b>是</b></div>
+        <div class="why">性質和判別是「雙向門」：性質是「已知是平四，推出等式」；判別是「已知等式，證明是平四」。考題就在考你分清方向。</div></div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>一句性質、一條等式</h2>
+      <p class="sub">先自己算，再對解答。以下 ABCD 均為平行四邊形。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 平行四邊形的對角線一定？</div>
+          <button class="opt">等長</button><button class="opt">互相平分</button><button class="opt">互相垂直</button><div class="exp">互相平分是平四的性質；等長是矩形、垂直是菱形（4-3）。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">2. 哪一個「不能」判定平行四邊形？</div>
+          <button class="opt">兩雙對邊相等</button><button class="opt">一雙對邊平行且相等</button><button class="opt">一雙對邊平行、另一雙對邊相等</button><div class="exp">等腰梯形反例——平行的那雙和相等的那雙不是同一雙就不行。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① AB = 3x−2、DC = x+8，求 x 與 AB</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">對邊相等：3x−2 = x+8 → x = 5 → AB = <b>13</b></div></div></div>
+        <div class="prob"><div class="pq">② ∠A = 70°，求 ∠B、∠C、∠D</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">∠C = <b>70°</b>、∠B = ∠D = <b>110°</b></div></div></div>
+        <div class="prob"><div class="pq">③ 對角線交於 O，AO = 2x+1、OC = 9，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">互相平分：2x+1 = 9 → x = <b>4</b></div></div></div>
+        <div class="prob"><div class="pq">④ 周長 36，AB = 10，求 BC</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2(AB+BC) = 36 → BC = <b>8</b></div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">性質/判別方向搞反 → <b>A</b>；「平分」當成「等長」 → <b>A</b>。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 4-3：加了條件的平行四邊形家族。</div></div>
+    </section>
+  </div>
+
+  <!-- ══ 4-3 ══ -->
+  <div class="sec" data-s="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+    <div class="lpills">
+      <button class="lpill on" data-s="2" data-l="0">矩形・菱形・正方形</button>
+      <button class="lpill" data-s="2" data-l="1">梯形與總整理</button>
+      <button class="lpill" data-s="2" data-l="2">練習與訂正</button>
+    </div>
+
+    <section class="lesson on" data-s="2" data-l="0">
+      <div class="plabel2">4-3 · 家族</div>
+      <h2>加一個條件，多一組性質</h2>
+      <table class="tbl">
+        <tr><th>圖形</th><th>是什麼</th><th>多出來的性質</th></tr>
+        <tr><td>矩形</td><td>有一個直角的平行四邊形</td><td>四個角都 90°；<b>對角線等長</b></td></tr>
+        <tr><td>菱形</td><td>有一雙鄰邊相等的平行四邊形</td><td>四邊等長；<b>對角線互相垂直平分</b>、且平分頂角</td></tr>
+        <tr><td>正方形</td><td>既是矩形又是菱形</td><td>兩邊的性質<b>全包</b></td></tr>
+      </table>
+      <div class="note"><b>家族關係：</b>正方形 ⊂ 矩形 ⊂ 平行四邊形，正方形 ⊂ 菱形 ⊂ 平行四邊形。所以「矩形一定是平行四邊形」對；「平行四邊形一定是矩形」錯——包含方向不能反。</div>
+      <div class="eg"><div class="q">例①【核心必會】菱形對角線長 6、8，求邊長與面積</div>
+        <div class="step">對角線互相垂直平分 → 邊是直角三角形的斜邊，兩股 = 3、4</div>
+        <div class="step">邊長 = √(3²+4²) = <b>5</b>（畢氏定理，國二上第2章回鍋）</div>
+        <div class="step">面積 = 對角線相乘 ÷ 2 = 6×8÷2 = <b>24</b></div>
+        <div class="why">菱形題八成都靠「對角線互相垂直平分」切出四個全等的直角三角形。</div></div>
+      <div class="eg"><div class="q">例②【核心必會】矩形對角線 AC = 3x−1、BD = x+7，求 x</div>
+        <div class="step">矩形對角線<b>等長</b>：3x−1 = x+7 → x = <b>4</b>（對角線 = 11）</div></div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="1">
+      <div class="plabel2">4-3 · 梯形與整理</div>
+      <h2>梯形只有一雙平行；一張表看完全家族的對角線</h2>
+      <div class="hi"><span class="k">梯形：恰有一雙對邊平行　；　等腰梯形：兩腰相等 → 同一底上的兩底角相等、對角線等長</span></div>
+      <div class="eg"><div class="q">例【核心必會】等腰梯形 ABCD（AD∥BC），∠B = 65°，求其餘三角</div>
+        <div class="step">同底 ∠C = <b>65°</b>（底角相等）；∠A = ∠D = 180−65 = <b>115°</b>（同側內角互補）</div></div>
+      <div class="table-scroll"><table class="tbl">
+        <tr><th>對角線性質</th><th>平行四邊形</th><th>矩形</th><th>菱形</th><th>正方形</th><th>等腰梯形</th></tr>
+        <tr><td>互相平分</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✗</td></tr>
+        <tr><td>等長</td><td>✗</td><td>✓</td><td>✗</td><td>✓</td><td>✓</td></tr>
+        <tr><td>互相垂直</td><td>✗</td><td>✗</td><td>✓</td><td>✓</td><td>✗</td></tr>
+      </table></div>
+      <div class="why" style="font-size:13px;color:var(--text-2);margin-top:-6px">這張表是 4-3 選擇題的答案庫——「哪個圖形的對角線一定…」全在這裡。注意等腰梯形對角線等長但<b>不</b>互相平分（它不是平行四邊形）。</div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="2">
+      <div class="plabel2">練習與訂正</div>
+      <h2>先認圖形，再抓它「多出來的性質」</h2>
+      <p class="sub">先自己算，再對解答。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="0"><div class="qt">1. 對角線「互相垂直平分」的是？</div>
+          <button class="opt">菱形（含正方形）</button><button class="opt">矩形</button><button class="opt">等腰梯形</button><div class="exp">垂直平分是菱形家的招牌；矩形是等長、等腰梯形是等長但不平分。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">2. 「矩形一定是平行四邊形」與「平行四邊形一定是矩形」？</div>
+          <button class="opt">都對</button><button class="opt">前對後錯</button><button class="opt">都錯</button><div class="exp">矩形 ⊂ 平行四邊形，包含方向不能反。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">3. 等腰梯形的對角線？</div>
+          <button class="opt">互相垂直</button><button class="opt">互相平分</button><button class="opt">等長</button><div class="exp">等長 ✓；但不互相平分（不是平行四邊形）。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算</h3>
+        <div class="prob"><div class="pq">① 菱形對角線 10、24，求邊長與面積</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">兩股 5、12 → 邊長 = <b>13</b>；面積 = 10×24÷2 = <b>120</b></div></div></div>
+        <div class="prob"><div class="pq">② 矩形 ABCD 對角線交於 O，AO = 7，求 BD</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">對角線等長且互相平分 → AC = 14 = BD → BD = <b>14</b></div></div></div>
+        <div class="prob"><div class="pq">③ 等腰梯形一個底角 72°，求其餘三角</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">同底另一角 <b>72°</b>；另一底兩角各 <b>108°</b></div></div></div>
+        <div class="prob"><div class="pq">④ 正方形對角線長 8，求面積</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">正方形也是菱形 → 面積 = 8×8÷2 = <b>32</b></div><div class="why">不用先求邊長——「對角線相乘除以 2」對所有對角線互相垂直的四邊形都成立。</div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">誰有什麼性質記混 → <b>A</b>（回對角線總表）；畢氏算錯 → <b>B</b>（回國二上第2章）。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">國二下四章全部完成——36 分的範圍已經重新走過一遍。之後把段考考卷的錯題丟進來，一題一題收乾淨。<a href="index.html">回數學首頁 →</a></div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 國二下 第4章 平行與四邊形</span><span>V2.7.0</span></div>
+</div>
+
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
+
+<script>
+var SL=[3,3,3], cS=0, cL=[0,0,0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t,idx){t.addEventListener('click',function(){showSec(+t.dataset.s);});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(idx+1)%stabs.length;else if(e.key==='ArrowLeft')n=(idx-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();showSec(+stabs[n].dataset.s);stabs[n].focus();}});});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),retry=m.querySelector('.retry');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;if(retry)retry.classList.remove('show');}else{o.classList.add('no');if(retry)retry.classList.add('show');}updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+</script>
+</body>
+</html>

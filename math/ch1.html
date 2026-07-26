@@ -55,6 +55,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","No
 .eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
 .longdiv{font-family:"Courier New",monospace;font-size:14px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin:10px 0;white-space:pre;overflow-x:auto;line-height:1.5}
 sup{font-size:.72em}
+.frac{display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;font-family:Georgia,serif}
+.frac .fn{display:block;padding:0 4px;border-bottom:1px solid currentColor}
+.frac .fd{display:block;padding:0 4px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll .tbl{min-width:560px}
 .tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
 .tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
 .tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
@@ -141,7 +146,7 @@ sup{font-size:.72em}
       <div class="note"><b>公式裡的 a、b 代表「一整項」：</b>不一定是單一字母，可以是一個數、一個單項式、或整個式子。例如 (2x−5)<sup>2</sup> 要把 <b>2x 整體</b>當成 a。</div>
       <div class="repr">
         <div class="repr-item"><span class="repr-tag">圖</span>
-          <svg viewBox="0 0 240 240" width="240" height="240" aria-label="(a+b)平方面積圖">
+          <svg role="img" viewBox="0 0 240 240" width="240" height="240" aria-label="(a+b)平方面積圖">
             <rect x="20" y="20" width="140" height="140" fill="#ECEBFA" stroke="#CBC0E0"/><rect x="160" y="20" width="60" height="140" fill="#E6F4EF" stroke="#CBC0E0"/>
             <rect x="20" y="160" width="140" height="60" fill="#E6F4EF" stroke="#CBC0E0"/><rect x="160" y="160" width="60" height="60" fill="#F1ECFA" stroke="#CBC0E0"/>
             <text x="90" y="95" text-anchor="middle" font-size="18" fill="#2A2335" font-family="Georgia">a²</text><text x="190" y="95" text-anchor="middle" font-size="15" fill="#3E8F79" font-family="Georgia">ab</text>
@@ -168,7 +173,7 @@ sup{font-size:.72em}
       <p class="sub">跟和的平方幾乎一樣，只是中間那項變號。看圖就懂為什麼是 −2ab。</p>
       <div class="repr">
         <div class="repr-item"><span class="repr-tag">圖</span>
-          <svg viewBox="0 0 200 200" width="200" height="200" aria-label="(a-b)平方面積圖">
+          <svg role="img" viewBox="0 0 200 200" width="200" height="200" aria-label="(a-b)平方面積圖">
             <rect x="30" y="20" width="110" height="110" fill="#ECEBFA" stroke="#5B57C2"/>
             <rect x="110" y="20" width="30" height="110" fill="#3E8F79" fill-opacity="0.4" stroke="#CBC0E0"/>
             <rect x="30" y="100" width="110" height="30" fill="#3E8F79" fill-opacity="0.4" stroke="#CBC0E0"/>
@@ -200,7 +205,7 @@ sup{font-size:.72em}
       <p class="sub"><b>同樣的兩項，一個相加、一個相減</b>時，相乘的中間兩項才會互相抵消，只剩兩個平方相減。</p>
       <div class="repr">
         <div class="repr-item"><span class="repr-tag">圖 · 切割重排</span>
-          <svg viewBox="0 0 320 130" width="320" height="130" aria-label="平方差切割重排圖">
+          <svg role="img" viewBox="0 0 320 130" width="320" height="130" aria-label="平方差切割重排圖">
             <!-- 左：L 形（a² 挖角 b²），切成兩塊 -->
             <rect x="20" y="20" width="90" height="60" fill="#ECEBFA" stroke="#5B57C2"/>
             <rect x="20" y="80" width="60" height="30" fill="#3E8F79" fill-opacity="0.4" stroke="#5B57C2"/>
@@ -243,7 +248,7 @@ sup{font-size:.72em}
 
       <div class="eg"><div class="q">例②【核心必會】帶分數平方：(40¾)<sup>2</sup> = 40<sup>2</sup> + a，求 a</div>
         <div class="step">(40 + ¾)<sup>2</sup> = 40<sup>2</sup> + 2·40·¾ + (¾)<sup>2</sup> = 40<sup>2</sup> + 60 + 9/16</div>
-        <div class="step">a = <b>60 9/16</b></div>
+        <div class="step">a = <b>60 <span class="frac"><span class="fn">9</span><span class="fd">16</span></span></b></div>
         <div class="why">這題最容易只答 9/16——那就是<b>漏了中間 2ab = 2·40·¾ = 60</b>。帶分數平方跟 (a+b)² 一模一樣，中間那項照樣在。</div></div>
 
       <div class="eg"><div class="q">例③【進階】選基準：3002 × 2998 − 2997<sup>2</sup> 的十位數字</div>
@@ -301,7 +306,7 @@ sup{font-size:.72em}
         <p style="font-size:13px;color:var(--text-2);margin-top:10px">進階挑戰（選做，不列入基本過關）：</p>
         <div class="prob"><div class="pq">⑪ 1003 × 997 − 996<sup>2</sup> 的個位數字</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">1003×997 = 1000<sup>2</sup>−3<sup>2</sup> = 999,991；996<sup>2</sup> = (1000−4)<sup>2</sup> = 992,016；相減 = 7,975 → 個位 <b>5</b></div><div class="why">基準選兩數中點 1000；996² 再用一次差的平方。</div></div></div>
         <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答）：</p>
-        <div class="prob"><div class="pq">再測① (60⅔)<sup>2</sup> = 60<sup>2</sup> + a，求 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = 2·60·⅔ + (⅔)<sup>2</sup> = 80 + 4/9 = <b>80 4/9</b></div></div></div>
+        <div class="prob"><div class="pq">再測① (60⅔)<sup>2</sup> = 60<sup>2</sup> + a，求 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = 2·60·⅔ + (⅔)<sup>2</sup> = 80 + <span class="frac"><span class="fn">4</span><span class="fd">9</span></span> = <b>80 <span class="frac"><span class="fn">4</span><span class="fd">9</span></span></b></div></div></div>
         <div class="prob"><div class="pq">再測② 2004 × 1996 − 1995<sup>2</sup> 的十位數字</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2000<sup>2</sup>−16 = 3,999,984；1995<sup>2</sup> = 3,980,025；差 = 19,959 → 十位 <b>5</b>（以 1995 為基準展開消去也可：10·1995+9 = 19,959）</div></div></div>
         <div class="prob"><div class="pq">再測③ 290×288/289 + 1/289 + 2×17×23 + 529</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">前兩項合併 = 289；289+2·17·23+529 = 17<sup>2</sup>+2·17·23+23<sup>2</sup> = (17+23)<sup>2</sup> = <b>1600</b></div></div></div>
       </div>
@@ -310,8 +315,8 @@ sup{font-size:.72em}
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
           <tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">怎麼分：分不清該用哪個公式 → <b>A</b>；漏掉中間 2ab、正負號寫錯、係數或整項沒平方 → 多半是 <b>B</b>；把題目條件看錯 → <b>C</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查</h3>
-        <ul><li class="g1">觀念辨識全部答對（訂正後答對也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～⑩）</h3>
+        <ul><li class="g1">觀念辨識全部答對（訂正後答對也算）</li><li class="g2">計算 ①～⑩ 都自己算過、對過答案（⑪與錯題再測依安排完成）</li></ul>
         <div class="stats"></div>
         <button class="btn">我已自行完成並核對這幾題</button>
         <div class="pass">這一課的自我檢查完成了。接著學 1-2 多項式加減，先熟悉同類項與去括號，為後面的展開運算打好基礎。</div></div>
@@ -346,12 +351,12 @@ sup{font-size:.72em}
       <div class="warn"><b>數字的平方不是次數：</b>4<sup>2</sup>+2x 裡的 4<sup>2</sup> 只是 16（常數），所以 4<sup>2</sup>+2x = 16+2x 是<b>一次</b>多項式，不是二次。次數只看<b>文字</b>的指數。</div>
       <div class="hi"><span class="k">判讀四步驟：① 先算掉純數字（4²→16）② 依次數由高到低排列 ③ 用加減號切項（負號跟著後面那項）④ 再判斷項數、次數、指定項係數</span></div>
       <div class="eg"><div class="q">用四步驟整理三個式子（考卷流程圖裡的三位主角）</div>
-        <table class="tbl">
+        <div class="table-scroll"><table class="tbl">
           <tr><th>原式</th><th>降冪整理</th><th>項數</th><th>次數</th><th>x<sup>2</sup> 係數</th><th>x 係數</th><th>常數項</th></tr>
           <tr><td>4<sup>2</sup>+2x</td><td>2x+16</td><td>2</td><td>1</td><td>0</td><td>2</td><td>16</td></tr>
           <tr><td>−x+x<sup>2</sup>+2</td><td>x<sup>2</sup>−x+2</td><td>3</td><td>2</td><td>1</td><td>−1</td><td>2</td></tr>
           <tr><td>−3+3x<sup>2</sup></td><td>3x<sup>2</sup>−3</td><td>2</td><td>2</td><td>3</td><td>0</td><td>−3</td></tr>
-        </table>
+        </table></div>
         <div class="why">三個易錯點都在表裡：省略的係數（−x 的係數是 <b>−1</b>）、缺項的係數是 <b>0</b>（3x²−3 沒有 x 項 → x 係數 0）、數字平方只是常數。</div></div>
       <div class="note"><b>零次多項式 vs 零多項式（別搞混）：</b>「3」是<b>零次</b>多項式——只有一個不為 0 的常數項。「0」是<b>零多項式</b>——所有係數（含常數）都是 0，通常<b>不定義它的次數</b>。</div>
       <div class="hi" style="border-color:var(--accent)"><span class="k">同類項 = 文字部分「完全一樣」的項</span></div>
@@ -461,7 +466,7 @@ sup{font-size:.72em}
         <div class="why">先寫 P=2(長+寬) 再代入合併——直接硬加四邊也可以，但容易漏。</div></div>
 
       <div class="eg"><div class="q">型②【核心必會】長 a、寬 b 的土地，開一條寬 x 的十字型道路，剩餘面積是多少？</div>
-        <svg viewBox="0 0 240 150" width="240" height="150" aria-label="十字道路示意">
+        <svg role="img" viewBox="0 0 240 150" width="240" height="150" aria-label="十字道路示意">
           <rect x="20" y="20" width="200" height="110" fill="#ECEBFA" stroke="#5B57C2"/>
           <rect x="20" y="62" width="200" height="26" fill="#FFFFFF" stroke="#CBC0E0"/>
           <rect x="107" y="20" width="26" height="110" fill="#FFFFFF" stroke="#CBC0E0"/>
@@ -472,10 +477,10 @@ sup{font-size:.72em}
         <div class="step">剩餘 = ab − ax − bx + x<sup>2</sup></div>
         <div class="step">法二（平移拼合）：把道路移到邊上，剩下的拼成一塊 (a−x)(b−x) 的長方形</div>
         <div class="repr-eq">ab − ax − bx + x<sup>2</sup> = (a − x)(b − x)　<small>展開檢查，兩法答案相同</small></div>
-        <div class="why">兩條路交會處只有一塊 x²，直接 ax+bx 會重複扣一次——這是本題的核心陷阱。兩法互相驗算最保險。</div></div>
+        <div class="why">兩條路交會處只有一塊 x²，直接 ax+bx 會重複扣一次——這是本題的核心陷阱。兩法互相驗算最保險。（圖中假設 a、b、x ＞ 0 且 x ＜ a、x ＜ b——道路不能比土地還寬。）</div></div>
 
       <div class="eg"><div class="q">型③【挑戰】凹槽周長：把邊「平移」再算</div>
-        <svg viewBox="0 0 280 190" width="280" height="190" aria-label="直角多邊形周長平移示意">
+        <svg role="img" viewBox="0 0 280 190" width="280" height="190" aria-label="直角多邊形周長平移示意">
           <path d="M20 20 H220 V70 H190 V110 H220 V170 H20 Z" fill="#ECEBFA" stroke="#5B57C2"/>
           <line x1="220" y1="70" x2="220" y2="110" stroke="#B7476A" stroke-dasharray="4 3"/>
           <text x="120" y="14" text-anchor="middle" font-size="12" fill="#645B78">寬</text>
@@ -530,7 +535,7 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">⑪ 外框相同的兩個圖形，其中一個右側往內挖一個深 5 的矩形凹槽，兩者周長相差多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">差 = 2×5 = 10</div><div class="why">矩形凹槽：一進一出各 5。此法僅適用矩形凹槽。</div></div></div>
 
         <div class="mcq" data-a="3"><div class="qt">⑫ 流程圖追蹤（沿箭頭走，每格重新算一次）：</div>
-          <svg viewBox="0 0 340 230" width="100%" style="max-width:340px;display:block;margin:6px auto" aria-label="多項式判斷流程圖">
+          <svg role="img" viewBox="0 0 340 230" width="100%" style="max-width:340px;display:block;margin:6px auto" aria-label="多項式判斷流程圖">
             <rect x="4" y="96" width="46" height="30" fill="#F1ECFA" stroke="#CBC0E0"/><text x="27" y="115" text-anchor="middle" font-size="11" fill="#2A2335">開始</text>
             <line x1="50" y1="111" x2="60" y2="111" stroke="#756C89"/>
             <rect x="60" y="85" width="106" height="52" fill="#FFFFFF" stroke="#5B57C2"/>
@@ -585,6 +590,7 @@ sup{font-size:.72em}
 
     <section class="lesson on" data-s="2" data-l="0">
       <div class="plabel2">多項式乘除 · 分配律</div>
+      <div class="note"><b>這一節內容較多，建議分 2～3 次完成</b>（每次約 40 分鐘）：第一回「基本乘除與長除法」、第二回「代值法與除法原理」、第三回「公式進階應用與錯題再測」。</div>
       <h2>外面那個，要乘進去每一項</h2>
       <p class="sub">乘法的根本動作只有一個：分配律。先把「指數怎麼算」講清楚。</p>
       <div class="prereq">
@@ -595,7 +601,7 @@ sup{font-size:.72em}
       </div>
       <div class="repr">
         <div class="repr-item"><span class="repr-tag">圖</span>
-          <svg viewBox="0 0 260 140" width="260" height="140" aria-label="分配律面積圖">
+          <svg role="img" viewBox="0 0 260 140" width="260" height="140" aria-label="分配律面積圖">
             <rect x="20" y="30" width="140" height="80" fill="#ECEBFA" stroke="#CBC0E0"/><rect x="160" y="30" width="80" height="80" fill="#E6F4EF" stroke="#CBC0E0"/>
             <text x="90" y="75" text-anchor="middle" font-size="16" fill="#2A2335" font-family="Georgia">a·b</text><text x="200" y="75" text-anchor="middle" font-size="16" fill="#2A2335" font-family="Georgia">a·c</text>
             <text x="90" y="24" text-anchor="middle" font-size="13" fill="#645B78">b</text><text x="200" y="24" text-anchor="middle" font-size="13" fill="#645B78">c</text><text x="12" y="74" text-anchor="middle" font-size="13" fill="#645B78">a</text></svg>
@@ -665,6 +671,7 @@ x + 2 │ x² + 5x + 6
       <div class="plabel2">多項式乘除 · 代值法與除法原理（實戰）</div>
       <h2>不用展開完：挑一個好算的數代進去</h2>
       <p class="sub">這幾種題型在你的考卷出現過。核心只有一句：<b>恆等式對「任何 x」都成立，所以可以挑一個最好算的 x 代進去</b>。</p>
+      <div class="note"><b>使用前提：</b>「代值」與「比係數」都只在<b>恆等式</b>（左右是同一個多項式、對所有 x 都成立）時才能用。若等式只對某個未知的 x 成立，就不能任意另代一個數。</div>
       <table class="tbl">
         <tr><th>題目要的</th><th>代什麼</th><th>為什麼</th></tr>
         <tr><td>展開後「係數總和」（含常數項）</td><td>x = 1</td><td>每一項的 x 都變 1，剩下的就是係數相加</td></tr>
@@ -674,7 +681,7 @@ x + 2 │ x² + 5x + 6
       <div class="eg"><div class="q">例①【核心必會】(3x−2)(2x<sup>2</sup>+x−4) 展開後，係數的總和是多少？</div>
         <div class="step">不用真的展開！代 x = 1：(3−2)(2+1−4) = (1)(−1) = <b>−1</b></div>
         <div class="why">展開後每一項是「係數 × x 的次方」，代 x=1 後就是所有係數（含常數項）相加。乘出來再加，又慢又容易錯。</div></div>
-      <div class="eg"><div class="q">例②【核心必會】2x<sup>2</sup>−3x+5 = a(x−1)<sup>2</sup> + b(x−1) + c，求 a+b+c</div>
+      <div class="eg"><div class="q">例②【核心必會】設 2x<sup>2</sup>−3x+5 = a(x−1)<sup>2</sup> + b(x−1) + c 為<b>恆等式</b>（對所有 x 成立），求 a+b+c</div>
         <div class="step">右邊代 x = 2 時剛好是 a+b+c（每個括號都變 1）</div>
         <div class="step">左邊代 x = 2：8 − 6 + 5 = 7 → a+b+c = <b>7</b></div>
         <div class="why">也可以展開比較係數（a=2、b=1、c=4，一樣是 7），但看出「代 x=2」就是一行的事。</div></div>
@@ -711,13 +718,13 @@ x + 2 │ x² + 5x + 6
       <div class="plabel2">多項式乘除 · 公式的進階應用（實戰）</div>
       <h2>乘法公式的變形題：對稱式、因數、分式</h2>
       <p class="sub">這幾型也來自你的考卷——公式不只拿來展開，還能「反著用、變形用」。</p>
-      <div class="eg"><div class="q">例①【核心必會】對稱式：a + 1/a = 5，求 a<sup>2</sup> + 1/a<sup>2</sup></div>
+      <div class="eg"><div class="q">例①【核心必會】對稱式：a + 1/a = 5（a ≠ 0），求 a<sup>2</sup> + 1/a<sup>2</sup></div>
         <div class="step">把已知平方：(a + 1/a)<sup>2</sup> = a<sup>2</sup> + 2·a·(1/a) + 1/a<sup>2</sup> = a<sup>2</sup> + 2 + 1/a<sup>2</sup></div>
         <div class="step">25 = a<sup>2</sup> + 1/a<sup>2</sup> + 2 → a<sup>2</sup> + 1/a<sup>2</sup> = <b>23</b></div>
         <div class="why">中間項 2·a·(1/a) 永遠等於 2——這就是這型題的開關：<b>x²+y² = (x+y)² − 2xy</b>。</div></div>
-      <div class="eg"><div class="q">例②【核心必會】用平方差拆數字：3599 是質數嗎？</div>
+      <div class="eg"><div class="q">例②【核心必會】用平方差拆數字：將 3599 因式分解，判斷是否為質數，並求它的正因數總和</div>
         <div class="step">3599 = 3600 − 1 = 60<sup>2</sup> − 1<sup>2</sup> = (60+1)(60−1) = <b>61 × 59</b></div>
-        <div class="step">→ 不是質數；它的正因數有 1、59、61、3599，總和 = 3720</div>
+        <div class="step">59、61 都是質數 → 3599 不是質數；正因數恰為 1、59、61、3599，總和 = 3720</div>
         <div class="why">看到「接近完全平方數」的數，先試平方差拆它。拆開後因數、因數和都是送分。</div></div>
       <div class="eg"><div class="q">例③【進階】奇偶分析：P、Q 是大於 1 的正整數，Q<sup>2</sup> − P<sup>2</sup> = 16，求 P+Q</div>
         <div class="step">(Q+P)(Q−P) = 16，且 Q+P 與 Q−P <b>奇偶性相同</b>（兩者相加是偶數 2Q）</div>
@@ -762,29 +769,36 @@ x + 2 │ x² + 5x + 6
         <div class="prob"><div class="pq">⑥ (x<sup>3</sup> − 4x + 3) ÷ (x − 1)（缺項補 0）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">先寫成 x<sup>3</sup> + 0x<sup>2</sup> − 4x + 3；商 = x<sup>2</sup> + x − 3，餘 0</div><div class="why">缺 x² 項要補 0x² 佔位，直式的位置才對得齊。</div></div></div>
         <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做，不列入基本過關）：</p>
         <div class="prob"><div class="pq">再測① (5x−1)(−4x<sup>2</sup>−2x+6) 展開後，係數的總和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">代 x=1：(5−1)(−4−2+6) = 4×0 = <b>0</b></div><div class="why">係數總和（含常數項）= 代 x=1，不用展開。</div></div></div>
-        <div class="prob"><div class="pq">再測② 梯形 AE=2x+3、CF=6x−1、AB=x+7，求綠色梯形面積</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">½[(2x+3)+(6x−1)](x+7) = (4x+1)(x+7) = <b>4x<sup>2</sup>+29x+7</b></div></div></div>
+        <div class="prob"><div class="pq">再測② 梯形的兩平行底長分別為 AE=2x+3、CF=6x−1，高為 AB=x+7，求梯形面積</div>
+          <svg role="img" viewBox="0 0 260 120" width="260" height="120" aria-label="梯形示意：上底AE、下底CF、高AB">
+            <path d="M40 20 H150 L220 95 H40 Z" fill="#ECEBFA" stroke="#5B57C2"/>
+            <line x1="40" y1="20" x2="40" y2="95" stroke="#B7476A" stroke-dasharray="4 3"/>
+            <text x="95" y="14" text-anchor="middle" font-size="11" fill="#645B78">AE = 2x+3</text>
+            <text x="130" y="110" text-anchor="middle" font-size="11" fill="#645B78">CF = 6x−1</text>
+            <text x="30" y="60" text-anchor="end" font-size="11" fill="#B7476A">高</text>
+          </svg><button class="toggle">顯示解答</button><div class="ans"><div class="st">½[(2x+3)+(6x−1)](x+7) = (4x+1)(x+7) = <b>4x<sup>2</sup>+29x+7</b></div></div></div>
         <div class="prob"><div class="pq">再測③ ax<sup>2</sup>+bx+6 除以 x−1 餘 8、除以 x+1 餘 12，求 a、b</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">f(1)=a+b+6=8、f(−1)=a−b+6=12 → a=<b>4</b>、b=<b>−2</b></div><div class="why">餘式定理：除以 x+1 是代 x=−1。</div></div></div>
-        <div class="prob"><div class="pq">再測④【進階】P、Q 為大於 1 的正整數，P<sup>2</sup>=8x+1、Q<sup>2</sup>=8x+25，求 P+Q</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">Q<sup>2</sup>−P<sup>2</sup>=24 → (Q+P)(Q−P)=24 同偶 → 12×2 → Q=7、P=5 → P+Q=<b>12</b></div></div></div>
+        <div class="prob"><div class="pq">再測④【進階】P、Q 為大於 1 的正整數，P<sup>2</sup>=8x+1、Q<sup>2</sup>=8x+25，求 P+Q</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">Q<sup>2</sup>−P<sup>2</sup>=24 → (Q+P)(Q−P)=24，取<b>同奇偶</b>的配對逐組檢查：12×2 → Q=7、P=5 ✓；6×4 → Q=5、P=1，不合 P＞1，捨去 → P+Q=<b>12</b></div><div class="why">固定流程：列因數配對 → 留同奇偶 → 解出 P、Q → 回頭檢查「正整數、＞1」。找到一組就停，會漏掉該捨去的檢查。</div></div></div>
         <div class="prob"><div class="pq">再測⑤ 2x<sup>2</sup>+ax−2 除以 cx−1 的商為 −2x+b、餘 2，求 2a+b+c</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x<sup>2</sup>+ax−2 = (cx−1)(−2x+b)+2 → 比較係數：c=−1、b=4、a=−2 → 2a+b+c = <b>−1</b></div></div></div>
         <div class="prob"><div class="pq">再測⑥ 已知 x<sup>2</sup>+2x=3，求 5x<sup>2</sup>+10x+21（用小安與亮宇兩種除法策略）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">小安：÷(x<sup>2</sup>+2x) 商 5 餘 21 → 5·3+21 = <b>36</b>；亮宇：÷(x<sup>2</sup>+2x−3) 商 5 餘 36，而 x<sup>2</sup>+2x−3=0 → <b>36</b></div><div class="why">兩條路答案相同；亮宇的除式剛好等於 0，值就是餘式。</div></div></div>
         <div class="prob"><div class="pq">再測⑦ 化簡 2x/(x<sup>2</sup>−4) − 1/(x−2)（原題寫 x≠2）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= [2x−(x+2)]/(x<sup>2</sup>−4) = (x−2)/[(x+2)(x−2)] = <b>1/(x+2)</b></div><div class="why">分子減完要再跟分母約分。<b>勘誤：</b>原題只寫 x≠2，但分母 x²−4 在 x=−2 也是 0，完整限制應為 <b>x ≠ ±2</b>——照四步驟自己把限制寫全。</div></div></div>
         <div class="prob"><div class="pq">再測⑧【進階】a=8051=90<sup>2</sup>−7<sup>2</sup>，關於 a 的正確敘述？（因數角度）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = (90+7)(90−7) = 97×83 → 正因數 1、83、97、8051，總和 = <b>8232</b></div></div></div>
-        <div class="prob"><div class="pq">再測⑨ a + 1/a = 6，求 a<sup>2</sup> + 1/a<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 6<sup>2</sup> − 2 = <b>34</b></div></div></div>
-        <div class="prob"><div class="pq">再測⑩ x<sup>3</sup>+ax+2 = (x−1)<sup>2</sup>(x+b)，求 ab</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">右邊展開 = x<sup>3</sup>+(b−2)x<sup>2</sup>+(1−2b)x+b → b−2=0 → b=2；a=1−2b=−3 → ab = <b>−6</b></div><div class="why">x² 係數為 0（左邊缺項）是解題入口。</div></div></div>
-        <div class="prob"><div class="pq">再測⑪【進階】E(p,q) 在直線 x+y=1 上，F( p/(p²−q²), q/(p²−q²) )，F 一定在哪條直線上？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">F 的 x−y = (p−q)/(p²−q²) = 1/(p+q) = 1/1 = 1 → <b>x−y=1</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑨ a + 1/a = 6（a ≠ 0），求 a<sup>2</sup> + 1/a<sup>2</sup></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 6<sup>2</sup> − 2 = <b>34</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑩ x<sup>3</sup>+ax+2 = (x−1)<sup>2</sup>(x+b) 為恆等式，求 ab</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">右邊展開 = x<sup>3</sup>+(b−2)x<sup>2</sup>+(1−2b)x+b → b−2=0 → b=2；a=1−2b=−3 → ab = <b>−6</b></div><div class="why">x² 係數為 0（左邊缺項）是解題入口。</div></div></div>
+        <div class="prob"><div class="pq">再測⑪【進階】E(p,q) 在直線 x+y=1 上，且 <b>p ≠ q</b>。F( p/(p²−q²), q/(p²−q²) )，F 一定在哪條直線上？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">F 的 x−y = (p−q)/(p²−q²) = 1/(p+q) = 1/1 = 1 → <b>x−y=1</b></div></div></div>
         <div class="prob"><div class="pq">再測⑫【進階】a=2025、b=−2024，求 (1/a + 1/b) × 2ab/(a²+2ab+b²)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (a+b)/ab × 2ab/(a+b)<sup>2</sup> = 2/(a+b) = 2/1 = <b>2</b></div></div></div>
-        <div class="prob"><div class="pq">再測⑬ 3x<sup>2</sup>−4x+6 = a(x−1)<sup>2</sup>+b(x−1)+c，求 a+b+c</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">代 x=2：12−8+6 = <b>10</b></div><div class="why">右邊代 x=2 剛好是 a+b+c——跟例②同一招。</div></div></div>
+        <div class="prob"><div class="pq">再測⑬ 3x<sup>2</sup>−4x+6 = a(x−1)<sup>2</sup>+b(x−1)+c 為恆等式，求 a+b+c</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">代 x=2：12−8+6 = <b>10</b></div><div class="why">右邊代 x=2 剛好是 a+b+c——跟例②同一招。</div></div></div>
         <div class="prob"><div class="pq">再測⑭【進階】(1−1/10<sup>2</sup>)(1−1/11<sup>2</sup>)⋯(1−1/20<sup>2</sup>) 之值</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">每項拆 (n−1)/n × (n+1)/n → 兩串連鎖消去 = (9/20) × (21/10) = <b>189/200</b></div><div class="why">跟例⑥同一個三層結構，只是串比較長：左串剩 9/20、右串剩 21/10。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr>
           <tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">漏乘某一項、長除法沒對齊 → 多半是 <b>B</b>；不知道指數相加、缺項要補 0 → <b>A</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第1章走完了。<a href="index.html">回數學首頁 →</a></div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～⑥）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本乘除與長除法 ①～⑥ 都自己算過、對過答案（錯題再測依安排完成，標【進階】者選做）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第1章走完了。<a href="index.html">回數學首頁 →</a></div></div>
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.4.5</span></div>
+  <div class="page-footer"><span>數學 · 第1章 乘法公式與多項式</span><span>V2.7.0</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
