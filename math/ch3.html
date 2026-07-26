@@ -209,7 +209,8 @@ sup{font-size:.72em}
       <button class="lpill on" data-s="1" data-l="0">十字交乘</button>
       <button class="lpill" data-s="1" data-l="1">含係數的十字交乘</button>
       <button class="lpill" data-s="1" data-l="2">混合分解與流程</button>
-      <button class="lpill" data-s="1" data-l="3">練習與訂正</button>
+      <button class="lpill" data-s="1" data-l="3">實戰題型（整合與幾何）</button>
+      <button class="lpill" data-s="1" data-l="4">練習・訂正・再測</button>
     </div>
 
     <section class="lesson on" data-s="1" data-l="0">
@@ -286,7 +287,48 @@ x ＿／ +3
       <div class="warn"><b>最常見的失分：</b>提完公因式就交卷。括號裡的式子要再走一次步驟③，直到每個因式都不能再分。</div>
     </section>
 
-    <section class="lesson" data-s="1" data-l="3">
+        <section class="lesson" data-s="1" data-l="3">
+      <div class="plabel2">3-2 · 實戰題型</div>
+      <h2>因式分解的六張考卷臉</h2>
+      <p class="sub">這些題型在你的考卷出現過。共通心法：<b>看到「面積、邊長、因式」，先把式子分解乾淨，再回頭對圖或對選項</b>。</p>
+
+      <div class="plabel2" style="margin-top:14px">題型一 · 剪拼幾何＝平方差的圖形版</div>
+      <div class="eg"><div class="q">例①【核心必會】邊長 2x 的正方形剪去邊長 5 的正方形，剩餘拼成一邊為 2x−5 的長方形，另一邊？</div>
+        <div class="step">面積不變：(2x)² − 5² = (2x−5)(2x+5) → 另一邊 = <b>2x + 5</b></div>
+        <div class="why">剪拼前後<b>面積相等</b>——平方差公式就是這張圖。一邊是 (2x−5)，另一邊必是 (2x+5)，不用真的算圖形。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型二 · 分組分解求邊長</div>
+      <div class="eg"><div class="q">例②【進階】甲、乙兩長方形併排（共同邊 EF）。甲面積 = xy−2x−y+2、乙面積 = xy−2x+y−2，PE = x−1，求 EF</div>
+        <div class="step">甲：xy−2x−y+2 = x(y−2) − (y−2) = <b>(x−1)(y−2)</b></div>
+        <div class="step">甲 = PE × EF = (x−1) × EF → EF = <b>y − 2</b></div>
+        <div class="step">驗證：乙 = xy−2x+y−2 = (x+1)(y−2) —— 共同邊 (y−2) ✓，乙的另一邊 x+1</div>
+        <div class="why">四項式先<b>分組提公因式</b>；分解出的兩個因式就是長方形的兩邊。已知一邊（PE），面積除掉它，另一邊自己現身。分完用另一塊驗證共同邊——對就對得很安心。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型三 · 「何者是因式」——先展開整理再分解</div>
+      <div class="eg"><div class="q">例③【核心必會】下列何者是 (x+2)(2x+1) − 5 的因式？</div>
+        <div class="step">先展開：2x²+5x+2−5 = 2x²+5x−3 → 十字交乘 = <b>(2x−1)(x+3)</b></div>
+        <div class="why"><b>不能直接看括號猜</b>——(x+2) 不是因式（−5 破壞了它）。「減一個數」的式子一律先展開合併，再重新分解，因式以分解後的為準。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型四 · 面積與一邊已知，求另一邊</div>
+      <div class="eg"><div class="q">例④【進階】長方形面積 4x²−10x−6，x 為整數，一邊長 15，另一邊可能是？</div>
+        <div class="step">先分解（記得提公因式）：= 2(2x+1)(x−3)</div>
+        <div class="step">試一邊 = 15：2x+1 = 15 → x = 7 → 另一邊 = 2(x−3) = <b>8</b></div>
+        <div class="why">流程：<b>分解 → 把 15 對到其中一個因式（或因式組合）→ 解出 x → 代入剩下的因式</b>。x 要是整數——對不出整數就換一種拼法。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型五 · 完全平方定係數：± 兩解都要</div>
+      <div class="eg"><div class="q">例⑤【進階】4x² + (k−1)x + 9 可分解成一次式的平方，求 k</div>
+        <div class="step">= (2x ± 3)²，中間項 = ±2·2x·3 = ±12x → k−1 = 12 或 k−1 = −12</div>
+        <div class="step">→ k = <b>13 或 −11</b>（兩個都是答案）</div>
+        <div class="why">完全平方的中間項有 <b>+ 和 − 兩種</b>——只寫一個就漏一半。之後題目常拿兩解（a、b）再加工（如求 a−2b），照條件 a＞b 分配好再算。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型六 · 大數計算：設 x、分解、約分</div>
+      <div class="eg"><div class="q">例⑥【核心必會】(99³ + 2×99² + 99) ÷ (99² + 99) = ?</div>
+        <div class="step">設 x = 99：原式 = (x³+2x²+x)/(x²+x) = x(x+1)²/[x(x+1)] = x+1</div>
+        <div class="step">代回：= <b>100</b></div>
+        <div class="why">巨大數字先別代（第1章的老口訣）——設 x、上下<b>各自分解到底</b>、整組約分，最後才代回。分子分母的公因式 x(x+1) 一次約乾淨。</div></div>
+    </section>
+
+<section class="lesson" data-s="1" data-l="4">
       <div class="plabel2">練習與訂正</div>
       <h2>先自己做，錯的訂正後一樣算過</h2>
       <p class="sub">先自己算，再對解答。每題都乘回去驗算。</p>
@@ -305,20 +347,27 @@ x ＿／ +3
         <div class="prob"><div class="pq">④ 分解 2x<sup>2</sup> + 5x + 2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (2x + 1)(x + 2)</div><div class="why">交叉 4x+x=5x ✓。</div></div></div>
         <div class="prob"><div class="pq">⑤ 分解 2x<sup>2</sup> − 8（先提再分）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 2(x<sup>2</sup> − 4) = 2(x + 2)(x − 2)</div><div class="why">先提 2，括號裡是平方差，還要再分。</div></div></div>
       </div>
-      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+              <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
+        <div class="prob"><div class="pq">再測① 邊長 3x 的正方形剪去邊長 7 的正方形，剩餘拼成一邊為 3x−7 的長方形，另一邊？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(3x)²−7² = (3x−7)(3x+7) → <b>3x + 7</b></div></div></div>
+        <div class="prob"><div class="pq">再測②【進階】長方形 PQRS 由甲、乙組成，甲面積 = 1−a−b+ab、乙面積 = ab+a−b−1（長寬皆大於 1），PE = b−1，求 EF</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">甲：1−a−b+ab = (1−a) − b(1−a) = (1−a)(1−b) = <b>(a−1)(b−1)</b>（長寬＞1，取正因式）</div><div class="st">甲 = PE × EF = (b−1)·EF → EF = <b>a − 1</b>；驗證：乙 = a(b+1)−(b+1) = (a−1)(b+1) ✓ 共同邊 a−1</div><div class="why">「長與寬都大於 1」這句話就是要你把 (1−a)(1−b) 換成正的 (a−1)(b−1)——題目每句話都有用。</div></div></div>
+        <div class="prob"><div class="pq">再測③ 計算 (1998³ + 3×1998² + 2×1998) ÷ (1998² + 1998)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設 x = 1998：x(x+1)(x+2) / [x(x+1)] = x+2 = <b>2000</b></div><div class="why">分子 x³+3x²+2x = x(x²+3x+2) = x(x+1)(x+2)——先提 x 再十字交乘，兩步都要做完才約得動。</div></div></div>
+        <div class="prob"><div class="pq">再測④ 長方形面積 12x²−50x+8，x 為整數，一邊 35，另一邊可能為？(A) 8 (B) 6 (C) 4 (D) 2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 2(6x−1)(x−4)；6x−1 = 35 → x = 6 → 另一邊 = 2(x−4) = 4 → <b>(C)</b></div><div class="why">35 也可以試 5×7 等組合，但只有 6x−1=35 給整數 x。逐一檢查、對出整數才收。</div></div></div>
+        <div class="prob"><div class="pq">再測⑤【進階】9x²−(m−3)x+4 可分解成一次式的平方，m 可能為 a 或 b（a、b 為整數，a＞b），求 a−2b</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (3x±2)²，中間 = ±12x → −(m−3) = 12 → m = −9；−(m−3) = −12 → m = 15</div><div class="st">a = 15、b = −9（a＞b）→ a−2b = 15+18 = <b>33</b></div><div class="why">注意中間項是 <b>−(m−3)</b>，負號要跟著走；± 兩解都列出來再按 a＞b 分配。</div></div></div>
+        <div class="prob"><div class="pq">再測⑥ 下列何者是 (x+1)(2x+3)−10 的因式？(A) 2x+7 (B) x+1 (C) x+2 (D) 2x−5</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">展開：2x²+5x+3−10 = 2x²+5x−7 = (2x+7)(x−1) → <b>(A)</b></div><div class="why">你上次選 (B) x+1——括號裡的 (x+1) 在減 10 之後已經不是因式了。「先展開整理、再分解」，因式只認分解後的。</div></div></div>
+<div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">找不到兩數、不會判斷符號 → <b>A</b>；兩數對但符號寫錯、沒驗算 → <b>B</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第3章走完了。因式分解會直接用在第4章一元二次方程式。<a href="index.html">回數學首頁 →</a></div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋基本計算；再測依安排完成，標【進階】者選做）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第3章走完了。因式分解會直接用在第4章一元二次方程式。<a href="index.html">回數學首頁 →</a></div></div>
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第3章 因式分解</span><span>V2.7.5</span></div>
+  <div class="page-footer"><span>數學 · 第3章 因式分解</span><span>V2.7.6</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-var SL=[4,4], cS=0, cL=[0,0];
+var SL=[4,5], cS=0, cL=[0,0];
 var stabs=document.querySelectorAll('.stab');
 function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
 function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
