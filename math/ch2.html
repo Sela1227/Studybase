@@ -117,7 +117,8 @@ sup{font-size:.72em}
     <div class="lpills">
       <button class="lpill on" data-s="0" data-l="0">平方根的意義</button>
       <button class="lpill" data-s="0" data-l="1">完全平方數與估算</button>
-      <button class="lpill" data-s="0" data-l="2">練習與訂正</button>
+      <button class="lpill" data-s="0" data-l="2">整數條件與範圍（實戰）</button>
+      <button class="lpill" data-s="0" data-l="3">練習・訂正・再測</button>
     </div>
 
     <section class="lesson on" data-s="0" data-l="0">
@@ -156,7 +157,37 @@ sup{font-size:.72em}
       <div class="note">背熟 1~15 的平方（1,4,9,…,225），夾範圍會快很多。</div>
     </section>
 
-    <section class="lesson" data-s="0" data-l="2">
+        <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">2-1 · 整數條件與範圍（實戰）</div>
+      <h2>什麼時候 √ 會開出整數？——質因數說了算</h2>
+      <p class="sub">這幾種題型在你的考卷出現過。心法一句：<b>√N 是整數 ⇔ N 的每個質因數都是偶數次方</b>。缺什麼，就補什麼。</p>
+      <div class="hi"><span class="k">√N 為正整數 ⇔ N 質因數分解後，每個指數都是偶數</span></div>
+      <div class="eg"><div class="q">例①【核心必會】√(180a)、√(180/b)、√(180+c)、√(180−d) 都是正整數，a、b、c、d 取最小正整數</div>
+        <div class="step">先分解：180 = 2<sup>2</sup> × 3<sup>2</sup> × 5　（5 是奇數次方，就差它）</div>
+        <div class="step">√(180a)：補一個 5 → a = <b>5</b>（180×5 = 900 = 30<sup>2</sup>）</div>
+        <div class="step">√(180/b)：把 5 除掉 → b = <b>5</b>（180÷5 = 36 = 6<sup>2</sup>）</div>
+        <div class="step">√(180+c)：找 180 之後最近的完全平方數 14<sup>2</sup>=196 → c = <b>16</b></div>
+        <div class="step">√(180−d)：找 180 之前最近的 13<sup>2</sup>=169 → d = <b>11</b></div>
+        <div class="why">乘除用「質因數補偶」；加減用「夾最近的完全平方數」（√180≈13.4，往上取 14²、往下取 13²）。兩套工具，看題目用哪套。</div></div>
+      <div class="eg"><div class="q">例②【進階】√(45a) 為正整數，且 10 ＜ a ＜ 100，這樣的 a 有幾個？</div>
+        <div class="step">45 = 3<sup>2</sup> × 5 → a 必須是 5 × (完全平方數) = 5k<sup>2</sup></div>
+        <div class="step">10 ＜ 5k<sup>2</sup> ＜ 100 → k<sup>2</sup> = 4、9、16 → a = 20、45、80 → <b>3 個</b></div>
+        <div class="why">a 不是只有一個——先寫出 a 的「形狀」（5k²），再用範圍篩 k。列出來逐一檢查，不會多也不會漏。</div></div>
+      <div class="eg"><div class="q">例③【核心必會】√x ＜ 5 的正整數 x 有幾個？√(3x) ≤ 9 呢？</div>
+        <div class="step">兩邊平方：x ＜ 25 → x = 1～24 → <b>24 個</b></div>
+        <div class="step">3x ≤ 81 → x ≤ 27 → <b>27 個</b></div>
+        <div class="why">√ 的不等式就是「兩邊平方」（兩邊都是正的，方向不變）。x＜25 的<b>正整數</b>是 1～24，別把 25 算進去、也別答成 25 個。</div></div>
+      <div class="eg"><div class="q">例④【進階】√(65<sup>2</sup> − 25<sup>2</sup>) = ?</div>
+        <div class="step">根號裡先用平方差：65<sup>2</sup>−25<sup>2</sup> = (65+25)(65−25) = 90 × 40 = 3600</div>
+        <div class="step">= √3600 = <b>60</b></div>
+        <div class="why">√(a²−b²) <b>不等於</b> a−b（65−25=40 ≠ 60）！根號裡是整團的，要先把裡面算完或分解完才能開。三個平方相減也一樣：一步一步用平方差，不能亂消。</div></div>
+      <div class="eg"><div class="q">例⑤【進階】正方形面積是 2x+y，邊長怎麼寫？</div>
+        <div class="step">邊長 = √(面積) = <b>√(2x+y)</b>（整個式子都在根號裡）</div>
+        <div class="why">面積↔邊長的橋就是 √ 與平方。反過來：已知邊長是 4，面積就是 16——列成方程式就能解出裡面的 x、y（見再測）。</div></div>
+      <div class="warn"><b>這課的三套工具：</b>① 整數條件 → 質因數補偶　② 個數問題 → 寫出形狀再用範圍篩　③ 根號裡的運算 → 先算完（或分解完）再開，√(a²−b²) ≠ a−b。</div>
+    </section>
+
+<section class="lesson" data-s="0" data-l="3">
       <div class="plabel2">練習與訂正</div>
       <h2>自己做一遍，錯的訂正後一樣算過</h2>
       <p class="sub">先自己算，再對解答。做錯的填最下面表格。</p>
@@ -170,7 +201,13 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">③ √30 在哪兩個整數之間？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">25 &lt; 30 &lt; 36 → 5 和 6 之間</div></div></div>
         <div class="prob"><div class="pq">④ 把 √10 估到十分位</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3.1<sup>2</sup>=9.61、3.2<sup>2</sup>=10.24 → 3.1&lt;√10&lt;3.2；√10≈3.2</div></div></div>
       </div>
-      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫（手機上表格可左右滑）。</div>
+              <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
+        <div class="prob"><div class="pq">再測① √720=26.8…，√(720a)、√(720/b)、√(720+c)、√(720−d) 均為正整數，a、b、c、d 為最小正整數，求 √(a+b+c+d+1)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">720 = 2<sup>4</sup>×3<sup>2</sup>×5 → a=5、b=5；27<sup>2</sup>=729 → c=9；26<sup>2</sup>=676 → d=44 → √(5+5+9+44+1) = √64 = <b>8</b></div></div></div>
+        <div class="prob"><div class="pq">再測②【進階】√(156a) 為正整數，a 為 100 和 800 之間的正整數，符合的 a 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">156 = 2<sup>2</sup>×3×13 → a = 39k<sup>2</sup>；100＜39k<sup>2</sup>＜800 → k<sup>2</sup>=4、9、16 → a=156、351、624 → <b>3 個</b></div></div></div>
+        <div class="prob"><div class="pq">再測③ √(114<sup>2</sup> − 64<sup>2</sup> − 50<sup>2</sup>) = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">114<sup>2</sup>−64<sup>2</sup> = (114+64)(114−64) = 178×50 → 再減 50<sup>2</sup>：50×(178−50) = 50×128 = 6400 → √6400 = <b>80</b></div><div class="why">不能寫成 114−64−50=0——根號裡要先分解算完才能開。</div></div></div>
+        <div class="prob"><div class="pq">再測④ (1) √x ＜ 8 的正整數 x 有幾個？　(2) √(6x) ≤ 12 的正整數 x 有幾個？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) x ＜ 64 → <b>63 個</b>　(2) 6x ≤ 144 → x ≤ 24 → <b>24 個</b></div><div class="why">(1) 最容易答成 15 或 64——x＜64 的正整數是 1～63。</div></div></div>
+        <div class="prob"><div class="pq">再測⑤【進階】正方形甲、乙、丙面積為 3x+2y、2x+y+5、x+y。(1) 甲的邊長？ (2) 甲、乙邊長為 6、5 時，丙的邊長？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) √(3x+2y)　(2) 3x+2y=36、2x+y+5=25 → 聯立解得 x=4、y=12 → 丙面積 = 16 → 邊長 <b>4</b></div><div class="why">邊長=√面積；已知邊長就把面積=邊長²列成方程式。</div></div></div>
+<div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。可印出來寫（手機上表格可左右滑）。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">分不清 √ 和「平方根」、忘了括號規則 → 多半是 <b>A</b>。</div></div>
       <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 2-2 根式的運算。</div></div>
@@ -344,13 +381,13 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.4.4</span></div>
+  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.4.5</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-var SL=[3,4,4], cS=0, cL=[0,0,0];
+var SL=[4,4,4], cS=0, cL=[0,0,0];
 var stabs=document.querySelectorAll('.stab');
 function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
 function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}

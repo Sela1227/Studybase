@@ -100,8 +100,8 @@ sup{font-size:.72em}
   <div class="poscard">
     <div class="plabel">國二上 · 第5章 統計資料處理</div>
     <h1>這章不吃前面的章節，可以直接拿下</h1>
-    <p>統計這章跟第1～4章的代數幾乎無關——只要會加減和數數就能學。它很適合當你在這個網站<b>第一個完整過關</b>的章節：整章走完、練習全對，先拿到一次「這科我行」的完整經驗。</p>
-    <div class="meta"><span>前置：基本加減（就這樣）</span><span>預計 40 分鐘／節</span><span>整章用同一份 20 人成績資料貫穿</span></div>
+    <p>統計這章跟第1～4章的代數幾乎無關，很適合當你在這個網站<b>第一個完整過關</b>的章節：整章走完、練習全對，先拿到一次「這科我行」的完整經驗。教學主例從頭到尾用同一份 20 人成績；練習再用新資料檢查是不是真的學會。</p>
+    <div class="meta"><span>前置：基本四則運算、分數與百分率、簡單座標讀圖</span><span>預計 40 分鐘／節</span><span>教學主例用同一份 20 人成績貫穿；練習另用新資料</span></div>
   </div>
 
   <div class="stabs" role="tablist" aria-label="第5章各節">
@@ -122,23 +122,30 @@ sup{font-size:.72em}
       <h2>把一堆亂數字，整理成看得懂的表</h2>
       <p class="sub">統計的第一步：資料太多看不出東西，就「分組、數個數」。整章都用下面這份資料。</p>
       <div class="dataset">某班 20 位同學的數學小考成績：<br>72　85　63　91　58　77　88　64　79　95<br>70　82　55　68　74　86　61　90　78　83</div>
-      <div class="hi"><span class="k">分組三步：① 找全距（最大 − 最小）② 定組距 ③ 劃記數次數</span></div>
+      <table class="tbl">
+        <tr><th>資料情況</th><th>整理方式</th></tr>
+        <tr><td>可能值少（如每週運動 1～5 天）</td><td>每個數值直接列一類</td></tr>
+        <tr><td>數值多且分散（如 20 人成績）</td><td>分成若干區間（分組）</td></tr>
+        <tr><td>類別資料（如最喜歡的科目）</td><td>依類別計數，不用組距</td></tr>
+      </table>
+      <div class="hi"><span class="k">需要分組時，三步：① 找全距（最大 − 最小）② 定組距與組數 ③ 逐筆歸組、數次數</span></div>
       <div class="eg"><div class="q">照三步做一次</div>
         <div class="step">① 全距 = 95 − 55 = 40</div>
         <div class="step">② 取組距 10，從 50 分起分 5 組（組數 × 組距要蓋住全部資料）</div>
-        <div class="step">③ 每筆資料劃記到所屬的組，數出次數：</div>
+        <div class="step">③ 逐筆把資料歸到所屬的組，數出次數（順便算好之後要用的「組中點」＝(下界＋上界)÷2）：</div>
         <table class="tbl">
-          <tr><th>成績（分）</th><th>劃記</th><th>次數（人）</th></tr>
-          <tr><td>50 ~ 60</td><td>丅</td><td>2</td></tr>
-          <tr><td>60 ~ 70</td><td>正（少一筆）</td><td>4</td></tr>
-          <tr><td>70 ~ 80</td><td>正丄</td><td>6</td></tr>
-          <tr><td>80 ~ 90</td><td>正</td><td>5</td></tr>
-          <tr><td>90 ~ 100</td><td>下</td><td>3</td></tr>
+          <tr><th>成績範圍</th><th>組中點</th><th>次數（人）</th></tr>
+          <tr><td>50 ≤ x ＜ 60</td><td>55</td><td>2</td></tr>
+          <tr><td>60 ≤ x ＜ 70</td><td>65</td><td>4</td></tr>
+          <tr><td>70 ≤ x ＜ 80</td><td>75</td><td>6</td></tr>
+          <tr><td>80 ≤ x ＜ 90</td><td>85</td><td>5</td></tr>
+          <tr><td>90 ≤ x ＜ 100</td><td>95</td><td>3</td></tr>
           <tr><td><b>合計</b></td><td></td><td><b>20</b></td></tr>
         </table>
-        <div class="why">數完一定要<b>加總檢查</b>：2+4+6+5+3 = 20，跟人數一樣才對。少一個就是漏劃了。</div></div>
-      <div class="note"><b>組界的約定：</b>每一組「<b>含下界、不含上界</b>」——60 分算在「60~70」那組，不算在「50~60」。全站與課本都用這個約定。</div>
-      <div class="warn"><b>常見錯誤：</b>邊界的數（60、70、80…）被數進下面那組、或兩組都劃。記住口訣：<b>剛好在界上，往上一組放</b>。</div>
+        <div class="why">數完一定要<b>加總檢查</b>：2+4+6+5+3 = 20，跟人數一樣才對。少一個就是漏數了。</div></div>
+      <div class="note"><b>分組方式不是唯一的。</b>本例為了好讀，選整十當組界，讓最低分 55、最高分 95 都被涵蓋。分組要守四個規則：起始下界不高於最小值、最後上界要高於最大值、各組不重疊也不留空隙、本例各組組距相同（都是 10）。</div>
+      <div class="note"><b>組界的約定：</b>每一組「<b>含下界、不含上界</b>」（50 ≤ x ＜ 60 含 50、不含 60）。本教材統一採這個寫法。</div>
+      <div class="warn"><b>常見錯誤：</b>邊界的數（60、70、80…）被歸進下面那組、或兩組都算。正確做法：<b>剛好等於組界時，放入「以該數為下界」的那一組</b>——例如 70 分放入 70 ≤ x ＜ 80。</div>
     </section>
 
     <!-- L1 直方圖與折線圖 -->
@@ -146,33 +153,37 @@ sup{font-size:.72em}
       <div class="plabel2">5-1 · 直方圖與折線圖</div>
       <h2>把次數分配表畫成圖</h2>
       <p class="sub">同一份表，兩種畫法：直方圖看「哪一段人最多」，折線圖看「起伏走勢」。</p>
-      <div class="eg"><div class="q">直方圖：長條「相連」的長條圖</div>
-        <svg viewBox="0 0 300 190" width="300" height="190" aria-label="成績次數直方圖">
-          <line x1="40" y1="150" x2="280" y2="150" stroke="#CBC0E0"/>
-          <line x1="40" y1="150" x2="40" y2="20" stroke="#CBC0E0"/>
-          <rect x="40"  y="110" width="44" height="40"  fill="#ECEBFA" stroke="#5B57C2"/>
-          <rect x="84"  y="70"  width="44" height="80"  fill="#ECEBFA" stroke="#5B57C2"/>
-          <rect x="128" y="30"  width="44" height="120" fill="#ECEBFA" stroke="#5B57C2"/>
-          <rect x="172" y="50"  width="44" height="100" fill="#ECEBFA" stroke="#5B57C2"/>
-          <rect x="216" y="90"  width="44" height="60"  fill="#ECEBFA" stroke="#5B57C2"/>
-          <text x="40" y="164" text-anchor="middle" font-size="10" fill="#645B78">50</text>
-          <text x="84" y="164" text-anchor="middle" font-size="10" fill="#645B78">60</text>
-          <text x="128" y="164" text-anchor="middle" font-size="10" fill="#645B78">70</text>
-          <text x="172" y="164" text-anchor="middle" font-size="10" fill="#645B78">80</text>
-          <text x="216" y="164" text-anchor="middle" font-size="10" fill="#645B78">90</text>
-          <text x="260" y="164" text-anchor="middle" font-size="10" fill="#645B78">100</text>
-          <text x="62" y="104" text-anchor="middle" font-size="11" fill="#2A2335">2</text>
-          <text x="106" y="64" text-anchor="middle" font-size="11" fill="#2A2335">4</text>
-          <text x="150" y="24" text-anchor="middle" font-size="11" fill="#2A2335">6</text>
-          <text x="194" y="44" text-anchor="middle" font-size="11" fill="#2A2335">5</text>
-          <text x="238" y="84" text-anchor="middle" font-size="11" fill="#2A2335">3</text>
-          <text x="160" y="184" text-anchor="middle" font-size="10" fill="#756C89">成績（分）　縱軸：次數（人）</text></svg>
-        <div class="cap">一眼看出：70~80 這組人最多（6 人）</div>
-        <div class="why">長條為什麼<b>相連</b>？因為成績是「連續」的範圍，一組接著一組沒有縫。這是直方圖跟一般長條圖（畫類別，如最喜歡的科目，長條分開）最大的不同。</div></div>
+      <div class="eg"><div class="q">直方圖：用相鄰長方形呈現各數值區間的次數</div>
+        <svg viewBox="0 0 320 200" width="320" height="200" aria-label="成績次數直方圖（含縱軸刻度）">
+          <line x1="44" y1="160" x2="290" y2="160" stroke="#CBC0E0"/>
+          <line x1="44" y1="160" x2="44" y2="28" stroke="#CBC0E0"/>
+          <line x1="40" y1="160" x2="44" y2="160" stroke="#756C89"/><text x="34" y="164" text-anchor="end" font-size="9" fill="#756C89">0</text><line x1="40" y1="140" x2="44" y2="140" stroke="#756C89"/><text x="34" y="144" text-anchor="end" font-size="9" fill="#756C89">1</text><line x1="40" y1="120" x2="44" y2="120" stroke="#756C89"/><text x="34" y="124" text-anchor="end" font-size="9" fill="#756C89">2</text><line x1="40" y1="100" x2="44" y2="100" stroke="#756C89"/><text x="34" y="104" text-anchor="end" font-size="9" fill="#756C89">3</text><line x1="40" y1="80" x2="44" y2="80" stroke="#756C89"/><text x="34" y="84" text-anchor="end" font-size="9" fill="#756C89">4</text><line x1="40" y1="60" x2="44" y2="60" stroke="#756C89"/><text x="34" y="64" text-anchor="end" font-size="9" fill="#756C89">5</text><line x1="40" y1="40" x2="44" y2="40" stroke="#756C89"/><text x="34" y="44" text-anchor="end" font-size="9" fill="#756C89">6</text>
+          <rect x="44"  y="120" width="44" height="40"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="88"  y="80"  width="44" height="80"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="132" y="40"  width="44" height="120" fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="176" y="60"  width="44" height="100" fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="220" y="100" width="44" height="60"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <text x="44" y="174" text-anchor="middle" font-size="9" fill="#645B78">50</text>
+          <text x="88" y="174" text-anchor="middle" font-size="9" fill="#645B78">60</text>
+          <text x="132" y="174" text-anchor="middle" font-size="9" fill="#645B78">70</text>
+          <text x="176" y="174" text-anchor="middle" font-size="9" fill="#645B78">80</text>
+          <text x="220" y="174" text-anchor="middle" font-size="9" fill="#645B78">90</text>
+          <text x="264" y="174" text-anchor="middle" font-size="9" fill="#645B78">100</text>
+          <text x="20" y="20" font-size="10" fill="#756C89">次數（人）</text>
+          <text x="290" y="190" text-anchor="end" font-size="10" fill="#756C89">成績（分）</text></svg>
+        <div class="cap">一眼看出：70 ≤ x ＜ 80 這組人最多（6 人）</div>
+        <div class="why">長條為什麼相連？因為<b>橫軸是連續排列的數值區間</b>——各組共用組界、沒有縫隙，長條的左右邊界就是組界。一般長條圖的橫軸是「不同類別」（例如最喜歡的科目），所以長條分開。本例各組組距相同，用長條「高度」表示次數。完整的統計圖要有：圖名、橫軸縱軸名稱與單位、等距刻度、正確組界。</div></div>
       <div class="eg"><div class="q">次數分配折線圖：取每組「組中點」描點連線</div>
-        <div class="step">組中點 = (下界＋上界) ÷ 2 → 55、65、75、85、95</div>
-        <div class="step">描 (55,2)(65,4)(75,6)(85,5)(95,3)，相鄰點連線；頭尾各補一個次數 0 的組中點（45、105），讓線落回橫軸</div>
-        <div class="why">折線圖跟直方圖說的是同一件事，只是換成「走勢」的樣子——先升到 70~80 的高峰再下降。</div></div>
+        <div class="step">描 (55,2)(65,4)(75,6)(85,5)(95,3)，相鄰點連線；頭尾各補一個次數 0 的組中點（45、105）</div>
+        <svg viewBox="0 0 320 200" width="320" height="200" aria-label="成績次數分配折線圖">
+          <line x1="20" y1="160" x2="310" y2="160" stroke="#CBC0E0"/>
+          <line x1="20" y1="160" x2="20" y2="28" stroke="#CBC0E0"/>
+          <line x1="16" y1="160" x2="20" y2="160" stroke="#756C89"/><text x="12" y="164" text-anchor="end" font-size="9" fill="#756C89">0</text><line x1="16" y1="140" x2="20" y2="140" stroke="#756C89"/><text x="12" y="144" text-anchor="end" font-size="9" fill="#756C89">1</text><line x1="16" y1="120" x2="20" y2="120" stroke="#756C89"/><text x="12" y="124" text-anchor="end" font-size="9" fill="#756C89">2</text><line x1="16" y1="100" x2="20" y2="100" stroke="#756C89"/><text x="12" y="104" text-anchor="end" font-size="9" fill="#756C89">3</text><line x1="16" y1="80" x2="20" y2="80" stroke="#756C89"/><text x="12" y="84" text-anchor="end" font-size="9" fill="#756C89">4</text><line x1="16" y1="60" x2="20" y2="60" stroke="#756C89"/><text x="12" y="64" text-anchor="end" font-size="9" fill="#756C89">5</text><line x1="16" y1="40" x2="20" y2="40" stroke="#756C89"/><text x="12" y="44" text-anchor="end" font-size="9" fill="#756C89">6</text>
+          <polyline points="42,160 86,120 130,80 174,40 218,60 262,100 306,160" fill="none" stroke="#5B57C2" stroke-width="1.5"/>
+          <circle cx="42" cy="160" r="3" fill="#5B57C2"/><circle cx="86" cy="120" r="3" fill="#5B57C2"/><circle cx="130" cy="80" r="3" fill="#5B57C2"/><circle cx="174" cy="40" r="3" fill="#5B57C2"/><circle cx="218" cy="60" r="3" fill="#5B57C2"/><circle cx="262" cy="100" r="3" fill="#5B57C2"/><circle cx="306" cy="160" r="3" fill="#5B57C2"/><text x="42" y="174" text-anchor="middle" font-size="9" fill="#645B78">45</text><text x="86" y="174" text-anchor="middle" font-size="9" fill="#645B78">55</text><text x="130" y="174" text-anchor="middle" font-size="9" fill="#645B78">65</text><text x="174" y="174" text-anchor="middle" font-size="9" fill="#645B78">75</text><text x="218" y="174" text-anchor="middle" font-size="9" fill="#645B78">85</text><text x="262" y="174" text-anchor="middle" font-size="9" fill="#645B78">95</text><text x="306" y="174" text-anchor="middle" font-size="9" fill="#645B78">105</text>
+          <text x="4" y="20" font-size="10" fill="#756C89">次數（人）</text>
+          <text x="310" y="190" text-anchor="end" font-size="10" fill="#756C89">組中點（分）</text></svg>
+        <div class="why">頭尾補 0 只是<b>讓折線落回橫軸</b>；真正的五組資料仍然只有 55～95 這五個組中點。折線圖跟直方圖說的是同一件事，換成「走勢」的樣子——升到 75（70≤x＜80 的組中點）的高峰再下降。</div></div>
     </section>
 
     <!-- L2 累積次數 -->
@@ -182,18 +193,28 @@ sup{font-size:.72em}
       <p class="sub">把次數「一路加上來」，回答「未滿某分數共幾人」這類問題最快。</p>
       <div class="hi"><span class="k">某組的累積次數 = 從第一組加到這一組的次數總和</span></div>
       <table class="tbl">
-        <tr><th>成績（分）</th><th>次數</th><th>累積次數</th></tr>
-        <tr><td>50 ~ 60</td><td>2</td><td>2</td></tr>
-        <tr><td>60 ~ 70</td><td>4</td><td>2+4 = 6</td></tr>
-        <tr><td>70 ~ 80</td><td>6</td><td>6+6 = 12</td></tr>
-        <tr><td>80 ~ 90</td><td>5</td><td>12+5 = 17</td></tr>
-        <tr><td>90 ~ 100</td><td>3</td><td>17+3 = 20</td></tr>
+        <tr><th>成績範圍</th><th>次數</th><th>累積次數</th><th>意思是…</th></tr>
+        <tr><td>50 ≤ x ＜ 60</td><td>2</td><td>2</td><td>未滿 60 分共 2 人</td></tr>
+        <tr><td>60 ≤ x ＜ 70</td><td>4</td><td>2+4 = 6</td><td>未滿 70 分共 6 人</td></tr>
+        <tr><td>70 ≤ x ＜ 80</td><td>6</td><td>6+6 = 12</td><td>未滿 80 分共 12 人</td></tr>
+        <tr><td>80 ≤ x ＜ 90</td><td>5</td><td>12+5 = 17</td><td>未滿 90 分共 17 人</td></tr>
+        <tr><td>90 ≤ x ＜ 100</td><td>3</td><td>17+3 = 20</td><td>未滿 100 分共 20 人</td></tr>
       </table>
       <div class="eg"><div class="q">用表回答問題</div>
         <div class="step">「不到 80 分」的人數 → 看 70~80 那列的累積 = <b>12 人</b></div>
         <div class="step">「80 分以上（含）」的人數 → 全部 − 不到 80 = 20 − 12 = <b>8 人</b></div>
         <div class="why">最後一組的累積一定等於總人數（20）——這也是檢查有沒有加錯的方法。</div></div>
-      <div class="note"><b>相對次數（比例版）：</b>某組次數 ÷ 總數。例如 70~80 這組 6/20 = 30%。全部組加起來一定是 100%。</div>
+      <div class="hi"><span class="k">相對次數 = 該組次數 ÷ 總次數</span></div>
+      <table class="tbl">
+        <tr><th>成績範圍</th><th>次數</th><th>相對次數</th><th>百分率</th></tr>
+        <tr><td>50 ≤ x ＜ 60</td><td>2</td><td>2/20</td><td>10%</td></tr>
+        <tr><td>60 ≤ x ＜ 70</td><td>4</td><td>4/20</td><td>20%</td></tr>
+        <tr><td>70 ≤ x ＜ 80</td><td>6</td><td>6/20</td><td>30%</td></tr>
+        <tr><td>80 ≤ x ＜ 90</td><td>5</td><td>5/20</td><td>25%</td></tr>
+        <tr><td>90 ≤ x ＜ 100</td><td>3</td><td>3/20</td><td>15%</td></tr>
+        <tr><td><b>合計</b></td><td><b>20</b></td><td><b>1</b></td><td><b>100%</b></td></tr>
+      </table>
+      <div class="note">相對次數回答「占多大比例」，方便跟別班、別的總人數比較。用<b>精確值</b>時相對次數總和是 1、百分率總和是 100%；若每組先四捨五入，加起來可能略有出入，是正常的。</div>
       <div class="warn"><b>常見錯誤：</b>把「累積次數」跟「該組次數」看混。題目問「不到 70 分幾人」是累積（6 人）；問「60~70 這組幾人」才是單組次數（4 人）。先看清楚題目問哪一種。</div>
     </section>
 
@@ -216,17 +237,34 @@ sup{font-size:.72em}
         <div class="dataset">15 位同學每週運動天數：<br>3　5　2　4　3　5　1　4　3　2　4　5　3　4　2</div>
         <div class="prob"><div class="pq">① 做出次數分配表（天數 1、2、3、4、5 各幾人），並加總檢查</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">1天:1人；2天:3人；3天:4人；4天:4人；5天:3人。合計 1+3+4+4+3 = 15 ✓</div><div class="why">這份資料是整數天數，不用分組，直接一個數一類。</div></div></div>
         <div class="prob"><div class="pq">② 承①，做累積次數，並回答：每週運動「不到 4 天」的有幾人？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">累積：1, 4, 8, 12, 15 → 不到 4 天 = 累積到 3 天 = <b>8 人</b></div></div></div>
-        <div class="prob"><div class="pq">③ 承①，運動 4 天（含）以上的比例是多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">4 天以上 = 4+3 = 7 人 → 7/15 ≈ 47%（也可答 7/15）</div><div class="why">或用 15 − 8 = 7 再除以總數。</div></div></div>
+        <div class="prob"><div class="pq">③ 承①，運動 4 天（含）以上的比例是多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">4 天以上 = 4+3 = 7 人 → 比例 = 7/15 ≈ 46.7%；取整數百分比約 47%</div><div class="why">或用 15 − 8 = 7 再除以總數。</div></div></div>
         <div class="prob"><div class="pq">④ 回到成績資料：90 分（含）以上的同學占全班百分之幾？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">90~100 有 3 人 → 3/20 = <b>15%</b></div></div></div>
+      </div>
+      <div class="qsec"><h3>作圖與讀圖（拿紙筆，真的畫）</h3>
+        <div class="dataset">16 位同學英文小考成績：<br>42　55　63　71　48　59　66　52　60　68<br>45　74　57　64　61　50</div>
+        <div class="prob"><div class="pq">⑤【作圖】用組距 10、從 40 分開始，完成次數分配表（含組中點），並在紙上畫出直方圖（記得縱軸刻度與軸名稱）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">40≤x＜50：組中點45、3人；50≤x＜60：55、5人；60≤x＜70：65、6人；70≤x＜80：75、2人。合計 16 ✓。直方圖：橫軸 40～80 四根相連長條，高度 3、5、6、2，縱軸標 0～6 刻度。</div><div class="why">檢查：起始下界 40 ≤ 最小值 42、最後上界 80 ＞ 最大值 74、四組不重疊不留隙。</div></div></div>
+        <div class="prob"><div class="pq">⑥【折線圖】承⑤，在紙上畫次數分配折線圖（頭尾要補 0）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">描點 (45,3)(55,5)(65,6)(75,2)，相鄰連線；頭尾補 (35,0)、(85,0) 讓折線落回橫軸。</div></div></div>
+        <div class="prob"><div class="pq">⑦【讀圖】下圖是 12 位同學「每天使用手機時數」的直方圖。(1) 哪一組人最多？(2) 未滿 4 小時的有幾人？(3) 總人數是否為 12？</div>
+          <svg viewBox="0 0 300 190" width="300" height="190" aria-label="手機時數直方圖">
+            <line x1="40" y1="150" x2="270" y2="150" stroke="#CBC0E0"/><line x1="40" y1="150" x2="40" y2="20" stroke="#CBC0E0"/>
+            <line x1="36" y1="150" x2="40" y2="150" stroke="#756C89"/><text x="30" y="154" text-anchor="end" font-size="9" fill="#756C89">0</text><line x1="36" y1="125" x2="40" y2="125" stroke="#756C89"/><text x="30" y="129" text-anchor="end" font-size="9" fill="#756C89">1</text><line x1="36" y1="100" x2="40" y2="100" stroke="#756C89"/><text x="30" y="104" text-anchor="end" font-size="9" fill="#756C89">2</text><line x1="36" y1="75" x2="40" y2="75" stroke="#756C89"/><text x="30" y="79" text-anchor="end" font-size="9" fill="#756C89">3</text><line x1="36" y1="50" x2="40" y2="50" stroke="#756C89"/><text x="30" y="54" text-anchor="end" font-size="9" fill="#756C89">4</text><line x1="36" y1="25" x2="40" y2="25" stroke="#756C89"/><text x="30" y="29" text-anchor="end" font-size="9" fill="#756C89">5</text>
+            <rect x="40" y="100" width="50" height="50" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="90" y="25" width="50" height="125" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="140" y="75" width="50" height="75" fill="#ECEBFA" stroke="#5B57C2"/>
+            <rect x="190" y="100" width="50" height="50" fill="#ECEBFA" stroke="#5B57C2"/>
+            <text x="40" y="164" text-anchor="middle" font-size="9" fill="#645B78">0</text><text x="90" y="164" text-anchor="middle" font-size="9" fill="#645B78">2</text><text x="140" y="164" text-anchor="middle" font-size="9" fill="#645B78">4</text><text x="190" y="164" text-anchor="middle" font-size="9" fill="#645B78">6</text><text x="240" y="164" text-anchor="middle" font-size="9" fill="#645B78">8</text>
+            <text x="16" y="14" font-size="10" fill="#756C89">次數（人）</text><text x="270" y="182" text-anchor="end" font-size="10" fill="#756C89">時數（小時）</text></svg>
+          <button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) 2 ≤ x ＜ 4 這組最多（5 人）　(2) 未滿 4 小時 = 2+5 = 7 人　(3) 2+5+3+2 = 12 ✓</div><div class="why">讀圖三件事：找最高的長條、把左邊的長條加起來、全部加總對總人數。</div></div></div>
+        <div class="prob"><div class="pq">⑧【圖表互換】某折線圖上的點為 (5,1)(15,4)(25,6)(35,3)(45,2)（橫軸：通勤分鐘的組中點；縱軸：人數）。還原次數分配表與累積次數表</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">組中點 5→組別 0≤x＜10：1 人；10≤x＜20：4；20≤x＜30：6；30≤x＜40：3；40≤x＜50：2。累積：1、5、11、14、16（總數 16 人）。</div><div class="why">組中點 5、組距 10 → 反推組界 0 和 10。折線圖上的每個點都對應表格的一列。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
-        <div class="leg">邊界劃錯組、累積跟單組看混 → <b>A/C</b>；劃記漏數、加總錯 → <b>B</b>（加總檢查可以自己抓到）。</div></div>
+        <div class="leg">邊界劃錯組、累積跟單組看混 → <b>A/C</b>；歸組漏數、加總錯 → <b>B</b>（加總檢查可以自己抓到）。</div></div>
       <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第5章完整走完了——這是國二上第一個從頭到尾拿下的章節。<a href="index.html">回數學首頁 →</a></div></div>
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第5章 統計資料處理</span><span>V2.4.4</span></div>
+  <div class="page-footer"><span>數學 · 第5章 統計資料處理</span><span>V2.4.5</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
