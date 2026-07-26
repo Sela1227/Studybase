@@ -150,8 +150,8 @@ sup{font-size:.72em}
 
     <section class="lesson" data-s="0" data-l="1">
       <div class="plabel2">3-1 · 多邊形</div>
-      <h2>切成三角形數內角；外角和永遠 360°</h2>
-      <div class="hi"><span class="k">n 邊形內角和 = (n−2) × 180°　；　外角和 = 360°（跟邊數無關）</span></div>
+      <h2>切成三角形數內角；凸多邊形外角和永遠 360°</h2>
+      <div class="hi"><span class="k">n 邊形內角和 = (n−2) × 180°　；　凸多邊形外角和 = 360°（每頂點各取一個同方向外角；跟邊數無關）</span></div>
       <div class="eg"><div class="q">為什麼是 (n−2)？</div>
         <div class="step">從一個頂點拉對角線，n 邊形被切成 (n−2) 個三角形，每個 180°</div>
         <div class="why">外角和 360° 有兩個看法：① 沿著多邊形走一圈，每個轉彎轉的就是外角，走回原點共轉了一整圈；② 把每個外角剪下來、頂點靠攏拼在一起，恰好拼滿一圈。</div></div>
@@ -168,7 +168,7 @@ sup{font-size:.72em}
       <h2>內角和、外角，交替用</h2>
       <p class="sub">先自己算，再對解答。</p>
       <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
-        <div class="mcq" data-a="1"><div class="qt">1. 任何多邊形的外角和是？</div>
+        <div class="mcq" data-a="1"><div class="qt">1. 凸多邊形每個頂點各取一個同方向的外角，外角和是？</div>
           <button class="opt">(n−2)×180°</button><button class="opt">360°</button><button class="opt">跟邊數成正比</button><div class="exp">外角和永遠 360°，跟邊數無關；(n−2)×180° 是內角和。</div><div class="retry">再看一次，選出正確的。</div></div>
         <div class="mcq" data-a="0"><div class="qt">2. 三角形一個外角等於？</div>
           <button class="opt">不相鄰兩內角的和</button><button class="opt">相鄰內角</button><button class="opt">三內角的和</button><div class="exp">外角 = 與它不相鄰的兩內角之和。</div><div class="retry">再看一次，選出正確的。</div></div>
@@ -244,7 +244,7 @@ sup{font-size:.72em}
           <button class="opt">SSS 全等</button><button class="opt">量角器</button><button class="opt">目測</button><div class="exp">三邊搬過去對應相等 → 三角形全等 → 對應角相等。</div><div class="retry">再看一次，選出正確的。</div></div>
       </div>
       <div class="qsec"><h3>動手做（紙上完成）</h3>
-        <div class="prob"><div class="pq">① 畫一線段 AB，作出它的中垂線，並用尺量檢查交點是否為中點</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">照作圖③步驟；檢查：交點到 A、B 距離相同、且夾角為 90°。</div></div></div>
+        <div class="prob"><div class="pq">① 畫一線段 AB，作出它的中垂線，並完成後可另用「有刻度」的直尺驗證交點是否為中點——但這是課後檢查，不算尺規作圖的步驟（作圖時直尺不能有刻度）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">照作圖③步驟；檢查：交點到 A、B 距離相同、且夾角為 90°。</div></div></div>
         <div class="prob"><div class="pq">② 畫一個約 60° 的角，作出角平分線，並量兩半是否相等</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">照作圖④；兩半各約 30°。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
@@ -368,7 +368,7 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">① P 在 AB 中垂線上，PA = 2x+1、PB = 13，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x+1 = 13 → x = <b>6</b></div></div></div>
         <div class="prob"><div class="pq">② P 在 ∠O 角平分線上，P 到一邊距離 7，到另一邊距離是？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>7</b>（等距）</div></div></div>
         <div class="prob"><div class="pq">③ 要找一點同時到 A、B 等距、又到 B、C 等距，怎麼找？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">作 AB 的中垂線與 BC 的中垂線，<b>交點</b>就是——它到 A、B、C 三點都等距。</div><div class="why">這個點就是之後「外心」的雛形（國三 3-2 會正式登場）。</div></div></div>
-        <div class="prob"><div class="pq">④【進階】兩條相交的道路，想蓋一間到兩條路等距的商店，位置在哪？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">在兩條路夾角的<b>角平分線</b>上（兩條路相交成四個角，共有兩條互相垂直的角平分線可選）。</div><div class="why">「到兩線等距」對應角平分線的逆敘述——跟到兩「點」等距用中垂線成對記。</div></div></div>
+        <div class="prob"><div class="pq">④【進階】兩條相交的道路，想蓋一間到兩條路等距的商店，位置在哪？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">位於某個夾角<b>內部</b>、到兩邊垂直距離相等的點，在該角的<b>內角平分線</b>上（四個夾角共有兩條互相垂直的平分線可選）。</div><div class="why">「到兩線等距」對應角平分線的逆敘述——跟到兩「點」等距用中垂線成對記。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
@@ -435,7 +435,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 國二下 第3章 三角形的基本性質</span><span>V2.9.1</span></div>
+  <div class="page-footer"><span>數學 · 國二下 第3章 三角形的基本性質</span><span>V2.9.2</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
