@@ -104,8 +104,8 @@ sup{font-size:.72em}
   <div class="poscard">
     <div class="plabel">國二下 · 第1章 數列與級數</div>
     <h1>國二下的起點：找規律、用公式</h1>
-    <p>這章跟國二上的代數幾乎獨立——用到的只有一次方程式和基本運算。學校有提前進度考，這章就是現在進行式：把「找規律 → 寫成公式 → 用公式算」這條路走熟，進度考直接受益。</p>
-    <div class="meta"><span>前置：一次方程式、四則運算</span><span>預計 40 分鐘／節</span><span>1-1 等差數列 → 1-2 等差級數 → 1-3 等比數列</span></div>
+    <p>這章主要用一次方程式、分數與指數運算；進階的「由總和反求項數」會接回國二上第4章的一元二次方程式，等比中項會用到第2章的平方根。學校有提前進度考，這章就是現在進行式：把「找規律 → 寫成公式 → 用公式算」這條路走熟，進度考直接受益。</p>
+    <div class="meta"><span>前置：一次方程式、分數與指數運算（進階題用到平方根、一元二次）</span><span>預計 40 分鐘／節</span><span>1-1 等差數列 → 1-2 等差級數 → 1-3 等比數列</span></div>
   </div>
 
   <div class="stabs" role="tablist" aria-label="第1章各節">
@@ -133,7 +133,8 @@ sup{font-size:.72em}
         <div class="why">檢查「是不是等差」就是把相鄰兩項相減，看差是否<b>每一組都相同</b>——只查一組不夠。</div></div>
       <div class="eg"><div class="q">例：公差可以是負的、也可以是分數</div>
         <div class="step">20、17、14、11、…　→ d = −3（一直在變小）</div>
-        <div class="step">1、3/2、2、5/2、…　→ d = 1/2</div></div>
+        <div class="step">1、<span class="frac"><span class="fn">3</span><span class="fd">2</span></span>、2、<span class="frac"><span class="fn">5</span><span class="fd">2</span></span>、…　→ d = <span class="frac"><span class="fn">1</span><span class="fd">2</span></span></div>
+        <div class="step">5、5、5、5、…　→ d = <b>0</b>（公差可以是 0——每次「加 0」也是加同一個數）</div></div>
       <div class="warn"><b>常見錯：</b>2、4、8、16、…（每次×2）<b>不是</b>等差——4−2=2 但 8−4=4，差不固定。它是 1-3 要學的「等比」數列。</div>
     </section>
 
@@ -141,19 +142,24 @@ sup{font-size:.72em}
       <div class="plabel2">1-1 · 一般項</div>
       <h2>a<sub>n</sub> = a<sub>1</sub> + (n−1)d：想去第 n 項，走 n−1 步</h2>
       <p class="sub">從首項出發，到第 n 項要「加 d」幾次？答案是 n−1 次——這就是整條公式。</p>
-      <div class="hi"><span class="k">a<sub>n</sub> = a<sub>1</sub> + (n − 1)d</span></div>
+      <div class="hi"><span class="k">a<sub>n</sub> = a<sub>1</sub> + (n − 1)d　（n = 1, 2, 3, …）</span></div>
       <div class="eg"><div class="q">例①【核心必會】3、7、11、…的第 10 項</div>
         <div class="step">a<sub>1</sub>=3、d=4 → a<sub>10</sub> = 3 + 9×4 = <b>39</b></div>
         <div class="why">是 (n−1)=9 步，不是 10 步——從第 1 項到第 10 項只走 9 步。這是本章第一大失分點。</div></div>
       <div class="eg"><div class="q">例②【核心必會】已知 a<sub>3</sub>=11、a<sub>7</sub>=23，求公差與首項</div>
         <div class="step">從第 3 項到第 7 項走了 7−3 = 4 步：23 − 11 = 4d → d = 3</div>
         <div class="step">a<sub>1</sub> = a<sub>3</sub> − 2d = 11 − 6 = <b>5</b></div>
-        <div class="why">兩項相減 = 步數 × d：d = (a<sub>7</sub>−a<sub>3</sub>)/(7−3)。不用把數列整串寫出來。</div></div>
+        <div class="why">兩項相減 = 步數 × d。不用把數列整串寫出來。</div></div>
+      <div class="hi"><span class="k">任意兩項通式：a<sub>n</sub> = a<sub>m</sub> + (n − m)d　（即 a<sub>n</sub> − a<sub>m</sub> = (n−m)d）</span></div>
+      <div class="eg"><div class="q">例②-2【核心必會】a<sub>5</sub>=12、a<sub>11</sub>=30，求公差</div>
+        <div class="step">30 − 12 = (11−5)d → 6d = 18 → d = <b>3</b></div>
+        <div class="why">通式讓「已知任意兩項」一步到位，不必每次先倒推首項。</div></div>
       <div class="eg"><div class="q">例③【進階】100 和 98，哪個在數列 2、5、8、11、… 裡？</div>
         <div class="step">a<sub>n</sub> = 2 + (n−1)·3 = 3n − 1</div>
-        <div class="step">3n−1 = 100 → n = 101/3，不是正整數 → 100 <b>不在</b></div>
+        <div class="step">3n−1 = 100 → n = <span class="frac"><span class="fn">101</span><span class="fd">3</span></span>，不是正整數 → 100 <b>不在</b></div>
         <div class="step">3n−1 = 98 → n = 33 ✓ → 98 是<b>第 33 項</b></div>
-        <div class="why">「在不在數列裡」= 解出來的 n 是不是正整數。這招在進度考很常見。</div></div>
+        <div class="why">「在不在數列裡」= 解出來的 n 是不是<b>正整數</b>。這招在進度考很常見。</div></div>
+      <div class="note"><b>項數公式（d ≠ 0 時）：</b>由一般項反解得 n = (a<sub>n</sub> − a<sub>1</sub>) ÷ d ＋ 1。算出來的 n 必須是正整數，否則該數不是數列中的項。101/3 這種分數就是「不在」的訊號。</div>
     </section>
 
     <section class="lesson" data-s="0" data-l="2">
@@ -167,6 +173,10 @@ sup{font-size:.72em}
         <div class="step">設三數為 a−d、a、a+d → 相加 = 3a = 24 → a = 8</div>
         <div class="step">→ 中間的數一定是 <b>8</b>，再依其他條件解 d</div>
         <div class="why">對稱設法讓「和」直接消掉 d——比設 a、a+d、a+2d 少算很多。</div></div>
+      <div class="eg"><div class="q">例③【進階】在 4 與 24 之間插入 4 個數，使六個數成等差數列</div>
+        <div class="step">共 4+2 = 6 項 → 從 4 到 24 走了 5 步 → d = (24−4) ÷ 5 = 4</div>
+        <div class="step">數列：4、8、12、16、20、24</div>
+        <div class="why">「插入 k 個中項」→ 總項數 k+2、間隔 k+1 個。先數清楚走幾步，再除。</div></div>
       <div class="rev"><b>1-1 三件武器：</b>① 檢查等差＝相鄰相減都相同　② a<sub>n</sub>=a<sub>1</sub>+(n−1)d（走 n−1 步）　③ 中項＝平均。</div>
     </section>
 
@@ -187,11 +197,12 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">② 等差數列中 a<sub>4</sub>=10、a<sub>9</sub>=25，求 d 與 a<sub>1</sub></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">25−10 = 5d → d = 3；a<sub>1</sub> = 10 − 3×3 = <b>1</b></div></div></div>
         <div class="prob"><div class="pq">③ 100 是不是數列 4、7、10、… 的項？是第幾項？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a<sub>n</sub> = 3n+1 = 100 → n = 33 ✓ → 是<b>第 33 項</b></div></div></div>
         <div class="prob"><div class="pq">④ 8、x、20 成等差，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x = 28 → x = <b>14</b></div></div></div>
+        <div class="prob"><div class="pq">⑤ 7、7、7、… 是等差數列嗎？公差多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>是</b>，d = 0——「每次加 0」也是加同一個數。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">步數算成 n 次 → <b>A</b>（回一般項那課）；相減時符號錯 → <b>B</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 1-2：把等差數列「加起來」。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～⑤）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～⑤ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 1-2：把等差數列「加起來」。</div></div>
     </section>
   </div>
 
@@ -212,6 +223,11 @@ sup{font-size:.72em}
         <div class="step">1+100 = 101、2+99 = 101、3+98 = 101、…</div>
         <div class="step">100 個數配成 50 對，每對 101 → 總和 = 101 × 50 = <b>5050</b></div>
         <div class="why">等差數列「頭尾等距的兩項，和都一樣」——這個對稱性就是整個 1-2 的引擎。</div></div>
+      <div class="eg"><div class="q">奇數項也成立嗎？——把級數倒過來寫一次</div>
+        <div class="step">S<sub>n</sub> = a<sub>1</sub> + a<sub>2</sub> + ⋯ + a<sub>n</sub>；倒著再寫：S<sub>n</sub> = a<sub>n</sub> + a<sub>n−1</sub> + ⋯ + a<sub>1</sub></div>
+        <div class="step">上下相加：2S<sub>n</sub> = (a<sub>1</sub>+a<sub>n</sub>) + (a<sub>2</sub>+a<sub>n−1</sub>) + ⋯ 每一組都等於 (a<sub>1</sub>+a<sub>n</sub>)，共 n 組</div>
+        <div class="step">→ 2S<sub>n</sub> = n(a<sub>1</sub>+a<sub>n</sub>) → S<sub>n</sub> = n(a<sub>1</sub>+a<sub>n</sub>)/2</div>
+        <div class="why">這個推導<b>不管 n 是奇數或偶數都成立</b>——配對法怕奇數「中間剩一個」，倒寫相加法沒有這個問題。驗證：1+2+⋯+99 = 99×100/2 = 4950，中間的 50 沒有被漏掉。</div></div>
       <div class="hi"><span class="k">S<sub>n</sub> = n × (首項 + 末項) ÷ 2　＝「項數 ×（頭＋尾）÷ 2」</span></div>
       <div class="note">另一個好記法：S<sub>n</sub> = 項數 × <b>平均</b>，而平均正是 (首項+末項)/2——跟梯形面積公式「(上底+下底)×高÷2」長得一樣不是巧合。</div>
     </section>
@@ -220,12 +236,18 @@ sup{font-size:.72em}
       <div class="plabel2">1-2 · 求和公式</div>
       <h2>兩個版本：知道末項用第一式，不知道用第二式</h2>
       <div class="hi"><span class="k">S<sub>n</sub> = n(a<sub>1</sub> + a<sub>n</sub>)/2　＝　n[2a<sub>1</sub> + (n−1)d]/2</span></div>
-      <div class="eg"><div class="q">例①【核心必會】3 + 7 + 11 + ⋯ + 39（共 10 項）</div>
-        <div class="step">知道頭 3、尾 39、項數 10 → S = 10×(3+39)/2 = <b>210</b></div></div>
+      <div class="eg"><div class="q">例①【核心必會】3 + 7 + 11 + ⋯ + 39</div>
+        <div class="step">先確認項數：39 = 3 + (n−1)×4 → n = 10</div>
+        <div class="step">再套公式：S = 10×(3+39)/2 = <b>210</b></div>
+        <div class="why">題目沒說幾項——項數永遠自己反解，不用猜的。</div></div>
       <div class="eg"><div class="q">例②【核心必會】2 + 5 + 8 + ⋯ 共 20 項</div>
         <div class="step">不知道末項 → 用第二式：S = 20×[2×2 + 19×3]/2 = 20×61/2 = <b>610</b></div>
         <div class="why">第二式其實就是先用 a<sub>n</sub>=a<sub>1</sub>+(n−1)d 把末項算出來、再套第一式——兩式是同一件事。</div></div>
       <div class="warn"><b>常見錯：</b>項數不是用「猜」的。像 3、7、⋯、39 的項數要用 a<sub>n</sub> 公式反解：3+(n−1)·4 = 39 → n = 10。先確認項數，再套公式。</div>
+      <div class="eg"><div class="q">例③【進階】不是從第一項開始加：奇數列 1、3、5、…（a<sub>n</sub>=2n−1），求 a<sub>5</sub>+a<sub>6</sub>+⋯+a<sub>20</sub></div>
+        <div class="step">法一（當新級數）：項數 = 20−5+1 = <b>16</b>；a<sub>5</sub>=9、a<sub>20</sub>=39 → S = 16×(9+39)/2 = <b>384</b></div>
+        <div class="step">法二（大減小）：S<sub>20</sub> − S<sub>4</sub> = 400 − 16 = 384 ✓</div>
+        <div class="why">從中間開始加：項數是「尾 − 頭 + 1」（含頭含尾）；或者用「前 20 項減前 4 項」——注意減的是 S<sub>4</sub> 不是 S<sub>5</sub>。</div></div>
     </section>
 
     <section class="lesson" data-s="1" data-l="2">
@@ -237,8 +259,9 @@ sup{font-size:.72em}
         <div class="why">應用題先做「翻譯表」：誰是首項、誰是公差、誰是項數，填好再套公式。</div></div>
       <div class="eg"><div class="q">例②【進階】等差數列 a<sub>1</sub>=4、d=3，前 n 項和為 175，求 n</div>
         <div class="step">n[8 + 3(n−1)]/2 = 175 → n(3n+5) = 350 → 3n<sup>2</sup>+5n−350 = 0</div>
-        <div class="step">十字交乘：(3n+35)(n−10) = 0 → n = 10（捨去負的）→ <b>n = 10</b></div>
-        <div class="why">反求 n 會出現一元二次方程式——國二上第 4 章在這裡回來了。n 是項數，必須是正整數。</div></div>
+        <div class="step">十字交乘：(3n+35)(n−10) = 0 → n = 10 或 n = −<span class="frac"><span class="fn">35</span><span class="fd">3</span></span></div>
+        <div class="step">n 是項數，<b>必須是正整數</b>；−35/3 既是負數也不是整數，捨去 → <b>n = 10</b></div>
+        <div class="why">反求 n 會出現一元二次方程式——國二上第 4 章在這裡回來了。捨根的標準不是「捨負的」，是「<b>不是正整數就捨</b>」——就算解出正分數也不能當項數。</div></div>
     </section>
 
     <section class="lesson" data-s="1" data-l="3">
@@ -255,6 +278,7 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">① 1 + 2 + 3 + ⋯ + 50</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">S = 50×(1+50)/2 = <b>1275</b></div></div></div>
         <div class="prob"><div class="pq">② 6 + 11 + 16 + ⋯ 共 12 項</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">S = 12×[12 + 11×5]/2 = 12×67/2 = <b>402</b></div></div></div>
         <div class="prob"><div class="pq">③ 疊磚：最底層 20 塊，每往上一層少 3 塊，疊 6 層。共幾塊？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a<sub>1</sub>=20、d=−3、n=6 → S = 6×[40 + 5×(−3)]/2 = 6×25/2 = <b>75</b> 塊</div><div class="why">d 是負的照樣套公式，符號帶著走。</div></div></div>
+        <div class="prob"><div class="pq">③-2 3 + 6 + 9 + ⋯ + 99（先求項數）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">99 = 3n → n = 33（奇數項也照套）→ S = 33×(3+99)/2 = <b>1683</b></div></div></div>
         <div class="prob"><div class="pq">④【進階】a<sub>1</sub>=2、d=4，前 n 項和為 200，求 n</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">n[4 + 4(n−1)]/2 = 200 → n(4n)/2 = 2n<sup>2</sup> = 200 → n<sup>2</sup> = 100 → <b>n = 10</b>（項數取正）</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
@@ -276,12 +300,14 @@ sup{font-size:.72em}
     <section class="lesson on" data-s="2" data-l="0">
       <div class="plabel2">1-3 · 認識</div>
       <h2>每次都乘同一個數，就是等比</h2>
-      <div class="hi"><span class="k">等比數列：後項 ÷ 前項 ＝ 固定的數（公比 r，r ≠ 0）</span></div>
+      <div class="hi"><span class="k">等比數列（各項皆不為 0）：後項 ÷ 前項 ＝ 固定的數（公比 r，r ≠ 0）</span></div>
+      <div class="note">用「除」定義，所以本課討論的數列<b>每一項都不是 0</b>；公比也不為 0（乘 0 一次，後面就全是 0 了）。</div>
       <div class="eg"><div class="q">例：3、6、12、24、…</div>
         <div class="step">6÷3 = 12÷6 = 24÷12 = 2 → 等比數列，公比 r = 2</div></div>
       <div class="eg"><div class="q">例：公比可以是分數、也可以是負的</div>
-        <div class="step">81、27、9、3、…　→ r = 1/3（越乘越小）</div>
+        <div class="step">81、27、9、3、…　→ r = <span class="frac"><span class="fn">1</span><span class="fd">3</span></span>（越乘越小）</div>
         <div class="step">2、−6、18、−54、…　→ r = −3（正負交錯）</div>
+        <div class="step">5、5、5、…　→ r = 1；5、−5、5、−5、…　→ r = −1（常見觀念題：這兩個都<b>是</b>等比數列）</div>
         <div class="why">r 是負數時數列會一正一負跳——看到正負交錯的數列，先猜等比、公比為負。</div></div>
       <div class="warn"><b>等差 vs 等比：</b>判斷用「減」還是「除」。5、8、11 相減都是 3 → 等差；3、6、12 相除都是 2 → 等比。兩個都試，別看到數字變大就亂猜。</div>
     </section>
@@ -289,24 +315,35 @@ sup{font-size:.72em}
     <section class="lesson" data-s="2" data-l="1">
       <div class="plabel2">1-3 · 一般項與中項</div>
       <h2>a<sub>n</sub> = a<sub>1</sub> × r<sup>n−1</sup>：走 n−1 步，每步乘 r</h2>
-      <div class="hi"><span class="k">a<sub>n</sub> = a<sub>1</sub> · r<sup>n−1</sup>　；　a、b、c 成等比 ⇔ b<sup>2</sup> = ac</span></div>
+      <div class="hi"><span class="k">a<sub>n</sub> = a<sub>1</sub> · r<sup>n−1</sup>　；　a、b、c 均不為 0 時：成等比 ⇔ b<sup>2</sup> = ac</span></div>
       <div class="eg"><div class="q">例①【核心必會】3、6、12、… 的第 8 項</div>
         <div class="step">a<sub>8</sub> = 3 × 2<sup>7</sup> = 3 × 128 = <b>384</b></div>
         <div class="why">跟等差一樣是 n−1 步——指數是 7 不是 8。</div></div>
       <div class="eg"><div class="q">例②【核心必會】等比數列 a<sub>2</sub>=6、a<sub>5</sub>=48，求公比與首項</div>
         <div class="step">從第 2 項到第 5 項乘了 3 次 r：48 = 6 × r<sup>3</sup> → r<sup>3</sup> = 8 → r = 2</div>
-        <div class="step">a<sub>1</sub> = 6 ÷ 2 = <b>3</b></div></div>
+        <div class="step">a<sub>1</sub> = 6 ÷ 2 = <b>3</b></div>
+        <div class="why">間隔 3 步是<b>奇數</b>次方，r³=8 只有一個實數解。</div></div>
+      <div class="eg"><div class="q">例②-2【進階】a<sub>2</sub>=6、a<sub>4</sub>=24，求公比與首項</div>
+        <div class="step">24 = 6r<sup>2</sup> → r<sup>2</sup> = 4 → r = <b>2 或 −2</b>（偶數次方，正負都開得回來——第 2 章的平方根）</div>
+        <div class="step">r=2 時 a<sub>1</sub>=3；r=−2 時 a<sub>1</sub>=<b>−3</b>——兩組都是合法答案</div>
+        <div class="why">間隔偶數步就要想到 ±；間隔奇數步只有一個。跟等比中項的 ± 是同一件事。</div></div>
       <div class="eg"><div class="q">例③【進階】4、x、25 成等比數列，求 x</div>
         <div class="step">x<sup>2</sup> = 4 × 25 = 100 → x = <b>±10</b></div>
-        <div class="why">等比中項有<b>正負兩個</b>（4、10、25 公比 5/2；4、−10、25 公比 −5/2 都成立）——只答 10 會被扣。這裡用到國二上第 2 章的平方根。</div></div>
+        <div class="why">已知兩端 a、c 且 ac ＞ 0 時，中間項 b = ±√(ac)——但<b>要代回檢查公比</b>是否成立。本題兩個都行：4、10、25 公比 <span class="frac"><span class="fn">5</span><span class="fd">2</span></span>；4、−10、25 公比 −<span class="frac"><span class="fn">5</span><span class="fd">2</span></span>。只答 10 會被扣。這裡用到國二上第 2 章的平方根。</div></div>
     </section>
 
     <section class="lesson" data-s="2" data-l="2">
       <div class="plabel2">1-3 · 生活應用</div>
       <h2>翻倍的世界：細菌、摺紙、利息</h2>
-      <div class="eg"><div class="q">例【核心必會】培養皿有 5 隻細菌，每小時數量變 3 倍。4 小時後有幾隻？</div>
+      <div class="eg"><div class="q">例①【核心必會】2、−6、18、−54、… 求第 6 項</div>
+        <div class="step">r = −3 → a<sub>6</sub> = 2 × (−3)<sup>5</sup> = 2 × (−243) = <b>−486</b></div>
+        <div class="why">負公比代次方<b>一定加括號</b>：(−3)<sup>5</sup> = −243；寫成 −3<sup>5</sup> 會跟「先平方再加負號」混淆（第1章的老朋友）。奇數次方保持負、偶數次方變正。</div></div>
+      <div class="eg"><div class="q">例②【核心必會】培養皿有 5 隻細菌，每小時數量變 3 倍。4 小時後有幾隻？</div>
         <div class="step">每小時 ×3 → 4 小時後 = 5 × 3<sup>4</sup> = 5 × 81 = <b>405</b> 隻</div>
         <div class="why">「n 小時後」乘了 n 次——這裡跟一般項的 n−1 不同，因為「現在」是第 0 時、不是第 1 項。看清楚題目從哪裡開始數。</div></div>
+      <div class="eg"><div class="q">例③【進階】利息：本金 10000 元，每年增加 2%，3 年後本利和？</div>
+        <div class="step">每年變成原來的 1 + 2% = 1.02 倍 → 3 年後 = 10000 × 1.02<sup>3</sup> ≈ <b>10612 元</b></div>
+        <div class="why">這題的重點只有一個：認出公比是 <b>1.02</b>（不是 0.02）。「增加 2%」= 乘 1.02。</div></div>
       <div class="rev"><b>1-3 三件武器：</b>① 判斷等比＝相鄰相除都相同（r≠0）　② a<sub>n</sub>=a<sub>1</sub>·r<sup>n−1</sup>　③ 等比中項 b²=ac（答案有 ±）。</div>
     </section>
 
@@ -322,8 +359,9 @@ sup{font-size:.72em}
       </div>
       <div class="qsec"><h3>基本計算</h3>
         <div class="prob"><div class="pq">① 2、6、18、… 的第 7 項</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a<sub>7</sub> = 2 × 3<sup>6</sup> = 2 × 729 = <b>1458</b></div></div></div>
-        <div class="prob"><div class="pq">② 81、27、9、… 的第 6 項</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a<sub>6</sub> = 81 × (1/3)<sup>5</sup> = 81/243 = <b>1/3</b></div></div></div>
+        <div class="prob"><div class="pq">② 81、27、9、… 的第 6 項</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a<sub>6</sub> = 81 × (<span class="frac"><span class="fn">1</span><span class="fd">3</span></span>)<sup>5</sup> = <span class="frac"><span class="fn">81</span><span class="fd">243</span></span> = <b><span class="frac"><span class="fn">1</span><span class="fd">3</span></span></b></div></div></div>
         <div class="prob"><div class="pq">③ 9、x、49 成等比，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x<sup>2</sup> = 9×49 = 441 → x = <b>±21</b></div><div class="why">± 都要。</div></div></div>
+        <div class="prob"><div class="pq">③-2 162 是不是 2、6、18、54、… 的項？第幾項？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2×3<sup>n−1</sup> = 162 → 3<sup>n−1</sup> = 81 = 3<sup>4</sup> → n−1 = 4 → <b>第 5 項</b> ✓</div><div class="why">跟等差的「在不在」同一招：解 n、檢查是不是正整數。</div></div></div>
         <div class="prob"><div class="pq">④ 一張紙對摺一次厚度變 2 倍。厚 0.1 mm 的紙對摺 10 次後厚幾 mm？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">0.1 × 2<sup>10</sup> = 0.1 × 1024 = <b>102.4 mm</b>（約 10 公分！）</div><div class="why">「摺 10 次」乘 10 次——從第 0 次開始數。等比成長快得驚人。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
@@ -333,7 +371,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 國二下 第1章 數列與級數</span><span>V2.7.0</span></div>
+  <div class="page-footer"><span>數學 · 國二下 第1章 數列與級數</span><span>V2.7.2</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>

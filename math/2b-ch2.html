@@ -105,7 +105,7 @@ sup{font-size:.72em}
     <div class="plabel">國二下 · 第2章 函數</div>
     <h1>一台「輸入 x、輸出 y」的機器</h1>
     <p>函數是往後所有圖形章節的語言（國三的二次函數就建在這上面）。這章只有一節，量不大，但「每個 x 恰好對應一個 y」這句話要真的懂。</p>
-    <div class="meta"><span>前置：一次式代入、座標平面</span><span>預計 40 分鐘／節</span><span>單節：2-1 函數與函數圖形</span></div>
+    <div class="meta"><span>前置：代數式代值、一次方程式、負數運算、座標平面與有序數對</span><span>預計 40 分鐘／節</span><span>單節：2-1 函數與函數圖形</span></div>
   </div>
 
   <div class="stabs" role="tablist" aria-label="第2章各節">
@@ -124,12 +124,19 @@ sup{font-size:.72em}
       <div class="plabel2">2-1 · 認識</div>
       <h2>每個 x，恰好對應一個 y</h2>
       <p class="sub">把函數想成一台機器：投入一個 x，一定吐出<b>恰好一個</b> y。</p>
-      <div class="hi"><span class="k">y 是 x 的函數 ⇔ 每一個 x 值，都恰好對應一個 y 值</span></div>
+      <div class="hi"><span class="k">y 是 x 的函數 ⇔ 在題目允許的範圍內，每一個 x 都恰好對應一個 y</span></div>
       <div class="eg"><div class="q">例：這些是函數嗎？</div>
         <div class="step">y = 2x + 1　→ 每個 x 算出一個 y ✓ 是函數</div>
         <div class="step">「y = x 的平方」→ 每個 x 有唯一的平方 ✓ 是函數（x=2 和 x=−2 都給 y=4 沒關係——<b>不同的 x 可以對到同一個 y</b>）</div>
         <div class="step">「y 的平方 = x」→ x=9 時 y 可以是 3 或 −3，一個 x 對到兩個 y ✗ 不是函數</div>
         <div class="why">方向是關鍵：管的是「一個 x 不能對多個 y」；反過來多個 x 對同一個 y 完全合法。</div></div>
+      <div class="note">「允許的範圍」很重要：像 y = 1/x，x = 0 不能代（分母不能為 0），但在 x ≠ 0 的範圍內，每個 x 仍恰好給一個 y——它還是函數。</div>
+      <div class="eg"><div class="q">用表格判斷：是不是函數？</div>
+        <table class="tbl" style="max-width:300px"><tr><th>x</th><td>−2</td><td>−1</td><td>0</td><td>1</td></tr><tr><th>y</th><td>4</td><td>1</td><td>0</td><td>1</td></tr></table>
+        <div class="step">每個 x 都只對到一個 y ✓ <b>是函數</b>（x=−1 和 x=1 都給 y=1 沒關係）</div>
+        <table class="tbl" style="max-width:240px"><tr><th>x</th><td>1</td><td>1</td><td>2</td></tr><tr><th>y</th><td>3</td><td>5</td><td>7</td></tr></table>
+        <div class="step">x = 1 同時對到 3 和 5 ✗ <b>不是函數</b></div>
+        <div class="why">表格題的檢查法：<b>掃 x 那一列，看有沒有重複的 x 配到不同的 y</b>。</div></div>
       <div class="note">函數可以用<b>式子</b>（y=2x+1）、<b>表格</b>（x 和 y 的對照表）、<b>圖形</b>（下下課）三種面貌出現——同一台機器，三種說明書。</div>
     </section>
 
@@ -143,29 +150,61 @@ sup{font-size:.72em}
       <div class="eg"><div class="q">例②【核心必會】f(x) = 3x − 2，若 f(a) = 10，求 a</div>
         <div class="step">3a − 2 = 10 → a = <b>4</b></div>
         <div class="why">「f(a)=10」是反著問：輸出是 10，輸入是多少？——列一次方程式解回去。</div></div>
+      <div class="eg"><div class="q">例③【進階】f(x) = 2x − 3，求 f(a+1)，並跟 f(a)+1 比較</div>
+        <div class="step">把<b>整個 a+1</b> 代進 x 的位置：f(a+1) = 2(a+1) − 3 = <b>2a − 1</b></div>
+        <div class="step">而 f(a) + 1 = (2a−3) + 1 = 2a − 2 → <b>f(a+1) ≠ f(a) + 1</b></div>
+        <div class="why">括號裡是什麼，就整團代進去。f(a+1) 是「先加 1 再進機器」；f(a)+1 是「先進機器再加 1」——順序不同、結果不同。</div></div>
       <div class="warn"><b>f(2) 不是 f 乘以 2</b>——f 是機器的名字，不是數。f(2) 整個是一個記號，讀作「f 在 2 的值」。</div>
     </section>
 
     <section class="lesson" data-s="0" data-l="2">
       <div class="plabel2">2-1 · 函數圖形</div>
       <h2>把每一組 (x, y) 畫到座標平面上</h2>
-      <p class="sub">函數圖形＝所有 (x, f(x)) 點的集合。一次函數 y = ax + b 的圖形是一條直線。</p>
+      <p class="sub">函數圖形＝所有 (x, f(x)) 點的集合。</p>
+      <table class="tbl">
+        <tr><th>式子</th><th>名稱</th><th>圖形</th></tr>
+        <tr><td>y = ax + b（<b>a ≠ 0</b>）</td><td>一次函數</td><td>斜直線</td></tr>
+        <tr><td>y = b（即 a = 0）</td><td>常數函數</td><td>水平線</td></tr>
+        <tr><td>x = c</td><td>不是 y 對 x 的函數</td><td>鉛直線</td></tr>
+      </table>
       <div class="eg"><div class="q">例①【核心必會】畫 y = 2x − 1</div>
         <table class="tbl" style="max-width:300px"><tr><th>x</th><td>−1</td><td>0</td><td>1</td><td>2</td></tr><tr><th>y</th><td>−3</td><td>−1</td><td>1</td><td>3</td></tr></table>
-        <svg role="img" viewBox="0 0 220 220" width="220" height="220" aria-label="y=2x−1 圖形">
+        <svg role="img" viewBox="0 0 220 220" width="220" height="220" aria-label="y=2x−1 圖形：通過 (0,−1) 與 (1,1) 的直線，含刻度">
           <line x1="10" y1="110" x2="210" y2="110" stroke="#CBC0E0"/>
           <line x1="110" y1="10" x2="110" y2="210" stroke="#CBC0E0"/>
-          <line x1="30" y1="200" x2="190" y2="40" stroke="#5B57C2" stroke-width="1.5"/>
+          <line x1="30" y1="107" x2="30" y2="113" stroke="#756C89"/><line x1="50" y1="107" x2="50" y2="113" stroke="#756C89"/><line x1="70" y1="107" x2="70" y2="113" stroke="#756C89"/><line x1="90" y1="107" x2="90" y2="113" stroke="#756C89"/><line x1="130" y1="107" x2="130" y2="113" stroke="#756C89"/><line x1="150" y1="107" x2="150" y2="113" stroke="#756C89"/><line x1="170" y1="107" x2="170" y2="113" stroke="#756C89"/><line x1="190" y1="107" x2="190" y2="113" stroke="#756C89"/><line x1="107" y1="190" x2="113" y2="190" stroke="#756C89"/><line x1="107" y1="170" x2="113" y2="170" stroke="#756C89"/><line x1="107" y1="150" x2="113" y2="150" stroke="#756C89"/><line x1="107" y1="130" x2="113" y2="130" stroke="#756C89"/><line x1="107" y1="90" x2="113" y2="90" stroke="#756C89"/><line x1="107" y1="70" x2="113" y2="70" stroke="#756C89"/><line x1="107" y1="50" x2="113" y2="50" stroke="#756C89"/><line x1="107" y1="30" x2="113" y2="30" stroke="#756C89"/>
+          <text x="148" y="106" font-size="9" fill="#756C89">2</text><text x="66" y="106" font-size="9" fill="#756C89">−2</text>
+          <text x="114" y="74" font-size="9" fill="#756C89">2</text><text x="114" y="154" font-size="9" fill="#756C89">−2</text>
+          <text x="103" y="122" font-size="9" fill="#756C89">0</text>
+          <line x1="70" y1="210" x2="170" y2="10" stroke="#5B57C2" stroke-width="1.5"/>
+          <polygon points="170,10 165,20 172,18" fill="#5B57C2"/>
+          <polygon points="70,210 75,200 68,202" fill="#5B57C2"/>
           <circle cx="90" cy="170" r="3" fill="#5B57C2"/><circle cx="110" cy="130" r="3" fill="#5B57C2"/>
           <circle cx="130" cy="90" r="3" fill="#5B57C2"/><circle cx="150" cy="50" r="3" fill="#5B57C2"/>
+          <text x="134" y="94" font-size="9" fill="#2A2335">(1,1)</text>
+          <text x="154" y="54" font-size="9" fill="#2A2335">(2,3)</text>
           <text x="204" y="104" font-size="10" fill="#756C89">x</text><text x="114" y="18" font-size="10" fill="#756C89">y</text>
-          <text x="160" y="36" font-size="11" fill="#5B57C2">y=2x−1</text></svg>
-        <div class="step">描四個點 → 它們在同一直線上 → 連成直線（往兩端延伸）</div>
-        <div class="why">畫一次函數其實描<b>兩點</b>就夠（兩點決定一直線），多描一點當檢查。</div></div>
+          <text x="176" y="36" font-size="11" fill="#5B57C2">y=2x−1</text></svg>
+        <div class="step">描四個點 → 它們在同一直線上 → 連成直線（兩端加箭頭表示持續延伸）</div>
+        <div class="why">畫一次函數其實描<b>兩點</b>就夠（兩點決定一直線），多描一點當檢查。<b>能連成直線是因為這是一次函數</b>——不是所有函數的點都能拿直線連。</div></div>
+      <div class="warn"><b>是否連線，看兩件事：</b>① 函數類型——一次函數才是直線（像 y = x² 的點就不能用直線硬連）；② x 的取值範圍——若 x 只取指定的幾個值（例如只有整數），圖形就<b>只有那幾個點</b>，不連線。</div>
       <div class="eg"><div class="q">例②【核心必會】點 (2,3)、(3,4) 在 y = 2x−1 的圖形上嗎？</div>
         <div class="step">(2,3)：2×2−1 = 3 ✓ <b>在</b>　；　(3,4)：2×3−1 = 5 ≠ 4 ✗ <b>不在</b></div>
         <div class="why">「在圖形上」＝代入後等式成立。不用畫圖，代一下就知道。</div></div>
       <div class="note"><b>兩個特例：</b>y = 3（常數函數）的圖形是<b>水平線</b>——每個 x 都輸出 3，是函數 ✓。而鉛直線 x = 2 上，x=2 對到無限多個 y——<b>不是</b>函數的圖形。</div>
+      <div class="eg"><div class="q">鉛直線判別法：一刀切下去，看碰到幾次</div>
+        <svg role="img" viewBox="0 0 320 110" width="320" height="110" aria-label="鉛直線判別法三例：斜直線是、拋物線是、圓不是">
+          <line x1="10" y1="90" x2="95" y2="20" stroke="#5B57C2" stroke-width="1.5"/>
+          <line x1="55" y1="8" x2="55" y2="102" stroke="#B7476A" stroke-dasharray="4 3"/>
+          <text x="30" y="106" font-size="10" fill="#3E8F79">✓ 是</text>
+          <path d="M115 25 Q160 130 205 25" fill="none" stroke="#5B57C2" stroke-width="1.5"/>
+          <line x1="160" y1="8" x2="160" y2="102" stroke="#B7476A" stroke-dasharray="4 3"/>
+          <text x="142" y="106" font-size="10" fill="#3E8F79">✓ 是</text>
+          <circle cx="270" cy="55" r="34" fill="none" stroke="#5B57C2" stroke-width="1.5"/>
+          <line x1="270" y1="8" x2="270" y2="102" stroke="#B7476A" stroke-dasharray="4 3"/>
+          <text x="248" y="106" font-size="10" fill="#B7476A">✗ 不是</text></svg>
+        <div class="step">在圖上任畫鉛直線（紅虛線）：<b>每條至多交圖形一次 → 是</b>函數圖形；<b>有一條交兩次以上 → 不是</b></div>
+        <div class="why">鉛直線 x = k 就是在問「x = k 對到幾個 y」——交兩點，就是一個 x 對到兩個 y。圓被切到上下兩點，所以不是。</div></div>
     </section>
 
     <section class="lesson" data-s="0" data-l="3">
@@ -184,22 +223,32 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">① f(x) = −2x + 7，求 f(0) 與 f(3)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">f(0) = <b>7</b>；f(3) = −6+7 = <b>1</b></div></div></div>
         <div class="prob"><div class="pq">② 承①，f(a) = −1，求 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">−2a+7 = −1 → a = <b>4</b></div></div></div>
         <div class="prob"><div class="pq">③ 點 (−1, −3) 在 y = 2x − 1 的圖形上嗎？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2×(−1)−1 = −3 ✓ <b>在</b></div></div></div>
-        <div class="prob"><div class="pq">④ 在紙上畫出 y = −x + 2 的圖形（描點法）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">如 (0,2)、(2,0) 兩點連直線（再描 (1,1) 檢查共線）。</div><div class="why">往右走 1、往下走 1 的直線；跟 y=2x−1 比較斜的方向。</div></div></div>
+        <div class="prob"><div class="pq">④ 在下方坐標紙畫出 y = −x + 2 的圖形（描點法）</div>
+          <svg role="img" viewBox="0 0 180 180" width="180" height="180" aria-label="空白坐標紙 −4 到 4">
+            <g stroke="#EFEAF7"><line x1="10" y1="10" x2="10" y2="170"/><line x1="30" y1="10" x2="30" y2="170"/><line x1="50" y1="10" x2="50" y2="170"/><line x1="70" y1="10" x2="70" y2="170"/><line x1="90" y1="10" x2="90" y2="170"/><line x1="110" y1="10" x2="110" y2="170"/><line x1="130" y1="10" x2="130" y2="170"/><line x1="150" y1="10" x2="150" y2="170"/><line x1="170" y1="10" x2="170" y2="170"/><line x1="10" y1="10" x2="170" y2="10"/><line x1="10" y1="30" x2="170" y2="30"/><line x1="10" y1="50" x2="170" y2="50"/><line x1="10" y1="70" x2="170" y2="70"/><line x1="10" y1="90" x2="170" y2="90"/><line x1="10" y1="110" x2="170" y2="110"/><line x1="10" y1="130" x2="170" y2="130"/><line x1="10" y1="150" x2="170" y2="150"/><line x1="10" y1="170" x2="170" y2="170"/></g>
+            <line x1="10" y1="90" x2="170" y2="90" stroke="#CBC0E0"/>
+            <line x1="90" y1="10" x2="90" y2="170" stroke="#CBC0E0"/>
+            <text x="163" y="86" font-size="9" fill="#756C89">x</text><text x="94" y="18" font-size="9" fill="#756C89">y</text>
+            <text x="128" y="86" font-size="8" fill="#756C89">2</text><text x="94" y="54" font-size="8" fill="#756C89">2</text><text x="83" y="100" font-size="8" fill="#756C89">0</text></svg>
+          <button class="toggle">顯示解答</button><div class="ans"><div class="st">描 (0,2)、(2,0)，連直線（再描 (1,1) 檢查共線）；兩端加箭頭。</div><div class="why">往右走 1、往下走 1 的直線；跟 y=2x−1 比較斜的方向。因為是一次函數（a=−1≠0），才可以連成直線。</div></div></div>
+        <div class="prob"><div class="pq">⑤【讀圖】某函數圖形上只有四個點：(−1,2)、(0,3)、(1,1)、(2,3)。(1) f(−1) = ?　(2) f(x)=3 時，x 可能是哪些？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) f(−1) = <b>2</b>　(2) y=3 的點有 (0,3) 和 (2,3) → x = <b>0 或 2</b></div><div class="why">一個 y 對到兩個 x 完全合法——這正是「多 x 對一 y 可以」的圖形版。</div></div></div>
+        <div class="prob"><div class="pq">⑥【判斷】用鉛直線判別法：A 斜直線、B 圓、C 水平線，哪些是函數圖形？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>A、C 是</b>；B 不是（鉛直線會切到圓的上下兩點）。</div></div></div>
+        <div class="prob"><div class="pq">⑦【表格描點】x = −2、−1、0、1、2，f(x) = 4、1、0、1、4。在紙上描出這五個點</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">描 (−2,4)(−1,1)(0,0)(1,1)(2,4)。<b>只畫這五個點</b>——題目沒給函數規則，不能自行連線。</div><div class="why">（這五個點其實落在 y=x² 上——就算連，也不會是直線。國三會正式見面。）</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">f(2) 當乘法 → <b>A</b>；代負數沒加括號 → <b>B</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第2章完成——「輸入輸出」的語言到手了。<a href="index.html">回數學首頁 →</a></div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算與圖形 ①～⑦）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算與圖形 ①～⑦ 都自己完成、對過答案（④⑦ 真的動手畫）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第2章完成——「輸入輸出」的語言到手了。<a href="index.html">回數學首頁 →</a></div></div>
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 國二下 第2章 函數</span><span>V2.7.0</span></div>
+  <div class="page-footer"><span>數學 · 國二下 第2章 函數</span><span>V2.7.2</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-var SL=[4], cS=0, cL=[0,0,0];
+var SL=[4], cS=0, cL=[0];
 var stabs=document.querySelectorAll('.stab');
 function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
 function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
