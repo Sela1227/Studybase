@@ -217,6 +217,8 @@ sup{font-size:.72em}
     <section class="lesson on" data-s="1" data-l="0">
       <div class="plabel2">十字交乘 · 基本型</div>
       <h2>x<sup>2</sup>+bx+c：找兩數，積 c、和 b</h2>
+      <div class="hi"><span class="k">分解前四項檢查：① 降冪排列　② 提公因式　③ 處理負號或分數（提出 − 或公分母分之一）　④ 再選分解法</span></div>
+      <div class="note">看到式子<b>先別急著十字交乘</b>——四項檢查掃一遍，很多「怪式子」整理完就變回熟悉的標準型。</div>
       <p class="sub">二次三項式先看是不是完全平方；不是的話，再找整數因數做十字交乘：把 x²+bx+c 拆成 (x+p)(x+q)。找不到合適的整數組合時，在本章範圍就可能不能再分解。</p>
       <div class="hi"><span class="k">x<sup>2</sup>+bx+c = (x+p)(x+q)，其中 p×q = c、p+q = b</span></div>
       <div class="eg"><div class="q">例：x<sup>2</sup> + 5x + 6</div>
@@ -308,7 +310,8 @@ x ＿／ +3
       <div class="plabel2" style="margin-top:18px">題型三 · 「何者是因式」——先展開整理再分解</div>
       <div class="eg"><div class="q">例③【核心必會】下列何者是 (x+2)(2x+1) − 5 的因式？</div>
         <div class="step">先展開：2x²+5x+2−5 = 2x²+5x−3 → 十字交乘 = <b>(2x−1)(x+3)</b></div>
-        <div class="why"><b>不能直接看括號猜</b>——(x+2) 不是因式（−5 破壞了它）。「減一個數」的式子一律先展開合併，再重新分解，因式以分解後的為準。</div></div>
+        <div class="why"><b>不能直接看括號猜</b>——(x+2) 不是因式（−5 破壞了它）。</div></div>
+      <div class="warn"><b>原式裡看得到某個括號，不代表它是整個多項式的因式。</b>括號乘積後面還有加減其他數時，一律<b>先去括號、合併，再重新分解</b>——因式只認分解後的結果。</div>
 
       <div class="plabel2" style="margin-top:18px">題型四 · 面積與一邊已知，求另一邊</div>
       <div class="eg"><div class="q">例④【進階】長方形面積 4x²−10x−6，x 為整數，一邊長 15，另一邊可能是？</div>
@@ -326,7 +329,7 @@ x ＿／ +3
       <div class="eg"><div class="q">例⑥【核心必會】(99³ + 2×99² + 99) ÷ (99² + 99) = ?</div>
         <div class="step">設 x = 99：原式 = (x³+2x²+x)/(x²+x) = x(x+1)²/[x(x+1)] = x+1</div>
         <div class="step">代回：= <b>100</b></div>
-        <div class="why">巨大數字先別代（第1章的老口訣）——設 x、上下<b>各自分解到底</b>、整組約分，最後才代回。分子分母的公因式 x(x+1) 一次約乾淨。</div></div>
+        <div class="why">巨大數字先別代（第1章的老口訣）——設 x、上下<b>各自分解到底</b>、整組約分，最後才代回。<b>紅線：約分只能約掉「完整的因式」，不能跨越加減號約掉單獨的項</b>（x²+x 裡的 x 不能單獨跟分子的 x 對消——要先分解成 x(x+1) 才約得動）。</div></div>
     </section>
 
     <section class="lesson" data-s="1" data-l="4">
@@ -357,6 +360,7 @@ x ＿／ +3
 
       <div class="plabel2" style="margin-top:18px">題型十一 · 拼板題：塊數當係數</div>
       <div class="hi"><span class="k">a 塊 x×x ＋ b 塊 x×1 ＋ c 塊 1×1 拼成長方形 ⇔ ax²+bx+c 可分解；兩邊長 = 兩個因式</span></div>
+      <div class="note"><b>面積相同只是必要條件，不是充分條件</b>——選項面積可能全部一樣，仍必須用因式分解確認紙片真的能依「因式所代表的邊長」排列。</div>
       <div class="eg"><div class="q">例⑤【進階】2 塊邊長 4 的正方形、5 塊 4×1、2 塊 1×1，拼成的長方形是？</div>
         <div class="step">設 x=4：2x²+5x+2 = (2x+1)(x+2) → 邊長 = 2×4+1 = 9 與 4+2 = 6 → <b>9 × 6</b></div>
         <div class="step">驗算：2×16+5×4+2 = 54 = 9×6 ✓</div>
@@ -367,6 +371,7 @@ x ＿／ +3
         <div class="step">分解：(a+4)(a−2) = b。b 為正整數 → a−2 ≥ 1 → a ≥ 3</div>
         <div class="step">逐列：a=3→7、4→16、5→27、6→40 ✓；a=7→55 ＞ 50 ✗ → <b>4 組</b></div>
         <div class="why">先分解看出「a 從哪裡開始合法」（b 要正 → a≥3），再逐列到超過上限為止——跟第2章的範圍篩同一個精神：<b>列出來，不多不漏</b>。</div></div>
+      <div class="rev"><b>整章一條流程：</b>先整理（四項檢查）→ 選方法 → 完整分解 → <b>展開檢查（三查）</b> → 套回題意（邊長？因式？個數？）。分解不是終點——題目問什麼，最後一步就翻譯成什麼。</div>
     </section>
 
 <section class="lesson" data-s="1" data-l="5">
@@ -388,7 +393,11 @@ x ＿／ +3
         <div class="prob"><div class="pq">④ 分解 2x<sup>2</sup> + 5x + 2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= (2x + 1)(x + 2)</div><div class="why">交叉 4x+x=5x ✓。</div></div></div>
         <div class="prob"><div class="pq">⑤ 分解 2x<sup>2</sup> − 8（先提再分）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">= 2(x<sup>2</sup> − 4) = 2(x + 2)(x − 2)</div><div class="why">先提 2，括號裡是平方差，還要再分。</div></div></div>
       </div>
-              <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
+              <p style="font-size:13px;color:var(--text-2);margin-top:14px">重複錯題型・無提示練習（不給方法，自己判斷）：</p>
+        <div class="prob"><div class="pq">⑦ 邊長 5x 的正方形剪去邊長 4 的正方形，剩餘拼成一邊為 5x−4 的長方形，另一邊？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(5x)²−4² = (5x−4)(5x+4) → <b>5x+4</b></div><div class="why">剩餘面積 = 新長方形的長 × 寬。</div></div></div>
+        <div class="prob"><div class="pq">⑧ 4x²+(k+2)x+25 可分解成一次式的平方，k 可能為 a 或 b（a＞b），求 a−b</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(2x±5)² 中間 = ±20x → k+2 = ±20 → k = 18 或 −22 → a−b = 18−(−22) = <b>40</b></div></div></div>
+        <div class="prob"><div class="pq">⑨ 兩長方形併排組成大長方形，面積分別為 pq−3p−q+3 與 pq−3p+q−3，共同邊為 q−3 的鄰邊 PE = ?（即求另一塊的資訊前，先分解第一塊）</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">pq−3p−q+3 = p(q−3)−(q−3) = (p−1)(q−3) → 兩邊為 <b>p−1</b> 與 q−3</div><div class="why">分組分解出的兩個因式就是兩邊——重排、分組、提括號，一氣呵成。</div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測</b>（考卷原題——先自己完整作答，再開解答；標【進階】者選做）：</p>
         <div class="prob"><div class="pq">再測① 邊長 3x 的正方形剪去邊長 7 的正方形，剩餘拼成一邊為 3x−7 的長方形，另一邊？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(3x)²−7² = (3x−7)(3x+7) → <b>3x + 7</b></div></div></div>
         <div class="prob"><div class="pq">再測②【進階】長方形 PQRS 由甲、乙組成，甲面積 = 1−a−b+ab、乙面積 = ab+a−b−1（長寬皆大於 1），PE = b−1，求 EF</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">甲：1−a−b+ab = (1−a) − b(1−a) = (1−a)(1−b) = <b>(a−1)(b−1)</b>（長寬＞1，取正因式）</div><div class="st">甲 = PE × EF = (b−1)·EF → EF = <b>a − 1</b>；驗證：乙 = a(b+1)−(b+1) = (a−1)(b+1) ✓ 共同邊 a−1</div><div class="why">「長與寬都大於 1」這句話就是要你把 (1−a)(1−b) 換成正的 (a−1)(b−1)——題目每句話都有用。</div></div></div>
         <div class="prob"><div class="pq">再測③ 計算 (1998³ + 3×1998² + 2×1998) ÷ (1998² + 1998)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設 x = 1998：x(x+1)(x+2) / [x(x+1)] = x+2 = <b>2000</b></div><div class="why">分子 x³+3x²+2x = x(x²+3x+2) = x(x+1)(x+2)——先提 x 再十字交乘，兩步都要做完才約得動。</div></div></div>
@@ -411,7 +420,7 @@ x ＿／ +3
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第3章 因式分解</span><span>V2.7.8</span></div>
+  <div class="page-footer"><span>數學 · 第3章 因式分解</span><span>V2.7.9</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
