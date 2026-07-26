@@ -219,7 +219,7 @@ input[type=number] { width: 110px; }
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-top">
-    <div class="hdr-title">第五章：元素及化合物</div><div style="max-width:720px;margin:0 auto;padding:0 20px"><div class="poscard"><div class="plabel">化學 · 第五章 物質的世界</div><h1>先把物質分好類，後面兩章才有地基</h1><p>依賴鏈：本章 → 第6章（原子與分子）→ 第7章（化學反應）。純物質與混合物、元素與化合物的判斷，是之後每一章選擇題的第一步。內容分 8 課，每課約 20～30 分鐘。</p><div class="meta"><span>結尾有 18 題總挑戰＋錯題登記</span></div></div></div>
+    <div class="hdr-title">第五章：元素及化合物</div><div style="max-width:720px;margin:0 auto;padding:0 20px"><div class="poscard"><div class="plabel">化學 · 第五章 物質的世界</div><h1>先把物質分好類，後面兩章才有地基</h1><p>依賴鏈：本章 → 第6章（原子與分子）→ 第7章（化學反應）。純物質與混合物、元素與化合物的判斷，是之後每一章選擇題的第一步。內容分 8 課，每課約 20～30 分鐘。核心路徑：照課次順序走，標「選讀」的課段考前可以跳過；章末<b>測驗一定要做</b>。</p><div class="meta"><span>結尾有 18 題總挑戰＋錯題登記</span></div></div></div>
     <div class="hdr-prog" id="hdr-prog">第 1 課，共 8 課</div>
   </div>
   <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
@@ -233,7 +233,7 @@ input[type=number] { width: 110px; }
   <div class="lpill" onclick="goLesson(3)">④化合物</div>
   <div class="lpill" onclick="goLesson(4)">⑤金屬vs非金屬</div>
   <div class="lpill" onclick="goLesson(5)">⑥週期表</div>
-  <div class="lpill" onclick="goLesson(6)">⑦重要元素</div>
+  <div class="lpill" onclick="goLesson(6)">⑦重要元素・選讀</div>
   <div class="lpill" onclick="goLesson(7)">⑧挑戰測驗</div>
 </div>
 
@@ -861,11 +861,11 @@ input[type=number] { width: 110px; }
 </div>
 
 <!-- ================= LESSON 6 ================= -->
-<div class="lesson" id="L6">
+<div class="lesson ext-lesson" id="L6">
   <div class="hook">
     <div class="hook-label">課前提問</div>
     <h2>你的手機、飛機機身、鑽石戒指、鉛筆筆芯，都跟同樣的幾種元素有關。</h2>
-    <p>這節課認識幾個在日常生活中最重要的元素，弄清楚每個元素有什麼特別的地方、能做什麼用途。</p>
+    <p>這節課認識幾個在日常生活中最重要的元素，弄清楚每個元素有什麼特別的地方、能做什麼用途。</p></div><button class="ext-toggle">展開延伸內容（選讀・段考前可跳過）</button><div style="display:none">
   </div>
 
   <div class="sec">
@@ -975,7 +975,7 @@ input[type=number] { width: 110px; }
     display:flex;justify-content:space-between;align-items:center;
     font-size:11px;color:#A89FBC;padding-bottom:80px;">
     <span>化學・第五章 · 阿蔓明道國中復習專班</span>
-    <span>V2.13.0</span>
+    <span>V2.14.0</span>
   </div>
 </div>
 
@@ -1500,5 +1500,5 @@ function retryQuiz(){
 // ── GENERAL ──
 function showPanel(){}  // stub
 </script>
-<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script></body>
+<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script><script>document.querySelectorAll('.ext-lesson').forEach(function(l){var btn=l.querySelector('.ext-toggle');if(!btn)return;var wrap=document.createElement('div');while(btn.nextSibling){wrap.appendChild(btn.nextSibling);}wrap.style.display='none';l.appendChild(wrap);btn.setAttribute('aria-expanded','false');btn.addEventListener('click',function(){var s=wrap.style.display==='none';wrap.style.display=s?'block':'none';btn.textContent=s?'收起延伸內容':'展開延伸內容（選讀・段考前可跳過）';btn.setAttribute('aria-expanded',s?'true':'false');});});</script></body>
 </html>

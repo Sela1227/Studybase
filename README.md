@@ -44,6 +44,7 @@ physics/  index（尚未開始）
 改 `sw.js` 第 2 行 cache 名（隨版號）→ 舊快取於 activate 清除。CORE 預快取：三科首頁、主首頁、offline、兩個技能卡頁、plan、css、圖示；其餘頁面開過即動態快取，未開過離線時導向 offline.html。
 
 ## 版本歷史（精要）
+- **V2.14.0** 化學三層化：三章定「核心路徑」（poscard 指引：選讀課段考前可跳過、測驗必做）；六課標〔選讀〕並預設收合（ch5 重要元素、ch6 原子模型演進/特殊化學式/亞佛加厥數/化學式種類、ch7 鹼土族與鹵素）——lpill 加註、課首「展開延伸內容」鈕、內容 JS 包裹收合（aria-expanded）
 - **V2.13.0** 頂欄/底欄內容對齊 720px 內容欄（返回鍵不再貼死左上；ch5 頂欄掛入 .topbar）；技能卡改「一次一張」（上一張/下一張＋knav 切換＋#錨點深連結＋繼續上次進度，位置記在 sb-cur-k/c）＋頁首收合（說明入「怎麼使用？」）；計畫頁首改「今天：Day N · 標題＋完成 x/54＋開始今天任務」（依開始日期或首個未完成日推算）
 - **V2.12.0** 化學技能卡 7 張；plan KPI 自動彙整＋輪次歸檔/匯出/匯入；offline.html＋sw 離線導向；抽出 css/lesson.css、js/lesson-ui.js；README/CLAUDE/DESIGN/handoff 全面重寫（先前 README/CLAUDE 為空檔，本版起補正）
 - V2.10.0 化學四頁版面統一（定位卡＋errlog＋gate；ch5 舊違規經授權歸零）

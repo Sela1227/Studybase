@@ -196,7 +196,7 @@ strong{font-weight:500;color:var(--text-1);}
   <span class="topbar-title">第七章 化學反應</span>
   <div class="topbar-prog">
     <div class="prog-label" id="pg-l">7-1 · 1/4</div>
-    <div class="prog-bar"><div class="prog-fill" id="pg-f"></div><div class="wrap-pos"><div class="poscard"><div class="plabel">化學 · 第七章 化學反應</div><h1>反應前後，什麼變了、什麼守恆</h1><p>依賴鏈：第6章（化學式）→ 本章。核心三件事：質量守恆、化學方程式與平衡、反應計量——理化計算題的大本營，正好接上數學的比例與方程式能力。每節約 40 分鐘。</p><div class="meta"><span>前置：第6章 化學式、數學一次方程式與比例</span><span>每節後有測驗＋錯題登記</span></div></div></div></div>
+    <div class="prog-bar"><div class="prog-fill" id="pg-f"></div><div class="wrap-pos"><div class="poscard"><div class="plabel">化學 · 第七章 化學反應</div><h1>反應前後，什麼變了、什麼守恆</h1><p>依賴鏈：第6章（化學式）→ 本章。核心三件事：質量守恆、化學方程式與平衡、反應計量——理化計算題的大本營，正好接上數學的比例與方程式能力。每節約 40 分鐘。核心路徑：照課次順序走，標「選讀」的課段考前可以跳過；每節<b>測驗一定要做</b>。</p><div class="meta"><span>前置：第6章 化學式、數學一次方程式與比例</span><span>每節後有測驗＋錯題登記</span></div></div></div></div>
   </div>
 </div>
 
@@ -613,7 +613,7 @@ strong{font-weight:500;color:var(--text-1);}
     <div class="lpill on" onclick="gL(2,0)">① 化學計量基礎</div>
     <div class="lpill" onclick="gL(2,1)">② 計算例題</div>
     <div class="lpill" onclick="gL(2,2)">③ 莫耳濃度</div>
-    <div class="lpill" onclick="gL(2,3)">④ 補充：鹼土族與鹵素</div>
+    <div class="lpill" onclick="gL(2,3)">④ 鹼土族與鹵素・選讀</div>
     <div class="lpill" onclick="gL(2,4)">測驗</div>
   </div>
 
@@ -806,9 +806,9 @@ strong{font-weight:500;color:var(--text-1);}
     </ul></div>
   </div>
 
-  <div class="lesson" id="S2L3">
+  <div class="lesson ext-lesson" id="S2L3">
     <div class="page-label">7-3 · 補充★</div>
-    <div class="page-title">鹼土族與鹵素的化學性質</div>
+    <div class="page-title">鹼土族與鹵素的化學性質</div><button class="ext-toggle">展開延伸內容（選讀・段考前可跳過）</button>
     <div class="page-sub">不同的金屬元素對試劑的反應不同——利用這個差異，我們可以「鑑定」溶液中含有哪種元素。</div>
 
     <div class="sec-head"><span class="sec-head-label">鹼土族 — 加入 Na₂CO₃(aq) 的反應</span><div class="sec-head-line"></div></div>
@@ -949,7 +949,7 @@ strong{font-weight:500;color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第七章 化學反應 · 阿蔓明道國中復習專班</span>
-    <span>V2.13.0</span>
+    <span>V2.14.0</span>
   </div>
 </div>
 
@@ -1248,5 +1248,5 @@ s4:[
 ]
 };
 </script>
-<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script></body>
+<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script><script>document.querySelectorAll('.ext-lesson').forEach(function(l){var btn=l.querySelector('.ext-toggle');if(!btn)return;var wrap=document.createElement('div');while(btn.nextSibling){wrap.appendChild(btn.nextSibling);}wrap.style.display='none';l.appendChild(wrap);btn.setAttribute('aria-expanded','false');btn.addEventListener('click',function(){var s=wrap.style.display==='none';wrap.style.display=s?'block':'none';btn.textContent=s?'收起延伸內容':'展開延伸內容（選讀・段考前可跳過）';btn.setAttribute('aria-expanded',s?'true':'false');});});</script></body>
 </html>

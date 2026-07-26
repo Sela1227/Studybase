@@ -1,4 +1,4 @@
-# CLAUDE.md — StudyBase 工作準則（V2.13.0）
+# CLAUDE.md — StudyBase 工作準則（V2.14.0）
 
 ## 專案速覽
 單一學生（阿蔓，2026.8 升國三，會考 2027.5）的復習站。21 HTML、純靜態、GitHub Pages。學習方法論見專案知識《教材設計_常駐設定》；每頁怎麼寫見《定稿品質規範》；視覺見 DESIGN.md。
@@ -20,10 +20,9 @@
 ## 檔案地圖（21 頁）
 math：ch1–ch5、2b-ch1–ch4、3a-ch1、skills、plan、index／chemistry：ch5–ch7、exam1、skills、index／physics：index／根：index、offline。
 
-## 共用層（V2.13.0 起）
+## 共用層（V2.14.0 起）
 css/tokens.css＋css/components.css 已被全站引用並覆蓋內嵌樣式——改按鍵/導覽/焦點一律改這裡，不再逐頁修。按鍵四階映射：primary=.gate .gbtn/.gate .btn/#check-btn；secondary=.hbtn/.qbtn/.inter-btn/.gbtn2；ghost=.prob .toggle；danger=.rbtn。文字字典：顯示解答/收起解答/批改/重新作答/完成本節/← 上一課/下一課 →。
 
 ## Backlog
-- 化學三層化（核心路徑／延伸收合）——需逐段內容判斷，單獨一輪
 - 3a-ch1 相似形依新課本目次重構；國三上圓、幾何證明
 - 兩週試行後依四指標數據調整
