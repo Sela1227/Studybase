@@ -1,8 +1,8 @@
 /* StudyBase PWA service worker */
-const CACHE = 'studybase-v2.8.1';
+const CACHE = 'studybase-v2.9.0';
 const CORE = [
   './', './index.html', './css/main.css',
-  './chemistry/index.html', './math/index.html', './physics/index.html',
+  './chemistry/index.html', './math/index.html', './physics/index.html', './math/skills.html', './math/plan.html',
   './favicon/app-192.png', './favicon/app-512.png', './favicon/site.webmanifest'
 ];
 self.addEventListener('install', e => {

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>兩週試行計畫 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.prereq{border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface2);padding:14px 16px;margin:14px 0}
+.prereq .t{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--text-2);text-transform:uppercase;margin-bottom:8px}
+.prereq p{font-size:14px;margin:6px 0}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.repr-eq small{color:var(--text-2);font-size:12px}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:17px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+sup{font-size:.72em}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll .tbl{min-width:620px}
+svg{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
+.frac{display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;font-family:Georgia,serif}
+.frac .fn{display:block;padding:0 5px;border-bottom:1px solid currentColor}
+.frac .fd{display:block;padding:0 5px}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.eg,.mcq,.prob,.errlog,.hi,.note,.rev{break-inside:avoid}body{background:#fff}}
+
+.day{border:1px solid var(--border);border-radius:var(--r);background:var(--surface);padding:14px 16px;margin:14px 0}
+.day h3{margin:0 0 8px;font-size:15px}
+.task{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--border);font-size:14px}
+.task:first-of-type{border-top:none}
+.task input[type=checkbox]{width:20px;height:20px;margin-top:1px;accent-color:#5B57C2}
+.task label{cursor:pointer}
+.task .tmin{font-size:11.5px;color:var(--text-3);white-space:nowrap;margin-left:auto;padding-left:8px}
+.kpi{display:grid;grid-template-columns:1fr 84px;gap:6px 10px;align-items:center;font-size:13.5px;margin:8px 0}
+.kpi input{border:1px solid var(--border);border-radius:var(--r);padding:8px;font-size:14px;width:100%;background:var(--bg);color:var(--text)}
+.prog{font-size:13px;color:var(--text-2);margin:6px 0 0}
+.wk{font-size:12px;color:var(--accent);letter-spacing:.08em;margin:26px 0 4px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">兩週試行計畫</span></div>
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">學習系統 · 試行</div>
+    <h1>兩週計畫：每天 25～30 分鐘，一天一個能力</h1>
+    <p>固定節奏：<b>5 分回鍋昨天一題（不看筆記）→ 8 分讀一張技能卡 → 10 分做題 → 5 分訂正＋寫一句錯因</b>。Day 4／10 是混合日（隔三天把舊卡混進來），Day 7／14 是原錯題驗收日。勾選會存在這台裝置上；換裝置要重勾。</p>
+    <div class="meta"><span>搭配 <a href="skills.html">技能卡</a></span><span>週驗收才碰原錯題</span><span>進度 <span id="prog">0/55</span></span></div>
+  </div>
+  <div class="wk">第一週</div><div class="day" id="d1"><h3>Day 1 · 開張：平方差</h3><div class="task"><input type="checkbox" id="p14-1-0" data-store="p14-1-0"><label for="p14-1-0">讀 <a href="skills.html#k1">卡1 面積差=平方差</a> 四格＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-1-1" data-store="p14-1-1"><label for="p14-1-1">做卡1 題②③④</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-1-2" data-store="p14-1-2"><label for="p14-1-2">做卡1 題⑤（辨認）＋訂正、寫一句錯因</label><span class="tmin">7分</span></div><div class="note" style="margin-top:10px">第一天沒有「昨日回鍋」——明天開始每天第一件事都是它。</div></div><div class="day" id="d2"><h3>Day 2 · 超過量翻譯</h3><div class="task"><input type="checkbox" id="p14-2-0" data-store="p14-2-0"><label for="p14-2-0">回鍋：不看筆記重做卡1 題③</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-2-1" data-store="p14-2-1"><label for="p14-2-1">讀 <a href="skills.html#k2">卡2 超過量</a> 四格＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-2-2" data-store="p14-2-2"><label for="p14-2-2">做卡2 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-2-3" data-store="p14-2-3"><label for="p14-2-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d3"><h3>Day 3 · 完全平方辨認</h3><div class="task"><input type="checkbox" id="p14-3-0" data-store="p14-3-0"><label for="p14-3-0">回鍋：卡2 題③（不看筆記）</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-3-1" data-store="p14-3-1"><label for="p14-3-1">讀 <a href="skills.html#k3">卡3 完全平方</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-3-2" data-store="p14-3-2"><label for="p14-3-2">做卡3 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-3-3" data-store="p14-3-3"><label for="p14-3-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d4"><h3>Day 4 · 篩根＋混合日（D4 間隔）</h3><div class="task"><input type="checkbox" id="p14-4-0" data-store="p14-4-0"><label for="p14-4-0">回鍋：卡3 題③</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-4-1" data-store="p14-4-1"><label for="p14-4-1">讀 <a href="skills.html#k4">卡4 篩根</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-4-2" data-store="p14-4-2"><label for="p14-4-2">做卡4 題②～⑤</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-4-3" data-store="p14-4-3"><label for="p14-4-3">混合：卡1④、卡2③、卡3④ 各一題（打亂順序做）</label><span class="tmin">9分</span></div><div class="note" style="margin-top:10px">混合是重點——單卡會了不算會，混在一起還認得出才算。</div></div><div class="day" id="d5"><h3>Day 5 · 根與係數</h3><div class="task"><input type="checkbox" id="p14-5-0" data-store="p14-5-0"><label for="p14-5-0">回鍋：卡4 題⑤（溫度那題）</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-5-1" data-store="p14-5-1"><label for="p14-5-1">讀 <a href="skills.html#k5">卡5 和積</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-5-2" data-store="p14-5-2"><label for="p14-5-2">做卡5 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-5-3" data-store="p14-5-3"><label for="p14-5-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d6"><h3>Day 6 · 括號≠因式</h3><div class="task"><input type="checkbox" id="p14-6-0" data-store="p14-6-0"><label for="p14-6-0">回鍋：卡5 題④</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-6-1" data-store="p14-6-1"><label for="p14-6-1">讀 <a href="skills.html#k6">卡6 括號</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-6-2" data-store="p14-6-2"><label for="p14-6-2">做卡6 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-6-3" data-store="p14-6-3"><label for="p14-6-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d7"><h3>Day 7 · 週驗收一（D7 原錯題）</h3><div class="task"><input type="checkbox" id="p14-7-0" data-store="p14-7-0"><label for="p14-7-0">原錯題：<a href="ch3.html">第3章</a> 再測①（剪拼 3x+7）</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-7-1" data-store="p14-7-1"><label for="p14-7-1">原錯題：<a href="ch4.html">第4章</a> 再測⑨（竹竿 L=13）</label><span class="tmin">7分</span></div><div class="task"><input type="checkbox" id="p14-7-2" data-store="p14-7-2"><label for="p14-7-2">原錯題：第3章 再測⑤（完全平方 a−2b=33）【進階，卡關就跳過】</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-7-3" data-store="p14-7-3"><label for="p14-7-3">填寫本週四指標（下方）＋圈出最不穩的一張卡</label><span class="tmin">8分</span></div><div class="note" style="margin-top:10px">驗收標準不是全對——是「能判斷方法、寫得出第一步」。不會起步的卡，下週重讀。</div></div><div class="wk">第二週</div><div class="day" id="d8"><h3>Day 8 · 答所問</h3><div class="task"><input type="checkbox" id="p14-8-0" data-store="p14-8-0"><label for="p14-8-0">回鍋：上週圈出最不穩那張卡的題③</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-8-1" data-store="p14-8-1"><label for="p14-8-1">讀 <a href="skills.html#k7">卡7 答所問</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-8-2" data-store="p14-8-2"><label for="p14-8-2">做卡7 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-8-3" data-store="p14-8-3"><label for="p14-8-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d9"><h3>Day 9 · 不能除以未知數</h3><div class="task"><input type="checkbox" id="p14-9-0" data-store="p14-9-0"><label for="p14-9-0">回鍋：卡7 題②</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-9-1" data-store="p14-9-1"><label for="p14-9-1">讀 <a href="skills.html#k8">卡8 除x</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-9-2" data-store="p14-9-2"><label for="p14-9-2">做卡8 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-9-3" data-store="p14-9-3"><label for="p14-9-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d10"><h3>Day 10 · 配方＋混合日（D4 間隔）</h3><div class="task"><input type="checkbox" id="p14-10-0" data-store="p14-10-0"><label for="p14-10-0">回鍋：卡8 題③</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-10-1" data-store="p14-10-1"><label for="p14-10-1">讀 <a href="skills.html#k9">卡9 配方</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-10-2" data-store="p14-10-2"><label for="p14-10-2">做卡9 題②～⑤</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-10-3" data-store="p14-10-3"><label for="p14-10-3">混合：卡5③、卡6③、卡7③ 各一題</label><span class="tmin">9分</span></div></div><div class="day" id="d11"><h3>Day 11 · 分解前四項檢查</h3><div class="task"><input type="checkbox" id="p14-11-0" data-store="p14-11-0"><label for="p14-11-0">回鍋：卡9 題⑤（先除2那題）</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-11-1" data-store="p14-11-1"><label for="p14-11-1">讀 <a href="skills.html#k10">卡10 四檢查</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-11-2" data-store="p14-11-2"><label for="p14-11-2">做卡10 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-11-3" data-store="p14-11-3"><label for="p14-11-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d12"><h3>Day 12 · 畢氏翻譯表</h3><div class="task"><input type="checkbox" id="p14-12-0" data-store="p14-12-0"><label for="p14-12-0">回鍋：卡10 題③</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-12-1" data-store="p14-12-1"><label for="p14-12-1">讀 <a href="skills.html#k11">卡11 畢氏</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-12-2" data-store="p14-12-2"><label for="p14-12-2">做卡11 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-12-3" data-store="p14-12-3"><label for="p14-12-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d13"><h3>Day 13 · 塊數當係數</h3><div class="task"><input type="checkbox" id="p14-13-0" data-store="p14-13-0"><label for="p14-13-0">回鍋：卡11 題④</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-13-1" data-store="p14-13-1"><label for="p14-13-1">讀 <a href="skills.html#k12">卡12 拼板</a>＋題①</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-13-2" data-store="p14-13-2"><label for="p14-13-2">做卡12 題②～⑤</label><span class="tmin">10分</span></div><div class="task"><input type="checkbox" id="p14-13-3" data-store="p14-13-3"><label for="p14-13-3">訂正＋一句錯因</label><span class="tmin">5分</span></div></div><div class="day" id="d14"><h3>Day 14 · 週驗收二（D7 原錯題）</h3><div class="task"><input type="checkbox" id="p14-14-0" data-store="p14-14-0"><label for="p14-14-0">原錯題：<a href="ch4.html">第4章</a> 再測⑪（誤算 40）</label><span class="tmin">5分</span></div><div class="task"><input type="checkbox" id="p14-14-1" data-store="p14-14-1"><label for="p14-14-1">原錯題：第4章 再測③（除以 x 步驟錯）</label><span class="tmin">4分</span></div><div class="task"><input type="checkbox" id="p14-14-2" data-store="p14-14-2"><label for="p14-14-2">原錯題：<a href="ch2.html">第2章</a> 再測①（格點/畢氏系）或第3章 再測⑫（拼板 14×9）擇一</label><span class="tmin">8分</span></div><div class="task"><input type="checkbox" id="p14-14-3" data-store="p14-14-3"><label for="p14-14-3">填寫本週四指標＋和爸媽對照兩週的數字</label><span class="tmin">8分</span></div><div class="note" style="margin-top:10px">兩週結束：四指標若「首次正確率」有上升，系統有效、繼續滾第二輪（換下一批卡或重跑不穩的卡）；若只有「訂正後」高，回報一下，我們調整。</div></div>
+  <div class="card" id="kpiw">
+    <div class="plabel2">每週四指標（0～100，自己估）</div>
+    <h2>成效不是「今天對幾題」，是這四個數字</h2>
+    <div class="wk">第一週（Day 7 填）</div>
+    <div class="kpi">
+      <span>① 首次作答正確率（沒看解答就對的比例）</span><input type="number" min="0" max="100" data-store="kpi-w1-1" inputmode="numeric">
+      <span>② 第一步正確率（能自己起步的比例）</span><input type="number" min="0" max="100" data-store="kpi-w1-2" inputmode="numeric">
+      <span>③ 回鍋保留率（隔天回鍋題做對的比例）</span><input type="number" min="0" max="100" data-store="kpi-w1-3" inputmode="numeric">
+      <span>④ 非計算錯誤（看錯/漏條件/答非所問的題數）</span><input type="number" min="0" max="99" data-store="kpi-w1-4" inputmode="numeric">
+    </div>
+    <div class="wk">第二週（Day 14 填）</div>
+    <div class="kpi">
+      <span>① 首次作答正確率</span><input type="number" min="0" max="100" data-store="kpi-w2-1" inputmode="numeric">
+      <span>② 第一步正確率</span><input type="number" min="0" max="100" data-store="kpi-w2-2" inputmode="numeric">
+      <span>③ 回鍋保留率</span><input type="number" min="0" max="100" data-store="kpi-w2-3" inputmode="numeric">
+      <span>④ 非計算錯誤（題數）</span><input type="number" min="0" max="99" data-store="kpi-w2-4" inputmode="numeric">
+    </div>
+    <div class="note">判讀：①上升 ＝ 系統有效；只有「訂正後很高、①不動」＝ 還在「看懂」階段，回報調整。這些數字存在這台裝置的瀏覽器裡。</div>
+  </div>
+  <div class="page-footer"><span>數學 · 兩週試行計畫</span><span>V2.9.0</span></div>
+</div>
+<script>
+(function(){
+  var boxes=document.querySelectorAll('[data-store]');
+  boxes.forEach(function(el){
+    var k='sb-'+el.dataset.store;
+    if(el.type==='checkbox'){ el.checked=localStorage.getItem(k)==='1';
+      el.addEventListener('change',function(){localStorage.setItem(k,el.checked?'1':'0');upd();});}
+    else{ var v=localStorage.getItem(k); if(v!==null) el.value=v;
+      el.addEventListener('change',function(){localStorage.setItem(k,el.value);});}
+  });
+  function upd(){var cbs=document.querySelectorAll('input[type=checkbox][data-store]');var d=0;cbs.forEach(function(c){if(c.checked)d++;});var p=document.getElementById('prog');if(p)p.textContent=d+'/'+cbs.length;}
+  upd();
+})();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js');}
+</script>
+</body></html>
