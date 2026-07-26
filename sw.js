@@ -1,8 +1,8 @@
 /* StudyBase PWA service worker */
-const CACHE = 'studybase-v2.10.0';
+const CACHE = 'studybase-v2.11.0';
 const CORE = [
   './', './index.html', './css/main.css',
-  './chemistry/index.html', './math/index.html', './physics/index.html', './math/skills.html', './math/plan.html',
+  './offline.html', './chemistry/index.html', './math/index.html', './physics/index.html', './math/skills.html', './math/plan.html', './chemistry/skills.html',
   './favicon/app-192.png', './favicon/app-512.png', './favicon/site.webmanifest'
 ];
 self.addEventListener('install', e => {
@@ -22,6 +22,6 @@ self.addEventListener('fetch', e => {
       const copy = res.clone();
       caches.open(CACHE).then(c => c.put(req, copy));
       return res;
-    }).catch(() => req.mode === 'navigate' ? caches.match('./index.html') : undefined))
+    }).catch(() => req.mode === 'navigate' ? caches.match('./offline.html') : undefined))
   );
 });
