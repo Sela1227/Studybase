@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#634A83">
+<title>第5章 統計資料處理 — 阿蔓明道國中復習專班</title>
+<style>
+:root{--bg:#F6F3FC;--surface:#FFFFFF;--surface2:#F1ECFA;--border:#E8E1F2;--border-mid:#CBC0E0;--text-1:#2A2335;--text-2:#645B78;--text-3:#756C89;--accent:#5B57C2;--accent-l:#ECEBFA;--mint:#3E8F79;--mint-l:#E6F4EF;--rose:#B7476A;--rose-l:#FBEDF1;--r:4px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans TC",sans-serif;background:var(--bg);color:var(--text-1);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+.topbar{height:52px;position:sticky;top:0;z-index:100;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:8px;font-size:13px}
+.topbar a{color:var(--text-2);text-decoration:none;min-height:44px;display:flex;align-items:center}
+.topbar .sep{color:var(--text-3)}.topbar .cur{color:var(--text-1);font-weight:500}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.poscard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin-top:20px}
+.poscard .plabel{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.poscard h1{font-size:20px;font-weight:400;margin:6px 0 10px;letter-spacing:-.01em}
+.poscard p{font-size:14px;color:var(--text-2);margin-bottom:10px}
+.poscard .meta{display:flex;flex-wrap:wrap;gap:6px}
+.poscard .meta span{font-size:12px;color:var(--text-2);background:var(--surface2);border:1px solid var(--border);border-radius:2px;padding:4px 9px}
+.stabs{display:flex;gap:4px;margin-top:22px;overflow-x:auto;border-bottom:1px solid var(--border)}
+.stab{font-size:14px;padding:0 4px;margin-right:18px;color:var(--text-3);white-space:nowrap;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;min-height:44px;display:inline-flex;align-items:center}
+.stab.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.lpills{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.lpill{font-size:13px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.lpill.on{background:var(--accent-l);border-color:var(--accent);color:var(--accent);font-weight:500}
+.lesson{margin-top:24px;display:none}.lesson.on{display:block}
+.plabel2{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.lesson h2{font-size:22px;font-weight:300;letter-spacing:-.01em;margin-bottom:6px}
+.lesson .sub{font-size:14px;color:var(--text-2);margin-bottom:18px}
+.lesson p{font-size:15px;margin:12px 0}
+.dataset{font-family:Georgia,serif;font-size:15px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:10px 0;letter-spacing:.06em}
+.repr-eq{font-family:Georgia,serif;font-size:16px;text-align:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:6px 0}
+.hi{border-left:3px solid var(--accent);background:var(--accent-l);border-radius:var(--r);padding:14px 16px;margin:16px 0}
+.hi .k{font-family:Georgia,serif;font-size:17px;text-align:center;display:block}
+.warn{border-left:3px solid var(--rose);background:var(--rose-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.warn b{color:var(--rose)}
+.note{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;margin:14px 0;font-size:14px;color:var(--text-2)}
+.rev{border-left:3px solid var(--mint);background:var(--mint-l);border-radius:var(--r);padding:12px 16px;margin:16px 0;font-size:14px}
+.rev b{color:var(--mint)}
+.eg{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:14px 0}
+.eg .q{font-weight:500;font-size:15px;margin-bottom:8px}
+.eg .step{font-family:Georgia,serif;font-size:15px;margin:4px 0}
+.eg .why{font-size:13px;color:var(--text-2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--border)}
+.eg svg{display:block;margin:8px auto;max-width:100%}
+.eg .cap{font-size:13px;color:var(--text-2);text-align:center;margin-top:4px}
+sup{font-size:.72em}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th,.tbl td{border:1px solid var(--border);padding:8px 10px;text-align:center}
+.tbl th{background:var(--surface2);color:var(--text-1);font-weight:500}
+.qsec h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+.mcq{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.mcq .qt{font-size:14px;font-weight:500;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font-size:14px;padding:11px 12px;margin:6px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1);min-height:44px}
+.opt.ok{background:var(--mint-l);border-color:var(--mint);color:var(--mint);font-weight:500}
+.opt.ok::before{content:"✓ ";font-weight:700}
+.opt.no{background:var(--rose-l);border-color:var(--rose);color:var(--rose)}
+.opt.no::before{content:"✕ ";font-weight:700}
+.exp{font-size:13px;color:var(--text-2);margin-top:8px;display:none;padding-top:8px;border-top:1px dashed var(--border)}
+.exp.show{display:block}
+.retry{font-size:12px;color:var(--accent);margin-top:6px;display:none}
+.retry.show{display:block}
+.prob{border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin:10px 0;background:var(--surface)}
+.prob .pq{font-family:Georgia,serif;font-size:15px}
+.prob .toggle{margin-top:10px;font-size:13px;color:var(--accent);background:none;border:1px solid var(--border);border-radius:var(--r);padding:0 12px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.prob .ans{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);font-size:14px}
+.prob .ans.show{display:block}.prob .ans .st{font-family:Georgia,serif}.prob .ans .why{font-size:13px;color:var(--text-2);margin-top:6px}
+.errlog{border:1px dashed var(--border-mid);border-radius:var(--r);padding:16px;margin:22px 0;background:var(--surface2);overflow-x:auto}
+.errlog h3{font-size:14px;font-weight:600;margin-bottom:4px}.errlog .hint{font-size:12px;color:var(--text-2);margin-bottom:12px}
+.errlog table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+.errlog th,.errlog td{border:1px solid var(--border);padding:8px 6px;text-align:center}
+.errlog th{background:var(--surface);color:var(--text-1);font-weight:500;font-size:12px}
+.errlog td:first-child{text-align:left;color:var(--text-2)}
+.errlog .leg{font-size:12px;color:var(--text-2);margin-top:8px;line-height:1.8}
+.gate{border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:22px 0;background:var(--surface)}
+.gate h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gate ul{list-style:none;font-size:14px;color:var(--text-2)}
+.gate li{padding:4px 0 4px 22px;position:relative}
+.gate li::before{content:"○";position:absolute;left:0;color:var(--text-3)}
+.gate li.done::before{content:"●";color:var(--mint)}
+.gate .stats{font-size:12px;color:var(--text-2);margin-top:8px}
+.gate .btn{margin-top:12px;font-size:14px;padding:12px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;width:100%;min-height:44px}
+.gate .pass{display:none;margin-top:12px;font-size:14px;color:var(--mint);background:var(--mint-l);border:1px solid var(--mint);border-radius:var(--r);padding:12px 14px}
+.gate .pass.show{display:block}.gate .pass a{color:var(--accent)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(246,243,252,.94);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 20px;display:flex;gap:10px;max-width:640px;margin:0 auto}
+.bnav button{flex:1;font-size:14px;padding:12px;border-radius:var(--r);border:1px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;min-height:44px}
+.bnav button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bnav button:disabled{opacity:.4;cursor:default}
+.page-footer{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px solid var(--border);margin-top:40px;padding-top:16px}
+@media print{.topbar,.bnav,.stabs,.lpills,.toggle,.gate .btn{display:none!important}.sec,.lesson{display:block!important}.ans,.exp{display:none!important}.eg,.mcq,.prob,.errlog,.hi,.note,.rev{break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a href="index.html">← 數學</a><span class="sep">/</span><span class="cur">第5章 統計資料處理</span></div>
+
+<div class="wrap">
+  <div class="poscard">
+    <div class="plabel">國二上 · 第5章 統計資料處理</div>
+    <h1>這章不吃前面的章節，可以直接拿下</h1>
+    <p>統計這章跟第1～4章的代數幾乎無關——只要會加減和數數就能學。它很適合當你在這個網站<b>第一個完整過關</b>的章節：整章走完、練習全對，先拿到一次「這科我行」的完整經驗。</p>
+    <div class="meta"><span>前置：基本加減（就這樣）</span><span>預計 40 分鐘／節</span><span>整章用同一份 20 人成績資料貫穿</span></div>
+  </div>
+
+  <div class="stabs" role="tablist" aria-label="第5章各節">
+    <button class="stab on" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" tabindex="0" data-s="0">5-1 資料整理與統計圖表</button>
+  </div>
+
+  <div class="sec on" data-s="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+    <div class="lpills">
+      <button class="lpill on" data-s="0" data-l="0">次數分配表</button>
+      <button class="lpill" data-s="0" data-l="1">直方圖與折線圖</button>
+      <button class="lpill" data-s="0" data-l="2">累積次數</button>
+      <button class="lpill" data-s="0" data-l="3">練習與訂正</button>
+    </div>
+
+    <!-- L0 次數分配表 -->
+    <section class="lesson on" data-s="0" data-l="0">
+      <div class="plabel2">5-1 · 次數分配表</div>
+      <h2>把一堆亂數字，整理成看得懂的表</h2>
+      <p class="sub">統計的第一步：資料太多看不出東西，就「分組、數個數」。整章都用下面這份資料。</p>
+      <div class="dataset">某班 20 位同學的數學小考成績：<br>72　85　63　91　58　77　88　64　79　95<br>70　82　55　68　74　86　61　90　78　83</div>
+      <div class="hi"><span class="k">分組三步：① 找全距（最大 − 最小）② 定組距 ③ 劃記數次數</span></div>
+      <div class="eg"><div class="q">照三步做一次</div>
+        <div class="step">① 全距 = 95 − 55 = 40</div>
+        <div class="step">② 取組距 10，從 50 分起分 5 組（組數 × 組距要蓋住全部資料）</div>
+        <div class="step">③ 每筆資料劃記到所屬的組，數出次數：</div>
+        <table class="tbl">
+          <tr><th>成績（分）</th><th>劃記</th><th>次數（人）</th></tr>
+          <tr><td>50 ~ 60</td><td>丅</td><td>2</td></tr>
+          <tr><td>60 ~ 70</td><td>正（少一筆）</td><td>4</td></tr>
+          <tr><td>70 ~ 80</td><td>正丄</td><td>6</td></tr>
+          <tr><td>80 ~ 90</td><td>正</td><td>5</td></tr>
+          <tr><td>90 ~ 100</td><td>下</td><td>3</td></tr>
+          <tr><td><b>合計</b></td><td></td><td><b>20</b></td></tr>
+        </table>
+        <div class="why">數完一定要<b>加總檢查</b>：2+4+6+5+3 = 20，跟人數一樣才對。少一個就是漏劃了。</div></div>
+      <div class="note"><b>組界的約定：</b>每一組「<b>含下界、不含上界</b>」——60 分算在「60~70」那組，不算在「50~60」。全站與課本都用這個約定。</div>
+      <div class="warn"><b>常見錯誤：</b>邊界的數（60、70、80…）被數進下面那組、或兩組都劃。記住口訣：<b>剛好在界上，往上一組放</b>。</div>
+    </section>
+
+    <!-- L1 直方圖與折線圖 -->
+    <section class="lesson" data-s="0" data-l="1">
+      <div class="plabel2">5-1 · 直方圖與折線圖</div>
+      <h2>把次數分配表畫成圖</h2>
+      <p class="sub">同一份表，兩種畫法：直方圖看「哪一段人最多」，折線圖看「起伏走勢」。</p>
+      <div class="eg"><div class="q">直方圖：長條「相連」的長條圖</div>
+        <svg viewBox="0 0 300 190" width="300" height="190" aria-label="成績次數直方圖">
+          <line x1="40" y1="150" x2="280" y2="150" stroke="#CBC0E0"/>
+          <line x1="40" y1="150" x2="40" y2="20" stroke="#CBC0E0"/>
+          <rect x="40"  y="110" width="44" height="40"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="84"  y="70"  width="44" height="80"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="128" y="30"  width="44" height="120" fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="172" y="50"  width="44" height="100" fill="#ECEBFA" stroke="#5B57C2"/>
+          <rect x="216" y="90"  width="44" height="60"  fill="#ECEBFA" stroke="#5B57C2"/>
+          <text x="40" y="164" text-anchor="middle" font-size="10" fill="#645B78">50</text>
+          <text x="84" y="164" text-anchor="middle" font-size="10" fill="#645B78">60</text>
+          <text x="128" y="164" text-anchor="middle" font-size="10" fill="#645B78">70</text>
+          <text x="172" y="164" text-anchor="middle" font-size="10" fill="#645B78">80</text>
+          <text x="216" y="164" text-anchor="middle" font-size="10" fill="#645B78">90</text>
+          <text x="260" y="164" text-anchor="middle" font-size="10" fill="#645B78">100</text>
+          <text x="62" y="104" text-anchor="middle" font-size="11" fill="#2A2335">2</text>
+          <text x="106" y="64" text-anchor="middle" font-size="11" fill="#2A2335">4</text>
+          <text x="150" y="24" text-anchor="middle" font-size="11" fill="#2A2335">6</text>
+          <text x="194" y="44" text-anchor="middle" font-size="11" fill="#2A2335">5</text>
+          <text x="238" y="84" text-anchor="middle" font-size="11" fill="#2A2335">3</text>
+          <text x="160" y="184" text-anchor="middle" font-size="10" fill="#756C89">成績（分）　縱軸：次數（人）</text></svg>
+        <div class="cap">一眼看出：70~80 這組人最多（6 人）</div>
+        <div class="why">長條為什麼<b>相連</b>？因為成績是「連續」的範圍，一組接著一組沒有縫。這是直方圖跟一般長條圖（畫類別，如最喜歡的科目，長條分開）最大的不同。</div></div>
+      <div class="eg"><div class="q">次數分配折線圖：取每組「組中點」描點連線</div>
+        <div class="step">組中點 = (下界＋上界) ÷ 2 → 55、65、75、85、95</div>
+        <div class="step">描 (55,2)(65,4)(75,6)(85,5)(95,3)，相鄰點連線；頭尾各補一個次數 0 的組中點（45、105），讓線落回橫軸</div>
+        <div class="why">折線圖跟直方圖說的是同一件事，只是換成「走勢」的樣子——先升到 70~80 的高峰再下降。</div></div>
+    </section>
+
+    <!-- L2 累積次數 -->
+    <section class="lesson" data-s="0" data-l="2">
+      <div class="plabel2">5-1 · 累積次數</div>
+      <h2>「不到 80 分的有幾人？」——累積次數直接回答</h2>
+      <p class="sub">把次數「一路加上來」，回答「未滿某分數共幾人」這類問題最快。</p>
+      <div class="hi"><span class="k">某組的累積次數 = 從第一組加到這一組的次數總和</span></div>
+      <table class="tbl">
+        <tr><th>成績（分）</th><th>次數</th><th>累積次數</th></tr>
+        <tr><td>50 ~ 60</td><td>2</td><td>2</td></tr>
+        <tr><td>60 ~ 70</td><td>4</td><td>2+4 = 6</td></tr>
+        <tr><td>70 ~ 80</td><td>6</td><td>6+6 = 12</td></tr>
+        <tr><td>80 ~ 90</td><td>5</td><td>12+5 = 17</td></tr>
+        <tr><td>90 ~ 100</td><td>3</td><td>17+3 = 20</td></tr>
+      </table>
+      <div class="eg"><div class="q">用表回答問題</div>
+        <div class="step">「不到 80 分」的人數 → 看 70~80 那列的累積 = <b>12 人</b></div>
+        <div class="step">「80 分以上（含）」的人數 → 全部 − 不到 80 = 20 − 12 = <b>8 人</b></div>
+        <div class="why">最後一組的累積一定等於總人數（20）——這也是檢查有沒有加錯的方法。</div></div>
+      <div class="note"><b>相對次數（比例版）：</b>某組次數 ÷ 總數。例如 70~80 這組 6/20 = 30%。全部組加起來一定是 100%。</div>
+      <div class="warn"><b>常見錯誤：</b>把「累積次數」跟「該組次數」看混。題目問「不到 70 分幾人」是累積（6 人）；問「60~70 這組幾人」才是單組次數（4 人）。先看清楚題目問哪一種。</div>
+    </section>
+
+    <!-- L3 練習 -->
+    <section class="lesson" data-s="0" data-l="3">
+      <div class="plabel2">練習與訂正</div>
+      <h2>照三步自己做一遍</h2>
+      <p class="sub">先自己算，再對解答。做錯的填最下面表格。這章全對，就是你的第一個完整過關。</p>
+      <div class="qsec"><h3>觀念辨識（答錯可再選）</h3>
+        <div class="mcq" data-a="1"><div class="qt">1. 資料最大 92、最小 47，全距是？</div>
+          <button class="opt">92</button><button class="opt">45</button><button class="opt">47</button><div class="exp">全距 = 最大 − 最小 = 92 − 47 = 45。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="2"><div class="qt">2. 用「含下界、不含上界」的約定，70 分應該劃在哪一組？</div>
+          <button class="opt">60 ~ 70</button><button class="opt">兩組都劃</button><button class="opt">70 ~ 80</button><div class="exp">剛好在界上，往上一組放：70 屬於 70~80。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="0"><div class="qt">3. 直方圖的長條為什麼相連？</div>
+          <button class="opt">因為分組的範圍是連續的，一組接一組</button><button class="opt">為了好看</button><button class="opt">畫錯了，應該分開</button><div class="exp">直方圖畫「連續資料的分組」，組跟組之間沒有縫；類別資料的長條圖才分開。</div><div class="retry">再看一次，選出正確的。</div></div>
+        <div class="mcq" data-a="1"><div class="qt">4. 累積次數表中，最後一組的累積次數一定等於？</div>
+          <button class="opt">最大的單組次數</button><button class="opt">資料總筆數</button><button class="opt">組數</button><div class="exp">一路加到底就是全部資料的筆數，這也是自我檢查的方法。</div><div class="retry">再看一次，選出正確的。</div></div>
+      </div>
+      <div class="qsec"><h3>基本計算（用這份新資料做整套）</h3>
+        <div class="dataset">15 位同學每週運動天數：<br>3　5　2　4　3　5　1　4　3　2　4　5　3　4　2</div>
+        <div class="prob"><div class="pq">① 做出次數分配表（天數 1、2、3、4、5 各幾人），並加總檢查</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">1天:1人；2天:3人；3天:4人；4天:4人；5天:3人。合計 1+3+4+4+3 = 15 ✓</div><div class="why">這份資料是整數天數，不用分組，直接一個數一類。</div></div></div>
+        <div class="prob"><div class="pq">② 承①，做累積次數，並回答：每週運動「不到 4 天」的有幾人？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">累積：1, 4, 8, 12, 15 → 不到 4 天 = 累積到 3 天 = <b>8 人</b></div></div></div>
+        <div class="prob"><div class="pq">③ 承①，運動 4 天（含）以上的比例是多少？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">4 天以上 = 4+3 = 7 人 → 7/15 ≈ 47%（也可答 7/15）</div><div class="why">或用 15 − 8 = 7 再除以總數。</div></div></div>
+        <div class="prob"><div class="pq">④ 回到成績資料：90 分（含）以上的同學占全班百分之幾？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">90~100 有 3 人 → 3/20 = <b>15%</b></div></div></div>
+      </div>
+      <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
+        <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
+        <div class="leg">邊界劃錯組、累積跟單組看混 → <b>A/C</b>；劃記漏數、加總錯 → <b>B</b>（加總檢查可以自己抓到）。</div></div>
+      <div class="gate"><h3>這一課的自我檢查</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">基本計算都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">第5章完整走完了——這是國二上第一個從頭到尾拿下的章節。<a href="index.html">回數學首頁 →</a></div></div>
+    </section>
+  </div>
+
+  <div class="page-footer"><span>數學 · 第5章 統計資料處理</span><span>V2.4.0</span></div>
+</div>
+
+<div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
+
+<script>
+var SL=[4], cS=0, cL=[0];
+var stabs=document.querySelectorAll('.stab');
+function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
+function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
+stabs.forEach(function(t,idx){t.addEventListener('click',function(){showSec(+t.dataset.s);});t.addEventListener('keydown',function(e){var n=null;if(e.key==='ArrowRight')n=(idx+1)%stabs.length;else if(e.key==='ArrowLeft')n=(idx-1+stabs.length)%stabs.length;if(n!==null){e.preventDefault();showSec(+stabs[n].dataset.s);stabs[n].focus();}});});
+document.querySelectorAll('.lpill').forEach(function(p){p.addEventListener('click',function(){showSec(+p.dataset.s);showLesson(+p.dataset.s,+p.dataset.l);});});
+function gidx(s,l){var i=0;for(var k=0;k<s;k++)i+=SL[k];return i+l;}
+function total(){return SL.reduce(function(a,b){return a+b;},0);}
+function fromIdx(i){var s=0;while(i>=SL[s]){i-=SL[s];s++;}return [s,i];}
+function updateNav(){var g=gidx(cS,cL[cS]);document.getElementById('prevBtn').disabled=(g===0);var nb=document.getElementById('nextBtn');if(g===total()-1){nb.textContent='完成 · 回數學首頁';nb.disabled=false;nb.dataset.done="1";}else{nb.textContent='下一課 →';nb.disabled=false;nb.dataset.done="";}}
+document.getElementById('prevBtn').addEventListener('click',function(){var g=gidx(cS,cL[cS]);if(g>0){var p=fromIdx(g-1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.getElementById('nextBtn').addEventListener('click',function(){if(this.dataset.done==="1"){location.href='index.html';return;}var g=gidx(cS,cL[cS]);if(g<total()-1){var p=fromIdx(g+1);showSec(p[0]);showLesson(p[0],p[1]);}});
+document.querySelectorAll('.mcq').forEach(function(m){var ai=+m.dataset.a,opts=m.querySelectorAll('.opt'),exp=m.querySelector('.exp'),retry=m.querySelector('.retry');m._solved=false;m._firstDone=false;m._firstCorrect=false;opts.forEach(function(o,i){o.addEventListener('click',function(){if(m._solved)return;if(!m._firstDone){m._firstDone=true;m._firstCorrect=(i===ai);}opts.forEach(function(x){x.classList.remove('no');});exp.classList.add('show');if(i===ai){o.classList.add('ok');m._solved=true;if(retry)retry.classList.remove('show');}else{o.classList.add('no');if(retry)retry.classList.add('show');}updateGate(m);});});});
+document.querySelectorAll('.prob .toggle').forEach(function(b){b.addEventListener('click',function(){var a=b.parentElement.querySelector('.ans');a.classList.toggle('show');b.textContent=a.classList.contains('show')?'收起解答':'顯示解答';});});
+document.querySelectorAll('.gate .btn').forEach(function(b){b.addEventListener('click',function(){b.parentElement.dataset.basic="1";updateGate(b.closest('.lesson'));});});
+function updateGate(ctx){var lesson=ctx.closest?ctx.closest('.lesson'):ctx;if(!lesson)return;var mcqs=lesson.querySelectorAll('.mcq'),solved=0,firstC=0;mcqs.forEach(function(m){if(m._solved)solved++;if(m._firstCorrect)firstC++;});var gate=lesson.querySelector('.gate');if(!gate)return;var g1=gate.querySelector('.g1'),g2=gate.querySelector('.g2'),stats=gate.querySelector('.stats');var mcqPass=(solved===mcqs.length&&mcqs.length>0);if(g1)g1.classList.toggle('done',mcqPass);var basic=gate.dataset.basic==="1";if(g2)g2.classList.toggle('done',basic);if(stats&&mcqs.length){stats.textContent=mcqPass?('觀念：首次答對 '+firstC+'/'+mcqs.length+'，訂正後 '+solved+'/'+mcqs.length):'';}if(mcqPass&&basic)gate.querySelector('.pass').classList.add('show');}
+</script>
+</body>
+</html>
