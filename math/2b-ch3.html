@@ -128,6 +128,7 @@ sup{font-size:.72em}
       <div class="plabel2">3-1 · 三角形</div>
       <h2>內角和 180°；外角＝不相鄰兩內角的和</h2>
       <div class="hi"><span class="k">三角形內角和 = 180°　；　一個外角 = 與它不相鄰的兩內角之和</span></div>
+      <div class="note"><b>外角是誰：</b>把一邊（BC）往外延長到 D，<b>∠ACD</b>（延長線與另一邊 CA 的夾角）就是 C 處的外角——它跟內角 ∠ACB 互補。</div>
       <div class="eg"><div class="q">看圖記住外角</div>
         <svg role="img" viewBox="0 0 260 130" width="260" height="130" aria-label="三角形外角示意">
           <path d="M30 110 L130 20 L200 110 Z" fill="#ECEBFA" stroke="#5B57C2"/>
@@ -135,8 +136,9 @@ sup{font-size:.72em}
           <text x="128" y="42" text-anchor="middle" font-size="12" fill="#2A2335">A</text>
           <text x="52" y="104" font-size="12" fill="#2A2335">B</text>
           <text x="182" y="104" font-size="12" fill="#2A2335">C</text>
-          <path d="M212 110 A12 12 0 0 0 208 101" fill="none" stroke="#B7476A"/>
-          <text x="224" y="102" font-size="11" fill="#B7476A">外角</text></svg>
+          <path d="M215 110 A15 15 0 0 0 191 98" fill="none" stroke="#B7476A"/>
+          <text x="221" y="94" font-size="11" fill="#B7476A">外角</text>
+          <text x="196" y="124" font-size="11" fill="#2A2335">D</text></svg>
         <div class="step">C 處的外角 = ∠A + ∠B（把 C 的內角補到 180° 剩下的，就是另外兩角的和）</div>
         <div class="why">兩個理由等價：外角＋∠C=180°，而 ∠A+∠B+∠C=180° → 外角=∠A+∠B。</div></div>
       <div class="eg"><div class="q">例①【核心必會】兩內角為 50°、60°，求第三角與 50° 那頂點的外角</div>
@@ -152,7 +154,7 @@ sup{font-size:.72em}
       <div class="hi"><span class="k">n 邊形內角和 = (n−2) × 180°　；　外角和 = 360°（跟邊數無關）</span></div>
       <div class="eg"><div class="q">為什麼是 (n−2)？</div>
         <div class="step">從一個頂點拉對角線，n 邊形被切成 (n−2) 個三角形，每個 180°</div>
-        <div class="why">外角和 360° 想像成「沿著多邊形走一圈，總共轉了一整圈」。</div></div>
+        <div class="why">外角和 360° 有兩個看法：① 沿著多邊形走一圈，每個轉彎轉的就是外角，走回原點共轉了一整圈；② 把每個外角剪下來、頂點靠攏拼在一起，恰好拼滿一圈。</div></div>
       <div class="eg"><div class="q">例①【核心必會】八邊形內角和？正五邊形每個內角？</div>
         <div class="step">(8−2)×180 = <b>1080°</b>；正五邊形每內角 = (5−2)×180 ÷ 5 = <b>108°</b></div></div>
       <div class="eg"><div class="q">例②【進階】內角和 1440° 的多邊形有幾邊？正 n 邊形每個外角 30°，n = ?</div>
@@ -176,11 +178,12 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">② 十二邊形的內角和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(12−2)×180 = <b>1800°</b></div></div></div>
         <div class="prob"><div class="pq">③ 正六邊形每個內角、每個外角</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">內角 = 720÷6 = <b>120°</b>；外角 = 360÷6 = <b>60°</b>（也可用 180−120）</div></div></div>
         <div class="prob"><div class="pq">④ 正 n 邊形每個外角 30°，求 n 與內角和</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">n = 360÷30 = <b>12</b>；內角和 = 10×180 = <b>1800°</b></div></div></div>
+        <div class="prob"><div class="pq">⑤【進階】三角形某外角為 2x+10°，與它不相鄰的兩內角為 x+30° 與 40°，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">外角 = 不相鄰兩內角和：2x+10 = (x+30)+40 → x = <b>60</b>（外角 130°、兩內角 90°、40°，第三內角 50° ✓）</div><div class="why">解完把三個內角加回 180° 驗算一次。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">內角和/外角和公式混用 → <b>A</b>；(n−2) 忘了減 2 → <b>B</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-2 尺規作圖。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～④，⑤進階選做）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～④ 都自己算過、對過答案（⑤選做）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-2 尺規作圖。</div></div>
     </section>
   </div>
 
@@ -200,7 +203,7 @@ sup{font-size:.72em}
       <div class="eg"><div class="q">作圖①：作一線段等於已知線段 AB</div>
         <div class="step">1. 畫一條射線，取端點 C　2. 圓規張開量 AB 的長　3. 以 C 為圓心畫弧，交射線於 D → CD = AB</div></div>
       <div class="eg"><div class="q">作圖②：作一角等於已知角 ∠O</div>
-        <div class="step">1. 以 O 為圓心畫弧，交兩邊於 A、B　2. 畫射線取端點 O′，同半徑畫弧交於 A′　3. 圓規量 AB 距離，以 A′ 為圓心畫弧交前弧於 B′　4. 連 O′B′ → ∠O′ = ∠O</div>
+        <div class="step">1. 以 O 為圓心畫弧，交兩邊於 A、B　2. 畫一條射線取端點 O′；<b>用與步驟 1 相同的半徑</b>、以 O′ 為圓心畫弧，交射線於 A′——<b>這條弧要畫得夠長</b>，因為 B′ 會落在它上面　3. 圓規量 AB 的距離，以 A′ 為圓心畫弧，交步驟 2 的弧於 B′　4. 連 O′B′ → ∠O′ = ∠O</div>
         <div class="why">背後原理是下一節的 SSS 全等：兩個三角形三邊對應相等，角就相等。尺規作圖不是魔術，每一步都有全等在撐。</div></div>
     </section>
 
@@ -211,8 +214,12 @@ sup{font-size:.72em}
         <svg role="img" viewBox="0 0 240 140" width="240" height="140" aria-label="中垂線作圖示意">
           <line x1="40" y1="80" x2="200" y2="80" stroke="#5B57C2"/>
           <line x1="120" y1="15" x2="120" y2="130" stroke="#B7476A"/>
-          <path d="M85 45 A55 55 0 0 1 155 45" fill="none" stroke="#CBC0E0"/>
-          <path d="M85 115 A55 55 0 0 0 155 115" fill="none" stroke="#CBC0E0"/>
+          <path d="M102 30 Q118 48 128 74" fill="none" stroke="#CBC0E0"/>
+          <path d="M138 30 Q122 48 112 74" fill="none" stroke="#CBC0E0"/>
+          <path d="M102 130 Q118 112 128 86" fill="none" stroke="#CBC0E0"/>
+          <path d="M138 130 Q122 112 112 86" fill="none" stroke="#CBC0E0"/>
+          <circle cx="120" cy="50" r="2.5" fill="#B7476A"/>
+          <circle cx="120" cy="109" r="2.5" fill="#B7476A"/>
           <text x="32" y="96" font-size="12" fill="#2A2335">A</text><text x="202" y="96" font-size="12" fill="#2A2335">B</text>
           <text x="126" y="24" font-size="11" fill="#B7476A">中垂線</text></svg>
         <div class="step">1. 以 A、B 為圓心，取<b>相同</b>且大於 AB 一半的半徑，各畫一弧　2. 兩弧交於上下兩點　3. 連這兩點 → 就是 AB 的中垂線</div>
@@ -274,9 +281,10 @@ sup{font-size:.72em}
         <tr><td>SAS</td><td>兩邊與<b>夾角</b>對應相等</td></tr>
         <tr><td>ASA</td><td>兩角與<b>夾邊</b>對應相等</td></tr>
         <tr><td>AAS</td><td>兩角與其中一角的<b>對邊</b>對應相等</td></tr>
-        <tr><td>RHS</td><td>直角三角形：斜邊與一股對應相等</td></tr>
+        <tr><td>RHS</td><td><b>兩個都是直角三角形時</b>：斜邊與一股對應相等（也叫 HL）</td></tr>
       </table>
       <div class="warn"><b>兩個不能用的：</b>SSA（兩邊與「非夾角」）——同樣的資料可能拼出兩種不同的三角形；AAA（三角相等）——形狀相同但大小可以不同（那是相似，國三的事）。</div>
+      <div class="note"><b>RHS 為什麼可以？</b>它看起來像 SSA（兩邊＋非夾角 90°），但直角是特例：斜邊固定時另一股只有一種拼法，所以成立——<b>前提是兩個三角形都有直角</b>，一般角度的 SSA 仍然不行。</div>
       <div class="eg"><div class="q">例【核心必會】已知 AB=DE、∠B=∠E、BC=EF，全等嗎？用哪個條件？</div>
         <div class="step">∠B 夾在 AB 與 BC 之間、∠E 夾在 DE 與 EF 之間 → <b>SAS</b> ✓ 全等</div>
         <div class="why">判斷 SAS 的關鍵一問：「這個角是不是被那兩邊<b>夾住</b>？」不是夾角就掉進 SSA。</div></div>
@@ -324,6 +332,8 @@ sup{font-size:.72em}
         <circle cx="70" cy="40" r="3" fill="#B7476A"/>
         <line x1="70" y1="40" x2="20" y2="100" stroke="#CBC0E0" stroke-dasharray="3 3"/>
         <line x1="70" y1="40" x2="120" y2="100" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <line x1="42" y1="66" x2="48" y2="74" stroke="#756C89"/>
+        <line x1="98" y1="74" x2="92" y2="66" stroke="#756C89"/>
         <text x="74" y="38" font-size="11" fill="#B7476A">P</text>
         <text x="14" y="116" font-size="11" fill="#2A2335">A</text><text x="118" y="116" font-size="11" fill="#2A2335">B</text>
         <line x1="180" y1="110" x2="290" y2="110" stroke="#5B57C2"/>
@@ -332,6 +342,8 @@ sup{font-size:.72em}
         <circle cx="252" cy="79" r="3" fill="#B7476A"/>
         <line x1="252" y1="79" x2="252" y2="110" stroke="#CBC0E0" stroke-dasharray="3 3"/>
         <line x1="252" y1="79" x2="228" y2="49" stroke="#CBC0E0" stroke-dasharray="3 3"/>
+        <path d="M247 110 L247 105 L252 105" fill="none" stroke="#756C89"/>
+        <path d="M231.9 45.9 L235.0 49.8 L231.1 52.9" fill="none" stroke="#756C89"/>
         <text x="256" y="76" font-size="11" fill="#B7476A">P</text><text x="172" y="124" font-size="11" fill="#2A2335">O</text></svg>
       <div class="eg"><div class="q">例①【核心必會】P 在 AB 的中垂線上，PA = 3x−2、PB = x+8，求 x</div>
         <div class="step">PA = PB → 3x−2 = x+8 → x = <b>5</b></div>
@@ -356,11 +368,12 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">① P 在 AB 中垂線上，PA = 2x+1、PB = 13，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2x+1 = 13 → x = <b>6</b></div></div></div>
         <div class="prob"><div class="pq">② P 在 ∠O 角平分線上，P 到一邊距離 7，到另一邊距離是？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st"><b>7</b>（等距）</div></div></div>
         <div class="prob"><div class="pq">③ 要找一點同時到 A、B 等距、又到 B、C 等距，怎麼找？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">作 AB 的中垂線與 BC 的中垂線，<b>交點</b>就是——它到 A、B、C 三點都等距。</div><div class="why">這個點就是之後「外心」的雛形（國三 3-2 會正式登場）。</div></div></div>
+        <div class="prob"><div class="pq">④【進階】兩條相交的道路，想蓋一間到兩條路等距的商店，位置在哪？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">在兩條路夾角的<b>角平分線</b>上（兩條路相交成四個角，共有兩條互相垂直的角平分線可選）。</div><div class="why">「到兩線等距」對應角平分線的逆敘述——跟到兩「點」等距用中垂線成對記。</div></div></div>
       </div>
       <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">性質與逆敘述混用 → <b>A</b>；「距離」忘了是垂直距離 → <b>A</b>。</div></div>
-      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～③）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～③ 都自己算過、對過答案</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-5：邊和角的大小關係。</div></div>
+      <div class="gate"><h3>這一課的自我檢查（過關範圍：觀念題＋計算 ①～③，④進階選做）</h3><ul><li class="g1">觀念辨識全部答對（訂正後也算）</li><li class="g2">計算 ①～③ 都自己算過、對過答案（④選做）</li></ul><div class="stats"></div><button class="btn">我已自行完成並核對這幾題</button><div class="pass">完成。接著 3-5：邊和角的大小關係。</div></div>
     </section>
   </div>
 
@@ -394,6 +407,7 @@ sup{font-size:.72em}
         <div class="why">「對」= 面對面：邊 9 的對角是不碰到這條邊的那個頂點。</div></div>
       <div class="eg"><div class="q">例②【進階】∠A=50°、∠B=60°，哪條邊最長？</div>
         <div class="step">∠C = 70° 最大 → 它的對邊 <b>AB</b> 最長</div>
+        <div class="step">完整排序照角來：70°＞60°＞50° → 對邊 <b>AB ＞ AC ＞ BC</b>（∠B 對 AC、∠A 對 BC）</div>
         <div class="why">先把第三角算出來（3-1 回鍋），再用大角對大邊。角的對邊是「名字裡沒有它的那條」：∠C 的對邊是 AB。</div></div>
       <div class="warn"><b>只能在「同一個」三角形裡比。</b>兩個不同三角形的邊角不能用這條互比。</div>
     </section>
@@ -421,7 +435,7 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 國二下 第3章 三角形的基本性質</span><span>V2.7.4</span></div>
+  <div class="page-footer"><span>數學 · 國二下 第3章 三角形的基本性質</span><span>V2.7.5</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
