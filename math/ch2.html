@@ -236,7 +236,9 @@ sup{font-size:.72em}
       <button class="lpill" data-s="1" data-l="1">加減乘除</button>
       <button class="lpill" data-s="1" data-l="2">分母有理化</button>
       <button class="lpill" data-s="1" data-l="3">實戰題型</button>
-      <button class="lpill" data-s="1" data-l="4">練習・訂正・再測</button>
+      <button class="lpill" data-s="1" data-l="4">實戰二・估算與小數部分</button>
+      <button class="lpill" data-s="1" data-l="5">實戰三・對稱與巧算</button>
+      <button class="lpill" data-s="1" data-l="6">練習・訂正・再測</button>
     </div>
 
     <section class="lesson on" data-s="1" data-l="0">
@@ -325,7 +327,70 @@ sup{font-size:.72em}
       <div class="warn"><b>這課四個開關：</b>① 最簡＝三條件都過　② 小數部分要檢查進位　③ 根式係數方程式走四步　④ 化簡完一層，整體再看一次。</div>
     </section>
 
-<section class="lesson" data-s="1" data-l="4">
+    <section class="lesson" data-s="1" data-l="4">
+      <div class="plabel2">2-2 · 實戰二</div>
+      <h2>估算與小數部分：不用算出精確小數</h2>
+
+      <div class="plabel2" style="margin-top:14px">題型五 · 根式近似與比例比較</div>
+      <div class="hi"><span class="k">流程：夾根號範圍 → 換成比例的小數範圍 → 比較選項</span></div>
+      <div class="eg"><div class="q">例①【核心必會】1+√2 最接近哪個？(甲) 7/3　(乙) 12/5　(丙) 5/2</div>
+        <div class="step">1.4² = 1.96 ＜ 2 ＜ 2.1025 = 1.45² → 1.4 ＜ √2 ＜ 1.45 → 2.4 ＜ 1+√2 ＜ 2.45</div>
+        <div class="step">選項化小數：7/3 ≈ 2.33、12/5 = 2.4、5/2 = 2.5 → 最接近 <b>12/5</b></div>
+        <div class="why">整題不需要背 √2 = 1.414——用題目給的（或自夾的）平方範圍把根式關進區間，再把選項化成小數來比。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型六 · 減式的整數與小數部分</div>
+      <div class="hi"><span class="k">小數部分 = 原數 − 整數部分（一定滿足 0 ≤ 小數部分 ＜ 1）</span></div>
+      <div class="eg"><div class="q">例②【核心必會】求 5 − √3 的整數部分與小數部分</div>
+        <div class="step">1 ＜ √3 ＜ 2 → 減完方向會反：3 ＜ 5−√3 ＜ 4 → 整數部分 <b>3</b></div>
+        <div class="step">小數部分 = (5−√3) − 3 = <b>2 − √3</b></div>
+        <div class="why">「減 √」的題先夾出整體範圍（注意不等號方向），整數部分出來後，<b>小數部分永遠 = 原數 − 整數部分</b>——它可以長得像 2−√3 這種式子，只要值在 0 和 1 之間就對。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型七 · 小數部分的倒數：乘共軛</div>
+      <div class="eg"><div class="q">例③【核心必會】√3 的小數部分為 a，求 1/a</div>
+        <div class="step">1 ＜ √3 ＜ 2 → a = √3 − 1</div>
+        <div class="step">1/a = 1/(√3−1)，分母分子同乘共軛 (√3+1)：= (√3+1)/(3−1) = <b><span class="frac"><span class="fn">√3+1</span><span class="fd">2</span></span></b></div>
+        <div class="why">分母長成 √n − k 或 √n + k，<b>優先乘共軛</b>（2-2 有理化那課的平方差應用）。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型八 · [√k] 的分段計數</div>
+      <div class="hi"><span class="k">[√k] = m 發生在 m² ≤ k ＜ (m+1)²——一段一段算，不要逐項慢數</span></div>
+      <div class="eg"><div class="q">例④【進階】[√1]+[√2]+⋯+[√8] = ?</div>
+        <table class="tbl" style="max-width:380px"><tr><th>k 的範圍</th><th>[√k]</th><th>個數</th><th>貢獻</th></tr>
+          <tr><td>1 ≤ k ≤ 3</td><td>1</td><td>3</td><td>3</td></tr>
+          <tr><td>4 ≤ k ≤ 8</td><td>2</td><td>5</td><td>10</td></tr></table>
+        <div class="step">總和 = 3 + 10 = <b>13</b></div>
+        <div class="why">每一段的個數 = (m+1)² − m² = 2m+1（3、5、7、…）。反過來「總和 = 34 求 n」也是列這張表累積到 34（見再測）——答案是 n，不是把 34 抄回去。</div></div>
+    </section>
+
+    <section class="lesson" data-s="1" data-l="5">
+      <div class="plabel2">2-2 · 實戰三</div>
+      <h2>對稱與巧算：先看結構，再動手</h2>
+
+      <div class="plabel2" style="margin-top:14px">題型九 · 共軛對稱式：先求 x+y 與 xy</div>
+      <div class="eg"><div class="q">例①【核心必會】x = (√7+√5)/2、y = (√7−√5)/2，求 x+y、xy、x²+y²</div>
+        <div class="step">x+y = <b>√7</b>（√5 消掉）；xy = (7−5)/4 = <b>1/2</b>（平方差）</div>
+        <div class="step">x²+y² = (x+y)² − 2xy = 7 − 1 = <b>6</b></div>
+        <div class="why">看到「一加一減」的共軛形式，<b>先求 x+y 與 xy</b>，其他全部用第1章對稱式改寫——各自平方硬展開又慢又容易錯。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十 · 帶分數根式的完全平方辨識</div>
+      <div class="eg"><div class="q">例②【進階】√(3 <span class="frac"><span class="fn">1</span><span class="fd">16</span></span>) = ?</div>
+        <div class="step">化假分數：= √(49/16)　（3×16+1 = 49，正好是 7²！）</div>
+        <div class="step">= <b>7/4</b></div>
+        <div class="why">n + 1/m² 型的帶分數，先算「n×m²+1 是不是完全平方數」——是的話整個根號直接開出來。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十一 · 根式係數聯立：對稱就「加」和「減」</div>
+      <div class="eg"><div class="q">例③【進階】(√3+√2)x + (√3−√2)y = 3√3+√2；(√3−√2)x + (√3+√2)y = 3√3−√2</div>
+        <div class="step">兩式<b>相加</b>：2√3(x+y) = 6√3 → x+y = 3</div>
+        <div class="step">兩式<b>相減</b>：2√2(x−y) = 2√2 → x−y = 1 → <b>x = 2、y = 1</b></div>
+        <div class="why">係數是「一加一減」的對稱結構時，加減會讓一半的根式直接消失——不要一開始就用一般消去法展開大量根式。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十二 · 有理化＋連鎖消去</div>
+      <div class="eg"><div class="q">例④【進階】1/(1+√3) + 1/(√3+√5) + 1/(√5+√7) = ?</div>
+        <div class="step">每項乘共軛：1/(√a+√b) = (√b−√a)/(b−a) = (√b−√a)/2（相鄰奇數差 2）</div>
+        <div class="step">= (√3−1)/2 + (√5−√3)/2 + (√7−√5)/2 → 中間全消 = <b>(√7 − 1)/2</b></div>
+        <div class="why">有理化把每一項變成「後減前」，整串就連鎖消去只剩頭尾——跟第1章的連乘消去是同一個精神。</div></div>
+    </section>
+
+<section class="lesson" data-s="1" data-l="6">
       <div class="plabel2">練習與訂正</div>
       <h2>自己做一遍，錯的訂正後一樣算過</h2>
       <p class="sub">先自己算，再對解答。</p>
@@ -350,6 +415,18 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">再測② √11 的小數部分為 a（√11 = 3+a），求 √44 的小數部分</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">√44 = 2√11 = 6+2a；3 ＜ √11 ＜ 3.5 → 0 ＜ a ＜ 0.5 → 2a ＜ 1 ✓ 不進位 → <b>2a</b>（選 B）</div><div class="why">這題不進位——但「檢查」這步不能省，√7 那種就會進位。</div></div></div>
         <div class="prob"><div class="pq">再測③ 3√6 · x − 2 = 7，求 x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3√6 x = 9 → x = 3/√6 = 3√6/6 = <b><span class="frac"><span class="fn">√6</span><span class="fd">2</span></span></b>（選 B）</div></div></div>
         <div class="prob"><div class="pq">再測④【進階】2022 × √(2021×2019+1) + 1 = a²，a 為正整數，求 a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2021×2019+1 = 2020²−1+1 = 2020² → 開出 2020 → 原式 = 2022×2020+1 = 2021²−1+1 = <b>2021²</b> → a = <b>2021</b></div><div class="why">兩層同一個公式：(n+1)(n−1)+1 = n²。你上次停在 2020——就是少做「整體再看一次」那步。</div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px">實戰二三・核心練習：</p>
+        <div class="prob"><div class="pq">⑧ 求 7 − √3 的整數部分與小數部分</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">5 ＜ 7−√3 ＜ 6 → 整數 <b>5</b>；小數 = (7−√3)−5 = <b>2−√3</b></div></div></div>
+        <div class="prob"><div class="pq">⑨ √5 的小數部分為 a，求 1/a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = √5−2 → 1/a = 1/(√5−2) = <b>√5+2</b>（乘共軛，分母 5−4=1）</div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測・第二批</b>（考卷原題）：</p>
+        <div class="prob"><div class="pq">再測⑤ 黃金比例 (1+√5)/2 : 1 最接近哪個螢幕比例？已知 2.2²=4.84、2.25²=5.0625。(A) 4:3 (B) 16:9 (C) 21:9 (D) 3:2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">2.2＜√5＜2.25 → 1.6 ＜ (1+√5)/2 ＜ 1.625；選項：4/3≈1.33、16/9≈1.78、21/9≈2.33、3/2=1.5 → 最接近 <b>(D) 3:2</b></div><div class="why">流程：夾範圍 → 選項化小數 → 比。你答對了這題——同一招要能搬到任何數字。</div></div></div>
+        <div class="prob"><div class="pq">再測⑥ 求 6 − √5 的整數部分與小數部分</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">3 ＜ 6−√5 ＜ 4 → 整數 <b>3</b>；小數 = <b>3 − √5</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑦【進階】[√1]+[√2]+⋯+[√n] = 34，求 n</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">分段：1~3 貢獻 3；4~8 貢獻 10（累積 13）；9~15 每項 3，貢獻 21（累積 34）→ k 走到 15 恰好 34 → <b>n = 15</b></div><div class="why">你上次寫 34——那是「總和」，題目要的是「加到第幾項」。列分段表，答案對象是 n。</div></div></div>
+        <div class="prob"><div class="pq">再測⑧ √2 的小數部分為 a，求 1/a</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">a = √2−1 → 1/a = <b>√2+1</b>（乘共軛，分母 2−1=1）</div></div></div>
+        <div class="prob"><div class="pq">再測⑨ x = (√5+√3)/2、y = (√5−√3)/2，求 x+y、xy、x²+y²</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">x+y = <b>√5</b>；xy = (5−3)/4 = <b>1/2</b>；x²+y² = 5−1 = <b>4</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑩【進階】√(227 <span class="frac"><span class="fn">1</span><span class="fd">225</span></span>) + √(223 <span class="frac"><span class="fn">1</span><span class="fd">225</span></span>) = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">227×225+1 = 51076 = 226²；223×225+1 = 50176 = 224² → = 226/15 + 224/15 = 450/15 = <b>30</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑪【進階】解 (√7+√2)x+(√7−√2)y = 5√7+13√2；(√7−√2)x+(√7+√2)y = 5√7−13√2</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">相加：2√7(x+y) = 10√7 → x+y = 5；相減：2√2(x−y) = 26√2 → x−y = 13 → <b>x = 9、y = −4</b></div><div class="why">你有解出來——但注意你是用展開消去硬算的；對稱結構「先加減」快十倍。</div></div></div>
+        <div class="prob"><div class="pq">再測⑫【進階】1/(√5+√7) + 1/(√7+√9) + ⋯ + 1/(√23+√25) = ?</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">每項 = (√後−√前)/2 → 連鎖消去 = (√25 − √5)/2 = <b>(5 − √5)/2</b></div></div></div>
 <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">沒先化簡就判斷同不同類 → 多半是 <b>A</b>；化簡找錯因數、係數乘錯 → <b>B</b>。</div></div>
@@ -365,7 +442,9 @@ sup{font-size:.72em}
       <button class="lpill" data-s="2" data-l="2">逆定理與應用</button>
       <button class="lpill" data-s="2" data-l="3">補直角三角形（實戰）</button>
       <button class="lpill" data-s="2" data-l="4">方格・路線・面積鏈（實戰）</button>
-      <button class="lpill" data-s="2" data-l="5">練習・訂正・再測</button>
+      <button class="lpill" data-s="2" data-l="5">實戰三・中心・摺紙・長方形定理</button>
+      <button class="lpill" data-s="2" data-l="6">實戰四・座標與整數三角形</button>
+      <button class="lpill" data-s="2" data-l="7">練習・訂正・再測</button>
     </div>
 
     <section class="lesson on" data-s="2" data-l="0">
@@ -483,7 +562,75 @@ sup{font-size:.72em}
         <div class="why">畢氏定理不只算邊長——它本身就是「面積的等式」，可以一層一層<b>代入串接</b>。寫證明時每一步標明用了哪個三角形。</div></div>
     </section>
 
-<section class="lesson" data-s="2" data-l="5">
+    <section class="lesson" data-s="2" data-l="5">
+      <div class="plabel2">2-3 · 實戰三</div>
+      <h2>中心距離、摺紙、長方形定理</h2>
+
+      <div class="plabel2" style="margin-top:14px">題型八 · 相鄰正方形的中心距離</div>
+      <div class="hi"><span class="k">正方形中心到每一邊的距離 = 邊長的一半</span></div>
+      <div class="eg"><div class="q">例①【核心必會】邊長 2 與 6 的正方形底部對齊併排，求兩中心距離</div>
+        <div class="step">水平距離 = 2/2 + 6/2 = 4；垂直距離 = 6/2 − 2/2 = 2</div>
+        <div class="step">距離 = √(4²+2²) = √20 = <b>2√5</b></div>
+        <div class="why">中心不在格線上沒關係——一樣是「水平差、垂直差」建直角三角形，只是差要用<b>半邊長</b>組出來。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型九 · 摺紙＝垂直平分線</div>
+      <div class="hi"><span class="k">摺疊使 B 落在 E → 摺痕是 BE 的垂直平分線 → 摺痕上任一點到 B、E 等距</span></div>
+      <div class="eg"><div class="q">例②【核心必會】用這個性質的固定三步</div>
+        <div class="step">① 摺痕過 A → AB = AE（先把「不動的長度」找出來）</div>
+        <div class="step">② 用畢氏在直角三角形裡解出未知邊（常是 AD 或 DE）</div>
+        <div class="step">③ 摺痕另一端 F 也有 FB = FE → 設 x 列方程式 → 最後用畢氏求摺痕長</div>
+        <div class="why">摺紙題的全部資訊就是「等距」兩個字——摺痕兩端各寫一條等距，配畢氏就解完（完整數字流程見再測⑬）。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十 · 長方形內點定理（英國國旗定理）</div>
+      <div class="hi"><span class="k">長方形內任一點 P：PA² + PC² = PB² + PD²（對角兩組的平方和相等）</span></div>
+      <div class="eg"><div class="q">例③【核心必會】PA=3、PB=5、PC=7，求 PD</div>
+        <div class="step">9 + 49 = 25 + PD² → PD² = 33 → PD = <b>√33</b></div>
+        <div class="why">記法：把 P 向兩邊作垂線，四段距離兩兩重組，兩組對角都等於同樣的四個平方和。列式時<b>對角配對</b>別配錯（A、C 一組；B、D 一組）。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十一 · 面積連鎖：邊長還是面積？</div>
+      <div class="eg"><div class="q">例④【進階】正方形塔：最大正方形邊長 5，左斜邊上的正方形 = 2²+3² = 13，求右邊正方形的<b>邊長</b></div>
+        <div class="step">面積關係：13 + (右) = 5² = 25 → 右 = 12</div>
+        <div class="step">題目問邊長 → <b>√12 = 2√3</b></div>
+        <div class="why"><b>畢氏定理裡的平方是「面積」</b>；題目若問邊長，最後還要開根號。答案寫 12 就是把面積當邊長——答案對象檢查再次上場。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十二 · 對角線平行 → 等高轉移面積</div>
+      <div class="eg"><div class="q">例⑤【進階】兩正方形方向相同時，BD ∥ CF，怎麼用？</div>
+        <div class="step">C、F 到直線 BD 的距離相同（平行線間距離處處相等）→ △BDF 與 △BDC <b>同底 BD、等高</b> → 面積相等</div>
+        <div class="step">而 △BDC 是大正方形的一半 → [△BDF] = 大正方形面積 ÷ 2</div>
+        <div class="why">看到「頂點在一條平行線上滑動」就想等高轉移——比硬做大面積扣小面積快非常多（見再測⑭）。</div></div>
+    </section>
+
+    <section class="lesson" data-s="2" data-l="6">
+      <div class="plabel2">2-3 · 實戰四</div>
+      <h2>座標距離與整數直角三角形</h2>
+
+      <div class="plabel2" style="margin-top:14px">題型十三 · 等距點：距離「平方」相等就好</div>
+      <div class="eg"><div class="q">例①【核心必會】A 在直線 x=2 上，到 (0,0) 與 (4,4) 等距，求 A</div>
+        <div class="step">設 A = (2, t)。等距 → <b>距離平方相等</b>（不用開根號）：2²+t² = (2−4)²+(t−4)²</div>
+        <div class="step">4+t² = 4+t²−8t+16 → 8t = 16 → t = 2 → A = <b>(2, 2)</b></div>
+        <div class="why">等距問題直接令「平方相等」，t² 會自己消掉，剩一次方程式。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十四 · 距離平方的重組</div>
+      <div class="eg"><div class="q">例②【進階】A(0,a)、B(−b,0)、C(0,−c)、D(d,0)，已知 AB²=20、CD²=44，求 √(AD²+BC²)</div>
+        <div class="step">AD²+BC² = (a²+d²)+(b²+c²) = <b>(a²+b²)+(c²+d²)</b> = 20+44 = 64</div>
+        <div class="step">→ √64 = <b>8</b></div>
+        <div class="why">四個平方自由重組——不用（也不能）求出各邊。看到「平方和」先想「能不能換組」。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十五 · 整數直角三角形：平方差配對</div>
+      <div class="eg"><div class="q">例③【進階】一股 5，另一股與斜邊都是整數，求周長</div>
+        <div class="step">c² − b² = 25 → (c−b)(c+b) = 25 → 正因數配對只有 1×25（5×5 給 b=0 捨去）</div>
+        <div class="step">c−b=1、c+b=25 → c=13、b=12 → 周長 = 5+12+13 = <b>30</b></div>
+        <div class="why">畢氏＋第1章平方差＋因數配對三合一。配對照固定流程：列配對 → 解 → 檢查正整數。</div></div>
+
+      <div class="plabel2" style="margin-top:18px">題型十六 · 追趕與可達：位置 → 距離 → 比較</div>
+      <div class="hi"><span class="k">先算目前位置 → 畢氏算直線距離 → 比較「剩餘時間 × 速度」夠不夠走</span></div>
+      <div class="eg"><div class="q">例④【核心必會】甲向東 2 m/s、乙向北 3 m/s，5 分鐘後乙抵達目標。甲還有 10 分鐘，趕得到嗎？</div>
+        <div class="step">5 分鐘後：甲在東 600 m、目標在北 900 m → 距離 = √(600²+900²) = 300√13 ≈ 1082 m</div>
+        <div class="step">甲剩餘可走 2×600 = 1200 m ＞ 1082 → <b>趕得到</b></div>
+        <div class="why">比較時可以平方：(300√13)² = 1,170,000 與 1200² = 1,440,000——避免小數。</div></div>
+    </section>
+
+<section class="lesson" data-s="2" data-l="7">
       <div class="plabel2">練習與訂正</div>
       <h2>自己做一遍，錯的訂正後一樣算過</h2>
       <p class="sub">先自己算，再對解答。</p>
@@ -510,6 +657,21 @@ sup{font-size:.72em}
         <div class="prob"><div class="pq">再測⑤【進階】甲、乙兩張 8×8 方格紙上各有頂點在格點的正方形：甲位移 (3,5)、乙位移 (4,4)。兩正方形面積相等，求甲、乙方格紙面積比</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">甲內正方形 = (3²+5²)a² = 34a²；乙 = (4²+4²)b² = 32b² → 34a² = 32b² → a²:b² = 32:34 = 16:17</div><div class="st">兩張都是 8×8 → 面積比 = 64a²:64b² = <b>16:17</b>（選 A）</div></div></div>
         <div class="prob"><div class="pq">再測⑥ 小宇上學：郵局→圖書館 300 m、圖書館→公園 400 m 互相垂直。(1) 郵局到公園原本距離？ (2) 原本 7:00 出門 7:20 到校（原路 200+500+300）；改道（200+300+400+300）後，要 7:20 到校應幾點出門？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) √(300²+400²) = <b>500 m</b>（選 C）</div><div class="st">(2) 原路 1000 m 花 20 分 → 改道 1200 m 花 20×1200/1000 = 24 分 → 7:20 − 24 分 = <b>6 點 56 分</b>（選 D）</div><div class="why">畢氏之後還有路程比＝時間比這一步——翻譯表填完再回答。</div></div></div>
         <div class="prob"><div class="pq">再測⑦【進階】甲～庚均為正方形、三個直角三角形。(1) 甲、乙、戊面積關係？ (2) 說明庚 = 甲+乙+丙+丁</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(1) △ABC 直角 → <b>戊 = 甲 + 乙</b></div><div class="st">(2) △DEF → 己 = 丙+丁；△GHI 的兩股是戊、己的邊 → 庚 = 戊+己 = (甲+乙)+(丙+丁) = <b>甲+乙+丙+丁</b></div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px">實戰三四・核心練習：</p>
+        <div class="prob"><div class="pq">⑧ 邊長 2 與 6 的正方形底部對齊併排，求兩中心距離</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">水平 1+3 = 4、垂直 3−1 = 2 → √20 = <b>2√5</b></div></div></div>
+        <div class="prob"><div class="pq">⑨ 長方形內一點 P：PA=3、PB=5、PC=7，求 PD</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">9+49 = 25+PD² → PD = <b>√33</b></div></div></div>
+        <div class="prob"><div class="pq">⑩ 一股 5、另一股與斜邊為整數的直角三角形，求周長</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(c−b)(c+b)=25 → 1×25 → 13、12 → 周長 <b>30</b></div></div></div>
+        <p style="font-size:13px;color:var(--text-2);margin-top:14px"><b>錯題再測・第二批</b>（考卷原題）：</p>
+        <div class="prob"><div class="pq">再測⑧ 邊長 3 與 4 的正方形底部對齊併排，A、B 為兩中心，求 AB</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">水平 = 3/2+4/2 = 7/2、垂直 = 4/2−3/2 = 1/2 → AB = √(49/4+1/4) = √(50/4) = <b><span class="frac"><span class="fn">5√2</span><span class="fd">2</span></span></b></div><div class="why">你上次寫 √5/2——半邊長是 3/2 和 2，不是 1/2 和 1。中心到邊的距離＝<b>邊長的一半</b>，先把兩個半邊長寫在圖上再組差。</div></div></div>
+        <div class="prob"><div class="pq">再測⑨ 尋寶：甲東 4 m/s、乙北 6 m/s、丙西 3 m/s，限時 30 分。10 分鐘後乙到達藏寶處（北方），甲、丙沿直線趕往，能否於剩餘 20 分鐘內到達？</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">10 分鐘後：甲在東 2400、乙（藏寶處）在北 3600、丙在西 1800</div><div class="st">甲：距離 = √(2400²+3600²) = 1200√13 ≈ 4327；可走 4×1200 = 4800 ＞ 距離 → <b>能</b></div><div class="st">丙：距離 = √(1800²+3600²) = 1800√5 ≈ 4025；可走 3×1200 = 3600 ＜ 距離 → <b>不能</b> → 選 <b>(D)</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑩【進階】正方形塔：最大正方形邊長 10，A 邊長 6、B 邊長 5、C 邊長 5，求正方形 D 的<b>邊長</b></div><button class="toggle">顯示解答</button><div class="ans"><div class="st">左斜邊正方形 = 6²+5² = 61；面積關係：61 + (5²+D 面積) = 10² = 100 → D 面積 = 14</div><div class="st">題目問邊長 → <b>√14</b></div><div class="why">你上次寫 14——那是面積。<b>畢氏的平方是面積，問邊長要開根號</b>。</div></div></div>
+        <div class="prob"><div class="pq">再測⑪【進階】長方形 ABCD 摺疊使 B 落在 CD 中點 E，摺痕 AF。CD = 6，求 AF</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">AB = AE = 6（A 在摺痕上）；DE = 3 → AD = √(36−9) = 3√3</div><div class="st">設 BF = x = FE；FC = 3√3−x、CE = 3：x² = (3√3−x)²+9 → 6√3x = 36 → x = 2√3</div><div class="st">AF = √(AB²+BF²) = √(36+12) = √48 = <b>4√3</b></div><div class="why">兩條等距（AB=AE、FB=FE）＋兩次畢氏——摺紙題的標準流程。</div></div></div>
+        <div class="prob"><div class="pq">再測⑫ 長方形內一點 P：PA=10、PB=11、PC=6，求 PD = x</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">PA²+PC² = PB²+PD² → 100+36 = 121+x² → x² = 15 → x = <b>√15</b></div><div class="why">長度取正——不用寫 ±√15。對角配對：A、C 一組。</div></div></div>
+        <div class="prob"><div class="pq">再測⑬ 一股 7、另一股與斜邊皆整數，求周長</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(c−b)(c+b) = 49 → 1×49 → c=25、b=24 → 周長 = 7+24+25 = <b>56</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑭【進階】正方形 ABCD（面積 50）、CEFG（面積 18）方向相同、C 在 BE 上，求 △BDF 面積</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">BD ∥ CF（兩對角線同方向）→ F 與 C 到 BD 等距 → [△BDF] = [△BDC] = 50/2 = <b>25</b></div><div class="why">你上次用面積扣除法算成 15——扣除法要扣對三塊很難；<b>等高轉移一步到位</b>。</div></div></div>
+        <div class="prob"><div class="pq">再測⑮ A 在直線 x=3 上，到 (1,0) 與 (7,2) 等距，求 A</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">(3−1)²+t² = (3−7)²+(t−2)² → 4+t² = 16+t²−4t+4 → 4t = 16 → t = 4 → A = <b>(3, 4)</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑯【進階】A(0,a)、B 在 x 軸負向、C 在 y 軸負向、D 在 x 軸正向；AB=√35、CD=√65，求 √(AD²+BC²)</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">AD²+BC² = (a²+d²)+(b²+c²) = (a²+b²)+(c²+d²) = 35+65 = 100 → <b>10</b></div></div></div>
+        <div class="prob"><div class="pq">再測⑰【進階】A(1,2)、B(4,6)，C 在 y 軸上使 △ABC 為直角三角形，求 C</div><button class="toggle">顯示解答</button><div class="ans"><div class="st">設 C = (0,t)，直角可能在三個頂點：直角在 C → t = 4；直角在 A → t = <span class="frac"><span class="fn">11</span><span class="fd">4</span></span>；直角在 B → t = 9</div><div class="st">→ C = (0,4)、(0, 11/4)、(0,9) <b>三個都合法</b></div><div class="why"><b>勘誤：</b>原題未指明直角在哪個頂點，完整答案有三個；課本解答只給 (0,4)，等於默認 ∠ACB=90°。考試時若題目這樣出，寫 (0,4) 之外可註明另兩解——條件不足是題目的問題，不是你的。</div></div></div>
 <div class="errlog"><h3>錯題登記（做錯的才填）</h3><div class="hint">寫題號、勾原因。手機上表格可左右滑。</div>
         <table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table>
         <div class="leg">斜邊擺錯、求斜邊還是求股判斷錯 → <b>A/C</b>；開根號或化簡算錯 → <b>B</b>。</div></div>
@@ -517,13 +679,13 @@ sup{font-size:.72em}
     </section>
   </div>
 
-  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.7.3</span></div>
+  <div class="page-footer"><span>數學 · 第2章 平方根與畢氏定理</span><span>V2.7.4</span></div>
 </div>
 
 <div class="bnav"><button id="prevBtn" disabled>← 上一課</button><button id="nextBtn" class="primary">下一課 →</button></div>
 
 <script>
-var SL=[4,5,6], cS=0, cL=[0,0,0];
+var SL=[4,7,8], cS=0, cL=[0,0,0];
 var stabs=document.querySelectorAll('.stab');
 function showSec(s){cS=s;document.querySelectorAll('.sec').forEach(function(el){el.classList.toggle('on',+el.dataset.s===s);});stabs.forEach(function(t){var on=+t.dataset.s===s;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});showLesson(s,cL[s]);}
 function showLesson(s,l){cS=s;cL[s]=l;var sec=document.querySelector('.sec[data-s="'+s+'"]');sec.querySelectorAll('.lesson').forEach(function(el){el.classList.toggle('on',+el.dataset.l===l);});sec.querySelectorAll('.lpill').forEach(function(p){p.classList.toggle('on',+p.dataset.l===l);});updateNav();window.scrollTo(0,0);}
