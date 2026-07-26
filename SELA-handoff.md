@@ -1,4 +1,4 @@
-# SELA-handoff — StudyBase V2.12.0（2026-07）
+# SELA-handoff — StudyBase V2.13.0（2026-07）
 
 ## 交接快照
 - 21 個 HTML：根 2（index、offline）＋數學 13＋化學 6＋物理 1（僅首頁，標「尚未開始」）

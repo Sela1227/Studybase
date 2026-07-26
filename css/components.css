@@ -35,3 +35,14 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 
 /* 弱文字對比升級：有意義小字用 muted */
 .item-sub,.page-footer,.tmin,.vshi{color:var(--text-muted)}
+
+/* 頂欄與底欄內容對齊 720px 內容欄（V2.13.0） */
+.topbar,.back-nav{padding-left:max(20px,calc((100vw - 720px)/2))!important;padding-right:max(20px,calc((100vw - 720px)/2))!important}
+.bnav,.bottom-nav{padding-left:max(20px,calc((100vw - 720px)/2))!important;padding-right:max(20px,calc((100vw - 720px)/2))!important}
+/* 技能卡單卡模式 */
+.cardnav{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:14px 0}
+.cardnav button{min-height:44px;padding:0 14px;border:1px solid var(--border-mid);border-radius:var(--r);background:var(--surface);cursor:pointer;color:var(--text-1)}
+.cardnav .pos{font-size:13px;color:var(--text-muted)}
+.knav a.on{border-color:#5B57C2;color:#5B57C2;background:#ECEBFA}
+details.howto{margin:10px 0 0}
+details.howto summary{min-height:44px;display:inline-flex;align-items:center;cursor:pointer;color:var(--text-muted);font-size:13.5px}

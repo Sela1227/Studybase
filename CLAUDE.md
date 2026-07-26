@@ -1,4 +1,4 @@
-# CLAUDE.md — StudyBase 工作準則（V2.12.0）
+# CLAUDE.md — StudyBase 工作準則（V2.13.0）
 
 ## 專案速覽
 單一學生（阿蔓，2026.8 升國三，會考 2027.5）的復習站。21 HTML、純靜態、GitHub Pages。學習方法論見專案知識《教材設計_常駐設定》；每頁怎麼寫見《定稿品質規範》；視覺見 DESIGN.md。
@@ -15,16 +15,15 @@
 - 錯題融入三層：換數字教學 → 無提示練習 → 原題只進再測；教學例絕不用原題。
 
 ## 學習系統（資料面）
-四鈕：1 獨立對／2 獨立錯／3 提示後對／4 看解答。燈號：紅＝(2)+(4)≥2；綠＝(1)≥3 且 (2)=(4)=0。localStorage 鍵表見 README。plan 的自動彙整讀 sb-res-*；歸檔寫 sb-hist。
+四鈕：1 獨立對／2 獨立錯／3 提示後對／4 看解答。燈號：紅＝(2)+(4)≥2；綠＝(1)≥3 且 (2)=(4)=0。localStorage 鍵表見 README（另有 sb-cur-k / sb-cur-c 記技能卡目前位置）。plan 的自動彙整讀 sb-res-*；歸檔寫 sb-hist。
 
 ## 檔案地圖（21 頁）
 math：ch1–ch5、2b-ch1–ch4、3a-ch1、skills、plan、index／chemistry：ch5–ch7、exam1、skills、index／physics：index／根：index、offline。
 
-## 共用層（V2.12.0 起）
+## 共用層（V2.13.0 起）
 css/tokens.css＋css/components.css 已被全站引用並覆蓋內嵌樣式——改按鍵/導覽/焦點一律改這裡，不再逐頁修。按鍵四階映射：primary=.gate .gbtn/.gate .btn/#check-btn；secondary=.hbtn/.qbtn/.inter-btn/.gbtn2；ghost=.prob .toggle；danger=.rbtn。文字字典：顯示解答/收起解答/批改/重新作答/完成本節/← 上一課/下一課 →。
 
 ## Backlog
-- 技能卡「一次一張」與頁首收合（審稿第三優先 UI）
 - 化學三層化（核心路徑／延伸收合）——需逐段內容判斷，單獨一輪
 - 3a-ch1 相似形依新課本目次重構；國三上圓、幾何證明
 - 兩週試行後依四指標數據調整

@@ -1,4 +1,4 @@
-# DESIGN.md V3 — StudyBase 視覺規格（依 V2.12.0 全站現況重整；取代所有舊版）
+# DESIGN.md V3 — StudyBase 視覺規格（依 V2.13.0 全站現況重整；取代所有舊版）
 
 ## 定位
 Nordic Minimalism × 薰衣草。安靜、可讀、無裝飾——所有視覺服務於「認出結構」。

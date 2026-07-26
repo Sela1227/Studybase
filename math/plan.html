@@ -123,8 +123,7 @@ svg{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
 <div class="wrap">
   <div class="poscard">
     <div class="plabel">學習系統 · 試行</div>
-    <h1>兩週，每天 25～30 分鐘，一天一件事</h1>
-    <p>固定節奏：<b>5 分回鍋昨天的（不看筆記）→ 8 分讀一張卡 → 10 分做題 → 5 分訂正＋寫一句錯因</b>。回鍋做的是「換過數字的變式」，不是原題——會做變式才是真的會，不是背答案。Day 4／10／12 是混合辨認日，Day 7／14 照卡片<b>燈號</b>驗收（綠→原錯題、黃→變式、紅→回四格）。前面九天都是核心卡，比較抽象的三張放最後。</p>
+    <h1>兩週，每天 25～30 分鐘，一天一件事</h1><div class="cardnav" style="margin:10px 0 0"><button id="goToday" style="background:#5B57C2;color:#fff;border-color:transparent">開始今天任務</button><span class="pos" id="todayLine">今天：—</span></div><details class="howto"><summary>怎麼使用？</summary><p>固定節奏：<b>5 分回鍋昨天的（不看筆記）→ 8 分讀一張卡 → 10 分做題 → 5 分訂正＋寫一句錯因</b>。回鍋做的是「換過數字的變式」，不是原題——會做變式才是真的會，不是背答案。Day 4／10／12 是混合辨認日，Day 7／14 照卡片<b>燈號</b>驗收（綠→原錯題、黃→變式、紅→回四格）。前面九天都是核心卡，比較抽象的三張放最後。</p></details>
     <div class="meta"><span>搭配 <a href="skills.html">技能卡</a></span><span><b>執行進度</b>（做了沒，不是會了沒）<span id="prog"> 0/0</span></span></div>
   </div>
 <div class="rule"><b>暫停規則（保護機制，不是懲罰）：</b>同一張卡裡，連續兩題寫不出第一步、或連續兩題都要看解答、或同一種錯連犯兩次——<b>今天就停在這裡</b>。改成：回四格重看 → 重做題① → 請爸媽只給「第一步提示」→ 剩下的題留到明天。這不叫沒做完，這叫不在還沒懂的時候硬堆題。</div>
@@ -158,7 +157,7 @@ svg{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
     </div>
     <div id="histList" class="note">尚無歷史。</div>
     <div class="note">歸檔＝把本輪所有勾選、指標、技能卡四鈕紀錄存成一筆歷史，然後清空重新開始（技能卡燈號會歸零）。匯出檔可以換裝置匯入。</div></div>
-    <div class="page-footer"><span>數學 · 兩週試行計畫</span><span>V2.12.0</span></div>
+    <div class="page-footer"><span>數學 · 兩週試行計畫</span><span>V2.13.0</span></div>
 </div>
 <script>
 (function(){
@@ -239,6 +238,25 @@ svg{max-width:100%;height:auto;display:block;margin-left:auto;margin-right:auto}
     }catch(e){alert('檔案格式不對');}};
     fr.readAsText(im.files[0]);
   });
+})();
+
+
+(function(){
+  var titles=['平方差', '翻譯機', '完全平方', '根安檢＋混合辨認日', '括號不是因式', '答所問', '週驗收一', '不准除以 x', '掃四格', '畢氏＋混合辨認日', '和與積', '配方＋混合辨認日', '拼板', '週驗收二'];
+  function todayN(){
+    var s=localStorage.getItem('sb-p14-start');
+    if(s){var d=Math.floor((Date.now()-new Date(s+'T00:00:00'))/86400000)+1; if(d>=1&&d<=14)return d;}
+    for(var day=1;day<=14;day++){var done=true;
+      document.querySelectorAll('input[type=checkbox][data-store^="p14-'+day+'-"]').forEach(function(c){if(!c.checked)done=false;});
+      if(!done)return day;}
+    return 14;
+  }
+  var n=todayN();
+  var cbs=document.querySelectorAll('input[type=checkbox][data-store]'),d=0;cbs.forEach(function(c){if(c.checked)d++;});
+  var tl=document.getElementById('todayLine');
+  if(tl)tl.textContent='今天：Day '+n+' · '+titles[n-1]+'　完成 '+d+'/'+cbs.length;
+  var gb=document.getElementById('goToday');
+  if(gb)gb.addEventListener('click',function(){var el=document.getElementById('d'+n);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});});
 })();
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('../sw.js');}
