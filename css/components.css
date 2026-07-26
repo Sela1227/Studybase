@@ -1,0 +1,37 @@
+/* StudyBase components — V2.12.0 統一設計語言（後載覆蓋各頁內嵌樣式） */
+@import url("tokens.css");
+
+/* 焦點（全站鍵盤與互動狀態） */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(91,87,194,.28);outline-offset:2px}
+
+/* 尺寸統一：一般操作 ≥44、底部導覽 ≥48 */
+.stab,.stabs button,.lpill,.tab,.chip,.hbtn,.toggle,.qbtn,.inter-btn,.gbtn,.gbtn2,.knav a,.flip,.flip-btn{min-height:44px!important;display:inline-flex;align-items:center;justify-content:center}
+.bnav button,.bnav a,.bnav-btn,.bottom-nav button{min-height:48px!important}
+
+/* 底部導覽統一（高度/半透明薰衣草/safe-area） */
+.bnav,.bottom-nav{position:fixed!important;left:0;right:0;bottom:0;min-height:68px;padding:10px 20px!important;padding-bottom:max(10px,env(safe-area-inset-bottom))!important;background:rgba(246,243,252,.96)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border)!important;box-sizing:border-box}
+
+/* 四階按鍵（映射既有類名） */
+.gate .gbtn,.gate .btn,#check-btn{background:var(--c1,var(--cc,var(--accent,var(--sb-accent))))!important;color:#fff!important;border:1px solid transparent!important;border-radius:var(--r)!important;padding:0 16px}
+.hbtn,.qbtn,.inter-btn,.gbtn2,#retry-btn{background:var(--surface)!important;color:var(--c1,var(--cc,var(--accent,var(--sb-accent))))!important;border:1px solid var(--c1,var(--cc,var(--accent,var(--sb-accent))))!important;border-radius:var(--r)!important}
+.prob .toggle{background:transparent!important;border:1px solid transparent!important;color:var(--c1,var(--cc,var(--accent,var(--sb-accent))))!important;padding-left:0}
+.rbtn{background:#F9E7EE!important;color:var(--rose)!important;border:1px solid var(--rose)!important;border-radius:var(--r)!important}
+
+/* 技能卡結果鈕：固定 2×2＋語意狀態（不只靠顏色，含符號） */
+.res{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+.res .vshi{grid-column:1/-1}
+.res button{min-height:48px!important;width:100%;justify-content:center}
+.res button.on[data-v="1"]{border-color:var(--mint)!important;color:var(--mint)!important;background:#E9F4F0!important}
+.res button.on[data-v="1"]::before{content:"✓ "}
+.res button.on[data-v="2"]{border-color:var(--rose)!important;color:var(--rose)!important;background:#F9E7EE!important}
+.res button.on[data-v="2"]::before{content:"✕ "}
+.res button.on[data-v="3"]{border-color:#8A6A00!important;color:#8A6A00!important;background:#F6EFDD!important}
+.res button.on[data-v="3"]::before{content:"◐ "}
+.res button.on[data-v="4"]{border-color:var(--border-dark)!important;color:var(--text-muted)!important;background:var(--surface2)!important}
+.res button.on[data-v="4"]::before{content:"▣ "}
+
+/* 提示/解答操作列：兩鈕各半 */
+.prob .hbtn{margin-right:8px}
+
+/* 弱文字對比升級：有意義小字用 muted */
+.item-sub,.page-footer,.tmin,.vshi{color:var(--text-muted)}

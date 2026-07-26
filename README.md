@@ -43,7 +43,7 @@ physics/  index（尚未開始）
 改 `sw.js` 第 2 行 cache 名（隨版號）→ 舊快取於 activate 清除。CORE 預快取：三科首頁、主首頁、offline、兩個技能卡頁、plan、css、圖示；其餘頁面開過即動態快取，未開過離線時導向 offline.html。
 
 ## 版本歷史（精要）
-- **V2.11.0** 化學技能卡 7 張；plan KPI 自動彙整＋輪次歸檔/匯出/匯入；offline.html＋sw 離線導向；抽出 css/lesson.css、js/lesson-ui.js；README/CLAUDE/DESIGN/handoff 全面重寫（先前 README/CLAUDE 為空檔，本版起補正）
+- **V2.12.0** 化學技能卡 7 張；plan KPI 自動彙整＋輪次歸檔/匯出/匯入；offline.html＋sw 離線導向；抽出 css/lesson.css、js/lesson-ui.js；README/CLAUDE/DESIGN/handoff 全面重寫（先前 README/CLAUDE 為空檔，本版起補正）
 - V2.10.0 化學四頁版面統一（定位卡＋errlog＋gate；ch5 舊違規經授權歸零）
 - V2.9.x 學習系統：12 數學技能卡（四格＋五題＋四鈕＋燈號＋回鍋變式）、14 天計畫（燈號驗收＋可計算 KPI＋暫停/爸媽規則）；全站審查修正（化學答案鍵與知識錯誤、數學嚴謹性）
 - V2.7.x–V2.8.x 二下四章建置與四輪審稿修正；二上 ch2/ch3/ch4 錯題五~九批三層融入（換數字教學→無提示→原題再測）

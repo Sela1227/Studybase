@@ -189,6 +189,7 @@ input[type=number] { width: 110px; }
 .gate .gpass.show{display:block}
 </style>
 <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
+<link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
 <div style="
@@ -470,7 +471,7 @@ input[type=number] { width: 110px; }
 
   <div class="sec">
     <h3>翻牌記憶訓練</h3>
-    <p style="color:#A89FBC;font-size:13px;margin-bottom:.75rem;">點牌面翻轉看答案，測試自己記住了沒。</p>
+    <p style="color:#A89FBC;font-size:13px;margin-bottom:.75rem;">點牌面翻轉顯示解答，測試自己記住了沒。</p>
     <div class="fc-wrap" onclick="flipCard()">
       <div class="fc-inner" id="fc-inner">
         <div class="fc-face">
@@ -655,7 +656,7 @@ input[type=number] { width: 110px; }
       </p>
       <button onclick="this.nextElementSibling.style.display='block';this.style.display='none';"
         style="margin-top:8px;padding:7px 16px;border-radius:4px;border:1px solid #CBC0E0;background:#fff;font-size:13px;cursor:pointer;color:#6E6580;">
-        看答案
+        顯示解答
       </button>
       <div style="display:none;margin-top:8px;padding:.75rem;background:#E6F2EC;border-radius:4px;font-size:13px;color:#4FA17A;line-height:1.75;">
         C：O = 3：8<br>
@@ -960,13 +961,13 @@ input[type=number] { width: 110px; }
   <div style="display:flex;gap:10px;margin-bottom:1rem;">
     <button id="check-btn" onclick="checkQuiz()" disabled
       style="padding:9px 24px;border-radius:4px;border:1px solid #8CC7AB;background:#E6F2EC;color:#4FA17A;font-size:14px;cursor:pointer;font-weight:500;">
-      批改答案
+      批改
     </button>
     <button id="retry-btn" onclick="retryQuiz()"
       style="display:none;padding:9px 24px;border-radius:4px;border:1px solid #CBC0E0;background:#fff;color:#6E6580;font-size:14px;cursor:pointer;">
       重新作答
     </button>
-  </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">第五章完成——分類的眼睛練好了，第6章進到原子內部。</div></div>
+  </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">完成本節</button><div class="gpass">第五章完成——分類的眼睛練好了，第6章進到原子內部。</div></div>
 
   <div id="quiz-container"></div>
 
@@ -974,7 +975,7 @@ input[type=number] { width: 110px; }
     display:flex;justify-content:space-between;align-items:center;
     font-size:11px;color:#A89FBC;padding-bottom:80px;">
     <span>化學・第五章 · 阿蔓明道國中復習專班</span>
-    <span>V2.11.0</span>
+    <span>V2.12.0</span>
   </div>
 </div>
 
@@ -1424,7 +1425,7 @@ const qData = [
   {q:'8. 承上題，若該白色固體有固定熔點，則此固體為？',opts:['元素','化合物','混合物','可能為混合物，可能為化合物'],ans:1,ex:'有固定熔點→純物質（排除混合物）。能分解出兩種物質→是化合物，不是元素。',lesson:0},
   {q:'9. 下列有關石墨的描述，何者錯誤？',opts:['俗稱「黑鉛」','是可以導電的非金屬','可做為乾電池的負極','可做鉛筆的筆芯'],ans:2,ex:'石墨做乾電池的「正極」，不是負極。',lesson:6},
   {q:'10. 根據鹼金族元素的熔點數據（Li熔點180°C、Na熔點98°C、K熔點63°C），加熱到1000°C，下列敘述何者正確？',opts:['這些元素全部都是氣態','鈉在1000°C還是固體','加熱到200°C，鉀和鈉都還是液體','加熱到700°C，鈉和鉀會是氣體，鋰是液體'],ans:2,ex:'(C)正確：200°C 時 Na（熔98）、K（熔63）都已熔化、又遠低於沸點 → 都是液體。(D)錯：Na 沸點883°C、K 沸點759°C，700°C 還沒到沸點，仍是液體。(A)(B)錯：1000°C 時 Na、K 已成氣體，但 Li（沸點1342°C）是液體、也早已不是固體。',lesson:5},
-  {q:'11. 下列敘述何者正確？',opts:['二氧化鈦是白色染料，也是製白漆及立可白的原料','銀的活性小，在火山地區配戴銀飾品無妨','鐵鋁合金密度小且堅硬，是製造飛機的理想材料','燃燒時應調整瓦斯與空氣比例，使火焰呈紅黃色'],ans:0,ex:'TiO₂確實是白色塗料和立可白的原料。銀在火山區會與硫化氫反應變黑；製飛機是鋁合金（非鐵鋁）；瓦斯完全燃燒應呈淡藍色。',lesson:6},
+  {q:'11. 下列敘述何者正確？',opts:['二氧化鈦是白色顏料，也是製白漆及立可白的原料','銀的活性小，在火山地區配戴銀飾品無妨','鐵鋁合金密度小且堅硬，是製造飛機的理想材料','燃燒時應調整瓦斯與空氣比例，使火焰呈紅黃色'],ans:0,ex:'TiO₂確實是白色塗料和立可白的原料。銀在火山區會與硫化氫反應變黑；製飛機是鋁合金（非鐵鋁）；瓦斯完全燃燒應呈淡藍色。',lesson:6},
   {q:'12. 市面上淨水器使用活性炭的主要目的是？',opts:['殺死水中細菌','與水中雜質產生化學反應','使礦物質溶出','吸附水中雜質和去除臭味'],ans:3,ex:'活性炭多孔，利用物理吸附去除雜質、脫色、除臭。它不殺菌，也不起化學反應。',lesson:6},
   {q:'13. 鋁製品不易銹蝕的主要原因是？',opts:['鋁活性小','鋁不易氧化','氧化物緻密而不易脫落','表面易做防鏽處理'],ans:2,ex:'鋁活性其實很大，容易被氧化，但表面的氧化鋁（Al₂O₃）非常緻密且不易脫落，隔絕空氣保護內部。',lesson:6},
   {q:'14. 已知3.5克的氮與2克的氧，恰好生成5.5克的一氧化二氮。則欲生成22克的一氧化二氮，需氮與氧各若干？',opts:['氮14克，氧8克','氮12克，氧10克','氮10克，氧12克','氮8克，氧14克'],ans:0,ex:'22÷5.5＝4倍，所以氮＝3.5×4＝14克，氧＝2×4＝8克。這就是定比定律的應用！',lesson:3},

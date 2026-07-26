@@ -1,4 +1,4 @@
-# DESIGN.md V3 — StudyBase 視覺規格（依 V2.11.0 全站現況重整；取代所有舊版）
+# DESIGN.md V3 — StudyBase 視覺規格（依 V2.12.0 全站現況重整；取代所有舊版）
 
 ## 定位
 Nordic Minimalism × 薰衣草。安靜、可讀、無裝飾——所有視覺服務於「認出結構」。
@@ -29,6 +29,9 @@ max-width 560–720px（章節 720）、觸控目標 ≥44px、radius 一律 var
 - gate：自我檢查清單＋過關鈕＋pass 文案
 - 技能卡：g4 四格（看到什麼/心裡想/動手第一步/最容易掉的坑）、hbtn 第一步提示、res 四鈕、cstat＋lamp 燈號（綠/黃/紅）
 - SVG：role="img"＋aria-label、max-width:100%、示意圖註明「未按比例」
+
+## 按鍵四階（components.css 為權威）
+primary 實心主色（每區至多一：批改/完成本節）；secondary 白底主色框（提示/重新作答/上一課）；ghost 透明底主色字（顯示/收起解答）；danger 淡紅（重設/清除）。尺寸：操作鈕 ≥44px、底部導覽鈕 ≥48px、bnav 68px＋safe-area。技能卡結果鈕 2×2、選取語意色＋符號 ✓✕◐▣。焦點：focus-visible 3px 紫暈。
 
 ## 列印
 隱藏 topbar/bnav/stabs/lpills/toggle/gate 按鈕/hbtn/res；ans 預設不印。

@@ -186,6 +186,7 @@ strong{font-weight:500;color:var(--text-1);}
 .gate .gpass.show{display:block}
 </style>
 <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
+<link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
 
@@ -360,8 +361,8 @@ strong{font-weight:500;color:var(--text-1);}
     <div id="qs1" class="quiz-wrap"></div>
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs1-btn" onclick="checkQ('s1')" disabled>批改</button>
-      <button class="qbtn" id="qs1-retry" onclick="retryQ('s1')" style="display:none">重試</button>
-    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">7-1 完成。接著 7-2。</div></div>
+      <button class="qbtn" id="qs1-retry" onclick="retryQ('s1')" style="display:none">重新作答</button>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">完成本節</button><div class="gpass">7-1 完成。接著 7-2。</div></div>
   </div>
 </div>
 
@@ -601,8 +602,8 @@ strong{font-weight:500;color:var(--text-1);}
     <div id="qs2" class="quiz-wrap"></div>
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs2-btn" onclick="checkQ('s2')" disabled>批改</button>
-      <button class="qbtn" id="qs2-retry" onclick="retryQ('s2')" style="display:none">重試</button>
-    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">7-2 完成。接著 7-3。</div></div>
+      <button class="qbtn" id="qs2-retry" onclick="retryQ('s2')" style="display:none">重新作答</button>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">完成本節</button><div class="gpass">7-2 完成。接著 7-3。</div></div>
   </div>
 </div>
 
@@ -863,8 +864,8 @@ strong{font-weight:500;color:var(--text-1);}
     <div id="qs3" class="quiz-wrap"></div>
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs3-btn" onclick="checkQ('s3')" disabled>批改</button>
-      <button class="qbtn" id="qs3-retry" onclick="retryQ('s3')" style="display:none">重試</button>
-    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">7-3 完成。最後 7-4。</div></div>
+      <button class="qbtn" id="qs3-retry" onclick="retryQ('s3')" style="display:none">重新作答</button>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">完成本節</button><div class="gpass">7-3 完成。最後 7-4。</div></div>
   </div>
 </div>
 
@@ -935,8 +936,8 @@ strong{font-weight:500;color:var(--text-1);}
     <div id="qs4" class="quiz-wrap"></div>
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs4-btn" onclick="checkQ('s4')" disabled>批改</button>
-      <button class="qbtn" id="qs4-retry" onclick="retryQ('s4')" style="display:none">重試</button>
-    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">第七章完成——質量守恆與方程式是段考理化計算的主戰場，錯題照登記複習。</div></div>
+      <button class="qbtn" id="qs4-retry" onclick="retryQ('s4')" style="display:none">重新作答</button>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">完成本節</button><div class="gpass">第七章完成——質量守恆與方程式是段考理化計算的主戰場，錯題照登記複習。</div></div>
   </div>
 </div>
 
@@ -948,7 +949,7 @@ strong{font-weight:500;color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第七章 化學反應 · 阿蔓明道國中復習專班</span>
-    <span>V2.11.0</span>
+    <span>V2.12.0</span>
   </div>
 </div>
 

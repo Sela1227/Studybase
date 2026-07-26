@@ -1,7 +1,7 @@
 /* StudyBase PWA service worker */
-const CACHE = 'studybase-v2.11.0';
+const CACHE = 'studybase-v2.12.0';
 const CORE = [
-  './', './index.html', './css/main.css',
+  './', './index.html', './css/main.css', './css/tokens.css', './css/components.css',
   './offline.html', './chemistry/index.html', './math/index.html', './physics/index.html', './math/skills.html', './math/plan.html', './chemistry/skills.html',
   './favicon/app-192.png', './favicon/app-512.png', './favicon/site.webmanifest'
 ];
