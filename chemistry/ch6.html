@@ -306,6 +306,24 @@ strong{font-weight:500; color:var(--text-1);}
 
 /* ── FOOTER ── */
 .page-footer{display:flex; justify-content:space-between; font-size:11px; color:var(--text-3); border-top:1px solid var(--border); margin-top:56px; padding:14px 0; max-width:640px; margin-left:auto; margin-right:auto; padding-left:20px; padding-right:20px;}
+
+.poscard{border:1px solid var(--border);border-left:2px solid var(--c1);background:var(--surface);border-radius:2px;padding:18px 20px;margin:18px 0}
+.poscard .plabel{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:6px}
+.poscard h1{font-size:19px;margin:0 0 8px;font-weight:500}
+.poscard p{font-size:14px;color:var(--text-2);margin:0 0 10px;line-height:1.7}
+.poscard .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-3)}
+.errlog{border:1px solid var(--border);border-radius:2px;background:var(--surface2);padding:14px 16px;margin:18px 0;overflow-x:auto}
+.errlog h4{margin:0 0 6px;font-size:14px;font-weight:500}
+.errlog .hint{font-size:12.5px;color:var(--text-3);margin-bottom:8px}
+.errlog table{border-collapse:collapse;font-size:13px;min-width:420px}
+.errlog th,.errlog td{border:1px solid var(--border-mid);padding:6px 10px;text-align:center}
+.errlog .leg{font-size:12.5px;color:var(--text-2);margin-top:8px}
+.gate{border:1px solid var(--border);border-left:2px solid var(--c1);border-radius:2px;background:var(--surface);padding:14px 16px;margin:18px 0}
+.gate h4{margin:0 0 8px;font-size:14px;font-weight:500}
+.gate ul{margin:0 0 10px;padding-left:20px;font-size:13.5px;color:var(--text-2);line-height:1.8}
+.gate .gbtn{font-size:13px;padding:0 14px;min-height:44px;border:1px solid var(--border-mid);border-radius:2px;background:var(--surface2);color:var(--text-1);cursor:pointer}
+.gate .gpass{display:none;font-size:13.5px;color:var(--c1);margin-top:10px}
+.gate .gpass.show{display:block}
 </style>
 <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
@@ -318,7 +336,7 @@ strong{font-weight:500; color:var(--text-1);}
   <span class="topbar-title">第六章 原子與分子</span>
   <div class="topbar-prog">
     <div class="prog-label" id="pg-l">6-1 · 1/6</div>
-    <div class="prog-bar"><div class="prog-fill" id="pg-f"></div></div>
+    <div class="prog-bar"><div class="prog-fill" id="pg-f"></div><div class="wrap-pos"><div class="poscard"><div class="plabel">化學 · 第六章 原子與分子</div><h1>看不見的積木：原子、分子、離子與化學式</h1><p>依賴鏈：第5章（物質分類）→ 本章 → 第7章（化學反應）。本章是化學的「字母表」——第7章的方程式全部用這裡的化學式寫成。內容較長，每節約 40 分鐘，建議一節分 1～2 次完成。</p><div class="meta"><span>前置：第5章 元素與化合物</span><span>每節後有測驗＋錯題登記</span></div></div></div></div>
   </div>
 </div>
 
@@ -645,7 +663,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs1-btn" onclick="checkQ('s1')" disabled>批改</button>
       <button class="qbtn" id="qs1-retry" onclick="retryQ('s1')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">6-1 完成。接著 6-2：原子怎麼牽手成分子。</div></div>
   </div>
 </div>
 
@@ -789,7 +807,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs2-btn" onclick="checkQ('s2')" disabled>批改</button>
       <button class="qbtn" id="qs2-retry" onclick="retryQ('s2')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">6-2 完成。接著 6-3：得失電子變離子。</div></div>
   </div>
 </div>
 
@@ -907,7 +925,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs3-btn" onclick="checkQ('s3')" disabled>批改</button>
       <button class="qbtn" id="qs3-retry" onclick="retryQ('s3')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">6-3 完成。接著 6-4：把粒子寫成化學式。</div></div>
   </div>
 </div>
 
@@ -1115,7 +1133,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs4-btn" onclick="checkQ('s4')" disabled>批改</button>
       <button class="qbtn" id="qs4-retry" onclick="retryQ('s4')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">6-4 完成。接著 6-5：週期表的地圖。</div></div>
   </div>
 </div>
 
@@ -1284,7 +1302,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs5-btn" onclick="checkQ('s5')" disabled>批改</button>
       <button class="qbtn" id="qs5-retry" onclick="retryQ('s5')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">6-5 完成。最後 6-6：總測驗。</div></div>
   </div>
 </div>
 
@@ -1365,7 +1383,7 @@ strong{font-weight:500; color:var(--text-1);}
     <div class="quiz-footer">
       <button class="qbtn primary" id="qs6-btn" onclick="checkQ('s6')" disabled>批改</button>
       <button class="qbtn" id="qs6-retry" onclick="retryQ('s6')" style="display:none">重試</button>
-    </div>
+    </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">第六章完成——化學的字母表到手了，第7章開始造句。</div></div>
   </div>
 </div>
 
@@ -1378,7 +1396,7 @@ strong{font-weight:500; color:var(--text-1);}
 <div style="padding:0 20px">
   <div class="page-footer">
     <span>第六章 原子與分子 · 阿蔓明道國中復習專班</span>
-    <span>V2.9.2</span>
+    <span>V2.10.0</span>
   </div>
 </div>
 
@@ -1843,5 +1861,5 @@ s6:[
 ]
 };
 </script>
-</body>
+<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script></body>
 </html>

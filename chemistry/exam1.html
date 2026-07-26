@@ -111,6 +111,24 @@ button{cursor:pointer;font-family:inherit;border:none;background:none;}
 .ans-cell .tag{display:block;font-size:9px;color:var(--t3);margin-top:1px;}
 
 .page-footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;font-size:11px;color:var(--t3);}
+
+.poscard{border:1px solid var(--bdr);border-left:2px solid var(--cc);background:var(--sur);border-radius:2px;padding:18px 20px;margin:18px 0}
+.poscard .plabel{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cc);margin-bottom:6px}
+.poscard h1{font-size:19px;margin:0 0 8px;font-weight:500}
+.poscard p{font-size:14px;color:var(--t2);margin:0 0 10px;line-height:1.7}
+.poscard .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--t3)}
+.errlog{border:1px solid var(--bdr);border-radius:2px;background:var(--sur2);padding:14px 16px;margin:18px 0;overflow-x:auto}
+.errlog h4{margin:0 0 6px;font-size:14px;font-weight:500}
+.errlog .hint{font-size:12.5px;color:var(--t3);margin-bottom:8px}
+.errlog table{border-collapse:collapse;font-size:13px;min-width:420px}
+.errlog th,.errlog td{border:1px solid var(--bdr-m);padding:6px 10px;text-align:center}
+.errlog .leg{font-size:12.5px;color:var(--t2);margin-top:8px}
+.gate{border:1px solid var(--bdr);border-left:2px solid var(--cc);border-radius:2px;background:var(--sur);padding:14px 16px;margin:18px 0}
+.gate h4{margin:0 0 8px;font-size:14px;font-weight:500}
+.gate ul{margin:0 0 10px;padding-left:20px;font-size:13.5px;color:var(--t2);line-height:1.8}
+.gate .gbtn{font-size:13px;padding:0 14px;min-height:44px;border:1px solid var(--bdr-m);border-radius:2px;background:var(--sur2);color:var(--t1);cursor:pointer}
+.gate .gpass{display:none;font-size:13.5px;color:var(--cc);margin-top:10px}
+.gate .gpass.show{display:block}
 </style>
 <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
@@ -123,7 +141,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none;}
   </a>
   <span class="sep">/</span>
   <span class="cur">第一次段考</span>
-</div>
+</div><div style="max-width:720px;margin:0 auto;padding:0 20px"><div class="poscard"><div class="plabel">化學 · 段考解析</div><h1>這份考卷在考什麼、下次怎麼拿回來</h1><p>用法：先看「策略」分頁抓大方向，再逐題看解析；每題錯因照 A（觀念）/B（計算）/C（看錯）/D（時間）歸類，回對應章節的課補洞。</p><div class="meta"><span>對應：第5～7章</span><span>搭配各章錯題登記使用</span></div></div></div>
 
 <div class="tab-bar">
   <button class="tab-btn on"  onclick="go('s-overview',this)">總覽</button>
@@ -184,7 +202,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none;}
 
   <div class="page-footer">
     <span>化學 · 第一次段考</span>
-    <span>V2.9.2</span>
+    <span>V2.10.0</span>
   </div>
 </div>
 
@@ -1376,7 +1394,7 @@ button{cursor:pointer;font-family:inherit;border:none;background:none;}
 
   <div class="page-footer">
     <span>化學 · 第一次段考</span>
-    <span>V2.9.2</span>
+    <span>V2.10.0</span>
   </div>
 </div>
 

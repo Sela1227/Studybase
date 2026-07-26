@@ -24,7 +24,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 /* ── LESSON NAV ── */
 .lnav { background: #fff; border-bottom: 1px solid #E8E1F2; padding: .5rem 1rem; display: flex; gap: 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .lnav::-webkit-scrollbar { display: none; }
-.lpill { flex-shrink: 0; padding: 5px 12px; border-radius: 999px; border: 1px solid #E8E1F2; background: #fff; color: #A89FBC; font-size: 12px; cursor: pointer; transition: all .15s; white-space: nowrap; }
+.lpill { flex-shrink: 0; padding: 5px 12px; border-radius:4px; border: 1px solid #E8E1F2; background: #fff; color: #A89FBC; font-size: 12px; cursor: pointer; transition: all .15s; white-space: nowrap; }
 .lpill.active { background: #5B57C2; color: #fff; border-color: #5B57C2; font-weight: 500; }
 .lpill.done { background: #E6F2EC; color: #4FA17A; border-color: #8CC7AB; }
 
@@ -33,7 +33,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .lesson.active { display: block; }
 
 /* Hook */
-.hook { background: #fff; border: 1px solid #E8E1F2; border-radius: 14px; padding: 1.25rem; margin-bottom: 1.25rem; }
+.hook { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: 1.25rem; margin-bottom: 1.25rem; }
 .hook-label { font-size: 11px; font-weight: 500; color: #5B57C2; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
 .hook h2 { font-size: 19px; font-weight: 500; margin-bottom: .75rem; line-height: 1.4; }
 .hook p { font-size: 14px; line-height: 1.75; color: #463E55; }
@@ -44,7 +44,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .sec p { font-size: 14px; line-height: 1.75; color: #463E55; margin-bottom: .625rem; }
 
 /* Cards */
-.card { background: #fff; border: 1px solid #E8E1F2; border-radius: 12px; padding: 1rem; margin-bottom: .75rem; }
+.card { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: 1rem; margin-bottom: .75rem; }
 .card h4 { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
 .card p, .card li { font-size: 13px; line-height: 1.75; color: #6E6580; }
 .card ul { padding-left: 1.2rem; }
@@ -58,11 +58,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .cbox strong { font-weight: 500; }
 
 /* Remember */
-.rbox { background: #ECE3F1; border: 1px solid #A071B6; border-radius: 10px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #6E4A86; line-height: 1.7; }
+.rbox { background: #ECE3F1; border: 1px solid #A071B6; border-radius:4px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #6E4A86; line-height: 1.7; }
 .rbox .rtitle { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; color: #704484; }
 
 /* Wow box */
-.wow { background: #F4E9F6; border: 1px solid #E8A6BE; border-radius: 10px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #8A3D52; line-height: 1.7; }
+.wow { background: #F4E9F6; border: 1px solid #E8A6BE; border-radius:4px; padding: .875rem 1rem; margin-bottom: .75rem; font-size: 13px; color: #8A3D52; line-height: 1.7; }
 .wow strong { font-weight: 500; }
 
 /* Table */
@@ -73,7 +73,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .tbl td:first-child { text-align: left; color: #6E6580; }
 
 /* Summary */
-.summary { background: #E6F2EC; border: 1px solid #8CC7AB; border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; }
+.summary { background: #E6F2EC; border: 1px solid #8CC7AB; border-radius:4px; padding: 1rem 1.25rem; margin-top: 1.5rem; }
 .summary h4 { font-size: 13px; font-weight: 500; color: #4FA17A; margin-bottom: 8px; }
 .summary li { font-size: 13px; color: #3E7E5F; line-height: 1.75; list-style: none; padding-left: 1.2rem; position: relative; }
 .summary li::before { content: "✓"; position: absolute; left: 0; color: #4FA17A; }
@@ -82,7 +82,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .sdiv { border: none; border-top: 1px solid #EDE7F6; margin: 1.25rem 0; }
 
 /* Badge */
-.badge { display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+.badge { display: inline-block; padding: 1px 9px; border-radius:4px; font-size: 12px; font-weight: 500; }
 .bb { background: #ECEBFA; color: #5B57C2; }
 .ba { background: #ECE3F1; color: #704484; }
 .bt { background: #E7F3ED; color: #3E7E5F; }
@@ -91,30 +91,30 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* ── ELEMENT GRID ── */
 .el-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 6px; margin-bottom: .75rem; }
-.el-tile { background: #fff; border: 1px solid #E8E1F2; border-radius: 8px; padding: 6px 4px; text-align: center; cursor: pointer; transition: all .12s; }
-.el-tile:hover { transform: scale(1.06); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+.el-tile { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: 6px 4px; text-align: center; cursor: pointer; transition: all .12s; }
+.el-tile:hover { transform: scale(1.06);  }
 .el-tile.metal { border-left: 3px solid #A071B6; }
 .el-tile.nonmetal { border-left: 3px solid #90C8AD; }
 .el-tile.selected { background: #ECEBFA; border-color: #6A54C0; }
 .et-sym { font-size: 16px; font-weight: 500; }
 .et-name { font-size: 10px; color: #A89FBC; margin-top: 2px; }
 .et-state { font-size: 9px; color: #CBC0E0; }
-#el-detail { background: #fff; border: 1px solid #E8E1F2; border-radius: 10px; padding: .875rem; margin-bottom: .75rem; font-size: 13px; line-height: 1.75; min-height: 56px; }
+#el-detail { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: .875rem; margin-bottom: .75rem; font-size: 13px; line-height: 1.75; min-height: 56px; }
 
 /* ── FLASHCARD ── */
 .fc-wrap { perspective: 800px; margin-bottom: .875rem; cursor: pointer; }
 .fc-inner { position: relative; height: 120px; transform-style: preserve-3d; transition: transform .45s; }
 .fc-inner.flipped { transform: rotateY(180deg); }
-.fc-face { position: absolute; inset: 0; background: #fff; border: 1px solid #E8E1F2; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; gap: 5px; }
+.fc-face { position: absolute; inset: 0; background: #fff; border: 1px solid #E8E1F2; border-radius:4px; display: flex; flex-direction: column; align-items: center; justify-content: center; backface-visibility: hidden; gap: 5px; }
 .fc-back-face { transform: rotateY(180deg); background: #ECEBFA; }
 .fc-big { font-size: 30px; font-weight: 500; color: #5B57C2; }
 .fc-hint { font-size: 12px; color: #A89FBC; }
 .fc-back-face .fc-big { font-size: 22px; color: #473F9E; }
 .fc-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 1rem; }
-.fc-btn { padding: 7px 18px; border-radius: 999px; border: 1px solid #CBC0E0; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
+.fc-btn { padding: 7px 18px; border-radius:4px; border: 1px solid #CBC0E0; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
 .fc-ctr { font-size: 13px; color: #A89FBC; }
 .fc-modes { display: flex; gap: 6px; flex-wrap: wrap; }
-.fc-mode { padding: 5px 12px; border-radius: 999px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 12px; cursor: pointer; }
+.fc-mode { padding: 5px 12px; border-radius:4px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 12px; cursor: pointer; }
 .fc-mode.active { background: #ECEBFA; color: #5B57C2; border-color: #A9A6E6; }
 
 /* ── PERIODIC TABLE MAP ── */
@@ -133,41 +133,60 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .pt-legend { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: .875rem; }
 .pt-leg-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #6E6580; }
 .pt-leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
-#group-info { background: #fff; border: 1px solid #E8E1F2; border-radius: 10px; padding: .875rem; font-size: 13px; line-height: 1.75; margin-bottom: .75rem; min-height: 56px; }
+#group-info { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: .875rem; font-size: 13px; line-height: 1.75; margin-bottom: .75rem; min-height: 56px; }
 
 /* ── ACTIVITY EXPERIMENT ── */
 .act-tabs { display: flex; gap: 6px; margin-bottom: .75rem; flex-wrap: wrap; }
-.act-tab { padding: 6px 14px; border-radius: 6px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
+.act-tab { padding: 6px 14px; border-radius:4px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
 .act-tab.active { background: #E6F2EC; color: #4FA17A; border-color: #8CC7AB; }
-#act-display { background: #fff; border: 1px solid #E8E1F2; border-radius: 10px; padding: .875rem; font-size: 13px; line-height: 1.75; margin-bottom: .75rem; }
+#act-display { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: .875rem; font-size: 13px; line-height: 1.75; margin-bottom: .75rem; }
 
 /* ── ELEMENT DETAIL CARDS (Lesson 7) ── */
 .elem-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: .75rem; }
-.elem-tab { padding: 6px 14px; border-radius: 6px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
+.elem-tab { padding: 6px 14px; border-radius:4px; border: 1px solid #E8E1F2; background: #fff; color: #6E6580; font-size: 13px; cursor: pointer; }
 .elem-tab.active { background: #ECEBFA; color: #5B57C2; border-color: #A9A6E6; }
 #elem-detail { font-size: 13px; line-height: 1.75; }
 
 /* ── RATIO CALC ── */
-.ratio-box { background: #F4EFFB; border-radius: 10px; padding: 1rem; margin-bottom: .75rem; }
-select, input[type=number] { padding: 7px 10px; border-radius: 8px; border: 1px solid #CBC0E0; background: #fff; font-size: 13px; }
+.ratio-box { background: #F4EFFB; border-radius:4px; padding: 1rem; margin-bottom: .75rem; }
+select, input[type=number] { padding: 7px 10px; border-radius:4px; border: 1px solid #CBC0E0; background: #fff; font-size: 13px; }
 input[type=number] { width: 110px; }
 
 /* ── QUIZ ── */
-.qcard { background: #fff; border: 1px solid #E8E1F2; border-radius: 12px; padding: 1rem; margin-bottom: .875rem; }
+.qcard { background: #fff; border: 1px solid #E8E1F2; border-radius:4px; padding: 1rem; margin-bottom: .875rem; }
 .qcard .qtxt { font-size: 13px; font-weight: 500; line-height: 1.6; margin-bottom: 10px; }
-.qopt { padding: 7px 12px; border-radius: 8px; border: 1px solid #E8E1F2; background: #fff; margin-bottom: 5px; font-size: 13px; cursor: pointer; display: flex; gap: 8px; transition: all .12s; }
+.qopt { padding: 7px 12px; border-radius:4px; border: 1px solid #E8E1F2; background: #fff; margin-bottom: 5px; font-size: 13px; cursor: pointer; display: flex; gap: 8px; transition: all .12s; }
 .qopt:hover { border-color: #A9A6E6; background: #F4F3FA; }
 .qopt.sel { background: #ECEBFA; border-color: #6A54C0; }
 .qopt.ok { background: #E6F2EC; border-color: #8CC7AB; color: #4FA17A; }
 .qopt.no { background: #F4E9F6; border-color: #E8A6BE; color: #B85A74; }
 .qlabel { font-weight: 500; color: #CBC0E0; min-width: 20px; }
-.qexp { display: none; margin-top: 8px; padding: .625rem .875rem; border-radius: 8px; font-size: 12px; line-height: 1.65; }
+.qexp { display: none; margin-top: 8px; padding: .625rem .875rem; border-radius:4px; font-size: 12px; line-height: 1.65; }
 
 /* ── BOTTOM NAV ── */
 .bnav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #E8E1F2; padding: .75rem 1rem; display: flex; gap: 10px; z-index: 99; }
-.bnav-btn { flex: 1; padding: 11px; border-radius: 10px; border: 1px solid #CBC0E0; background: #fff; color: #6E6580; font-size: 14px; font-weight: 500; cursor: pointer; }
+.bnav-btn { flex: 1; padding: 11px; border-radius:4px; border: 1px solid #CBC0E0; background: #fff; color: #6E6580; font-size: 14px; font-weight: 500; cursor: pointer; }
 .bnav-btn.primary { background: #5B57C2; color: #fff; border-color: #5B57C2; }
 .bnav-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+
+.poscard{border:1px solid #E8E1F2;border-left:2px solid #A368B0;background:#FFFFFF;border-radius:4px;padding:18px 20px;margin:18px 0}
+.poscard .plabel{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A368B0;margin-bottom:6px}
+.poscard h1{font-size:19px;margin:0 0 8px;font-weight:500}
+.poscard p{font-size:14px;color:#6E6580;margin:0 0 10px;line-height:1.7}
+.poscard .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:#A89FBC}
+.errlog{border:1px solid #E8E1F2;border-radius:4px;background:#F1ECFA;padding:14px 16px;margin:18px 0;overflow-x:auto}
+.errlog h4{margin:0 0 6px;font-size:14px;font-weight:500}
+.errlog .hint{font-size:12.5px;color:#A89FBC;margin-bottom:8px}
+.errlog table{border-collapse:collapse;font-size:13px;min-width:420px}
+.errlog th,.errlog td{border:1px solid #CBC0E0;padding:6px 10px;text-align:center}
+.errlog .leg{font-size:12.5px;color:#6E6580;margin-top:8px}
+.gate{border:1px solid #E8E1F2;border-left:2px solid #A368B0;border-radius:4px;background:#FFFFFF;padding:14px 16px;margin:18px 0}
+.gate h4{margin:0 0 8px;font-size:14px;font-weight:500}
+.gate ul{margin:0 0 10px;padding-left:20px;font-size:13.5px;color:#6E6580;line-height:1.8}
+.gate .gbtn{font-size:13px;padding:0 14px;min-height:44px;border:1px solid #CBC0E0;border-radius:4px;background:#F1ECFA;color:#2A2335;cursor:pointer}
+.gate .gpass{display:none;font-size:13.5px;color:#A368B0;margin-top:10px}
+.gate .gpass.show{display:block}
 </style>
 <script>if("serviceWorker" in navigator){addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}</script>
 </head>
@@ -199,7 +218,7 @@ input[type=number] { width: 110px; }
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-top">
-    <div class="hdr-title">第五章：元素及化合物</div>
+    <div class="hdr-title">第五章：元素及化合物</div><div style="max-width:720px;margin:0 auto;padding:0 20px"><div class="poscard"><div class="plabel">化學 · 第五章 物質的世界</div><h1>先把物質分好類，後面兩章才有地基</h1><p>依賴鏈：本章 → 第6章（原子與分子）→ 第7章（化學反應）。純物質與混合物、元素與化合物的判斷，是之後每一章選擇題的第一步。內容分 8 課，每課約 20～30 分鐘。</p><div class="meta"><span>結尾有 18 題總挑戰＋錯題登記</span></div></div></div>
     <div class="hdr-prog" id="hdr-prog">第 1 課，共 8 課</div>
   </div>
   <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
@@ -365,27 +384,27 @@ input[type=number] { width: 110px; }
     <div class="card" style="padding:.75rem;">
       <div class="section-label" style="margin-bottom:8px;">非金屬（8個）</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">H</div><div style="font-size:11px;color:#3E7E5F;">氫·氣</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">O</div><div style="font-size:11px;color:#3E7E5F;">氧·氣</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">N</div><div style="font-size:11px;color:#3E7E5F;">氮·氣</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">C</div><div style="font-size:11px;color:#3E7E5F;">碳·固</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">S</div><div style="font-size:11px;color:#3E7E5F;">硫·固</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cl</div><div style="font-size:11px;color:#3E7E5F;">氯·氣</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Br</div><div style="font-size:11px;color:#3E7E5F;">溴·液</div></div>
-        <div style="background:#E7F3ED;color:#33694F;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">I</div><div style="font-size:11px;color:#3E7E5F;">碘·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">H</div><div style="font-size:11px;color:#3E7E5F;">氫·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">O</div><div style="font-size:11px;color:#3E7E5F;">氧·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">N</div><div style="font-size:11px;color:#3E7E5F;">氮·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">C</div><div style="font-size:11px;color:#3E7E5F;">碳·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">S</div><div style="font-size:11px;color:#3E7E5F;">硫·固</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cl</div><div style="font-size:11px;color:#3E7E5F;">氯·氣</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Br</div><div style="font-size:11px;color:#3E7E5F;">溴·液</div></div>
+        <div style="background:#E7F3ED;color:#33694F;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">I</div><div style="font-size:11px;color:#3E7E5F;">碘·固</div></div>
       </div>
       <div class="section-label" style="margin-bottom:8px;">金屬（10個）</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Na</div><div style="font-size:11px;color:#704484;">鈉</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">K</div><div style="font-size:11px;color:#704484;">鉀</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Mg</div><div style="font-size:11px;color:#704484;">鎂</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Al</div><div style="font-size:11px;color:#704484;">鋁</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Fe</div><div style="font-size:11px;color:#704484;">鐵</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cu</div><div style="font-size:11px;color:#704484;">銅</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ag</div><div style="font-size:11px;color:#704484;">銀</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Au</div><div style="font-size:11px;color:#704484;">金</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Hg</div><div style="font-size:11px;color:#704484;">汞·液</div></div>
-        <div style="background:#ECE3F1;color:#6E4A86;border-radius:6px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ca</div><div style="font-size:11px;color:#704484;">鈣</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Na</div><div style="font-size:11px;color:#704484;">鈉</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">K</div><div style="font-size:11px;color:#704484;">鉀</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Mg</div><div style="font-size:11px;color:#704484;">鎂</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Al</div><div style="font-size:11px;color:#704484;">鋁</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Fe</div><div style="font-size:11px;color:#704484;">鐵</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Cu</div><div style="font-size:11px;color:#704484;">銅</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ag</div><div style="font-size:11px;color:#704484;">銀</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Au</div><div style="font-size:11px;color:#704484;">金</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Hg</div><div style="font-size:11px;color:#704484;">汞·液</div></div>
+        <div style="background:#ECE3F1;color:#6E4A86;border-radius:4px;padding:5px 10px;font-size:13px;font-weight:500;text-align:center;min-width:64px;"><div style="font-size:16px;">Ca</div><div style="font-size:11px;color:#704484;">鈣</div></div>
       </div>
     </div>
     <div class="rbox">
@@ -635,10 +654,10 @@ input[type=number] { width: 110px; }
         <strong>題目：有 6g 的碳，需要幾克的氧才能完全化合成 CO₂？</strong>
       </p>
       <button onclick="this.nextElementSibling.style.display='block';this.style.display='none';"
-        style="margin-top:8px;padding:7px 16px;border-radius:6px;border:1px solid #CBC0E0;background:#fff;font-size:13px;cursor:pointer;color:#6E6580;">
+        style="margin-top:8px;padding:7px 16px;border-radius:4px;border:1px solid #CBC0E0;background:#fff;font-size:13px;cursor:pointer;color:#6E6580;">
         看答案
       </button>
-      <div style="display:none;margin-top:8px;padding:.75rem;background:#E6F2EC;border-radius:8px;font-size:13px;color:#4FA17A;line-height:1.75;">
+      <div style="display:none;margin-top:8px;padding:.75rem;background:#E6F2EC;border-radius:4px;font-size:13px;color:#4FA17A;line-height:1.75;">
         C：O = 3：8<br>
         O = 6 × (8/3) = 6 × 2.67 = <strong>16g</strong><br>
         （也可以想：3g C 配 8g O，6g C 是 3g 的 2 倍，所以 O 也是 8 × 2 = 16g）
@@ -733,11 +752,11 @@ input[type=number] { width: 110px; }
     <h3>活性大小——一個口訣記清楚</h3>
     <div class="card" style="background:#F4EFFB;text-align:center;padding:1.25rem;">
       <div style="font-size:15px;font-weight:500;color:#19171A;line-height:2.2;">
-        <span style="background:#F4E9F6;color:#8A3D52;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">K、Na</span>
+        <span style="background:#F4E9F6;color:#8A3D52;padding:3px 12px;border-radius:4px;margin:2px;display:inline-block;">K、Na</span>
         最活潑，碰到水就爆炸<br>
-        <span style="background:#ECE3F1;color:#6E4A86;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Mg、Al、Zn、Fe</span>
+        <span style="background:#ECE3F1;color:#6E4A86;padding:3px 12px;border-radius:4px;margin:2px;display:inline-block;">Mg、Al、Zn、Fe</span>
         遇鹽酸才冒泡<br>
-        <span style="background:#E6F2EC;color:#3E7E5F;padding:3px 12px;border-radius:6px;margin:2px;display:inline-block;">Pb、Cu</span>
+        <span style="background:#E6F2EC;color:#3E7E5F;padding:3px 12px;border-radius:4px;margin:2px;display:inline-block;">Pb、Cu</span>
         最懶，不理水也不理酸
       </div>
     </div>
@@ -940,14 +959,14 @@ input[type=number] { width: 110px; }
 
   <div style="display:flex;gap:10px;margin-bottom:1rem;">
     <button id="check-btn" onclick="checkQuiz()" disabled
-      style="padding:9px 24px;border-radius:999px;border:1px solid #8CC7AB;background:#E6F2EC;color:#4FA17A;font-size:14px;cursor:pointer;font-weight:500;">
+      style="padding:9px 24px;border-radius:4px;border:1px solid #8CC7AB;background:#E6F2EC;color:#4FA17A;font-size:14px;cursor:pointer;font-weight:500;">
       批改答案
     </button>
     <button id="retry-btn" onclick="retryQuiz()"
-      style="display:none;padding:9px 24px;border-radius:999px;border:1px solid #CBC0E0;background:#fff;color:#6E6580;font-size:14px;cursor:pointer;">
+      style="display:none;padding:9px 24px;border-radius:4px;border:1px solid #CBC0E0;background:#fff;color:#6E6580;font-size:14px;cursor:pointer;">
       重新作答
     </button>
-  </div>
+  </div><div class="errlog"><h4>錯題登記（做錯的才填）</h4><div class="hint">寫題號、勾原因——之後複習從 A 類開始。</div><table><tr><th>題號</th><th>A 觀念不懂</th><th>B 會但算錯</th><th>C 看錯題目</th><th>D 沒時間</th></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr><tr><td>&nbsp;</td><td>▢</td><td>▢</td><td>▢</td><td>▢</td></tr></table><div class="leg">A → 回本節對應課重看；B → 只補計算；C → 圈條件、寫出所求；D → 已會的才練限時。</div></div><div class="gate"><h4>這一節的自我檢查</h4><ul><li>測驗全部作答並批改（錯的照 A/B/C/D 登記）</li><li>錯題回對應課看過、能說出「為什麼」</li></ul><button class="gbtn">我已完成並核對這一節</button><div class="gpass">第五章完成——分類的眼睛練好了，第6章進到原子內部。</div></div>
 
   <div id="quiz-container"></div>
 
@@ -955,7 +974,7 @@ input[type=number] { width: 110px; }
     display:flex;justify-content:space-between;align-items:center;
     font-size:11px;color:#A89FBC;padding-bottom:80px;">
     <span>化學・第五章 · 阿蔓明道國中復習專班</span>
-    <span>V2.9.2</span>
+    <span>V2.10.0</span>
   </div>
 </div>
 
@@ -1016,7 +1035,7 @@ function showAtomInfo() {
   document.getElementById('atom-info').innerHTML=`
     <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
       <div>
-        <div style="width:64px;height:64px;border-radius:12px;background:#ECEBFA;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:500;color:#5B57C2;margin-bottom:8px;">${sym}</div>
+        <div style="width:64px;height:64px;border-radius:4px;background:#ECEBFA;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:500;color:#5B57C2;margin-bottom:8px;">${sym}</div>
         ${buildAtomSVG(z,shells)}
       </div>
       <div style="flex:1;min-width:160px;font-size:13px;line-height:2;">
@@ -1027,7 +1046,7 @@ function showAtomInfo() {
         <div>中子數：<strong>${n}</strong>（≈${a}−${z}）</div>
         <div>電子排列：<strong>${shellStr}</strong></div>
         <div>最外層電子：<strong>${outerEl}</strong>個</div>
-        <div style="margin-top:6px;padding:.5rem .75rem;background:#F4EFFB;border-radius:8px;font-size:12px;line-height:1.6;">${outerMsg}</div>
+        <div style="margin-top:6px;padding:.5rem .75rem;background:#F4EFFB;border-radius:4px;font-size:12px;line-height:1.6;">${outerMsg}</div>
       </div>
     </div>`;
 }
@@ -1055,18 +1074,18 @@ setTimeout(showAtomInfo, 100);
 const bondData={
   ionic:{title:'離子鍵 ── 一個給、一個收，靠靜電吸在一起',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：金屬元素 ＋ 非金屬元素</strong><br>金屬原子把最外層電子「給出去」→ 變成帶正電的<strong>陽離子（＋）</strong><br>非金屬原子「接收電子」→ 變成帶負電的<strong>陰離子（−）</strong><br>正負離子靠靜電引力吸在一起，形成離子鍵。</div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;font-size:13px;background:#F4EFFB;border-radius:10px;padding:1rem;">
-      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#ECE3F1;border:2px solid #A071B6;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#6E4A86;margin:0 auto 4px;">Na</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#B85A74;font-weight:700;">1</span></div></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;font-size:13px;background:#F4EFFB;border-radius:4px;padding:1rem;">
+      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#ECE3F1;border:2px solid #A071B6;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#6E4A86;margin:0 auto 4px;">Na</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#B85A74;font-weight:500;">1</span></div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
       <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#ECEBFA;border:2px solid #6A54C0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#473F9E;margin:0 auto 4px;">Na⁺</div><div style="font-size:11px;color:#A89FBC;">2,8（失1e⁻）</div></div>
       <div style="font-size:20px;color:#5B57C2;font-weight:500;">+</div>
-      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E7F3ED;border:2px solid #90C8AD;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#33694F;margin:0 auto 4px;">Cl</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#5B57C2;font-weight:700;">7</span></div></div>
+      <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E7F3ED;border:2px solid #90C8AD;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#33694F;margin:0 auto 4px;">Cl</div><div style="font-size:11px;color:#A89FBC;">2,8,<span style="color:#5B57C2;font-weight:500;">7</span></div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
       <div style="text-align:center;"><div style="width:50px;height:50px;border-radius:50%;background:#E6F2EC;border:2px solid #8CC7AB;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#3E7E5F;margin:0 auto 4px;">Cl⁻</div><div style="font-size:11px;color:#A89FBC;">2,8,8（得1e⁻）</div></div>
       <div style="font-size:16px;color:#A89FBC;">→</div>
       <div style="font-size:18px;font-weight:500;color:#5B57C2;">NaCl</div>
     </div>
-    <div style="background:#E6F2EC;border-radius:8px;padding:.625rem .875rem;font-size:12px;color:#3E7E5F;line-height:1.6;">性質：高熔點（NaCl熔點801°C）、固態不導電、<strong>溶於水後可導電</strong>（Na⁺和Cl⁻自由移動）</div>`},
+    <div style="background:#E6F2EC;border-radius:4px;padding:.625rem .875rem;font-size:12px;color:#3E7E5F;line-height:1.6;">性質：高熔點（NaCl熔點801°C）、固態不導電、<strong>溶於水後可導電</strong>（Na⁺和Cl⁻自由移動）</div>`},
   covalent:{title:'共價鍵 ── 共用電子，誰也不虧',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：非金屬元素 ＋ 非金屬元素</strong><br>兩個原子各拿出一個（或多個）電子，形成<strong>共用電子對</strong>，兩個原子各自把共用電子計入自己的最外層。兩者都達到穩定，皆大歡喜。</div>
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">
@@ -1078,10 +1097,10 @@ const bondData={
         <tr><td style="padding:6px 8px;">CO₂</td><td style="padding:6px 8px;font-family:monospace;font-size:14px;">O ═ C ═ O</td><td style="padding:6px 8px;">各2對，共4對</td></tr>
       </tbody>
     </table>
-    <div style="background:#ECEBFA;border-radius:8px;padding:.625rem .875rem;font-size:12px;color:#473F9E;line-height:1.6;">性質：熔沸點通常比離子化合物低、大多<strong>不導電</strong>（共用電子不能自由移動）</div>`},
+    <div style="background:#ECEBFA;border-radius:4px;padding:.625rem .875rem;font-size:12px;color:#473F9E;line-height:1.6;">性質：熔沸點通常比離子化合物低、大多<strong>不導電</strong>（共用電子不能自由移動）</div>`},
   metallic:{title:'金屬鍵 ── 電子海，大家共用',
     html:`<div style="font-size:13px;line-height:1.75;margin-bottom:12px;"><strong>條件：純金屬</strong><br>金屬原子把最外層電子釋放出來，這些電子不屬於任何特定原子，而是在整個金屬中<strong>自由流動</strong>，形成「電子海」。帶正電的金屬離子浸在電子海中，靠靜電力維持在一起。</div>
-    <div style="background:#F4EFFB;border-radius:10px;padding:1rem;margin-bottom:12px;text-align:center;">
+    <div style="background:#F4EFFB;border-radius:4px;padding:1rem;margin-bottom:12px;text-align:center;">
       <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:6px;">${Array(9).fill(0).map(()=>'<div style="width:32px;height:32px;border-radius:50%;background:#ECE3F1;border:1.5px solid #A071B6;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#6E4A86;">M⁺</div>').join('')}</div>
       <div style="font-size:11px;color:#A89FBC;">金屬陽離子排列成晶格，電子在縫隙間自由流動（電子海）</div>
     </div>
@@ -1157,7 +1176,7 @@ function showEl(sym, type) {
   const e = all.find(x=>x.sym===sym);
   document.getElementById('el-detail').innerHTML =
     `<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-      <div style="width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;background:${type==='metal'?'#ECE3F1':'#E7F3ED'};color:${type==='metal'?'#6E4A86':'#33694F'};">${e.sym}</div>
+      <div style="width:48px;height:48px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;background:${type==='metal'?'#ECE3F1':'#E7F3ED'};color:${type==='metal'?'#6E4A86':'#33694F'};">${e.sym}</div>
       <div><div style="font-size:16px;font-weight:500;">${e.name}（${e.sym}）</div>
       <div style="font-size:12px;color:#A89FBC;">${type==='metal'?'金屬':'非金屬'}・常溫${e.state}態</div></div>
     </div>
@@ -1237,7 +1256,7 @@ function showAct(key,btn){
   document.getElementById('act-display').innerHTML=
     `<div style="font-size:13px;font-weight:500;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #CBC0E0;">${d.title}</div>
      <table style="width:100%;border-collapse:collapse;">${rows}</table>
-     <div style="background:${d.color};border-radius:8px;padding:.625rem .875rem;margin-top:10px;font-size:13px;color:#463E55;">${d.warn}</div>`;
+     <div style="background:${d.color};border-radius:4px;padding:.625rem .875rem;margin-top:10px;font-size:13px;color:#463E55;">${d.warn}</div>`;
 }
 showAct('kna', document.querySelector('.act-tab'));
 
@@ -1462,7 +1481,7 @@ function checkQuiz() {
   const color=pct>=80?'#3E7E5F':pct>=60?'#704484':'#B85A74';
   const bg=pct>=80?'#E6F2EC':pct>=60?'#ECE3F1':'#F4E9F6';
   document.getElementById('quiz-score').innerHTML=
-    `<div style="background:${bg};border-radius:12px;padding:1rem;margin-bottom:1rem;">
+    `<div style="background:${bg};border-radius:4px;padding:1rem;margin-bottom:1rem;">
       <div style="font-size:20px;font-weight:500;color:${color};">${correct} / ${qData.length} 題正確（${pct}%）</div>
       <div style="font-size:13px;color:${color};margin-top:4px;">${pct>=80?'非常好！整章掌握得很扎實。':pct>=60?'還不錯，把答錯的地方找到對應課程再複習一次！':'需要多加複習，從第一課重新看一遍。'}</div>
     </div>`;
@@ -1480,5 +1499,5 @@ function retryQuiz(){
 // ── GENERAL ──
 function showPanel(){}  // stub
 </script>
-</body>
+<script>document.querySelectorAll('.gate .gbtn').forEach(function(b){b.addEventListener('click',function(){var p=b.parentElement.querySelector('.gpass');p.classList.add('show');b.textContent='已完成 ✓';});});</script></body>
 </html>
